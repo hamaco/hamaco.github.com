@@ -4,7 +4,7 @@
   <title><![CDATA[Hamaco's blog]]></title>
   <link href="http://hamaco.github.com/atom.xml" rel="self"/>
   <link href="http://hamaco.github.com/"/>
-  <updated>2012-03-22T01:47:17+09:00</updated>
+  <updated>2012-03-22T02:02:51+09:00</updated>
   <id>http://hamaco.github.com/</id>
   <author>
     <name><![CDATA[hamaco]]></name>
@@ -12,5 +12,24 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[first post]]></title>
+    <link href="http://hamaco.github.com/blog/2012/03/22/first-post/"/>
+    <updated>2012-03-22T02:00:00+09:00</updated>
+    <id>http://hamaco.github.com/blog/2012/03/22/first-post</id>
+    <content type="html"><![CDATA[<p>よく覚えてなかったからoctopreessやり直してみた。</p>
+
+<p>markdownってどうやって書くんだっけかな。</p>
+
+<pre><code>&lt;?php
+function hello($name)
+{
+  return "Hello {$name}!!";
+}
+echo hello("hamaco");
+</code></pre>
+]]></content>
+  </entry>
   
 </feed>
