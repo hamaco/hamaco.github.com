@@ -9,11 +9,8 @@
   <meta name="author" content="hamaco">
 
   
-  <meta name="description" content="よく覚えてなかったからoctopreessやり直してみた。 markdownってどうやって書くんだっけかな。 &lt;?php
-function hello($name)
-{ return "Hello {$name}!!";
-}
-echo hello("hamaco"); &hellip;">
+  <meta name="description" content="Markdownでメモ書きたかったので以前1回やったOctopressをまたセットアップしてみた。
+前やった時のメモとか公式とか見ながら再度セットアップしたのでMarkdownの練習兼ねてメモ。 Github Pages用のリポジトリ作成 GitHubで hamaco.github.com &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -68,6 +65,97 @@ echo hello("hamaco"); &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/03/23/install-octopress/">GitHub PagesでOctopress使ってみる</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-03-23T00:46:00+09:00" pubdate data-updated="true">Mar 23<span>rd</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Markdownでメモ書きたかったので以前1回やったOctopressをまたセットアップしてみた。
+前やった時のメモとか公式とか見ながら再度セットアップしたのでMarkdownの練習兼ねてメモ。</p>
+
+<h2>Github Pages用のリポジトリ作成</h2>
+
+<p><a href="https://github.com/repositories/new">GitHub</a>で hamaco.github.com という名前でリポジトリを作成する。</p>
+
+<h2>Octopressのダウンロード</h2>
+
+<p>ダウンロードというかgitでcloneしてくる。</p>
+
+<pre><code>git clone https://github.com/imathis/octopress.git
+</code></pre>
+
+<p>bundlerとかいうやつで必要なgemとかインストールして初期処理を行う。</p>
+
+<pre><code>cd octopress
+gem install bundler
+bundle install
+rake install
+</code></pre>
+
+<h2>Octopressの設定</h2>
+
+<h3>初期設定</h3>
+
+<p>下記コマンドを実行するとgithubのリポジトリを聞かれるので最初に作成したGithub PageのリポジトリURLを指定する。</p>
+
+<pre><code>rake setup_github_pages
+
+git@github.com:hamaco/hamaco.github.com.git
+</code></pre>
+
+<p>その後、下記コマンドを実行してしばらく(10分弱)待つと見れるようになる。</p>
+
+<pre><code>rake generate
+rake deploy
+</code></pre>
+
+<h3>Blogの設定</h3>
+
+<p>設定ファイルを弄ってタイトルとかをちゃんとしたのにする。</p>
+
+<pre><code>gvim _config.yml
+</code></pre>
+
+<h2>記事の作成</h2>
+
+<p>記事を作成するのにはrakeを実行して、内容を書いてやる。</p>
+
+<pre><code>rake new_post\["title name"\]
+gvim source/_posts/2012-03-23-title-name.markdown
+</code></pre>
+
+<p><em>追記予定</em>
+source側の管理とかやったらその辺追記したりする予定</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -141,6 +229,10 @@ echo hello("hamaco");
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/03/23/install-octopress/">GitHub PagesでOctopress使ってみる</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2012/03/22/first-post/">first post</a>

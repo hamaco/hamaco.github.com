@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Hamaco's blog]]></title>
-  <link href="http://hamaco.github.com/atom.xml" rel="self"/>
+  <title><![CDATA[Category: octopress | Hamaco's blog]]></title>
+  <link href="http://hamaco.github.com/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://hamaco.github.com/"/>
   <updated>2012-03-23T00:52:41+09:00</updated>
   <id>http://hamaco.github.com/</id>
@@ -74,40 +74,6 @@ gvim source/_posts/2012-03-23-title-name.markdown
 
 <p><em>追記予定</em>
 source側の管理とかやったらその辺追記したりする予定</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[first post]]></title>
-    <link href="http://hamaco.github.com/blog/2012/03/22/first-post/"/>
-    <updated>2012-03-22T02:00:00+09:00</updated>
-    <id>http://hamaco.github.com/blog/2012/03/22/first-post</id>
-    <content type="html"><![CDATA[<p>よく覚えてなかったからoctopreessやり直してみた。</p>
-
-<p>markdownってどうやって書くんだっけかな。</p>
-
-<pre><code>&lt;?php
-function hello($name)
-{
-  return "Hello {$name}!!";
-}
-echo hello("hamaco");
-</code></pre>
-
-<p>codeblockってのがoctopressにはあるのかな?</p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="kd">var</span> <span class="nx">hello</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>  <span class="k">return</span> <span class="s2">&quot;Hello &quot;</span> <span class="o">+</span> <span class="nx">name</span> <span class="o">+</span> <span class="s2">&quot;!!&quot;</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">hello</span><span class="p">(</span><span class="s2">&quot;hamaco&quot;</span><span class="p">));</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-
 ]]></content>
   </entry>
   

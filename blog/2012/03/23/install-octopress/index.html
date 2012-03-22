@@ -5,13 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Blog Archive - Hamaco's blog</title>
+  <title>GitHub PagesでOctopress使ってみる - Hamaco's blog</title>
   <meta name="author" content="hamaco">
 
   
-  <meta name="description" content="Blog Archive 2012 GitHub PagesでOctopress使ってみる
-Mar 23 2012 posted in github, octopress first post
-Mar 22 2012 Recent Posts GitHub &hellip;">
+  <meta name="description" content="Markdownでメモ書きたかったので以前1回やったOctopressをまたセットアップしてみた。
+前やった時のメモとか公式とか見ながら再度セットアップしたのでMarkdownの練習兼ねてメモ。 Github Pages用のリポジトリ作成 GitHubで hamaco.github.com &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -20,7 +19,7 @@ Mar 22 2012 Recent Posts GitHub &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://hamaco.github.com/blog/archives">
+  <link rel="canonical" href="http://hamaco.github.com/blog/2012/03/23/install-octopress">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -65,45 +64,139 @@ Mar 22 2012 Recent Posts GitHub &hellip;">
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Blog Archive</h1>
+    
+      <h1 class="entry-title">GitHub PagesでOctopress使ってみる</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-03-23T00:46:00+09:00" pubdate data-updated="true">Mar 23<span>rd</span>, 2012</time>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives">
 
 
+<div class="entry-content"><p>Markdownでメモ書きたかったので以前1回やったOctopressをまたセットアップしてみた。
+前やった時のメモとか公式とか見ながら再度セットアップしたのでMarkdownの練習兼ねてメモ。</p>
 
-  
-  <h2>2012</h2>
+<h2>Github Pages用のリポジトリ作成</h2>
 
-<article>
-  
-<h1><a href="/blog/2012/03/23/install-octopress/">GitHub PagesでOctopress使ってみる</a></h1>
-<time datetime="2012-03-23T00:46:00+09:00" pubdate><span class='month'>Mar</span> <span class='day'>23</span> <span class='year'>2012</span></time>
+<p><a href="https://github.com/repositories/new">GitHub</a>で hamaco.github.com という名前でリポジトリを作成する。</p>
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/github/'>github</a>, <a class='category' href='/blog/categories/octopress/'>octopress</a></span>
-</footer>
+<h2>Octopressのダウンロード</h2>
 
+<p>ダウンロードというかgitでcloneしてくる。</p>
 
-</article>
+<pre><code>git clone https://github.com/imathis/octopress.git
+</code></pre>
 
+<p>bundlerとかいうやつで必要なgemとかインストールして初期処理を行う。</p>
 
+<pre><code>cd octopress
+gem install bundler
+bundle install
+rake install
+</code></pre>
 
-<article>
-  
-<h1><a href="/blog/2012/03/22/first-post/">first post</a></h1>
-<time datetime="2012-03-22T02:00:00+09:00" pubdate><span class='month'>Mar</span> <span class='day'>22</span> <span class='year'>2012</span></time>
+<h2>Octopressの設定</h2>
 
+<h3>初期設定</h3>
 
-</article>
+<p>下記コマンドを実行するとgithubのリポジトリを聞かれるので最初に作成したGithub PageのリポジトリURLを指定する。</p>
 
+<pre><code>rake setup_github_pages
+
+git@github.com:hamaco/hamaco.github.com.git
+</code></pre>
+
+<p>その後、下記コマンドを実行してしばらく(10分弱)待つと見れるようになる。</p>
+
+<pre><code>rake generate
+rake deploy
+</code></pre>
+
+<h3>Blogの設定</h3>
+
+<p>設定ファイルを弄ってタイトルとかをちゃんとしたのにする。</p>
+
+<pre><code>gvim _config.yml
+</code></pre>
+
+<h2>記事の作成</h2>
+
+<p>記事を作成するのにはrakeを実行して、内容を書いてやる。</p>
+
+<pre><code>rake new_post\["title name"\]
+gvim source/_posts/2012-03-23-title-name.markdown
+</code></pre>
+
+<p><em>追記予定</em>
+source側の管理とかやったらその辺追記したりする予定</p>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">hamaco</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-03-23T00:46:00+09:00" pubdate data-updated="true">Mar 23<span>rd</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/github/'>github</a>, <a class='category' href='/blog/categories/octopress/'>octopress</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://hamaco.github.com/blog/2012/03/23/install-octopress/" data-via="hamaco" data-counturl="http://hamaco.github.com/blog/2012/03/23/install-octopress/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/03/22/first-post/" title="Previous Post: first post">&laquo; first post</a>
+      
+      
+    </p>
+  </footer>
 </article>
 
 </div>
