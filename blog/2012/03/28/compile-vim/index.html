@@ -5,11 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: octopress - Hamaco's blog</title>
+  <title>Vim をソースからコンパイルする - Hamaco's blog</title>
   <meta name="author" content="hamaco">
 
   
-  <meta name="description" content="Category: octopress">
+  <meta name="description" content="普段使っているプラギンが7.3以上専用だったりして、基本的にディストリ標準のVimだとまともに動かないので、最近はvimを自分でコンパイルしてる。
+こないだインストールした時にも思ったけど、新規でインストールする時に必要なパッケージとか調べるの面倒なのでメモしておく。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://hamaco.github.comblog/categories/octopress">
+  <link rel="canonical" href="http://hamaco.github.com/blog/2012/03/28/compile-vim">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -63,35 +64,134 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Category: Octopress</h1>
+    
+      <h1 class="entry-title">Vim をソースからコンパイルする</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-03-28T03:21:00+09:00" pubdate data-updated="true">2012年03月28日</time>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives" class="category">
 
 
+<div class="entry-content"><p>普段使っているプラギンが7.3以上専用だったりして、基本的にディストリ標準のVimだとまともに動かないので、最近はvimを自分でコンパイルしてる。<br/>
+こないだインストールした時にも思ったけど、新規でインストールする時に必要なパッケージとか調べるの面倒なのでメモしておく。<br/>
+UbuntuでインストールしたのでUbuntuになってるのでCentOSとかの場合は適宜置き換えること。<br/>
+もし今度CentOSでコンパイルすることがあれば追記するかも。</p>
 
-  
-  <h2>2012</h2>
+<h2>必要なパッケージのインストール</h2>
 
-<article>
-  
-<h1><a href="/blog/2012/03/23/install-octopress/">GitHub PagesでOctopress使ってみる</a></h1>
-<time datetime="2012-03-23T00:46:00+09:00" pubdate><span class='month'>Mar</span> <span class='day'>23</span> <span class='year'>2012</span></time>
+<pre><code>sudo aptitude install mercurial libncurses-dev
+</code></pre>
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/github/'>github</a>, <a class='category' href='/blog/categories/octopress/'>octopress</a></span>
-</footer>
+<h2>Vimのソースの取得</h2>
+
+<p>今後それなりにコンパイルすることになると思うので、VimはMercurialのリポジトリから取得してくる。</p>
+
+<pre><code>hg clone https://vim.googlecode.com/hg/ vim
+</code></pre>
+
+<p>2回目以降は以下の方法でリポジトリを更新する。</p>
+
+<pre><code>hg pull
+hg update
+</code></pre>
+
+<h2>Make</h2>
+
+<p>後は普通にコンパイルするだけ。configureのオプションは結構テキトー。とりあえず動いてるからいいかなーとか思ってる。
+自分しか使わないし、サーバ上とかで他の人が使ってなにかあったりしたら面倒なのでホームディレクトリ以下にインストールされるようにしてるくらいで後は普通かと。</p>
+
+<div><script src='https://gist.github.com/2218942.js?file='></script>
+<noscript><pre><code>#!/bin/sh
+
+./configure \
+    --prefix=$HOME/app/vim-7.3 \
+    --disable-darwin \
+    --disable-selinux \
+    --enable-fontset \
+    --enable-gnome-check \
+    --enable-gui=gtk2 \
+    --enable-multibyte \
+    --enable-perlinterp \
+    --enable-pythoninterp \
+    --enable-rubyinterp \
+    --with-vim-name=vim \
+    --with-compiledby=&quot;hamaco &lt;hamanaka.kazuhiro@gmail.com&gt;&quot; \
+    --with-features=huge \
+    --with-tlib=ncurses
+
+make &amp;&amp; make install</code></pre></noscript></div>
 
 
-</article>
-
+<p>終わり!</p>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">hamaco</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-03-28T03:21:00+09:00" pubdate data-updated="true">2012年03月28日</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/vim/'>vim</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://hamaco.github.com/blog/2012/03/28/compile-vim/" data-via="hamaco" data-counturl="http://hamaco.github.com/blog/2012/03/28/compile-vim/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/03/23/install-octopress/" title="Previous Post: GitHub PagesでOctopress使ってみる">&laquo; GitHub PagesでOctopress使ってみる</a>
+      
+      
+    </p>
+  </footer>
 </article>
 
 </div>

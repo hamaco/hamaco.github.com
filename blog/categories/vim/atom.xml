@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: vim | Hamaco's blog]]></title>
+  <link href="http://hamaco.github.com/blog/categories/vim/atom.xml" rel="self"/>
+  <link href="http://hamaco.github.com/"/>
+  <updated>2012-03-28T03:43:08+09:00</updated>
+  <id>http://hamaco.github.com/</id>
+  <author>
+    <name><![CDATA[hamaco]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Vim をソースからコンパイルする]]></title>
+    <link href="http://hamaco.github.com/blog/2012/03/28/compile-vim/"/>
+    <updated>2012-03-28T03:21:00+09:00</updated>
+    <id>http://hamaco.github.com/blog/2012/03/28/compile-vim</id>
+    <content type="html"><![CDATA[<p>普段使っているプラギンが7.3以上専用だったりして、基本的にディストリ標準のVimだとまともに動かないので、最近はvimを自分でコンパイルしてる。<br/>
+こないだインストールした時にも思ったけど、新規でインストールする時に必要なパッケージとか調べるの面倒なのでメモしておく。<br/>
+UbuntuでインストールしたのでUbuntuになってるのでCentOSとかの場合は適宜置き換えること。<br/>
+もし今度CentOSでコンパイルすることがあれば追記するかも。</p>
+
+<h2>必要なパッケージのインストール</h2>
+
+<pre><code>sudo aptitude install mercurial libncurses-dev
+</code></pre>
+
+<h2>Vimのソースの取得</h2>
+
+<p>今後それなりにコンパイルすることになると思うので、VimはMercurialのリポジトリから取得してくる。</p>
+
+<pre><code>hg clone https://vim.googlecode.com/hg/ vim
+</code></pre>
+
+<p>2回目以降は以下の方法でリポジトリを更新する。</p>
+
+<pre><code>hg pull
+hg update
+</code></pre>
+
+<h2>Make</h2>
+
+<p>後は普通にコンパイルするだけ。configureのオプションは結構テキトー。とりあえず動いてるからいいかなーとか思ってる。
+自分しか使わないし、サーバ上とかで他の人が使ってなにかあったりしたら面倒なのでホームディレクトリ以下にインストールされるようにしてるくらいで後は普通かと。</p>
+
+<p><div><script src='https://gist.github.com/2218942.js?file='></script>
+<noscript><pre><code>#!/bin/sh
+
+./configure \
+	--prefix=$HOME/app/vim-7.3 \
+	--disable-darwin \
+	--disable-selinux \
+	--enable-fontset \
+	--enable-gnome-check \
+	--enable-gui=gtk2 \
+	--enable-multibyte \
+	--enable-perlinterp \
+	--enable-pythoninterp \
+	--enable-rubyinterp \
+	--with-vim-name=vim \
+	--with-compiledby=&quot;hamaco &lt;hamanaka.kazuhiro@gmail.com&gt;&quot; \
+	--with-features=huge \
+	--with-tlib=ncurses
+
+make &amp;&amp; make install</code></pre></noscript></div>
+</p>
+
+<p>終わり!</p>
+]]></content>
+  </entry>
+  
+</feed>
