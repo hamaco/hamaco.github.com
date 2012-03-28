@@ -4,7 +4,7 @@
   <title><![CDATA[Category: octopress | Hamaco's blog]]></title>
   <link href="http://hamaco.github.com/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://hamaco.github.com/"/>
-  <updated>2012-03-28T03:43:08+09:00</updated>
+  <updated>2012-03-29T00:01:31+09:00</updated>
   <id>http://hamaco.github.com/</id>
   <author>
     <name><![CDATA[hamaco]]></name>
@@ -71,6 +71,15 @@ rake deploy
 <pre><code>rake new_post\["title name"\]
 gvim source/_posts/2012-03-23-title-name.markdown
 </code></pre>
+
+<h2>参考サイト</h2>
+
+<ul>
+<li><a href="http://octopress.org/docs/setup/">Octopress Setup - Octopress</a></li>
+<li><a href="http://mattn.kaoriya.net/software/lang/ruby/20111017205717.htm">Big Sky :: githubとjekyllとoctopressで作る簡単でモダンなブログ</a></li>
+<li><a href="http://www.glidenote.com/archives/1517">GithubとOctopressでモダンな技術系ブログを作ってみる | Glide Note - グライドノート</a></li>
+</ul>
+
 
 <p><em>追記予定</em>
 source側の管理とかやったらその辺追記したりする予定</p>
