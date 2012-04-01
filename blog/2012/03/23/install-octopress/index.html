@@ -1,97 +1,73 @@
 
-<!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<!DOCTYPE HTML>
+<html>
 <head>
-  <meta charset="utf-8">
-  <title>GitHub PagesでOctopress使ってみる - Hamaco's blog</title>
-  <meta name="author" content="hamaco">
+    <meta charset="utf-8">
+    <title>GitHub PagesでOctopress使ってみる - Hamaco's blog</title>
+    <meta name="author" content="hamaco">
 
-  
-  <meta name="description" content="Markdownでメモ書きたかったので以前1回やったOctopressをまたセットアップしてみた。
-前やった時のメモとか公式とか見ながら再度セットアップしたのでMarkdownの練習兼ねてメモ。 Github Pages用のリポジトリ作成 GitHubで hamaco.github.com &hellip;">
-  
+    
+    <meta name="description" content="GitHub PagesでOctopress使ってみる Markdownでメモ書きたかったので以前1回やったOctopressをまたセットアップしてみた。
+前やった時のメモとか公式とか見ながら再度セットアップしたのでMarkdownの練習兼ねてメモ。 Github Pages用のリポジトリ作成 &hellip;">
+    
+    <meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1">
 
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  
-  <link rel="canonical" href="http://hamaco.github.com/blog/2012/03/23/install-octopress">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="/javascripts/ender.js"></script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <link href="/atom.xml" rel="alternate" title="Hamaco's blog" type="application/atom+xml">
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-
-  
+    <link href="/atom.xml" rel="alternate" title="Hamaco's blog" type="application/atom+xml">
+    <link rel="canonical" href="">
+    <link href="/favicon.png" rel="shortcut icon">
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    
+    
 
 </head>
 
-<body   >
-  <header role="banner"><hgroup>
-  <h1><a href="/">Hamaco's blog</a></h1>
-  
-    <h2>特に考えてない</h2>
-  
-</hgroup>
-
-</header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-  
+<body>
+	<header class="inner"><h1 class="left"><a href="/">Hamaco's blog</a></h1>
+<nav class="menu left"><ul class="main">
+	<li><a href="/">Blog</a></li>
+	<li><a href="/blog/archives">Archives</a></li>
 </ul>
-  
-<form action="http://google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="q" value="site:hamaco.github.com" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
-</form>
-  
-<ul class="main-navigation">
-  <li><a href="/">Blog</a></li>
-  <li><a href="/blog/archives">Archives</a></li>
-</ul>
-
 </nav>
-  <div id="main">
-    <div id="content">
-      <div>
-<article class="hentry" role="article">
-  
-  <header>
-    
-      <h1 class="entry-title">GitHub PagesでOctopress使ってみる</h1>
-    
-    
-      <p class="meta">
-        
+<div class="right">
+	<form class="search right" action="http://google.com/search" method="get">
+		<input class="left" type="text" name="q" results="0">
+		<input type="hidden" name="q" value="site:hamaco.github.com">
+	</form>
+	<div class="social right">
+		
+		
+		
+		<a class="twitter" href="http://twitter.com/hamaco" title="Twitter">Twitter</a>
+		
+		
+		<a class="github" href="https://github.com/hamaco" title="GitHub">GitHub</a>
+		
+		
+		<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+	</div>
+</div>
+</header>
+	
+<div id="banner" class="inner">
+	<div class="container">
+		<ul class="feed"></ul>
+	</div>
+	<small><a href="http://twitter.com/hamaco">hamaco</a> @ <a href="http://twitter.com">Twitter</a></small>
+	<div class="loading">Loading...</div>
+</div>
+<script src="/javascripts/twitter.js"></script>
+<script type="text/javascript">
+	(function($){
+		$('#banner').getTwitterFeed('hamaco', 4, false);
+	})(jQuery);
+</script>
 
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-03-23T00:46:00+09:00" pubdate data-updated="true">2012年03月23日</time>
-        
-      </p>
-    
-  </header>
-
-
-<div class="entry-content"><p>Markdownでメモ書きたかったので以前1回やったOctopressをまたセットアップしてみた。
+	<div id="content" class="inner"><article class="post">
+    <h1 class="title">GitHub PagesでOctopress使ってみる</h1>
+    <div class="entry"><p>Markdownでメモ書きたかったので以前1回やったOctopressをまたセットアップしてみた。
 前やった時のメモとか公式とか見ながら再度セットアップしたのでMarkdownの練習兼ねてメモ。</p>
 
 <h2>Github Pages用のリポジトリ作成</h2>
@@ -157,16 +133,8 @@ gvim source/_posts/2012-03-23-title-name.markdown
 <p><em>追記予定</em>
 source側の管理とかやったらその辺追記したりする予定</p>
 </div>
-
-
-  <footer>
-    <p class="meta">
-      
-  
-
-<span class="byline author vcard">Posted by <span class="fn">hamaco</span></span>
-
-      
+    <div class="meta">
+        <div class="date">
 
 
 
@@ -178,141 +146,34 @@ source側の管理とかやったらその辺追記したりする予定</p>
   
 
 
-<time datetime="2012-03-23T00:46:00+09:00" pubdate data-updated="true">2012年03月23日</time>
-      
+<time datetime="2012-03-23T00:46:00+09:00" pubdate data-updated="true">2012年03月23日</time></div>
+        <div class="tags">
 
-<span class="categories">
+<div class="cat">
   
     <a class='category' href='/blog/categories/github/'>github</a>, <a class='category' href='/blog/categories/octopress/'>octopress</a>
   
-</span>
-
-
-    </p>
-    
-      <div class="sharing">
-  
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://hamaco.github.com/blog/2012/03/23/install-octopress/" data-via="hamaco" data-counturl="http://hamaco.github.com/blog/2012/03/23/install-octopress/" >Tweet</a>
-  
-  
-  
 </div>
 
-    
-    <p class="meta">
-      
-        <a class="basic-alignment left" href="/blog/2012/03/22/first-post/" title="Previous Post: first post">&laquo; first post</a>
-      
-      
-        <a class="basic-alignment right" href="/blog/2012/03/28/compile-vim/" title="Next Post: Vim をソースからコンパイルする">Vim をソースからコンパイルする &raquo;</a>
-      
-    </p>
-  </footer>
-</article>
-
 </div>
-
-<aside class="sidebar">
-  
-    <section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
-    
-      <li class="post">
-        <a href="/blog/2012/03/28/compile-vim/">Vim をソースからコンパイルする</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/03/23/install-octopress/">GitHub PagesでOctopress使ってみる</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/03/22/first-post/">first post</a>
-      </li>
-    
-  </ul>
-</section>
-
-<section>
-  <h1>GitHub Repos</h1>
-  <ul id="gh_repos">
-    <li class="loading">Status updating...</li>
-  </ul>
-  
-  <a href="https://github.com/hamaco">@hamaco</a> on GitHub
-  
-  <script type="text/javascript">
-    $.domReady(function(){
-        if (!window.jXHR){
-            var jxhr = document.createElement('script');
-            jxhr.type = 'text/javascript';
-            jxhr.src = '/javascripts/libs/jXHR.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(jxhr, s);
-        }
-
-        github.showRepos({
-            user: 'hamaco',
-            count: 0,
-            skip_forks: true,
-            target: '#gh_repos'
-        });
-    });
-  </script>
-  <script src="/javascripts/github.js" type="text/javascript"> </script>
-</section>
-
-
-<section>
-  <h1>Latest Tweets</h1>
-  <ul id="tweets">
-    <li class="loading">Status updating...</li>
-  </ul>
-  <script type="text/javascript">
-    $.domReady(function(){
-      getTwitterFeed("hamaco", 4, false);
-    });
-  </script>
-  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
-  
-    <a href="http://twitter.com/hamaco" class="twitter-follow-button" data-show-count="false">Follow @hamaco</a>
-  
-</section>
-
-
-
-
-
-  
-</aside>
-
-
+        
     </div>
-  </div>
-  <footer role="contentinfo"><p>
-  Copyright &copy; 2012 - hamaco -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</p>
-
-</footer>
-  
-
-
-
-
-
-
-
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
-
+</article>
+<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+	<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-4eb4a0c47196e907"></script>
+</div>
+</div>
+	<footer class="inner">Copyright &copy; 2012 Hamaco's blog</footer>
+	<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script src="/javascripts/slash.js"></script>
 
 
 
