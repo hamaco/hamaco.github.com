@@ -4,7 +4,7 @@
   <title><![CDATA[Category: github | Hamaco's blog]]></title>
   <link href="http://hamaco.github.com/blog/categories/github/atom.xml" rel="self"/>
   <link href="http://hamaco.github.com/"/>
-  <updated>2012-04-02T01:09:39+09:00</updated>
+  <updated>2012-04-02T02:16:57+09:00</updated>
   <id>http://hamaco.github.com/</id>
   <author>
     <name><![CDATA[hamaco]]></name>
@@ -72,12 +72,26 @@ rake deploy
 gvim source/_posts/2012-03-23-title-name.markdown
 </code></pre>
 
+<h2>ソースの管理</h2>
+
+<p>なんかプロジェクトページとユーザページを統合しとくと面倒とか書いてあるブログがあったりしたので丁度アカウントも持ってたしBitbucketでソースを管理するようにしてみる。<br/>
+と言ってもBitbucketでリポジトリを作成してpushしてあげるだけ。<br/>
+Bitbucketでのリポジトリ作成はGitHubとたいして変わらないので割愛。分からなければ参考サイト見て下さい。</p>
+
+<pre><code>git add .
+git commit -m 'commit message'
+git push origin source
+git remote add bitbucket git@bitbucket.org:hamaco/octopress-github.git
+git push -u bitbucket source
+</code></pre>
+
 <h2>参考サイト</h2>
 
 <ul>
 <li><a href="http://octopress.org/docs/setup/">Octopress Setup - Octopress</a></li>
 <li><a href="http://mattn.kaoriya.net/software/lang/ruby/20111017205717.htm">Big Sky :: githubとjekyllとoctopressで作る簡単でモダンなブログ</a></li>
 <li><a href="http://www.glidenote.com/archives/1517">GithubとOctopressでモダンな技術系ブログを作ってみる | Glide Note - グライドノート</a></li>
+<li><a href="http://tokkonopapa.github.com/blog/2011/12/30/octopress-on-github-and-bitbucket/">Octopressのインストールから運用管理まで - T.I.D.</a></li>
 </ul>
 
 

@@ -20,6 +20,18 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     
     
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-1995376-4']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
 
 </head>
 
@@ -121,12 +133,26 @@ rake deploy
 gvim source/_posts/2012-03-23-title-name.markdown
 </code></pre>
 
+<h2>ソースの管理</h2>
+
+<p>なんかプロジェクトページとユーザページを統合しとくと面倒とか書いてあるブログがあったりしたので丁度アカウントも持ってたしBitbucketでソースを管理するようにしてみる。<br/>
+と言ってもBitbucketでリポジトリを作成してpushしてあげるだけ。<br/>
+Bitbucketでのリポジトリ作成はGitHubとたいして変わらないので割愛。分からなければ参考サイト見て下さい。</p>
+
+<pre><code>git add .
+git commit -m 'commit message'
+git push origin source
+git remote add bitbucket git@bitbucket.org:hamaco/octopress-github.git
+git push -u bitbucket source
+</code></pre>
+
 <h2>参考サイト</h2>
 
 <ul>
 <li><a href="http://octopress.org/docs/setup/">Octopress Setup - Octopress</a></li>
 <li><a href="http://mattn.kaoriya.net/software/lang/ruby/20111017205717.htm">Big Sky :: githubとjekyllとoctopressで作る簡単でモダンなブログ</a></li>
 <li><a href="http://www.glidenote.com/archives/1517">GithubとOctopressでモダンな技術系ブログを作ってみる | Glide Note - グライドノート</a></li>
+<li><a href="http://tokkonopapa.github.com/blog/2011/12/30/octopress-on-github-and-bitbucket/">Octopressのインストールから運用管理まで - T.I.D.</a></li>
 </ul>
 
 
