@@ -7,8 +7,8 @@
     <meta name="author" content="hamaco">
 
     
-    <meta name="description" content="Vim をソースからコンパイルする 普段使っているプラギンが7.3以上専用だったりして、基本的にディストリ標準のVimだとまともに動かないので、最近はvimを自分でコンパイルしてる。
-こないだインストールした時にも思ったけど、 &hellip;">
+    <meta name="description" content="Octopressのテーマを変更してみた Octopressのテーマがデフォルトだとつまんないなーとか思ったので変更してみた。
+しかし今の所そんなにテーマが豊富じゃないようなのでそんなに選択肢は多くないっぽい。 テーマのインストール List Of Octopress &hellip;">
     
     <meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1">
 
@@ -66,6 +66,70 @@
 </script>
 
 	<div id="content" class="inner">
+
+
+    <article class="post">
+    <h1 class="title"><a href="/blog/2012/04/02/change-octopress-theme/">Octopressのテーマを変更してみた</a></h1>
+    <div class="entry">
+        <p>Octopressのテーマがデフォルトだとつまんないなーとか思ったので変更してみた。<br/>
+しかし今の所そんなにテーマが豊富じゃないようなのでそんなに選択肢は多くないっぽい。</p>
+
+<h2>テーマのインストール</h2>
+
+<p><a href="https://github.com/imathis/octopress/wiki/List-Of-Octopress-Themes">List Of Octopress Themes</a>にOctopress用のテーマがリストアップされています。
+今回は検索してて一番最初に見つけたSlashというテーマを入れてみます。<br/>
+インストール方法も上記Wikiに書いてある通りコマンドを3つほど実行するだけで簡単にインストールできます。</p>
+
+<pre><code>git clone git://github.com/tommy351/Octopress-Theme-Slash.git .themes/slash
+rake install['slash']
+</code></pre>
+
+<h2>テーマ確認</h2>
+
+<p>インストールが完了したらプレビューで確認してみましょう。<br/>
+サーバが立ち上がったあと http://127.0.0.1:4000/ とかで確認できるはずです。</p>
+
+<pre><code>rake preview
+</code></pre>
+
+<h2>テーマ反映</h2>
+
+<p>プレビューしてみて良い感じであればそのままgenerateして本番環境に反映させます。</p>
+
+<pre><code>rake gen_deploy
+</code></pre>
+
+<p>GitHub Pagesで運用している場合暫く待つとGitHubからメールが飛んできてテーマが変わるはず。</p>
+
+        
+        
+    </div>
+    <div class="meta">
+        <div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-04-02T00:58:00+09:00" pubdate data-updated="true">2012年04月02日</time></div>
+        <div class="tags">
+
+<div class="cat">
+  
+    <a class='category' href='/blog/categories/octopress/'>octopress</a>
+  
+</div>
+
+</div>
+        
+    </div>
+</article>
 
 
     <article class="post">
