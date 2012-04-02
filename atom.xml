@@ -4,7 +4,7 @@
   <title><![CDATA[Hamaco's blog]]></title>
   <link href="http://hamaco.github.com/atom.xml" rel="self"/>
   <link href="http://hamaco.github.com/"/>
-  <updated>2012-04-02T02:16:57+09:00</updated>
+  <updated>2012-04-03T01:01:58+09:00</updated>
   <id>http://hamaco.github.com/</id>
   <author>
     <name><![CDATA[hamaco]]></name>
@@ -12,6 +12,234 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[第1回 クラウドサーバ勉強会に参加してきた]]></title>
+    <link href="http://hamaco.github.com/blog/2012/04/03/suin-cloud-study-01/"/>
+    <updated>2012-04-03T02:04:00+09:00</updated>
+    <id>http://hamaco.github.com/blog/2012/04/03/suin-cloud-study-01</id>
+    <content type="html"><![CDATA[<p>先日<a href="http://facebook.com/suinyeze">suin</a>さんの開催したクラウドサーバ勉強会に参加してきました。<br/>
+さくらのクラウドでなんかやってみようとかいう事だったので使ってみたいと思っていたfluentdを使ってみたのでメモ兼ねてエントリー。<br/>
+今回はあまり時間がなかったりして思ってたより進まなかったけど一応動く所までは出来た。<br/>
+基本fluentdのGitHub見ながらなのであまり難しいことはしてないです。<br/>
+色々やってから知ったけども開発元からtd-agentという名前で安定版はapt-getとかで入れれるらしい……</p>
+
+<h2>Web &amp; DB</h2>
+
+<p>とりあえず両方ともで使うのでfluentdが試せる所まで構築する。</p>
+
+<h3>Rubyのインストール</h3>
+
+<p>Rubyの1.9.2が必要らしいのでrbenv+ruby-buildでインストールする。<br/>
+まずは必要なパッケージのインストールをする。</p>
+
+<pre><code>sudo aptitude install zlib1g-dev libssl-dev
+</code></pre>
+
+<p>パッケージのインストールが終わったらRubyのコンパイルとか頑張る。この辺は結構テキトー。</p>
+
+<pre><code>git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
+mkdir ~/.rbenv/plugins
+git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+
+~/.zshenv
+  $path .rbenv/bin
+~/.zshrc
+  eval "$(rbenv init -)"
+
+exec $SHELL
+rbenv install 1.9.2-p318
+rbenv rehash
+rbenv global 1.9.2-p318
+rehash
+</code></pre>
+
+<h3>install fluentd</h3>
+
+<p>fluentd 自体はgemで簡単に入ります。</p>
+
+<pre><code>gem install fluentd
+</code></pre>
+
+<h3>使ってみる</h3>
+
+<p>fluentdにはコンフィグファイルを生成する機能があるので、それを使って動作確認。</p>
+
+<pre><code>fluentd --setup fluent
+
+/ _ / X ls fluent
+fluent.conf  plugin/
+</code></pre>
+
+<p>root権限が必要だけどsuするとパスが通らなくなるのでとりあえずsudoでrootになってから起動する。</p>
+
+<pre><code>sudo -s
+fluentd -c fluent/fluent.conf
+</code></pre>
+
+<p>何やらずらずらっとログが表示されたら違う端末でHTTPリクエストを投げて見る。</p>
+
+<pre><code>curl http://133.242.55.236:8888/debug.curl -F 'json={"name": "suin"}'
+</code></pre>
+
+<p>正常に動いていると、fluentdがstdoutに受け取ったJSONデータをそのまま出してくれます。</p>
+
+<pre><code>2012-04-01 15:13:55 +0900 debug.curl: {"name":"suin"}
+</code></pre>
+
+<h2>Web</h2>
+
+<p>fluentdの動作が確認できたら次はwebサーバのログを見るように設定する</p>
+
+<h3>nginxのインストールと設定</h3>
+
+<p>今回はwebサーバのログをfluentd経由でMongoDBに突っ込むまでやりたいので、nginxをインストールしてログをstdoutに出す所までやる。
+特にnginxに理由はなくて、隣でnginxとApacheの速度比較してたりしたのでなんとなく入れただけ。むしろApacheのがそのままでいけるはずなので楽だと思う。</p>
+
+<pre><code>sudo aptitude install nginx
+</code></pre>
+
+<p>そのままだとログのフォーマットがApacheと違うため同じフォーマットでログを吐くようにする。</p>
+
+<pre><code>sudo vim /etc/nginx/nginx.conf
+
++     log_format main '$remote_addr - $remote_user [$time_local] "$request" '
++                     '$status $body_bytes_sent "$http_referer" '
++                     '"$http_user_agent"';
+</code></pre>
+
+<h3>fluentdの設定</h3>
+
+<p>nginxの設定が終わったので次はfluentdがnginxのログを見るように設定。所々apacheの文字があるのはfluentdがapacheの吐くログの形式に対応していて、それを使ったりしてるからです。</p>
+
+<pre><code>sudo vim ~/works/fluent/fluent.conf
+</code></pre>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="nt">&lt;source&gt;</span>
+</span><span class='line'>  type tail
+</span><span class='line'>  format apache
+</span><span class='line'>  path /var/log/nginx/localhost.access.log
+</span><span class='line'>  pos_file /tmp/td-agent/apache.pos
+</span><span class='line'>  tag apache.access
+</span><span class='line'><span class="nt">&lt;/source&gt;</span>
+</span><span class='line'><span class="nt">&lt;match</span> <span class="err">apache.access</span><span class="nt">&gt;</span>
+</span><span class='line'>  type stdout
+</span><span class='line'><span class="nt">&lt;/match&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>pos_fileとか設定しなきゃいけないみたいなので、何処かのサイトに書いてあったのと同じ場所にした。ただこのままだとディレクトリが存在しないので作成する。</p>
+
+<pre><code>mkdir /tmp/td-agent
+</code></pre>
+
+<p>これで、ブラウザとかでnginxにアクセスするとfluentdがstdoutにアクセスログを出してくれます。</p>
+
+<h2>DB</h2>
+
+<p>webサーバの設定が終わったので、次はDBサーバにMongoDBを入れて設定する。</p>
+
+<h3>MongoDBのインストール</h3>
+
+<p>MongoDBも使ったことなくてよくわからないのでaptで入れただけ。</p>
+
+<pre><code>sudo aptitude install mongodb
+</code></pre>
+
+<h3>MongoDBプラグインのインストール</h3>
+
+<p>fluentdのMongoDBプラグインを入れて、nginxのログをMongoDBを入れるよう設定。
+起動すると何か言って来たので一応bson_extも入れた。</p>
+
+<pre><code>fluent-gem install fluent-plugin-mongo
+gem install bson_ext
+</code></pre>
+
+<p>とりあえずこれで準備完了。</p>
+
+<h2>Web &amp; DB</h2>
+
+<p>WebサーバとDBサーバの準備ができたのでnginxのアクセスログをDBサーバに飛ばしてMongoDBに保存する設定を書く。</p>
+
+<figure class='code'><figcaption><span>Web Server&#8217;s fluent.conf  </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="nt">&lt;match</span> <span class="err">apache.access</span><span class="nt">&gt;</span>
+</span><span class='line'>  type copy
+</span><span class='line'>  <span class="nt">&lt;store&gt;</span>
+</span><span class='line'>    type stdout
+</span><span class='line'>  <span class="nt">&lt;/store&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;store&gt;</span>
+</span><span class='line'>    type forward
+</span><span class='line'>    retry_limit 50
+</span><span class='line'>    <span class="nt">&lt;server&gt;</span>
+</span><span class='line'>      host 133.242.54.192
+</span><span class='line'>    <span class="nt">&lt;/server&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;/store&gt;</span>
+</span><span class='line'><span class="nt">&lt;/match&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span>DB Server&#8217;s fluent.conf  </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="nt">&lt;source&gt;</span>
+</span><span class='line'>  type forward
+</span><span class='line'><span class="nt">&lt;/source&gt;</span>
+</span><span class='line'><span class="nt">&lt;match</span> <span class="err">apache.access</span><span class="nt">&gt;</span>
+</span><span class='line'>  type copy
+</span><span class='line'>  <span class="nt">&lt;store&gt;</span>
+</span><span class='line'>    type stdout
+</span><span class='line'>  <span class="nt">&lt;/store&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;store&gt;</span>
+</span><span class='line'>    type mongo
+</span><span class='line'>    host localhost
+</span><span class='line'>    database fluent
+</span><span class='line'>    collection accesslog
+</span><span class='line'>  <span class="nt">&lt;/store&gt;</span>
+</span><span class='line'><span class="nt">&lt;/match&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>後はテキトーにwebにアクセスすると、Webサーバのstdoutに出力 -> DBサーバのstdoutに出力 -> MongoDBに保存 とされる。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Octopressのテーマを変更してみた]]></title>
