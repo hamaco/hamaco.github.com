@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: windows | Hamaco's blog]]></title>
+  <link href="http://hamaco.github.com/blog/categories/windows/atom.xml" rel="self"/>
+  <link href="http://hamaco.github.com/"/>
+  <updated>2012-04-04T00:23:31+09:00</updated>
+  <id>http://hamaco.github.com/</id>
+  <author>
+    <name><![CDATA[hamaco]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Windowsでハードリンク使ってみた]]></title>
+    <link href="http://hamaco.github.com/blog/2012/04/04/use-windows-hardlink/"/>
+    <updated>2012-04-04T00:21:00+09:00</updated>
+    <id>http://hamaco.github.com/blog/2012/04/04/use-windows-hardlink</id>
+    <content type="html"><![CDATA[<p>WindowsであまりGvimを使ってなかったんだけど最近のcygwinは気軽に入れれたりしたのでWindowsのGvim環境を整えたりした時にmklinkでちょっと嵌ったのでメモ。<br/>
+mklinkでファイルのリンクを作成する場合に/Hを付けないとシンボリックリンクになるけど、<em>vimrcや</em>gvimrcを編集した時にリンクが切れてしまい普通のファイルになってしまうみたい。<br/>
+なのでコマンドとしてはこんな感じでWindowsのGvimも快適に使えるようになってgitで管理しやすくなりますよ。</p>
+
+<pre><code>mklink /D .vim .\dotfiles\dot.vim
+mklink /H _vimrc .\dotfiles\dot.vimrc
+mklink /H _gvimrc .\dotfiles\dot.gvimrc
+</code></pre>
+]]></content>
+  </entry>
+  
+</feed>
