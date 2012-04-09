@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: octopress | Hamaco's blog]]></title>
+  <title><![CDATA[Category: octopress | hamaco's blog]]></title>
   <link href="http://hamaco.github.com/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://hamaco.github.com/"/>
-  <updated>2012-04-04T00:23:31+09:00</updated>
+  <updated>2012-04-09T16:14:27+09:00</updated>
   <id>http://hamaco.github.com/</id>
   <author>
     <name><![CDATA[hamaco]]></name>
