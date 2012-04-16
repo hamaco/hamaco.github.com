@@ -3,12 +3,17 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Octopressのテーマを変更してみた - hamaco's blog</title>
+    <title>SSH切断時にtmuxが自動で閉じないようにした - hamaco's blog</title>
     <meta name="author" content="hamaco">
 
     
-    <meta name="description" content="Octopressのテーマを変更してみた Octopressのテーマがデフォルトだとつまんないなーとか思ったので変更してみた。
-しかし今の所そんなにテーマが豊富じゃないようなのでそんなに選択肢は多くないっぽい。 テーマのインストール List Of Octopress &hellip;">
+    <meta name="description" content="SSH切断時にtmuxが自動で閉じないようにした SSHとかで接続失敗した時とか画面表示確認する前に閉じられてしまい原因調べるのが面倒だったので、ssh/mosh コマンド実行時にはセッションが閉じてもtmuxのWindowsが閉じないようにしてみました。 SSH用 1
+2
+3
+4
+5
+6
+7 &hellip;">
     
     <meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1">
 
@@ -81,36 +86,48 @@
 </script>
 
 	<div id="content" class="inner"><article class="post">
-    <h1 class="title">Octopressのテーマを変更してみた</h1>
-    <div class="entry"><p>Octopressのテーマがデフォルトだとつまんないなーとか思ったので変更してみた。<br/>
-しかし今の所そんなにテーマが豊富じゃないようなのでそんなに選択肢は多くないっぽい。</p>
+    <h1 class="title">SSH切断時にtmuxが自動で閉じないようにした</h1>
+    <div class="entry"><p>SSHとかで接続失敗した時とか画面表示確認する前に閉じられてしまい原因調べるのが面倒だったので、ssh/mosh コマンド実行時にはセッションが閉じてもtmuxのWindowsが閉じないようにしてみました。</p>
 
-<h2>テーマのインストール</h2>
+<h2>SSH用</h2>
 
-<p><a href="https://github.com/imathis/octopress/wiki/List-Of-Octopress-Themes">List Of Octopress Themes</a>にOctopress用のテーマがリストアップされています。
-今回は検索してて一番最初に見つけたSlashというテーマを入れてみます。<br/>
-インストール方法も上記Wikiに書いてある通りコマンドを3つほど実行するだけで簡単にインストールできます。</p>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="k">function </span>ssh_tmux<span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>  <span class="nb">eval </span><span class="nv">server</span><span class="o">=</span><span class="se">\$</span><span class="o">{</span><span class="nv">$#}</span>
+</span><span class='line'>  tmux <span class="nb">set set</span>-remain-on-exit on<span class="se">\;</span> <span class="se">\</span>
+</span><span class='line'>      new-window -n s:<span class="nv">$server</span> <span class="s2">&quot;ssh $*&quot;</span><span class="se">\;</span> <span class="se">\</span>
+</span><span class='line'>      <span class="nb">set set</span>-remain-on-exit off &gt; /dev/null
+</span><span class='line'><span class="o">}</span>
+</span><span class='line'><span class="nb">alias </span><span class="nv">ssh</span><span class="o">=</span>ssh_tmux
+</span></code></pre></td></tr></table></div></figure>
 
-<pre><code>git clone git://github.com/tommy351/Octopress-Theme-Slash.git .themes/slash
-rake install['slash']
-</code></pre>
 
-<h2>テーマ確認</h2>
+<h2>Mosh用</h2>
 
-<p>インストールが完了したらプレビューで確認してみましょう。<br/>
-サーバが立ち上がったあと http://127.0.0.1:4000/ とかで確認できるはずです。</p>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="k">function </span>mosh_tmux<span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>  <span class="nb">eval </span><span class="nv">server</span><span class="o">=</span><span class="se">\$</span><span class="o">{</span><span class="nv">$#}</span>
+</span><span class='line'>  tmux <span class="nb">set set</span>-remain-on-exit on<span class="se">\;</span> <span class="se">\</span>
+</span><span class='line'>      new-window -n s:<span class="nv">$server</span> <span class="s2">&quot;mosh $*&quot;</span><span class="se">\;</span> <span class="se">\</span>
+</span><span class='line'>      <span class="nb">set set</span>-remain-on-exit off &gt; /dev/null
+</span><span class='line'><span class="o">}</span>
+</span><span class='line'><span class="nb">alias </span><span class="nv">mosh</span><span class="o">=</span>mosh_tmux
+</span></code></pre></td></tr></table></div></figure>
 
-<pre><code>rake preview
-</code></pre>
 
-<h2>テーマ反映</h2>
-
-<p>プレビューしてみて良い感じであればそのままgenerateして本番環境に反映させます。</p>
-
-<pre><code>rake gen_deploy
-</code></pre>
-
-<p>GitHub Pagesで運用している場合暫く待つとGitHubからメールが飛んできてテーマが変わるはず。</p>
+<p>screenの時は良く分からなくて <code>zombie ^[</code> と書いて全て残るようにしてたんだけど、tmuxはコマンド使えるので普段は自動で閉じて、ssh/moshの時だけ閉じないとかできて楽チンですね。</p>
 </div>
     <div class="meta">
         <div class="date">
@@ -125,12 +142,12 @@ rake install['slash']
   
 
 
-<time datetime="2012-04-02T00:58:00+09:00" pubdate data-updated="true">2012年04月02日</time></div>
+<time datetime="2012-04-16T14:40:00+09:00" pubdate data-updated="true">2012年04月16日</time></div>
         <div class="tags">
 
 <div class="cat">
   
-    <a class='category' href='/blog/categories/octopress/'>octopress</a>
+    <a class='category' href='/blog/categories/tmux/'>tmux</a>
   
 </div>
 

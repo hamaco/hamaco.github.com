@@ -4,7 +4,7 @@
   <title><![CDATA[hamaco's blog]]></title>
   <link href="http://hamaco.github.com/atom.xml" rel="self"/>
   <link href="http://hamaco.github.com/"/>
-  <updated>2012-04-10T11:04:03+09:00</updated>
+  <updated>2012-04-16T15:03:47+09:00</updated>
   <id>http://hamaco.github.com/</id>
   <author>
     <name><![CDATA[hamaco]]></name>
@@ -12,6 +12,117 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[SSH切断時にtmuxが自動で閉じないようにした]]></title>
+    <link href="http://hamaco.github.com/blog/2012/04/16/tmux-zombie/"/>
+    <updated>2012-04-16T14:40:00+09:00</updated>
+    <id>http://hamaco.github.com/blog/2012/04/16/tmux-zombie</id>
+    <content type="html"><![CDATA[<p>SSHとかで接続失敗した時とか画面表示確認する前に閉じられてしまい原因調べるのが面倒だったので、ssh/mosh コマンド実行時にはセッションが閉じてもtmuxのWindowsが閉じないようにしてみました。</p>
+
+<h2>SSH用</h2>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="k">function </span>ssh_tmux<span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>  <span class="nb">eval </span><span class="nv">server</span><span class="o">=</span><span class="se">\$</span><span class="o">{</span><span class="nv">$#}</span>
+</span><span class='line'>  tmux <span class="nb">set set</span>-remain-on-exit on<span class="se">\;</span> <span class="se">\</span>
+</span><span class='line'>      new-window -n s:<span class="nv">$server</span> <span class="s2">&quot;ssh $*&quot;</span><span class="se">\;</span> <span class="se">\</span>
+</span><span class='line'>      <span class="nb">set set</span>-remain-on-exit off &gt; /dev/null
+</span><span class='line'><span class="o">}</span>
+</span><span class='line'><span class="nb">alias </span><span class="nv">ssh</span><span class="o">=</span>ssh_tmux
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Mosh用</h2>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="k">function </span>mosh_tmux<span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>  <span class="nb">eval </span><span class="nv">server</span><span class="o">=</span><span class="se">\$</span><span class="o">{</span><span class="nv">$#}</span>
+</span><span class='line'>  tmux <span class="nb">set set</span>-remain-on-exit on<span class="se">\;</span> <span class="se">\</span>
+</span><span class='line'>      new-window -n s:<span class="nv">$server</span> <span class="s2">&quot;mosh $*&quot;</span><span class="se">\;</span> <span class="se">\</span>
+</span><span class='line'>      <span class="nb">set set</span>-remain-on-exit off &gt; /dev/null
+</span><span class='line'><span class="o">}</span>
+</span><span class='line'><span class="nb">alias </span><span class="nv">mosh</span><span class="o">=</span>mosh_tmux
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>screenの時は良く分からなくて <code>zombie ^[</code> と書いて全て残るようにしてたんだけど、tmuxはコマンド使えるので普段は自動で閉じて、ssh/moshの時だけ閉じないとかできて楽チンですね。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Moshをインストールしてみた]]></title>
+    <link href="http://hamaco.github.com/blog/2012/04/15/install-mosh/"/>
+    <updated>2012-04-15T21:55:00+09:00</updated>
+    <id>http://hamaco.github.com/blog/2012/04/15/install-mosh</id>
+    <content type="html"><![CDATA[<p>Moshを使うとネットが遅かったり切れたりしても大丈夫とかいう話を聞いたので、新しくなったさくらVPSに<a href="http://mosh.mit.edu/">Mosh</a>をインストールしてみました。</p>
+
+<h2>サーバのDebianにインストール</h2>
+
+<p>Debianにはmoshのパッケージがないようなので自分でコンパイルする。<br/>
+以下の様にして必要なパッケージを導入。ただ、元々入っているパッケージもあるのでこれで全部かは不明。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo aptitude install build-essential protobuf-compiler libprotobuf-dev pkg-config dh-autoreconf zlib1g-dev libboost-dev libncurses-dev</span></code></pre></td></tr></table></div></figure>
+
+
+<p>必要なパッケージが入ったら後はgithubからソースを持ってきて普通にコンパイルする。<br/>
+管理者権限が必要なく、ログインアカウントのPATHさえ通ってれば行ける感じだったので普段通り/homeディレクトリ内にインストールした。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git clone git://github.com/keithw/mosh.git
+</span><span class='line'>cd mosh
+</span><span class='line'>./autogen.sh
+</span><span class='line'>./configure \
+</span><span class='line'>  --prefix=$HOME/local
+</span><span class='line'>
+</span><span class='line'>make && make install</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>クライアントのUbuntuにインストール</h2>
+
+<p>Ubuntuにはパッケージからインストールできるようなので<a href="http://mosh.mit.edu/#getting">ここ</a>を参考にパッケージからインストールする。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get install python-software-properties
+</span><span class='line'>sudo add-apt-repository ppa:keithw/mosh
+</span><span class='line'>sudo apt-get update
+</span><span class='line'>sudo apt-get install mosh</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>接続テスト</h2>
+
+<p>クライアント側とサーバ側でのインストールが完了したら接続テストをしてみる。<br/>
+特別サーバ側で事前になにかする必要はなく、クライアント側からの接続時にmosh-serverが立ち上がります。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>mosh {sakura_vps_ip_address}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>まだMoshのメリットを享受してないので分からないですが、良い感じなら他のサーバにも導入しようかな。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[「X分で読めるよ」のブログパーツ入れてみたったよー！]]></title>

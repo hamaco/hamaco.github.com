@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: tmux | hamaco's blog]]></title>
+  <link href="http://hamaco.github.com/blog/categories/tmux/atom.xml" rel="self"/>
+  <link href="http://hamaco.github.com/"/>
+  <updated>2012-04-16T15:03:47+09:00</updated>
+  <id>http://hamaco.github.com/</id>
+  <author>
+    <name><![CDATA[hamaco]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[SSH切断時にtmuxが自動で閉じないようにした]]></title>
+    <link href="http://hamaco.github.com/blog/2012/04/16/tmux-zombie/"/>
+    <updated>2012-04-16T14:40:00+09:00</updated>
+    <id>http://hamaco.github.com/blog/2012/04/16/tmux-zombie</id>
+    <content type="html"><![CDATA[<p>SSHとかで接続失敗した時とか画面表示確認する前に閉じられてしまい原因調べるのが面倒だったので、ssh/mosh コマンド実行時にはセッションが閉じてもtmuxのWindowsが閉じないようにしてみました。</p>
+
+<h2>SSH用</h2>
+
+<p>``` sh
+function ssh_tmux() {</p>
+
+<pre><code>eval server=\${$#}
+tmux set set-remain-on-exit on\; \
+    new-window -n s:$server "ssh $*"\; \
+    set set-remain-on-exit off &gt; /dev/null
+</code></pre>
+
+<p>}
+alias ssh=ssh_tmux
+```</p>
+
+<h2>Mosh用</h2>
+
+<p>``` sh
+function mosh_tmux() {</p>
+
+<pre><code>eval server=\${$#}
+tmux set set-remain-on-exit on\; \
+    new-window -n s:$server "mosh $*"\; \
+    set set-remain-on-exit off &gt; /dev/null
+</code></pre>
+
+<p>}
+alias mosh=mosh_tmux
+```</p>
+
+<p>screenの時は良く分からなくて <code>zombie ^[</code> と書いて全て残るようにしてたんだけど、tmuxはコマンド使えるので普段は自動で閉じて、ssh/moshの時だけ閉じないとかできて楽チンですね。</p>
+]]></content>
+  </entry>
+  
+</feed>

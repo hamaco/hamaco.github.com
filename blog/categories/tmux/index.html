@@ -3,12 +3,11 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Octopressのテーマを変更してみた - hamaco's blog</title>
+    <title>Category: tmux - hamaco's blog</title>
     <meta name="author" content="hamaco">
 
     
-    <meta name="description" content="Octopressのテーマを変更してみた Octopressのテーマがデフォルトだとつまんないなーとか思ったので変更してみた。
-しかし今の所そんなにテーマが豊富じゃないようなのでそんなに選択肢は多くないっぽい。 テーマのインストール List Of Octopress &hellip;">
+    <meta name="description" content="Category: tmux">
     
     <meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1">
 
@@ -80,75 +79,32 @@
 	})(jQuery);
 </script>
 
-	<div id="content" class="inner"><article class="post">
-    <h1 class="title">Octopressのテーマを変更してみた</h1>
-    <div class="entry"><p>Octopressのテーマがデフォルトだとつまんないなーとか思ったので変更してみた。<br/>
-しかし今の所そんなにテーマが豊富じゃないようなのでそんなに選択肢は多くないっぽい。</p>
-
-<h2>テーマのインストール</h2>
-
-<p><a href="https://github.com/imathis/octopress/wiki/List-Of-Octopress-Themes">List Of Octopress Themes</a>にOctopress用のテーマがリストアップされています。
-今回は検索してて一番最初に見つけたSlashというテーマを入れてみます。<br/>
-インストール方法も上記Wikiに書いてある通りコマンドを3つほど実行するだけで簡単にインストールできます。</p>
-
-<pre><code>git clone git://github.com/tommy351/Octopress-Theme-Slash.git .themes/slash
-rake install['slash']
-</code></pre>
-
-<h2>テーマ確認</h2>
-
-<p>インストールが完了したらプレビューで確認してみましょう。<br/>
-サーバが立ち上がったあと http://127.0.0.1:4000/ とかで確認できるはずです。</p>
-
-<pre><code>rake preview
-</code></pre>
-
-<h2>テーマ反映</h2>
-
-<p>プレビューしてみて良い感じであればそのままgenerateして本番環境に反映させます。</p>
-
-<pre><code>rake gen_deploy
-</code></pre>
-
-<p>GitHub Pagesで運用している場合暫く待つとGitHubからメールが飛んできてテーマが変わるはず。</p>
-</div>
-    <div class="meta">
-        <div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-04-02T00:58:00+09:00" pubdate data-updated="true">2012年04月02日</time></div>
-        <div class="tags">
+	<div id="content" class="inner">
+<section class="archive">
+	
+	
+		
+		<h1 class="archive-title">2012</h1>
+	
+	<article class="archive">
+		
+<h1 class="title"><a href="/blog/2012/04/16/tmux-zombie/">SSH切断時にtmuxが自動で閉じないようにした</a></h1>
+<div class="meta">
+	<span class="date">Apr 16</span>
+	<span class="tags">
 
 <div class="cat">
   
-    <a class='category' href='/blog/categories/octopress/'>octopress</a>
+    <a class='category' href='/blog/categories/tmux/'>tmux</a>
   
 </div>
 
+</span>
+    
 </div>
-        
-    </div>
-</article>
-<div class="share">
-	<div class="addthis_toolbox addthis_default_style ">
-	
-	
-	<a class="addthis_button_tweet"></a>
-	
-	
-	<a class="addthis_counter addthis_pill_style"></a>
-	</div>
-	<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-4eb4a0c47196e907"></script>
-</div>
+	</article>
+</section>
+
 </div>
 	<footer class="inner">Copyright &copy; 2012 hamaco's blog<script type="text/javascript">_ncounter_target = "entry";(function(d){  var message = { readit : '分で読めるよ' };  load(); //entry  function load(){    if( d.addEventListener ){      d.addEventListener('DOMContentLoaded',function(){ init(); }, false );    }else{      try{        d.documentElement.doScroll("left");      }catch( error ){        setTimeout( arguments.callee, 0 );        return;      }      init();    }  }  function init(){    var target = d.getElementById(_ncounter_target);    if( !target ){      if( d.getElementsByClassName ){        target = d.getElementsByClassName(_ncounter_target);      }else{        var nodes = d.getElementsByTagName('*');        target = [];        for( var i=nodes.length; i-- > 0; ){          if( nodes[i].className == _ncounter_target ){            target.push(nodes[i]);          }        }      }      if( !target ){        return;      }      for( var i=target.length; i-- > 0; ){        add_readit(target[i]);      }    }else{      add_readit(target);    }  }  function add_readit(node){    var n = count_text(node);    if( n == 0 ) n++;    var counter = d.createElement('span');    counter.className = 'texts_counter';    counter.appendChild(d.createTextNode(n+message.readit));    node.insertBefore( counter, node.firstChild );  }  function count_text(node){    var text = node.textContent || node.innerHTML;    return parseInt(text.length/400);  }})(document);</script></footer>
 	<script src="/javascripts/jquery.fancybox.pack.js"></script>

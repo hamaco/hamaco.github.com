@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: mosh | hamaco's blog]]></title>
+  <link href="http://hamaco.github.com/blog/categories/mosh/atom.xml" rel="self"/>
+  <link href="http://hamaco.github.com/"/>
+  <updated>2012-04-16T15:03:47+09:00</updated>
+  <id>http://hamaco.github.com/</id>
+  <author>
+    <name><![CDATA[hamaco]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Moshをインストールしてみた]]></title>
+    <link href="http://hamaco.github.com/blog/2012/04/15/install-mosh/"/>
+    <updated>2012-04-15T21:55:00+09:00</updated>
+    <id>http://hamaco.github.com/blog/2012/04/15/install-mosh</id>
+    <content type="html"><![CDATA[<p>Moshを使うとネットが遅かったり切れたりしても大丈夫とかいう話を聞いたので、新しくなったさくらVPSに<a href="http://mosh.mit.edu/">Mosh</a>をインストールしてみました。</p>
+
+<h2>サーバのDebianにインストール</h2>
+
+<p>Debianにはmoshのパッケージがないようなので自分でコンパイルする。<br/>
+以下の様にして必要なパッケージを導入。ただ、元々入っているパッケージもあるのでこれで全部かは不明。</p>
+
+<p><code>
+sudo aptitude install build-essential protobuf-compiler libprotobuf-dev pkg-config dh-autoreconf zlib1g-dev libboost-dev libncurses-dev
+</code></p>
+
+<p>必要なパッケージが入ったら後はgithubからソースを持ってきて普通にコンパイルする。<br/>
+管理者権限が必要なく、ログインアカウントのPATHさえ通ってれば行ける感じだったので普段通り/homeディレクトリ内にインストールした。</p>
+
+<p>```
+git clone git://github.com/keithw/mosh.git
+cd mosh
+./autogen.sh
+./configure \
+  --prefix=$HOME/local</p>
+
+<p>make &amp;&amp; make install
+```</p>
+
+<h2>クライアントのUbuntuにインストール</h2>
+
+<p>Ubuntuにはパッケージからインストールできるようなので<a href="http://mosh.mit.edu/#getting">ここ</a>を参考にパッケージからインストールする。</p>
+
+<p><code>
+sudo apt-get install python-software-properties
+sudo add-apt-repository ppa:keithw/mosh
+sudo apt-get update
+sudo apt-get install mosh
+</code></p>
+
+<h2>接続テスト</h2>
+
+<p>クライアント側とサーバ側でのインストールが完了したら接続テストをしてみる。<br/>
+特別サーバ側で事前になにかする必要はなく、クライアント側からの接続時にmosh-serverが立ち上がります。</p>
+
+<p><code>
+mosh {sakura_vps_ip_address}
+</code></p>
+
+<p>まだMoshのメリットを享受してないので分からないですが、良い感じなら他のサーバにも導入しようかな。</p>
+]]></content>
+  </entry>
+  
+</feed>
