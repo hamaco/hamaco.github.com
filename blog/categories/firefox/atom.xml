@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: firefox | hamaco's blog]]></title>
+  <link href="http://hamaco.github.com/blog/categories/firefox/atom.xml" rel="self"/>
+  <link href="http://hamaco.github.com/"/>
+  <updated>2012-05-28T22:29:06+09:00</updated>
+  <id>http://hamaco.github.com/</id>
+  <author>
+    <name><![CDATA[hamaco]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Firebugのコマンドラインのフォントをカスタマイズした]]></title>
+    <link href="http://hamaco.github.com/blog/2012/04/17/customize-firebug-commandline/"/>
+    <updated>2012-04-17T23:34:00+09:00</updated>
+    <id>http://hamaco.github.com/blog/2012/04/17/customize-firebug-commandline</id>
+    <content type="html"><![CDATA[<p>多分誰かのはてブとかにあったんだと思うけど、<a href="http://efcl.info/2009/0927/res1363/">Firebugのコマンドラインのフォントを変更してるサイト</a>を見かけて、そういえばFirebugのコマンドラインの文字ってめっちゃ小さくて読みにくいなーとか思い出したので、stylishでフォントの設定してみました。<br/>
+参考サイトそのままじゃダメだったので調べたついでにコマンドラインだけじゃなくコマンドエディタとかコンソールの表示部分とかもついでに調べて最終的に以下の様な感じに。</p>
+
+<p>``` css firebug-commandline-custom.css
+/<em>*
+ * コマンドライン
+ </em>/
+textbox#fbCommandLine {</p>
+
+<pre><code>font-size: 13pt !important;
+font-family: "Rounded M+ 1m" !important;
+</code></pre>
+
+<p>}</p>
+
+<p>/<em>*
+ * コマンドラインの補完候補
+ </em>/</p>
+
+<h1>fbCommandLineCompletion {</h1>
+
+<pre><code>font-size: 13pt !important;
+font-family: "Rounded M+ 1m" !important;
+</code></pre>
+
+<p>}</p>
+
+<p>/<em>*
+ * コマンドエディタ
+ </em>/</p>
+
+<h1>fbCommandEditor {</h1>
+
+<pre><code>font-size: 13pt !important;
+font-family: "Rounded M+ 1m" !important;
+</code></pre>
+
+<p>}</p>
+
+<p>/<em>*
+ * コマンドエディタツール
+ </em>/</p>
+
+<h1>fbCommandToolbar {</h1>
+
+<pre><code>font-size: 11pt !important;
+font-family: "Rounded M+ 1m" !important;
+</code></pre>
+
+<p>}</p>
+
+<p>/<em>*
+ * コンソールログ
+ </em>/
+.panelNode-console {</p>
+
+<pre><code>font-size: 10pt !important;
+font-family: "KugimmyAA" !important;
+</code></pre>
+
+<p>}
+```</p>
+]]></content>
+  </entry>
+  
+</feed>

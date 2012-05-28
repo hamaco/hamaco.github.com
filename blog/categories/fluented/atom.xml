@@ -4,7 +4,7 @@
   <title><![CDATA[Category: fluented | hamaco's blog]]></title>
   <link href="http://hamaco.github.com/blog/categories/fluented/atom.xml" rel="self"/>
   <link href="http://hamaco.github.com/"/>
-  <updated>2012-04-16T15:03:47+09:00</updated>
+  <updated>2012-05-28T22:29:06+09:00</updated>
   <id>http://hamaco.github.com/</id>
   <author>
     <name><![CDATA[hamaco]]></name>
@@ -115,27 +115,7 @@ fluentd -c fluent/fluent.conf
 <pre><code>sudo vim ~/works/fluent/fluent.conf
 </code></pre>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="nt">&lt;source&gt;</span>
-</span><span class='line'>  type tail
-</span><span class='line'>  format apache
-</span><span class='line'>  path /var/log/nginx/localhost.access.log
-</span><span class='line'>  pos_file /tmp/td-agent/apache.pos
-</span><span class='line'>  tag apache.access
-</span><span class='line'><span class="nt">&lt;/source&gt;</span>
-</span><span class='line'><span class="nt">&lt;match</span> <span class="err">apache.access</span><span class="nt">&gt;</span>
-</span><span class='line'>  type stdout
-</span><span class='line'><span class="nt">&lt;/match&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>Liquid error: undefined method `join' for #<String:0x9dd20bc></p>
 
 <p>pos_fileとか設定しなきゃいけないみたいなので、何処かのサイトに書いてあったのと同じ場所にした。ただこのままだとディレクトリが存在しないので作成する。</p>
 
@@ -170,91 +150,9 @@ gem install bson_ext
 
 <p>WebサーバとDBサーバの準備ができたのでnginxのアクセスログをDBサーバに飛ばしてMongoDBに保存する設定を書く。</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Web Server's fluent.conf  </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="nt">&lt;match</span> <span class="err">apache.access</span><span class="nt">&gt;</span>
-</span><span class='line'>  type copy
-</span><span class='line'>  <span class="nt">&lt;store&gt;&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;pre&gt;&lt;code&gt;</span>type stdout
-</span><span class='line'><span class="nt">&lt;/code&gt;&lt;/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;p&gt;</span>  <span class="nt">&lt;/store&gt;</span>
-</span><span class='line'>  <span class="nt">&lt;store&gt;&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;pre&gt;&lt;code&gt;</span>type forward
-</span><span class='line'>retry_limit 50
-</span><span class='line'><span class="ni">&amp;lt;</span>server<span class="ni">&amp;gt;</span>
-</span><span class='line'>  host 133.242.54.192
-</span><span class='line'><span class="ni">&amp;lt;</span>/server<span class="ni">&amp;gt;</span>
-</span><span class='line'><span class="nt">&lt;/code&gt;&lt;/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;p&gt;</span>  <span class="nt">&lt;/store&gt;</span>
-</span><span class='line'><span class="nt">&lt;/match&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>Liquid error: undefined method `join' for #<String:0x9dd1338></p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>DB Server's fluent.conf  </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="nt">&lt;source&gt;</span>
-</span><span class='line'>  type forward
-</span><span class='line'><span class="nt">&lt;/source&gt;</span>
-</span><span class='line'><span class="nt">&lt;match</span> <span class="err">apache.access</span><span class="nt">&gt;</span>
-</span><span class='line'>  type copy
-</span><span class='line'>  <span class="nt">&lt;store&gt;&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;pre&gt;&lt;code&gt;</span>type stdout
-</span><span class='line'><span class="nt">&lt;/code&gt;&lt;/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;p&gt;</span>  <span class="nt">&lt;/store&gt;</span>
-</span><span class='line'>  <span class="nt">&lt;store&gt;&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;pre&gt;&lt;code&gt;</span>type mongo
-</span><span class='line'>host localhost
-</span><span class='line'>database fluent
-</span><span class='line'>collection accesslog
-</span><span class='line'><span class="nt">&lt;/code&gt;&lt;/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;p&gt;</span>  <span class="nt">&lt;/store&gt;</span>
-</span><span class='line'><span class="nt">&lt;/match&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>Liquid error: undefined method `join' for #<String:0x9dd07e4></p>
 
 <p>後はテキトーにwebにアクセスすると、Webサーバのstdoutに出力 -> DBサーバのstdoutに出力 -> MongoDBに保存 とされる。</p>
 ]]></content>

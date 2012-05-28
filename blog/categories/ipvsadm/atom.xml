@@ -4,7 +4,7 @@
   <title><![CDATA[Category: ipvsadm | hamaco's blog]]></title>
   <link href="http://hamaco.github.com/blog/categories/ipvsadm/atom.xml" rel="self"/>
   <link href="http://hamaco.github.com/"/>
-  <updated>2012-04-16T15:03:47+09:00</updated>
+  <updated>2012-05-28T22:29:06+09:00</updated>
   <id>http://hamaco.github.com/</id>
   <author>
     <name><![CDATA[hamaco]]></name>
@@ -44,51 +44,7 @@ sysctl -p
 
 <p>今回LVSのローカルIPが192.168.1.11なのでwebサーバのgatewayをLVSに設定します。</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>/etc/network/interfaces </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;h1>This file describes the network interfaces available on your system&lt;/h1>
-</span><span class='line'>
-</span><span class='line'>&lt;h1>and how to activate them. For more information, see interfaces(5).&lt;/h1>
-</span><span class='line'>
-</span><span class='line'>&lt;h1>The loopback network interface&lt;/h1>
-</span><span class='line'>
-</span><span class='line'>&lt;p>auto lo
-</span><span class='line'>iface lo inet loopback&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;p>auto eth0
-</span><span class='line'>iface eth0 inet static&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;pre>&lt;code>    address 192.168.1.51
-</span><span class='line'>    netmask 255.255.255.0
-</span><span class='line'>    network 192.168.1.0
-</span><span class='line'>    broadcast 192.168.1.255
-</span><span class='line'>    gateway 192.168.1.11
-</span><span class='line'>&lt;/code>&lt;/pre>
-</span><span class='line'>
-</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>Liquid error: undefined method `join' for #<String:0xa7d7b0c></p>
 
 <p>これでwebサーバがLVSを通してネットに繋がるようになっていると思います。</p>
 

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: octopress | hamaco's blog]]></title>
   <link href="http://hamaco.github.com/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://hamaco.github.com/"/>
-  <updated>2012-04-16T15:03:47+09:00</updated>
+  <updated>2012-05-28T22:29:06+09:00</updated>
   <id>http://hamaco.github.com/</id>
   <author>
     <name><![CDATA[hamaco]]></name>
@@ -131,9 +131,6 @@ git push -u bitbucket source
 <li><a href="http://tokkonopapa.github.com/blog/2011/12/30/octopress-on-github-and-bitbucket/">Octopressのインストールから運用管理まで - T.I.D.</a></li>
 </ul>
 
-
-<p><em>追記予定</em>
-source側の管理とかやったらその辺追記したりする予定</p>
 ]]></content>
   </entry>
   
