@@ -4,7 +4,7 @@
   <title><![CDATA[hamaco's blog]]></title>
   <link href="http://hamaco.github.com/atom.xml" rel="self"/>
   <link href="http://hamaco.github.com/"/>
-  <updated>2012-05-28T22:29:06+09:00</updated>
+  <updated>2012-05-29T11:49:41+09:00</updated>
   <id>http://hamaco.github.com/</id>
   <author>
     <name><![CDATA[hamaco]]></name>
@@ -259,7 +259,7 @@ sysctl -p
 
 <p>今回LVSのローカルIPが192.168.1.11なのでwebサーバのgatewayをLVSに設定します。</p>
 
-<p>Liquid error: undefined method `join&#8217; for #&lt;String:0xa1e3138></p>
+<p>Liquid error: undefined method `join&#8217; for #&lt;String:0x9787f04></p>
 
 <p>これでwebサーバがLVSを通してネットに繋がるようになっていると思います。</p>
 
@@ -408,7 +408,7 @@ fluentd -c fluent/fluent.conf
 <pre><code>sudo vim ~/works/fluent/fluent.conf
 </code></pre>
 
-<p>Liquid error: undefined method `join&#8217; for #&lt;String:0xa5f22b0></p>
+<p>Liquid error: undefined method `join&#8217; for #&lt;String:0x9c784a0></p>
 
 <p>pos_fileとか設定しなきゃいけないみたいなので、何処かのサイトに書いてあったのと同じ場所にした。ただこのままだとディレクトリが存在しないので作成する。</p>
 
@@ -443,9 +443,9 @@ gem install bson_ext
 
 <p>WebサーバとDBサーバの準備ができたのでnginxのアクセスログをDBサーバに飛ばしてMongoDBに保存する設定を書く。</p>
 
-<p>Liquid error: undefined method `join&#8217; for #&lt;String:0xa5f2030></p>
+<p>Liquid error: undefined method `join&#8217; for #&lt;String:0x9c78220></p>
 
-<p>Liquid error: undefined method `join&#8217; for #&lt;String:0xa5f1db0></p>
+<p>Liquid error: undefined method `join&#8217; for #&lt;String:0x9c77fa0></p>
 
 <p>後はテキトーにwebにアクセスすると、Webサーバのstdoutに出力 -> DBサーバのstdoutに出力 -> MongoDBに保存 とされる。</p>
 ]]></content>
@@ -500,7 +500,7 @@ UbuntuでインストールしたのでUbuntuになってるのでCentOSとか�
 
 <h2>必要なパッケージのインストール</h2>
 
-<pre><code>sudo aptitude install mercurial libncurses-dev libx11-dev
+<pre><code>sudo aptitude install mercurial libncurses-dev libx11-dev libxt-dev libgtk2.0-dev
 </code></pre>
 
 <h2>Vimのソースの取得</h2>
@@ -650,7 +650,7 @@ echo hello("hamaco");
 
 <p>codeblockってのがoctopressにはあるのかな?</p>
 
-<p>Liquid error: undefined method `join&#8217; for #&lt;String:0xa94e918></p>
+<p>Liquid error: undefined method `join&#8217; for #&lt;String:0x9fd55d0></p>
 ]]></content>
   </entry>
   
