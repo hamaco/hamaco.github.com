@@ -4,7 +4,7 @@
   <title><![CDATA[Category: fluented | hamaco's blog]]></title>
   <link href="http://hamaco.github.com/blog/categories/fluented/atom.xml" rel="self"/>
   <link href="http://hamaco.github.com/"/>
-  <updated>2012-05-31T11:46:54+09:00</updated>
+  <updated>2012-05-31T13:57:44+09:00</updated>
   <id>http://hamaco.github.com/</id>
   <author>
     <name><![CDATA[hamaco]]></name>
@@ -115,7 +115,7 @@ fluentd -c fluent/fluent.conf
 <pre><code>sudo vim ~/works/fluent/fluent.conf
 </code></pre>
 
-<p>Liquid error: undefined method `join' for #<String:0xa67ef44></p>
+<p>Liquid error: undefined method `join' for #<String:0xad5ae6c></p>
 
 <p>pos_fileとか設定しなきゃいけないみたいなので、何処かのサイトに書いてあったのと同じ場所にした。ただこのままだとディレクトリが存在しないので作成する。</p>
 
@@ -150,9 +150,9 @@ gem install bson_ext
 
 <p>WebサーバとDBサーバの準備ができたのでnginxのアクセスログをDBサーバに飛ばしてMongoDBに保存する設定を書く。</p>
 
-<p>Liquid error: undefined method `join' for #<String:0xa67e9b8></p>
+<p>Liquid error: undefined method `join' for #<String:0xad5ab38></p>
 
-<p>Liquid error: undefined method `join' for #<String:0xa67e404></p>
+<p>Liquid error: undefined method `join' for #<String:0xad5a778></p>
 
 <p>後はテキトーにwebにアクセスすると、Webサーバのstdoutに出力 -> DBサーバのstdoutに出力 -> MongoDBに保存 とされる。</p>
 ]]></content>

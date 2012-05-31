@@ -4,7 +4,7 @@
   <title><![CDATA[hamaco's blog]]></title>
   <link href="http://hamaco.github.com/atom.xml" rel="self"/>
   <link href="http://hamaco.github.com/"/>
-  <updated>2012-05-31T11:46:54+09:00</updated>
+  <updated>2012-05-31T13:57:44+09:00</updated>
   <id>http://hamaco.github.com/</id>
   <author>
     <name><![CDATA[hamaco]]></name>
@@ -18,7 +18,9 @@
     <link href="http://hamaco.github.com/blog/2012/05/31/install-jsx/"/>
     <updated>2012-05-31T10:23:00+09:00</updated>
     <id>http://hamaco.github.com/blog/2012/05/31/install-jsx</id>
-    <content type="html"><![CDATA[<p>今朝Twitterのタイムラインで<a href="http://jsx.github.com/">JSX</a>なるものが話題になっていたのでちょろっとインストールしてみた。</p>
+    <content type="html"><![CDATA[<p><strong>jsx.vimがあったので多少変更</strong></p>
+
+<p>今朝Twitterのタイムラインで<a href="http://jsx.github.com/">JSX</a>なるものが話題になっていたのでちょろっとインストールしてみた。</p>
 
 <h2>インストール</h2>
 
@@ -148,6 +150,17 @@
 </pre></td><td class='code'><pre><code class=''><span class='line'>$ ./bin/jsx --run example/hello.jsx</span></code></pre></td></tr></table></div></figure>
 
 
+<h2>jsx.vimのインストール</h2>
+
+<p>jsxのVim用syntaxファイルが実はあるみたいなのでインストールする。自分はNeoBundleを使用しているのでNeoBundleでインストールした。</p>
+
+<figure class='code'><figcaption><span>.vimrc</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='vim'><span class='line'>NeoBundle <span class="s1">&#39;git://github.com/jsx/jsx.vim.git&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>.vimrc書いて<code>:Unite neobundle/install</code>か<code>:NeoBundleInstall</code>でインストールができる。</p>
+
 <h2>quickrunの設定を書く</h2>
 
 <p>まあ毎回コマンド叩くの面倒だよねってことでquickrunから一発で実行できるようにしてみる。</p>
@@ -155,21 +168,20 @@
 <p>まずはJSXをPATHの通った所(自分の場合は$HOME/app/*/bin)に配置する。
 jsxファイル単体をbinの中に置いても動作しなかったのでgit cloneしたやつ丸ごと移動させた。</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ mv JSX ~/app/JSX</span></code></pre></td></tr></table></div></figure>
+<figure class='code'><figcaption><span>.vimrc</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='vim'><span class='line'>$ <span class="k">mv</span> JSX <span class="p">~</span><span class="sr">/app/</span>JSX
+</span></code></pre></td></tr></table></div></figure>
 
 
-<p>次に.vimrcに拡張子がjsxのファイルの扱いを設定する。syntaxファイルがないのでとりあえずjavascriptのが有効になるようにしてみた。</p>
+<p>次に.vimrcに拡張子がjsxのファイルの扱いを設定する。<s>syntaxファイルがないのでとりあえずjavascriptのが有効になるようにしてみた。</s>syntaxファイルあったので修正。</p>
 
 <figure class='code'><figcaption><span>.vimrc</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='vim'><span class='line'>autocmd <span class="nb">BufNewFile</span><span class="p">,</span><span class="nb">BufRead</span> *.jsx <span class="k">setlocal</span> <span class="k">filetype</span><span class="p">=</span>jsx.javascript
-</span><span class='line'><span class="k">let</span> <span class="k">g</span>:quickrun_config <span class="p">=</span> {}
-</span><span class='line'><span class="k">let</span> <span class="k">g</span>:quickrun_config[<span class="s1">&#39;jsx.javascript&#39;</span>] <span class="p">=</span> {
+</pre></td><td class='code'><pre><code class='vim'><span class='line'><span class="k">let</span> <span class="k">g</span>:quickrun_config <span class="p">=</span> {}
+</span><span class='line'><span class="k">let</span> <span class="k">g</span>:quickrun_config[<span class="s1">&#39;jsx&#39;</span>] <span class="p">=</span> {
 </span><span class='line'>          \ <span class="s1">&#39;command&#39;</span>: <span class="s1">&#39;jsx&#39;</span><span class="p">,</span>
 </span><span class='line'>          \ <span class="s1">&#39;exec&#39;</span>: [<span class="s1">&#39;%c --run %s&#39;</span>]
 </span><span class='line'>          \ }
@@ -201,7 +213,7 @@ jsxファイル単体をbinの中に置いても動作しなかったのでgit c
 </span><span class='line'><span class="p">}</span>
 </span><span class='line'>
 </span><span class='line'>
-</span><span class='line'><span class="c1">// vim: set ft=jsx.javascript :</span>
+</span><span class='line'><span class="c1">// vim: set ft=jsx :</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
@@ -455,7 +467,7 @@ sysctl -p
 
 <p>今回LVSのローカルIPが192.168.1.11なのでwebサーバのgatewayをLVSに設定します。</p>
 
-<p>Liquid error: undefined method `join&#8217; for #&lt;String:0xa144ab0></p>
+<p>Liquid error: undefined method `join&#8217; for #&lt;String:0xa8c26e8></p>
 
 <p>これでwebサーバがLVSを通してネットに繋がるようになっていると思います。</p>
 
@@ -604,7 +616,7 @@ fluentd -c fluent/fluent.conf
 <pre><code>sudo vim ~/works/fluent/fluent.conf
 </code></pre>
 
-<p>Liquid error: undefined method `join&#8217; for #&lt;String:0xa719760></p>
+<p>Liquid error: undefined method `join&#8217; for #&lt;String:0xae1562c></p>
 
 <p>pos_fileとか設定しなきゃいけないみたいなので、何処かのサイトに書いてあったのと同じ場所にした。ただこのままだとディレクトリが存在しないので作成する。</p>
 
@@ -639,9 +651,9 @@ gem install bson_ext
 
 <p>WebサーバとDBサーバの準備ができたのでnginxのアクセスログをDBサーバに飛ばしてMongoDBに保存する設定を書く。</p>
 
-<p>Liquid error: undefined method `join&#8217; for #&lt;String:0xa7194e0></p>
+<p>Liquid error: undefined method `join&#8217; for #&lt;String:0xae15398></p>
 
-<p>Liquid error: undefined method `join&#8217; for #&lt;String:0xa719260></p>
+<p>Liquid error: undefined method `join&#8217; for #&lt;String:0xae15104></p>
 
 <p>後はテキトーにwebにアクセスすると、Webサーバのstdoutに出力 -> DBサーバのstdoutに出力 -> MongoDBに保存 とされる。</p>
 ]]></content>
@@ -846,7 +858,7 @@ echo hello("hamaco");
 
 <p>codeblockってのがoctopressにはあるのかな?</p>
 
-<p>Liquid error: undefined method `join&#8217; for #&lt;String:0xaa90ac4></p>
+<p>Liquid error: undefined method `join&#8217; for #&lt;String:0xb1742a0></p>
 ]]></content>
   </entry>
   
