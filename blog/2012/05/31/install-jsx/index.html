@@ -230,7 +230,9 @@ jsxファイル単体をbinの中に置いても動作しなかったのでgit c
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
+<span class='line-number'>6</span>
 </pre></td><td class='code'><pre><code class='vim'><span class='line'>autocmd <span class="nb">BufNewFile</span><span class="p">,</span><span class="nb">BufRead</span> *.jsx <span class="k">setlocal</span> <span class="k">filetype</span><span class="p">=</span>jsx.javascript
+</span><span class='line'><span class="k">let</span> <span class="k">g</span>:quickrun_config <span class="p">=</span> {}
 </span><span class='line'><span class="k">let</span> <span class="k">g</span>:quickrun_config[<span class="s1">&#39;jsx.javascript&#39;</span>] <span class="p">=</span> {
 </span><span class='line'>          \ <span class="s1">&#39;command&#39;</span>: <span class="s1">&#39;jsx&#39;</span><span class="p">,</span>
 </span><span class='line'>          \ <span class="s1">&#39;exec&#39;</span>: [<span class="s1">&#39;%c --run %s&#39;</span>]

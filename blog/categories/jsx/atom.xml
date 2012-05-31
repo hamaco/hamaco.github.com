@@ -4,7 +4,7 @@
   <title><![CDATA[Category: jsx | hamaco's blog]]></title>
   <link href="http://hamaco.github.com/blog/categories/jsx/atom.xml" rel="self"/>
   <link href="http://hamaco.github.com/"/>
-  <updated>2012-05-31T11:23:06+09:00</updated>
+  <updated>2012-05-31T11:25:48+09:00</updated>
   <id>http://hamaco.github.com/</id>
   <author>
     <name><![CDATA[hamaco]]></name>
@@ -118,6 +118,7 @@ $ mv JSX ~/app/JSX
 
 <p>``` vim .vimrc
 autocmd BufNewFile,BufRead *.jsx setlocal filetype=jsx.javascript
+let g:quickrun_config = {}
 let g:quickrun_config['jsx.javascript'] = {</p>
 
 <pre><code>        \ 'command': 'jsx',

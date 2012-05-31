@@ -238,7 +238,9 @@ jsxファイル単体をbinの中に置いても動作しなかったのでgit c
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
+<span class='line-number'>6</span>
 </pre></td><td class='code'><pre><code class='vim'><span class='line'>autocmd <span class="nb">BufNewFile</span><span class="p">,</span><span class="nb">BufRead</span> *.jsx <span class="k">setlocal</span> <span class="k">filetype</span><span class="p">=</span>jsx.javascript
+</span><span class='line'><span class="k">let</span> <span class="k">g</span>:quickrun_config <span class="p">=</span> {}
 </span><span class='line'><span class="k">let</span> <span class="k">g</span>:quickrun_config[<span class="s1">&#39;jsx.javascript&#39;</span>] <span class="p">=</span> {
 </span><span class='line'>          \ <span class="s1">&#39;command&#39;</span>: <span class="s1">&#39;jsx&#39;</span><span class="p">,</span>
 </span><span class='line'>          \ <span class="s1">&#39;exec&#39;</span>: [<span class="s1">&#39;%c --run %s&#39;</span>]
@@ -679,7 +681,7 @@ sysctl -p
 
 <p>今回LVSのローカルIPが192.168.1.11なのでwebサーバのgatewayをLVSに設定します。</p>
 
-<p>Liquid error: undefined method `join&#8217; for #&lt;String:0xa9db750></p>
+<p>Liquid error: undefined method `join&#8217; for #&lt;String:0x998a180></p>
 
 <p>これでwebサーバがLVSを通してネットに繋がるようになっていると思います。</p>
 
@@ -892,7 +894,7 @@ fluentd -c fluent/fluent.conf
 <pre><code>sudo vim ~/works/fluent/fluent.conf
 </code></pre>
 
-<p>Liquid error: undefined method `join&#8217; for #&lt;String:0xaf27754></p>
+<p>Liquid error: undefined method `join&#8217; for #&lt;String:0x9ef1eac></p>
 
 <p>pos_fileとか設定しなきゃいけないみたいなので、何処かのサイトに書いてあったのと同じ場所にした。ただこのままだとディレクトリが存在しないので作成する。</p>
 
@@ -927,9 +929,9 @@ gem install bson_ext
 
 <p>WebサーバとDBサーバの準備ができたのでnginxのアクセスログをDBサーバに飛ばしてMongoDBに保存する設定を書く。</p>
 
-<p>Liquid error: undefined method `join&#8217; for #&lt;String:0xaf274d4></p>
+<p>Liquid error: undefined method `join&#8217; for #&lt;String:0x9ef1c2c></p>
 
-<p>Liquid error: undefined method `join&#8217; for #&lt;String:0xaf27254></p>
+<p>Liquid error: undefined method `join&#8217; for #&lt;String:0x9ef19ac></p>
 
 <p>後はテキトーにwebにアクセスすると、Webサーバのstdoutに出力 -> DBサーバのstdoutに出力 -> MongoDBに保存 とされる。</p>
 
@@ -1262,7 +1264,7 @@ echo hello("hamaco");
 
 <p>codeblockってのがoctopressにはあるのかな?</p>
 
-<p>Liquid error: undefined method `join&#8217; for #&lt;String:0xb2a915c></p>
+<p>Liquid error: undefined method `join&#8217; for #&lt;String:0xa220bdc></p>
 
         
         
