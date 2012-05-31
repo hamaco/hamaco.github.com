@@ -4,7 +4,7 @@
   <title><![CDATA[hamaco's blog]]></title>
   <link href="http://hamaco.github.com/atom.xml" rel="self"/>
   <link href="http://hamaco.github.com/"/>
-  <updated>2012-05-31T13:57:44+09:00</updated>
+  <updated>2012-05-31T18:42:50+09:00</updated>
   <id>http://hamaco.github.com/</id>
   <author>
     <name><![CDATA[hamaco]]></name>
@@ -467,7 +467,36 @@ sysctl -p
 
 <p>今回LVSのローカルIPが192.168.1.11なのでwebサーバのgatewayをLVSに設定します。</p>
 
-<p>Liquid error: undefined method `join&#8217; for #&lt;String:0xa8c26e8></p>
+<figure class='code'><figcaption><span>/etc/network/interfaces </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># This file describes the network interfaces available on your system
+</span><span class='line'># and how to activate them. For more information, see interfaces(5).
+</span><span class='line'>
+</span><span class='line'># The loopback network interface
+</span><span class='line'>auto lo
+</span><span class='line'>iface lo inet loopback
+</span><span class='line'>
+</span><span class='line'>auto eth0
+</span><span class='line'>iface eth0 inet static
+</span><span class='line'>        address 192.168.1.51
+</span><span class='line'>        netmask 255.255.255.0
+</span><span class='line'>        network 192.168.1.0
+</span><span class='line'>        broadcast 192.168.1.255
+</span><span class='line'>        gateway 192.168.1.11</span></code></pre></td></tr></table></div></figure>
+
 
 <p>これでwebサーバがLVSを通してネットに繋がるようになっていると思います。</p>
 
@@ -616,7 +645,28 @@ fluentd -c fluent/fluent.conf
 <pre><code>sudo vim ~/works/fluent/fluent.conf
 </code></pre>
 
-<p>Liquid error: undefined method `join&#8217; for #&lt;String:0xae1562c></p>
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="nt">&lt;source&gt;</span>
+</span><span class='line'>  type tail
+</span><span class='line'>  format apache
+</span><span class='line'>  path /var/log/nginx/localhost.access.log
+</span><span class='line'>  pos_file /tmp/td-agent/apache.pos
+</span><span class='line'>  tag apache.access
+</span><span class='line'><span class="nt">&lt;/source&gt;</span>
+</span><span class='line'><span class="nt">&lt;match</span> <span class="err">apache.access</span><span class="nt">&gt;</span>
+</span><span class='line'>  type stdout
+</span><span class='line'><span class="nt">&lt;/match&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
 
 <p>pos_fileとか設定しなきゃいけないみたいなので、何処かのサイトに書いてあったのと同じ場所にした。ただこのままだとディレクトリが存在しないので作成する。</p>
 
@@ -651,9 +701,71 @@ gem install bson_ext
 
 <p>WebサーバとDBサーバの準備ができたのでnginxのアクセスログをDBサーバに飛ばしてMongoDBに保存する設定を書く。</p>
 
-<p>Liquid error: undefined method `join&#8217; for #&lt;String:0xae15398></p>
+<figure class='code'><figcaption><span>Web Server&#8217;s fluent.conf  </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="nt">&lt;match</span> <span class="err">apache.access</span><span class="nt">&gt;</span>
+</span><span class='line'>  type copy
+</span><span class='line'>  <span class="nt">&lt;store&gt;</span>
+</span><span class='line'>    type stdout
+</span><span class='line'>  <span class="nt">&lt;/store&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;store&gt;</span>
+</span><span class='line'>    type forward
+</span><span class='line'>    retry_limit 50
+</span><span class='line'>    <span class="nt">&lt;server&gt;</span>
+</span><span class='line'>      host 133.242.54.192
+</span><span class='line'>    <span class="nt">&lt;/server&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;/store&gt;</span>
+</span><span class='line'><span class="nt">&lt;/match&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
 
-<p>Liquid error: undefined method `join&#8217; for #&lt;String:0xae15104></p>
+
+
+
+<figure class='code'><figcaption><span>DB Server&#8217;s fluent.conf  </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="nt">&lt;source&gt;</span>
+</span><span class='line'>  type forward
+</span><span class='line'><span class="nt">&lt;/source&gt;</span>
+</span><span class='line'><span class="nt">&lt;match</span> <span class="err">apache.access</span><span class="nt">&gt;</span>
+</span><span class='line'>  type copy
+</span><span class='line'>  <span class="nt">&lt;store&gt;</span>
+</span><span class='line'>    type stdout
+</span><span class='line'>  <span class="nt">&lt;/store&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;store&gt;</span>
+</span><span class='line'>    type mongo
+</span><span class='line'>    host localhost
+</span><span class='line'>    database fluent
+</span><span class='line'>    collection accesslog
+</span><span class='line'>  <span class="nt">&lt;/store&gt;</span>
+</span><span class='line'><span class="nt">&lt;/match&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
 
 <p>後はテキトーにwebにアクセスすると、Webサーバのstdoutに出力 -> DBサーバのstdoutに出力 -> MongoDBに保存 とされる。</p>
 ]]></content>
@@ -858,7 +970,18 @@ echo hello("hamaco");
 
 <p>codeblockってのがoctopressにはあるのかな?</p>
 
-<p>Liquid error: undefined method `join&#8217; for #&lt;String:0xb1742a0></p>
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="kd">var</span> <span class="nx">hello</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">return</span> <span class="s2">&quot;Hello &quot;</span> <span class="o">+</span> <span class="nx">name</span> <span class="o">+</span> <span class="s2">&quot;!!&quot;</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">hello</span><span class="p">(</span><span class="s2">&quot;hamaco&quot;</span><span class="p">));</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
 ]]></content>
   </entry>
   

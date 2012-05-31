@@ -180,7 +180,28 @@ fluentd -c fluent/fluent.conf
 <pre><code>sudo vim ~/works/fluent/fluent.conf
 </code></pre>
 
-<p>Liquid error: undefined method `join&#8217; for #&lt;String:0xae1562c></p>
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="nt">&lt;source&gt;</span>
+</span><span class='line'>  type tail
+</span><span class='line'>  format apache
+</span><span class='line'>  path /var/log/nginx/localhost.access.log
+</span><span class='line'>  pos_file /tmp/td-agent/apache.pos
+</span><span class='line'>  tag apache.access
+</span><span class='line'><span class="nt">&lt;/source&gt;</span>
+</span><span class='line'><span class="nt">&lt;match</span> <span class="err">apache.access</span><span class="nt">&gt;</span>
+</span><span class='line'>  type stdout
+</span><span class='line'><span class="nt">&lt;/match&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
 
 <p>pos_fileとか設定しなきゃいけないみたいなので、何処かのサイトに書いてあったのと同じ場所にした。ただこのままだとディレクトリが存在しないので作成する。</p>
 
@@ -215,9 +236,71 @@ gem install bson_ext
 
 <p>WebサーバとDBサーバの準備ができたのでnginxのアクセスログをDBサーバに飛ばしてMongoDBに保存する設定を書く。</p>
 
-<p>Liquid error: undefined method `join&#8217; for #&lt;String:0xae15398></p>
+<figure class='code'><figcaption><span>Web Server&#8217;s fluent.conf  </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="nt">&lt;match</span> <span class="err">apache.access</span><span class="nt">&gt;</span>
+</span><span class='line'>  type copy
+</span><span class='line'>  <span class="nt">&lt;store&gt;</span>
+</span><span class='line'>    type stdout
+</span><span class='line'>  <span class="nt">&lt;/store&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;store&gt;</span>
+</span><span class='line'>    type forward
+</span><span class='line'>    retry_limit 50
+</span><span class='line'>    <span class="nt">&lt;server&gt;</span>
+</span><span class='line'>      host 133.242.54.192
+</span><span class='line'>    <span class="nt">&lt;/server&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;/store&gt;</span>
+</span><span class='line'><span class="nt">&lt;/match&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
 
-<p>Liquid error: undefined method `join&#8217; for #&lt;String:0xae15104></p>
+
+
+
+<figure class='code'><figcaption><span>DB Server&#8217;s fluent.conf  </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="nt">&lt;source&gt;</span>
+</span><span class='line'>  type forward
+</span><span class='line'><span class="nt">&lt;/source&gt;</span>
+</span><span class='line'><span class="nt">&lt;match</span> <span class="err">apache.access</span><span class="nt">&gt;</span>
+</span><span class='line'>  type copy
+</span><span class='line'>  <span class="nt">&lt;store&gt;</span>
+</span><span class='line'>    type stdout
+</span><span class='line'>  <span class="nt">&lt;/store&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;store&gt;</span>
+</span><span class='line'>    type mongo
+</span><span class='line'>    host localhost
+</span><span class='line'>    database fluent
+</span><span class='line'>    collection accesslog
+</span><span class='line'>  <span class="nt">&lt;/store&gt;</span>
+</span><span class='line'><span class="nt">&lt;/match&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
 
 <p>後はテキトーにwebにアクセスすると、Webサーバのstdoutに出力 -> DBサーバのstdoutに出力 -> MongoDBに保存 とされる。</p>
 </div>
@@ -259,8 +342,9 @@ gem install bson_ext
 	
 	<a class="addthis_counter addthis_pill_style"></a>
 	</div>
-	<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-4eb4a0c47196e907"></script>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
 </div>
+
 
 <section id="comment">
     <h1 class="title">Comments</h1>
@@ -268,7 +352,16 @@ gem install bson_ext
 </div>
 </section>
 </div>
-	<footer class="inner">Copyright &copy; 2012 hamaco's blog<script type="text/javascript">_ncounter_target = "entry";(function(d){  var message = { readit : '分で読めるよ' };  load(); //entry  function load(){    if( d.addEventListener ){      d.addEventListener('DOMContentLoaded',function(){ init(); }, false );    }else{      try{        d.documentElement.doScroll("left");      }catch( error ){        setTimeout( arguments.callee, 0 );        return;      }      init();    }  }  function init(){    var target = d.getElementById(_ncounter_target);    if( !target ){      if( d.getElementsByClassName ){        target = d.getElementsByClassName(_ncounter_target);      }else{        var nodes = d.getElementsByTagName('*');        target = [];        for( var i=nodes.length; i-- > 0; ){          if( nodes[i].className == _ncounter_target ){            target.push(nodes[i]);          }        }      }      if( !target ){        return;      }      for( var i=target.length; i-- > 0; ){        add_readit(target[i]);      }    }else{      add_readit(target);    }  }  function add_readit(node){    var n = count_text(node);    if( n == 0 ) n++;    var counter = d.createElement('span');    counter.className = 'texts_counter';    counter.appendChild(d.createTextNode(n+message.readit));    node.insertBefore( counter, node.firstChild );  }  function count_text(node){    var text = node.textContent || node.innerHTML;    return parseInt(text.length/400);  }})(document);</script></footer>
+	<footer class="inner">Copyright &copy; 2012
+
+    hamaco
+
+
+<script type="text/javascript">
+  _ncounter_target = 'entry';
+</script>
+<script type='text/javascript' src='http://sites.google.com/site/mksdcom/Home/ncounter-min.js' charset='UTF-8' ></script>
+</footer>
 	<script src="/javascripts/jquery.fancybox.pack.js"></script>
 <script src="/javascripts/slash.js"></script>
 

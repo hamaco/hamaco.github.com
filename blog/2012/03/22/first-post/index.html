@@ -100,7 +100,18 @@ echo hello("hamaco");
 
 <p>codeblockってのがoctopressにはあるのかな?</p>
 
-<p>Liquid error: undefined method `join&#8217; for #&lt;String:0xb1742a0></p>
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="kd">var</span> <span class="nx">hello</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">return</span> <span class="s2">&quot;Hello &quot;</span> <span class="o">+</span> <span class="nx">name</span> <span class="o">+</span> <span class="s2">&quot;!!&quot;</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">hello</span><span class="p">(</span><span class="s2">&quot;hamaco&quot;</span><span class="p">));</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
 </div>
     <div class="meta">
         <div class="date">
@@ -134,8 +145,9 @@ echo hello("hamaco");
 	
 	<a class="addthis_counter addthis_pill_style"></a>
 	</div>
-	<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-4eb4a0c47196e907"></script>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
 </div>
+
 
 <section id="comment">
     <h1 class="title">Comments</h1>
@@ -143,7 +155,16 @@ echo hello("hamaco");
 </div>
 </section>
 </div>
-	<footer class="inner">Copyright &copy; 2012 hamaco's blog<script type="text/javascript">_ncounter_target = "entry";(function(d){  var message = { readit : '分で読めるよ' };  load(); //entry  function load(){    if( d.addEventListener ){      d.addEventListener('DOMContentLoaded',function(){ init(); }, false );    }else{      try{        d.documentElement.doScroll("left");      }catch( error ){        setTimeout( arguments.callee, 0 );        return;      }      init();    }  }  function init(){    var target = d.getElementById(_ncounter_target);    if( !target ){      if( d.getElementsByClassName ){        target = d.getElementsByClassName(_ncounter_target);      }else{        var nodes = d.getElementsByTagName('*');        target = [];        for( var i=nodes.length; i-- > 0; ){          if( nodes[i].className == _ncounter_target ){            target.push(nodes[i]);          }        }      }      if( !target ){        return;      }      for( var i=target.length; i-- > 0; ){        add_readit(target[i]);      }    }else{      add_readit(target);    }  }  function add_readit(node){    var n = count_text(node);    if( n == 0 ) n++;    var counter = d.createElement('span');    counter.className = 'texts_counter';    counter.appendChild(d.createTextNode(n+message.readit));    node.insertBefore( counter, node.firstChild );  }  function count_text(node){    var text = node.textContent || node.innerHTML;    return parseInt(text.length/400);  }})(document);</script></footer>
+	<footer class="inner">Copyright &copy; 2012
+
+    hamaco
+
+
+<script type="text/javascript">
+  _ncounter_target = 'entry';
+</script>
+<script type='text/javascript' src='http://sites.google.com/site/mksdcom/Home/ncounter-min.js' charset='UTF-8' ></script>
+</footer>
 	<script src="/javascripts/jquery.fancybox.pack.js"></script>
 <script src="/javascripts/slash.js"></script>
 
