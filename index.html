@@ -681,7 +681,7 @@ sysctl -p
 
 <p>今回LVSのローカルIPが192.168.1.11なのでwebサーバのgatewayをLVSに設定します。</p>
 
-<p>Liquid error: undefined method `join&#8217; for #&lt;String:0x998a180></p>
+<p>Liquid error: undefined method `join&#8217; for #&lt;String:0xa144ab0></p>
 
 <p>これでwebサーバがLVSを通してネットに繋がるようになっていると思います。</p>
 
@@ -894,7 +894,7 @@ fluentd -c fluent/fluent.conf
 <pre><code>sudo vim ~/works/fluent/fluent.conf
 </code></pre>
 
-<p>Liquid error: undefined method `join&#8217; for #&lt;String:0x9ef1eac></p>
+<p>Liquid error: undefined method `join&#8217; for #&lt;String:0xa719760></p>
 
 <p>pos_fileとか設定しなきゃいけないみたいなので、何処かのサイトに書いてあったのと同じ場所にした。ただこのままだとディレクトリが存在しないので作成する。</p>
 
@@ -929,9 +929,9 @@ gem install bson_ext
 
 <p>WebサーバとDBサーバの準備ができたのでnginxのアクセスログをDBサーバに飛ばしてMongoDBに保存する設定を書く。</p>
 
-<p>Liquid error: undefined method `join&#8217; for #&lt;String:0x9ef1c2c></p>
+<p>Liquid error: undefined method `join&#8217; for #&lt;String:0xa7194e0></p>
 
-<p>Liquid error: undefined method `join&#8217; for #&lt;String:0x9ef19ac></p>
+<p>Liquid error: undefined method `join&#8217; for #&lt;String:0xa719260></p>
 
 <p>後はテキトーにwebにアクセスすると、Webサーバのstdoutに出力 -> DBサーバのstdoutに出力 -> MongoDBに保存 とされる。</p>
 
@@ -1264,7 +1264,7 @@ echo hello("hamaco");
 
 <p>codeblockってのがoctopressにはあるのかな?</p>
 
-<p>Liquid error: undefined method `join&#8217; for #&lt;String:0xa220bdc></p>
+<p>Liquid error: undefined method `join&#8217; for #&lt;String:0xaa90ac4></p>
 
         
         
@@ -1300,6 +1300,19 @@ echo hello("hamaco");
 	<script src="/javascripts/jquery.fancybox.pack.js"></script>
 <script src="/javascripts/slash.js"></script>
 
+
+<script type="text/javascript">
+      var disqus_shortname = 'hamaco-blog';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
 
 
 

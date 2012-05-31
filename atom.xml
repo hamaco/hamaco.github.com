@@ -4,7 +4,7 @@
   <title><![CDATA[hamaco's blog]]></title>
   <link href="http://hamaco.github.com/atom.xml" rel="self"/>
   <link href="http://hamaco.github.com/"/>
-  <updated>2012-05-31T11:25:48+09:00</updated>
+  <updated>2012-05-31T11:46:54+09:00</updated>
   <id>http://hamaco.github.com/</id>
   <author>
     <name><![CDATA[hamaco]]></name>
@@ -455,7 +455,7 @@ sysctl -p
 
 <p>今回LVSのローカルIPが192.168.1.11なのでwebサーバのgatewayをLVSに設定します。</p>
 
-<p>Liquid error: undefined method `join&#8217; for #&lt;String:0x998a180></p>
+<p>Liquid error: undefined method `join&#8217; for #&lt;String:0xa144ab0></p>
 
 <p>これでwebサーバがLVSを通してネットに繋がるようになっていると思います。</p>
 
@@ -604,7 +604,7 @@ fluentd -c fluent/fluent.conf
 <pre><code>sudo vim ~/works/fluent/fluent.conf
 </code></pre>
 
-<p>Liquid error: undefined method `join&#8217; for #&lt;String:0x9ef1eac></p>
+<p>Liquid error: undefined method `join&#8217; for #&lt;String:0xa719760></p>
 
 <p>pos_fileとか設定しなきゃいけないみたいなので、何処かのサイトに書いてあったのと同じ場所にした。ただこのままだとディレクトリが存在しないので作成する。</p>
 
@@ -639,9 +639,9 @@ gem install bson_ext
 
 <p>WebサーバとDBサーバの準備ができたのでnginxのアクセスログをDBサーバに飛ばしてMongoDBに保存する設定を書く。</p>
 
-<p>Liquid error: undefined method `join&#8217; for #&lt;String:0x9ef1c2c></p>
+<p>Liquid error: undefined method `join&#8217; for #&lt;String:0xa7194e0></p>
 
-<p>Liquid error: undefined method `join&#8217; for #&lt;String:0x9ef19ac></p>
+<p>Liquid error: undefined method `join&#8217; for #&lt;String:0xa719260></p>
 
 <p>後はテキトーにwebにアクセスすると、Webサーバのstdoutに出力 -> DBサーバのstdoutに出力 -> MongoDBに保存 とされる。</p>
 ]]></content>
@@ -846,7 +846,7 @@ echo hello("hamaco");
 
 <p>codeblockってのがoctopressにはあるのかな?</p>
 
-<p>Liquid error: undefined method `join&#8217; for #&lt;String:0xa220bdc></p>
+<p>Liquid error: undefined method `join&#8217; for #&lt;String:0xaa90ac4></p>
 ]]></content>
   </entry>
   
