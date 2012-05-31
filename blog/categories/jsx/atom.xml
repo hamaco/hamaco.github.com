@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: jsx | hamaco's blog]]></title>
+  <link href="http://hamaco.github.com/blog/categories/jsx/atom.xml" rel="self"/>
+  <link href="http://hamaco.github.com/"/>
+  <updated>2012-05-31T11:23:06+09:00</updated>
+  <id>http://hamaco.github.com/</id>
+  <author>
+    <name><![CDATA[hamaco]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[JSXをインストールしてちょろっと触ってみた]]></title>
+    <link href="http://hamaco.github.com/blog/2012/05/31/install-jsx/"/>
+    <updated>2012-05-31T10:23:00+09:00</updated>
+    <id>http://hamaco.github.com/blog/2012/05/31/install-jsx</id>
+    <content type="html"><![CDATA[<p>今朝Twitterのタイムラインで<a href="http://jsx.github.com/">JSX</a>なるものが話題になっていたのでちょろっとインストールしてみた。</p>
+
+<h2>インストール</h2>
+
+<p>JSXにはnode.js / npmが必要なのでインストールする。今回はお試しで入れたのでaptitudeからインストールする。
+<code>
+$ s aptitude install npm
+</code></p>
+
+<p>まずはJSX本体がないと話にならないのでgitからcloneしてくる。
+<code>
+$ git clone https://github.com/jsx/JSX.git
+$ cd JSX
+</code></p>
+
+<p>READMEに従ってインストールする。
+<code>
+$ make setup
+</code></p>
+
+<p>以下のようなのがずらずらでてくるので暫く待つ。
+```
+npm install
+npm http GET https://registry.npmjs.org/browserbuild
+npm http GET https://registry.npmjs.org/source-map
+npm http 200 https://registry.npmjs.org/source-map
+npm http GET https://registry.npmjs.org/source-map/-/source-map-0.1.0.tgz
+npm http 200 https://registry.npmjs.org/browserbuild
+npm http GET https://registry.npmjs.org/browserbuild/-/browserbuild-0.4.9.tgz
+npm http 200 https://registry.npmjs.org/source-map/-/source-map-0.1.0.tgz
+npm http 200 https://registry.npmjs.org/browserbuild/-/browserbuild-0.4.9.tgz
+npm http GET https://registry.npmjs.org/commander
+npm http GET https://registry.npmjs.org/debug/0.6.0
+npm http GET https://registry.npmjs.org/requirejs
+npm http 200 https://registry.npmjs.org/requirejs
+npm http GET https://registry.npmjs.org/requirejs/-/requirejs-2.0.0.tgz
+npm http 200 https://registry.npmjs.org/debug/0.6.0
+npm http GET https://registry.npmjs.org/debug/-/debug-0.6.0.tgz
+npm http 200 https://registry.npmjs.org/commander
+npm http GET https://registry.npmjs.org/commander/-/commander-0.5.2.tgz
+npm http 200 https://registry.npmjs.org/requirejs/-/requirejs-2.0.0.tgz
+npm http 200 https://registry.npmjs.org/debug/-/debug-0.6.0.tgz
+npm http 200 https://registry.npmjs.org/commander/-/commander-0.5.2.tgz
+Bbrowserbuild@0.4.9 ./node_modules/browserbuild
+├── debug@0.6.0
+└── commander@0.5.2
+source-map@0.1.0 ./node_modules/source-map
+└── requirejs@2.0.0
+perl web/setup.pl
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current</p>
+
+<pre><code>                             Dload  Upload   Total   Spent    Left  Speed
+</code></pre>
+
+<p>  0     0    0     0    0     0      0      0 --:--:--  0:00:06 --:--:--     0
+100  320k  100  320k    0     0  39278      0  0:00:08  0:00:08 --:--:--  343k
+--> Working on String::ShellQuote
+Fetching http://www.cpan.org/authors/id/R/RO/ROSCH/String-ShellQuote-1.04.tar.gz ... OK
+Configuring String-ShellQuote-1.04 ... OK
+Building String-ShellQuote-1.04 ... OK
+Successfully installed String-ShellQuote-1.04
+--> Working on JSON::PP
+Fetching http://www.cpan.org/authors/id/M/MA/MAKAMAKA/JSON-PP-2.27200.tar.gz ... OK
+Configuring JSON-PP-2.27200 ... OK
+Building JSON-PP-2.27200 ... OK
+Successfully installed JSON-PP-2.27200 (upgraded from 2.27105)
+2 distributions installed
+```</p>
+
+<p>bin/jsxにファイルができあがるのでこれでインストールは終わり。</p>
+
+<h2>Hello World!</h2>
+
+<p>試しにhello worldを実行してみる。一度jsファイルで出力してnodeで実行する。
+<code>
+$ ./bin/jsx --executable --output hello.js example/hello.jsx
+$ node hello.js
+</code></p>
+
+<p>また一々jsファイルを作成しなくても以下のようにすれば実行できるみたい。</p>
+
+<p><code>
+$ ./bin/jsx --run example/hello.jsx
+</code></p>
+
+<h2>quickrunの設定を書く</h2>
+
+<p>まあ毎回コマンド叩くの面倒だよねってことでquickrunから一発で実行できるようにしてみる。</p>
+
+<p>まずはJSXをPATHの通った所(自分の場合は$HOME/app/*/bin)に配置する。
+jsxファイル単体をbinの中に置いても動作しなかったのでgit cloneしたやつ丸ごと移動させた。</p>
+
+<p><code>
+$ mv JSX ~/app/JSX
+</code></p>
+
+<p>次に.vimrcに拡張子がjsxのファイルの扱いを設定する。syntaxファイルがないのでとりあえずjavascriptのが有効になるようにしてみた。</p>
+
+<p>``` vim .vimrc
+autocmd BufNewFile,BufRead *.jsx setlocal filetype=jsx.javascript
+let g:quickrun_config['jsx.javascript'] = {</p>
+
+<pre><code>        \ 'command': 'jsx',
+        \ 'exec': ['%c --run %s']
+        \ }
+</code></pre>
+
+<p>```</p>
+
+<p>後はテキトーにjsxファイルを開いて<code>&lt;Leader&gt;r</code>を押すとそのまま実行されて結果が表示されるようになる。</p>
+
+<h2>shadow.vimで使ってみる</h2>
+
+<p>こんな感じでコードの最初の行にshadow.vim向けの1行を追加したshdファイルを作成した後<code>vim hello.js</code>と.shdなしのファイルを開くと自動的に.shd付きのファイルが開かれ、保存時に自動でjsにコンパイルされたものがhello.jsに保存されます。
+``` javascript hello.js.shd
+// jsx /dev/stdin</p>
+
+<p>class _Main {</p>
+
+<pre><code>static function main(args : string[]) :void {
+    log "Hello, world!";
+}
+</code></pre>
+
+<p>}</p>
+
+<p>// vim: set ft=jsx.javascript :
+```</p>
+
+<p>しかしこれやってみたけど、できあがるファイルに/dev/stdinとか入るから複数ファイル使うような時に使えないような気がしないでもない。</p>
+]]></content>
+  </entry>
+  
+</feed>

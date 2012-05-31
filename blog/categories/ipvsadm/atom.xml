@@ -4,7 +4,7 @@
   <title><![CDATA[Category: ipvsadm | hamaco's blog]]></title>
   <link href="http://hamaco.github.com/blog/categories/ipvsadm/atom.xml" rel="self"/>
   <link href="http://hamaco.github.com/"/>
-  <updated>2012-05-29T11:49:41+09:00</updated>
+  <updated>2012-05-31T11:23:06+09:00</updated>
   <id>http://hamaco.github.com/</id>
   <author>
     <name><![CDATA[hamaco]]></name>
@@ -44,7 +44,7 @@ sysctl -p
 
 <p>今回LVSのローカルIPが192.168.1.11なのでwebサーバのgatewayをLVSに設定します。</p>
 
-<p>Liquid error: undefined method `join' for #<String:0x9e5e7d8></p>
+<p>Liquid error: undefined method `join' for #<String:0xaa5e2b8></p>
 
 <p>これでwebサーバがLVSを通してネットに繋がるようになっていると思います。</p>
 
