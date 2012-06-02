@@ -2,58 +2,62 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
         <loc>http://hamaco.github.com/blog/2012/03/22/first-post/</loc>
-        <lastmod>2012-05-31T18:35:29+09:00</lastmod>
+        <lastmod>2012-04-04T22:28:46+09:00</lastmod>
     </url>
     <url>
         <loc>http://hamaco.github.com/blog/2012/03/23/install-octopress/</loc>
-        <lastmod>2012-05-31T18:35:29+09:00</lastmod>
+        <lastmod>2012-05-10T17:18:44+09:00</lastmod>
     </url>
     <url>
         <loc>http://hamaco.github.com/blog/2012/03/28/compile-vim/</loc>
-        <lastmod>2012-05-31T18:35:29+09:00</lastmod>
+        <lastmod>2012-06-02T23:01:23+09:00</lastmod>
     </url>
     <url>
         <loc>http://hamaco.github.com/blog/2012/04/02/change-octopress-theme/</loc>
-        <lastmod>2012-05-31T18:35:29+09:00</lastmod>
+        <lastmod>2012-04-04T22:28:46+09:00</lastmod>
     </url>
     <url>
         <loc>http://hamaco.github.com/blog/2012/04/03/suin-cloud-study-01/</loc>
-        <lastmod>2012-05-31T18:35:29+09:00</lastmod>
+        <lastmod>2012-04-04T22:28:46+09:00</lastmod>
     </url>
     <url>
         <loc>http://hamaco.github.com/blog/2012/04/04/use-windows-hardlink/</loc>
-        <lastmod>2012-05-31T18:35:29+09:00</lastmod>
+        <lastmod>2012-04-04T22:28:46+09:00</lastmod>
     </url>
     <url>
         <loc>http://hamaco.github.com/blog/2012/04/09/suin-cloud-study-02/</loc>
-        <lastmod>2012-05-31T18:35:29+09:00</lastmod>
+        <lastmod>2012-05-10T17:18:44+09:00</lastmod>
     </url>
     <url>
         <loc>http://hamaco.github.com/blog/2012/04/10/reading-estimates/</loc>
-        <lastmod>2012-05-31T18:35:29+09:00</lastmod>
+        <lastmod>2012-05-10T17:18:44+09:00</lastmod>
     </url>
     <url>
         <loc>http://hamaco.github.com/blog/2012/04/15/install-mosh/</loc>
-        <lastmod>2012-05-31T18:35:29+09:00</lastmod>
+        <lastmod>2012-05-10T17:18:44+09:00</lastmod>
     </url>
     <url>
         <loc>http://hamaco.github.com/blog/2012/04/16/tmux-zombie/</loc>
-        <lastmod>2012-05-31T18:35:29+09:00</lastmod>
+        <lastmod>2012-05-10T17:18:44+09:00</lastmod>
     </url>
     <url>
         <loc>http://hamaco.github.com/blog/2012/04/17/customize-firebug-commandline/</loc>
-        <lastmod>2012-05-31T18:35:29+09:00</lastmod>
+        <lastmod>2012-05-10T17:18:44+09:00</lastmod>
     </url>
     <url>
         <loc>http://hamaco.github.com/blog/2012/05/31/install-jsx/</loc>
-        <lastmod>2012-05-31T18:35:29+09:00</lastmod>
+        <lastmod>2012-06-02T23:01:23+09:00</lastmod>
     </url>
     <url>
-        <loc>http://hamaco.github.com/</loc>
-        <lastmod>2012-05-31T18:35:29+09:00</lastmod>
+        <loc>http://hamaco.github.com/blog/2012/06/02/tokyovim-07/</loc>
+        <lastmod>2012-06-03T01:15:32+09:00</lastmod>
     </url>
     <url>
         <loc>http://hamaco.github.com/blog/archives/</loc>
-        <lastmod>2012-05-31T18:35:29+09:00</lastmod>
+        <lastmod>2012-06-03T01:15:32+09:00</lastmod>
+    </url>
+    <url>
+        <loc>http://hamaco.github.com/</loc>
+        <lastmod>2012-06-03T01:15:32+09:00</lastmod>
     </url>
 </urlset>

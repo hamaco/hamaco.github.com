@@ -4,7 +4,7 @@
   <title><![CDATA[hamaco's blog]]></title>
   <link href="http://hamaco.github.com/atom.xml" rel="self"/>
   <link href="http://hamaco.github.com/"/>
-  <updated>2012-05-31T18:42:50+09:00</updated>
+  <updated>2012-06-03T02:03:23+09:00</updated>
   <id>http://hamaco.github.com/</id>
   <author>
     <name><![CDATA[hamaco]]></name>
@@ -12,6 +12,25 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[TokyoVim #7に参加してきた]]></title>
+    <link href="http://hamaco.github.com/blog/2012/06/02/tokyovim-07/"/>
+    <updated>2012-06-02T23:38:00+09:00</updated>
+    <id>http://hamaco.github.com/blog/2012/06/02/tokyovim-07</id>
+    <content type="html"><![CDATA[<p>前日会社の人達と飲んで終電を逃したのと、会社から歩いて10分くらいの所だったので飲み会終わった後に参加決めて<a href="http://partake.in/events/19d55309-7086-4729-81cc-8f3c75f241d0">TokyoVim #7</a>に参加してきました。</p>
+
+<p>初参加でどういうイベントか良く分かってなかったのとまったく何も考えてなかったのでとりあえず自分の.vimrcの整理をすることに。</p>
+
+<p>あまり考えてなかったので.vimrcを上から見ていって、ずっと放置してて大半の設定がなくなってたneocomplcacheの設定したり使ってないプラグイン削除したりネタプラグインをNeoBundleLazyでロードするようにしたりしました。</p>
+
+<p>neocomplcacheの設定見直してる辺りで時間がなくなったのと気力が切れたのであと何回か頑張らないといけなさそう。</p>
+
+<p>シャイなのであまり話さず、基本的に全部<a href="http://twilog.org/hamaco/date-120602">Twitterで呟いた</a>ので特別言うことがない。</p>
+
+<p>おわり。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[JSXをインストールしてちょろっと触ってみた]]></title>
