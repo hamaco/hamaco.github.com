@@ -4,7 +4,7 @@
   <title><![CDATA[Category: candycane | hamaco's blog]]></title>
   <link href="http://hamaco.github.com/blog/categories/candycane/atom.xml" rel="self"/>
   <link href="http://hamaco.github.com/"/>
-  <updated>2012-06-14T23:52:36+09:00</updated>
+  <updated>2012-06-14T23:57:41+09:00</updated>
   <id>http://hamaco.github.com/</id>
   <author>
     <name><![CDATA[hamaco]]></name>
@@ -12,6 +12,46 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[CandyCaneでギャル文字]]></title>
+    <link href="http://hamaco.github.com/blog/2012/06/14/candycane-gal/"/>
+    <updated>2012-06-14T23:29:00+09:00</updated>
+    <id>http://hamaco.github.com/blog/2012/06/14/candycane-gal</id>
+    <content type="html"><![CDATA[<p>最近ギャル文字が流行っているらしいのでCandyCaneでもギャル文字が使えるプラグイン作った。</p>
+
+<blockquote><p><a href="https://github.com/hamaco/candycane-gal">hamaco/candycane-gal - GitHub</a></p>
+
+<p><cite>http://github.com/hamaco/candycane-gal</cite></p></blockquote>
+
+<h2>インストール</h2>
+
+<p>まだ、CandyCaneのプラグイン一覧に登録されていないので以下の様な感じでgithubから持ってくる必要があります。</p>
+
+<p><code>
+git clone https://github.com/hamaco/candycane-gal.git app/Plugin/CcGal
+</code></p>
+
+<p>インストールはこれで終わり。
+これだけでチケットの説明やコメント等が全部ギャル文字になります。</p>
+
+<h2>スクリーンショット</h2>
+
+<p>参考までにギャル文字プラグインを入れる前と入れた後のスクリーンショットを貼っておきます。</p>
+
+<h3>Before</h3>
+
+<p><img src="/images/2012/06/candycane-gal-01.png" width="480"></p>
+
+<h3>After</h3>
+
+<p><img src="/images/2012/06/candycane-gal-02.png" width="480"></p>
+
+<h2>参考サイト</h2>
+
+<p><a href="http://mattn.kaoriya.net/software/vim/20120607224505.htm">Big Sky :: Vimでギャル文字</a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[CandyCaneのチケット作成での誤爆を防ぐプラグイン書いた]]></title>
