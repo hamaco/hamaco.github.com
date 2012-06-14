@@ -4,7 +4,7 @@
   <title><![CDATA[hamaco's blog]]></title>
   <link href="http://hamaco.github.com/atom.xml" rel="self"/>
   <link href="http://hamaco.github.com/"/>
-  <updated>2012-06-03T02:03:23+09:00</updated>
+  <updated>2012-06-14T23:52:36+09:00</updated>
   <id>http://hamaco.github.com/</id>
   <author>
     <name><![CDATA[hamaco]]></name>
@@ -14,10 +14,132 @@
 
   
   <entry>
+    <title type="html"><![CDATA[CandyCaneでギャル文字]]></title>
+    <link href="http://hamaco.github.com/blog/2012/06/14/candycane-gal/"/>
+    <updated>2012-06-14T23:29:00+09:00</updated>
+    <id>http://hamaco.github.com/blog/2012/06/14/candycane-gal</id>
+    <content type="html"><![CDATA[<p>最近ギャル文字が流行っているらしいのでCandyCaneでもギャル文字が使えるプラグイン作った。</p>
+
+<blockquote><p><a href="https://github.com/hamaco/candycane-gal">hamaco/candycane-gal - GitHub</a></p>
+
+<p><cite>http://github.com/hamaco/candycane-gal</cite></p></blockquote>
+
+<h2>インストール</h2>
+
+<p>まだ、CandyCaneのプラグイン一覧に登録されていないので以下の様な感じでgithubから持ってくる必要があります。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git clone https://github.com/hamaco/candycane-gal.git app/Plugin/CcGal</span></code></pre></td></tr></table></div></figure>
+
+
+<p>インストールはこれで終わり。
+これだけでチケットの説明やコメント等が全部ギャル文字になります。</p>
+
+<h2>スクリーンショット</h2>
+
+<p>参考までにギャル文字プラグインを入れる前と入れた後のスクリーンショットを貼っておきます。</p>
+
+<h3>Before</h3>
+
+<p><img src="http://hamaco.github.com/images/2012/06/candycane-gal-01.png" width="480"></p>
+
+<h3>After</h3>
+
+<p><img src="http://hamaco.github.com/images/2012/06/candycane-gal-02.png" width="480"></p>
+
+<h2>参考サイト</h2>
+
+<p><a href="http://mattn.kaoriya.net/software/vim/20120607224505.htm">Big Sky :: Vimでギャル文字</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[CandyCaneのチケット作成での誤爆を防ぐプラグイン書いた]]></title>
+    <link href="http://hamaco.github.com/blog/2012/06/11/candycane-enter-cancel/"/>
+    <updated>2012-06-11T19:20:00+09:00</updated>
+    <id>http://hamaco.github.com/blog/2012/06/11/candycane-enter-cancel</id>
+    <content type="html"><![CDATA[<p>CandyCane でチケット作成してて、タイトルで Enter キーを連打して書きかけのチケットを作って、うがぁあああ、ってなったことありませんか？</p>
+
+<p>私はありません。</p>
+
+<p>ですがその様な人がいるかもしれないようなので、こんな悲しい思いを繰り返さないためのプラグインを作りました。</p>
+
+<h2>ソースコード</h2>
+
+<p><a href="https://github.com/hamaco/candycane-enter-cancel">hamaco/candycane-enter-cancel · GitHub</a></p>
+
+<h2>謝罪</h2>
+
+<p>すみません、このサイトのRedmineプラグインをパクりましたm(_ _)m</p>
+
+<p><a href="http://d.hatena.ne.jp/suer/20120610/1339336133">Redmineのチケット作成での誤爆を防ぐプラグイン書いた - すえひろがりっっっっ!</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[RedmineのテーマをCandyCaneで使ってみた]]></title>
+    <link href="http://hamaco.github.com/blog/2012/06/04/use-redmine-theme-on-candycane/"/>
+    <updated>2012-06-04T10:26:00+09:00</updated>
+    <id>http://hamaco.github.com/blog/2012/06/04/use-redmine-theme-on-candycane</id>
+    <content type="html"><![CDATA[<p>プラグインは言語が違うので無理ですが、テーマなら言語関係ないのでRedmineのがCandyCaneでも使えるんじゃないかと思って試してみました。
+今回はRedmine Themeで検索して上の方にでてきた<a href="http://blog.redmine.jp/articles/farend-basic-theme/">farend basic</a>をCandyCaneで使ってみます。</p>
+
+<h2>テーマのダウンロード</h2>
+
+<p>まず、テーマをダウンロードするのですが、RedmineとCandyCane(CakePHP)ではテーマのディレクトリ構成など多少違うのでそのままダウンロードするだけだと動きません。
+なので、CakePHPの規則に従った形でテーマを用意します。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ cd {CANDYCANE_ROOT_DIR}
+</span><span class='line'>$ mkdir -p app/webroot/themed/farend_basic/css</span></code></pre></td></tr></table></div></figure>
+
+
+<p>次にテーマのcssをダウンロードしてきます。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ cd app/webroot/themed/farend_basic/css
+</span><span class='line'>$ wget https://raw.github.com/farend/redmine_theme_farend_basic/master/stylesheets/application.css</span></code></pre></td></tr></table></div></figure>
+
+
+<p>今回のはcss1個だけなのでディレクトリ作ってcssだけダウンロードしてきましたが、テーマに画像などが含まれている場合はzipファイルとかでダウンロードしてきたあとcssの入っているディレクトリを変更するのが簡単だと思います。</p>
+
+<h2>テーマの修正</h2>
+
+<p>CandyCaneはデフォルトのapplication.cssを読み込んだ後にテーマのcssを読み込む為、テーマのcss内にあるapplication.cssの読み込み処理を削除(コメントアウト)します。そもそもPATHが違うのでエラーでちゃいますし。</p>
+
+<figure class='code'><figcaption><span>application.css</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="c">/* @import url(../../../stylesheets/application.css); */</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>テーマの設定</h2>
+
+<p>テーマファイルを設置したら後はCandyCaneの画面上でfarend basicテーマを使用するよう設定します。
+管理の設定からテーマのセレクトボックスでfarend_basicを選択すると、さっきDLしてきたfarend_basicが使えるようになります。</p>
+
+<p><img src="http://hamaco.github.com/images/2012/06/candycane-theme-01.png" width="480"></p>
+
+<p>このテーマは基本的な所は変わらないので分かりにくいですが、チケットの一覧ページに行くと優先度に応じて色が付いているのが分かると思います。</p>
+
+<p><img src="http://hamaco.github.com/images/2012/06/candycane-theme-02.png" width="480"></p>
+
+<p>書いてから投稿までに数日経ってしまったのでちょっと他のテーマも動かしてみました。<a href="http://www.redmine.org/projects/redmine/wiki/Theme_List">Redmineのテーマ一覧</a>一覧の一番上にあったA1 themeっていうテーマです。これもfarend basicと同じやり方で使えます。</p>
+
+<p><img src="http://hamaco.github.com/images/2012/06/candycane-theme-03.png" width="480"></p>
+
+<h2>終わりに</h2>
+
+<p>こんな感じで比較的簡単にRedmineのテーマが使用できるのでライセンス的に問題のないやつがあればCandyCane用にコンバートしてみたり、Redmineのテーマを参考にCandyCaneのテーマを作ってみてはどうでしょうか。</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[TokyoVim #7に参加してきた]]></title>
-    <link href="http://hamaco.github.com/blog/2012/06/02/tokyovim-07/"/>
-    <updated>2012-06-02T23:38:00+09:00</updated>
-    <id>http://hamaco.github.com/blog/2012/06/02/tokyovim-07</id>
+    <link href="http://hamaco.github.com/blog/2012/06/03/tokyovim-07/"/>
+    <updated>2012-06-03T01:38:00+09:00</updated>
+    <id>http://hamaco.github.com/blog/2012/06/03/tokyovim-07</id>
     <content type="html"><![CDATA[<p>前日会社の人達と飲んで終電を逃したのと、会社から歩いて10分くらいの所だったので飲み会終わった後に参加決めて<a href="http://partake.in/events/19d55309-7086-4729-81cc-8f3c75f241d0">TokyoVim #7</a>に参加してきました。</p>
 
 <p>初参加でどういうイベントか良く分かってなかったのとまったく何も考えてなかったのでとりあえず自分の.vimrcの整理をすることに。</p>

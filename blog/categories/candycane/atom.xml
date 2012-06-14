@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: candycane | hamaco's blog]]></title>
+  <link href="http://hamaco.github.com/blog/categories/candycane/atom.xml" rel="self"/>
+  <link href="http://hamaco.github.com/"/>
+  <updated>2012-06-14T23:52:36+09:00</updated>
+  <id>http://hamaco.github.com/</id>
+  <author>
+    <name><![CDATA[hamaco]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[CandyCaneのチケット作成での誤爆を防ぐプラグイン書いた]]></title>
+    <link href="http://hamaco.github.com/blog/2012/06/11/candycane-enter-cancel/"/>
+    <updated>2012-06-11T19:20:00+09:00</updated>
+    <id>http://hamaco.github.com/blog/2012/06/11/candycane-enter-cancel</id>
+    <content type="html"><![CDATA[<p>CandyCane でチケット作成してて、タイトルで Enter キーを連打して書きかけのチケットを作って、うがぁあああ、ってなったことありませんか？</p>
+
+<p>私はありません。</p>
+
+<p>ですがその様な人がいるかもしれないようなので、こんな悲しい思いを繰り返さないためのプラグインを作りました。</p>
+
+<h2>ソースコード</h2>
+
+<p><a href="https://github.com/hamaco/candycane-enter-cancel">hamaco/candycane-enter-cancel · GitHub</a></p>
+
+<h2>謝罪</h2>
+
+<p>すみません、このサイトのRedmineプラグインをパクりましたm(_ _)m</p>
+
+<p><a href="http://d.hatena.ne.jp/suer/20120610/1339336133">Redmineのチケット作成での誤爆を防ぐプラグイン書いた - すえひろがりっっっっ!</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[RedmineのテーマをCandyCaneで使ってみた]]></title>
+    <link href="http://hamaco.github.com/blog/2012/06/04/use-redmine-theme-on-candycane/"/>
+    <updated>2012-06-04T10:26:00+09:00</updated>
+    <id>http://hamaco.github.com/blog/2012/06/04/use-redmine-theme-on-candycane</id>
+    <content type="html"><![CDATA[<p>プラグインは言語が違うので無理ですが、テーマなら言語関係ないのでRedmineのがCandyCaneでも使えるんじゃないかと思って試してみました。
+今回はRedmine Themeで検索して上の方にでてきた<a href="http://blog.redmine.jp/articles/farend-basic-theme/">farend basic</a>をCandyCaneで使ってみます。</p>
+
+<h2>テーマのダウンロード</h2>
+
+<p>まず、テーマをダウンロードするのですが、RedmineとCandyCane(CakePHP)ではテーマのディレクトリ構成など多少違うのでそのままダウンロードするだけだと動きません。
+なので、CakePHPの規則に従った形でテーマを用意します。</p>
+
+<p><code>
+$ cd {CANDYCANE_ROOT_DIR}
+$ mkdir -p app/webroot/themed/farend_basic/css
+</code></p>
+
+<p>次にテーマのcssをダウンロードしてきます。</p>
+
+<p><code>
+$ cd app/webroot/themed/farend_basic/css
+$ wget https://raw.github.com/farend/redmine_theme_farend_basic/master/stylesheets/application.css
+</code></p>
+
+<p>今回のはcss1個だけなのでディレクトリ作ってcssだけダウンロードしてきましたが、テーマに画像などが含まれている場合はzipファイルとかでダウンロードしてきたあとcssの入っているディレクトリを変更するのが簡単だと思います。</p>
+
+<h2>テーマの修正</h2>
+
+<p>CandyCaneはデフォルトのapplication.cssを読み込んだ後にテーマのcssを読み込む為、テーマのcss内にあるapplication.cssの読み込み処理を削除(コメントアウト)します。そもそもPATHが違うのでエラーでちゃいますし。</p>
+
+<p><code>css application.css
+/* @import url(../../../stylesheets/application.css); */
+</code></p>
+
+<h2>テーマの設定</h2>
+
+<p>テーマファイルを設置したら後はCandyCaneの画面上でfarend basicテーマを使用するよう設定します。
+管理の設定からテーマのセレクトボックスでfarend_basicを選択すると、さっきDLしてきたfarend_basicが使えるようになります。</p>
+
+<p><img src="/images/2012/06/candycane-theme-01.png" width="480"></p>
+
+<p>このテーマは基本的な所は変わらないので分かりにくいですが、チケットの一覧ページに行くと優先度に応じて色が付いているのが分かると思います。</p>
+
+<p><img src="/images/2012/06/candycane-theme-02.png" width="480"></p>
+
+<p>書いてから投稿までに数日経ってしまったのでちょっと他のテーマも動かしてみました。<a href="http://www.redmine.org/projects/redmine/wiki/Theme_List">Redmineのテーマ一覧</a>一覧の一番上にあったA1 themeっていうテーマです。これもfarend basicと同じやり方で使えます。</p>
+
+<p><img src="/images/2012/06/candycane-theme-03.png" width="480"></p>
+
+<h2>終わりに</h2>
+
+<p>こんな感じで比較的簡単にRedmineのテーマが使用できるのでライセンス的に問題のないやつがあればCandyCane用にコンバートしてみたり、Redmineのテーマを参考にCandyCaneのテーマを作ってみてはどうでしょうか。</p>
+]]></content>
+  </entry>
+  
+</feed>
