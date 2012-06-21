@@ -4,7 +4,7 @@
   <title><![CDATA[hamaco's blog]]></title>
   <link href="http://hamaco.github.com/atom.xml" rel="self"/>
   <link href="http://hamaco.github.com/"/>
-  <updated>2012-06-14T23:57:41+09:00</updated>
+  <updated>2012-06-21T19:31:31+09:00</updated>
   <id>http://hamaco.github.com/</id>
   <author>
     <name><![CDATA[hamaco]]></name>
@@ -12,6 +12,112 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[新Macbook Airを買ったので設定したことまとめ その1]]></title>
+    <link href="http://hamaco.github.com/blog/2012/06/21/setup-macbook-air-01/"/>
+    <updated>2012-06-21T20:02:00+09:00</updated>
+    <id>http://hamaco.github.com/blog/2012/06/21/setup-macbook-air-01</id>
+    <content type="html"><![CDATA[<p>ディスク容量やらメモリやら普通に使う上で不便になってきたので新しく発売されたMacbook Air 13inchを買いました。
+で、OSもLionになったしどうせだから最初から設定してみるかーってことになったのでその時のメモを何回かに分けてまとめてみます。</p>
+
+<h2>初期設定</h2>
+
+<p>ことえりとか意味の分からないもの使わないのでUSを選んだ以外はまったくもってふつーだと思うので省略。</p>
+
+<h2>最低限必要なアプリ導入</h2>
+
+<p>まあ、真っ先にインストールしたのはOperaとMacVimなのですが、インストールしたアプリは後日まとめるとして環境設定系でとりあえず必須のKeyRemap4MacBookとAquaSKKをインストールしました。</p>
+
+<h2>システム環境設定</h2>
+
+<p>後はひたすら1個ずつ確認しながらシステム環境設定をちまちま弄ります。</p>
+
+<h3>デスクトップとスクリーンセーバー</h3>
+
+<p>壁紙を自分の好きなのに変更し、半透明メニューバーをOFF。
+そしてスクリーンセーバーをFlurryに変更し、開始時間を5分に。</p>
+
+<h3>Dock</h3>
+
+<p><img src="http://hamaco.github.com/images/2012/06/setup-macbook-air-01-01.png" width="480"></p>
+
+<p>元々狭い縦が狭くなるの嫌いなのでDockを左に移動して最小化。</p>
+
+<h3>Mission Control</h3>
+
+<p><img src="http://hamaco.github.com/images/2012/06/setup-macbook-air-01-02.png" width="480"></p>
+
+<p>ホットキーの設定をSnow Leopardの頃と同じにしてみた。ただ、ジェスチャが揃ってるので不要になるかも。</p>
+
+<h3>言語とテキスト</h3>
+
+<p><img src="http://hamaco.github.com/images/2012/06/setup-macbook-air-01-03.png" width="480"></p>
+
+<p>入力ソースでAquaSKKを有効にして、一生使うことのないであろう入力ソースのショートカットを無効化。</p>
+
+<h3>セキュリティとプライバシー</h3>
+
+<p>一応なにかあった時の為にFileVaultを有効化。</p>
+
+<h3>Spotlight</h3>
+
+<p><img src="http://hamaco.github.com/images/2012/06/setup-macbook-air-01-04.png" width="480"></p>
+
+<p>SpotlightなんてどうせGrowlで被るし使わないのでキーボードショートカットOFF。</p>
+
+<h3>キーボード</h3>
+
+<p><img src="http://hamaco.github.com/images/2012/06/setup-macbook-air-01-05.png" width="480"></p>
+
+<p><img src="http://hamaco.github.com/images/2012/06/setup-macbook-air-01-06.png" width="480"></p>
+
+<p>JISキーボードのCapsLockはDelayもなく誤爆しやすいし、CapsLockなんて使わないのでアクションなしに。ここでキーリピートとか変更したけど実は意味なかったりもする。</p>
+
+<h3>トラックパッド</h3>
+
+<p>全てのチェックを入れて軌跡の速さをMAXに。</p>
+
+<h3>共有</h3>
+
+<p><img src="http://hamaco.github.com/images/2012/06/setup-macbook-air-01-07.png" width="480"></p>
+
+<p>デフォルトのコンピュータ名が酷いので変更する。</p>
+
+<h2>KeyRemap4MacBook</h2>
+
+<p><img src="http://hamaco.github.com/images/2012/06/setup-macbook-air-01-08.png" width="480"></p>
+
+<p>とりあえず今の設定はこんな感じ。</p>
+
+<ul>
+<li>US配列</li>
+<li>SandS</li>
+<li>かな -> Enter</li>
+<li>英数 -> ESC</li>
+<li>右Shift ->  ^と&amp;</li>
+</ul>
+
+
+<p><img src="http://hamaco.github.com/images/2012/06/setup-macbook-air-01-09.png" width="480"></p>
+
+<p>さっきキーボードの設定でキーリピート弄ったけど、結局それでも遅くてこっちで設定した。</p>
+
+<h2>AquaSKK</h2>
+
+<p><img src="http://hamaco.github.com/images/2012/06/setup-macbook-air-01-10.png" width="480"></p>
+
+<p>eskkがEnterで改行しないようにしてないと安定しないのでそれに合わせるのと、邪魔な現在の入力モード表示をOFF。</p>
+
+<p><img src="http://hamaco.github.com/images/2012/06/setup-macbook-air-01-11.png" width="480"></p>
+
+<p>補完はやっぱり欲しいのでON。</p>
+
+<h1>まとめ</h1>
+
+<p>システム環境設定は今の所こんな感じにしています。導入したアプリーケーションとかはある程度落ち着いたらその2とかでまとめます。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[CandyCaneでギャル文字]]></title>

@@ -7,11 +7,8 @@
     <meta name="author" content="hamaco">
 
     
-    <meta name="description" content="First Post よく覚えてなかったからoctopreessやり直してみた。 markdownってどうやって書くんだっけかな。 &lt;?php
-function hello($name)
-{ return "Hello {$name}!!";
-}
-echo hello("hamaco &hellip;">
+    <meta name="description" content="GitHub PagesでOctopress使ってみる Markdownでメモ書きたかったので以前1回やったOctopressをまたセットアップしてみた。
+前やった時のメモとか公式とか見ながら再度セットアップしたのでMarkdownの練習兼ねてメモ。 Github Pages用のリポジトリ作成 &hellip;">
     
     <meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1">
 
@@ -86,6 +83,118 @@ echo hello("hamaco &hellip;">
 </script>
 
 	<div id="content" class="inner">
+
+
+    <article class="post">
+    <h1 class="title"><a href="/blog/2012/03/23/install-octopress/">GitHub PagesでOctopress使ってみる</a></h1>
+    <div class="entry">
+        <p>Markdownでメモ書きたかったので以前1回やったOctopressをまたセットアップしてみた。
+前やった時のメモとか公式とか見ながら再度セットアップしたのでMarkdownの練習兼ねてメモ。</p>
+
+<h2>Github Pages用のリポジトリ作成</h2>
+
+<p><a href="https://github.com/repositories/new">GitHub</a>で hamaco.github.com という名前でリポジトリを作成する。</p>
+
+<h2>Octopressのダウンロード</h2>
+
+<p>ダウンロードというかgitでcloneしてくる。</p>
+
+<pre><code>git clone https://github.com/imathis/octopress.git
+</code></pre>
+
+<p>bundlerとかいうやつで必要なgemとかインストールして初期処理を行う。</p>
+
+<pre><code>cd octopress
+gem install bundler
+bundle install
+rake install
+</code></pre>
+
+<h2>Octopressの設定</h2>
+
+<h3>初期設定</h3>
+
+<p>下記コマンドを実行するとgithubのリポジトリを聞かれるので最初に作成したGithub PageのリポジトリURLを指定する。</p>
+
+<pre><code>rake setup_github_pages
+
+git@github.com:hamaco/hamaco.github.com.git
+</code></pre>
+
+<p>その後、下記コマンドを実行してしばらく(10分弱)待つと見れるようになる。</p>
+
+<pre><code>rake generate
+rake deploy
+</code></pre>
+
+<h3>Blogの設定</h3>
+
+<p>設定ファイルを弄ってタイトルとかをちゃんとしたのにする。</p>
+
+<pre><code>gvim _config.yml
+</code></pre>
+
+<h2>記事の作成</h2>
+
+<p>記事を作成するのにはrakeを実行して、内容を書いてやる。</p>
+
+<pre><code>rake new_post\["title name"\]
+gvim source/_posts/2012-03-23-title-name.markdown
+</code></pre>
+
+<h2>ソースの管理</h2>
+
+<p>なんかプロジェクトページとユーザページを統合しとくと面倒とか書いてあるブログがあったりしたので丁度アカウントも持ってたしBitbucketでソースを管理するようにしてみる。<br/>
+と言ってもBitbucketでリポジトリを作成してpushしてあげるだけ。<br/>
+Bitbucketでのリポジトリ作成はGitHubとたいして変わらないので割愛。分からなければ参考サイト見て下さい。</p>
+
+<pre><code>git add .
+git commit -m 'commit message'
+git push origin source
+git remote add bitbucket git@bitbucket.org:hamaco/octopress-github.git
+git push -u bitbucket source
+</code></pre>
+
+<h2>参考サイト</h2>
+
+<ul>
+<li><a href="http://octopress.org/docs/setup/">Octopress Setup - Octopress</a></li>
+<li><a href="http://mattn.kaoriya.net/software/lang/ruby/20111017205717.htm">Big Sky :: githubとjekyllとoctopressで作る簡単でモダンなブログ</a></li>
+<li><a href="http://www.glidenote.com/archives/1517">GithubとOctopressでモダンな技術系ブログを作ってみる | Glide Note - グライドノート</a></li>
+<li><a href="http://tokkonopapa.github.com/blog/2011/12/30/octopress-on-github-and-bitbucket/">Octopressのインストールから運用管理まで - T.I.D.</a></li>
+</ul>
+
+
+        
+        
+    </div>
+    <div class="meta">
+        <div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-03-23T00:46:00+09:00" pubdate data-updated="true">2012年03月23日</time></div>
+        <div class="tags">
+
+<div class="cat">
+  
+    <a class='category' href='/blog/categories/github/'>github</a>, <a class='category' href='/blog/categories/octopress/'>octopress</a>
+  
+</div>
+
+</div>
+        
+    </div>
+
+</article>
 
 
     <article class="post">
