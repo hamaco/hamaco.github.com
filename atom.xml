@@ -4,7 +4,7 @@
   <title><![CDATA[hamaco's blog]]></title>
   <link href="http://hamaco.github.com/atom.xml" rel="self"/>
   <link href="http://hamaco.github.com/"/>
-  <updated>2012-06-21T19:31:31+09:00</updated>
+  <updated>2012-07-05T16:32:53+09:00</updated>
   <id>http://hamaco.github.com/</id>
   <author>
     <name><![CDATA[hamaco]]></name>
@@ -14,108 +14,49 @@
 
   
   <entry>
-    <title type="html"><![CDATA[新Macbook Airを買ったので設定したことまとめ その1]]></title>
-    <link href="http://hamaco.github.com/blog/2012/06/21/setup-macbook-air-01/"/>
-    <updated>2012-06-21T20:02:00+09:00</updated>
-    <id>http://hamaco.github.com/blog/2012/06/21/setup-macbook-air-01</id>
-    <content type="html"><![CDATA[<p>ディスク容量やらメモリやら普通に使う上で不便になってきたので新しく発売されたMacbook Air 13inchを買いました。
-で、OSもLionになったしどうせだから最初から設定してみるかーってことになったのでその時のメモを何回かに分けてまとめてみます。</p>
+    <title type="html"><![CDATA[Macのtmuxでクリップボードを使えるようにする（主にVimの為に）]]></title>
+    <link href="http://hamaco.github.com/blog/2012/07/05/fix-macosx-tmux-pasteboard/"/>
+    <updated>2012-07-05T16:22:00+09:00</updated>
+    <id>http://hamaco.github.com/blog/2012/07/05/fix-macosx-tmux-pasteboard</id>
+    <content type="html"><![CDATA[<p>MacOSXのtmuxだとpbcopy|pbpasteが正常に動作しないみたいで、CUI版のVimで<code>set clipboard=unnamed</code>していると<code>p</code>でペーストする際に<code>E353: Nothing in register *</code>とかエラーがでてペーストが一切できなくなってしまいます。
+常にGui版のMacVimでも使っていれば良いのですが、流石にCUI版を一切使わない or ペーストしない生活は私には出来ないのでちょっと調べてみたら結構簡単に対処できたのでメモ。</p>
 
-<h2>初期設定</h2>
+<h2>やり方</h2>
 
-<p>ことえりとか意味の分からないもの使わないのでUSを選んだ以外はまったくもってふつーだと思うので省略。</p>
+<p><a href="https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard">ChrisJohnsen/tmux-MacOSX-pasteboard</a>を使うと簡単にできるみたいです。READMEに書いてあるままやってるだけなのでそのままそっち見ながらやった方が楽かもしれない。</p>
 
-<h2>最低限必要なアプリ導入</h2>
+<h3>プログラムのコンパイル</h3>
 
-<p>まあ、真っ先にインストールしたのはOperaとMacVimなのですが、インストールしたアプリは後日まとめるとして環境設定系でとりあえず必須のKeyRemap4MacBookとAquaSKKをインストールしました。</p>
+<p>普通にgitでcloneしてきてからmakeして、PATHの通った所にファイルを置きます。</p>
 
-<h2>システム環境設定</h2>
-
-<p>後はひたすら1個ずつ確認しながらシステム環境設定をちまちま弄ります。</p>
-
-<h3>デスクトップとスクリーンセーバー</h3>
-
-<p>壁紙を自分の好きなのに変更し、半透明メニューバーをOFF。
-そしてスクリーンセーバーをFlurryに変更し、開始時間を5分に。</p>
-
-<h3>Dock</h3>
-
-<p><img src="http://hamaco.github.com/images/2012/06/setup-macbook-air-01-01.png" width="480"></p>
-
-<p>元々狭い縦が狭くなるの嫌いなのでDockを左に移動して最小化。</p>
-
-<h3>Mission Control</h3>
-
-<p><img src="http://hamaco.github.com/images/2012/06/setup-macbook-air-01-02.png" width="480"></p>
-
-<p>ホットキーの設定をSnow Leopardの頃と同じにしてみた。ただ、ジェスチャが揃ってるので不要になるかも。</p>
-
-<h3>言語とテキスト</h3>
-
-<p><img src="http://hamaco.github.com/images/2012/06/setup-macbook-air-01-03.png" width="480"></p>
-
-<p>入力ソースでAquaSKKを有効にして、一生使うことのないであろう入力ソースのショートカットを無効化。</p>
-
-<h3>セキュリティとプライバシー</h3>
-
-<p>一応なにかあった時の為にFileVaultを有効化。</p>
-
-<h3>Spotlight</h3>
-
-<p><img src="http://hamaco.github.com/images/2012/06/setup-macbook-air-01-04.png" width="480"></p>
-
-<p>SpotlightなんてどうせGrowlで被るし使わないのでキーボードショートカットOFF。</p>
-
-<h3>キーボード</h3>
-
-<p><img src="http://hamaco.github.com/images/2012/06/setup-macbook-air-01-05.png" width="480"></p>
-
-<p><img src="http://hamaco.github.com/images/2012/06/setup-macbook-air-01-06.png" width="480"></p>
-
-<p>JISキーボードのCapsLockはDelayもなく誤爆しやすいし、CapsLockなんて使わないのでアクションなしに。ここでキーリピートとか変更したけど実は意味なかったりもする。</p>
-
-<h3>トラックパッド</h3>
-
-<p>全てのチェックを入れて軌跡の速さをMAXに。</p>
-
-<h3>共有</h3>
-
-<p><img src="http://hamaco.github.com/images/2012/06/setup-macbook-air-01-07.png" width="480"></p>
-
-<p>デフォルトのコンピュータ名が酷いので変更する。</p>
-
-<h2>KeyRemap4MacBook</h2>
-
-<p><img src="http://hamaco.github.com/images/2012/06/setup-macbook-air-01-08.png" width="480"></p>
-
-<p>とりあえず今の設定はこんな感じ。</p>
-
-<ul>
-<li>US配列</li>
-<li>SandS</li>
-<li>かな -> Enter</li>
-<li>英数 -> ESC</li>
-<li>右Shift ->  ^と&amp;</li>
-</ul>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git clone https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard.git
+</span><span class='line'>cd tmux-MacOSX-pasteboard
+</span><span class='line'>make reattach-to-user-namespace
+</span><span class='line'>cp reattach-to-user-namespace ~/bin/</span></code></pre></td></tr></table></div></figure>
 
 
-<p><img src="http://hamaco.github.com/images/2012/06/setup-macbook-air-01-09.png" width="480"></p>
+<p>別にmakeだけでも実行ファイルできあがりますが、ついでにtestとかいうのもmakeされるので、READMEに書かれてる通りmakeに引数渡してます。</p>
 
-<p>さっきキーボードの設定でキーリピート弄ったけど、結局それでも遅くてこっちで設定した。</p>
+<h3>tmuxの設定</h3>
 
-<h2>AquaSKK</h2>
+<p>次に<code>.tmux.conf</code>に以下の内容を追加。</p>
 
-<p><img src="http://hamaco.github.com/images/2012/06/setup-macbook-air-01-10.png" width="480"></p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>set-option -g default-command "reattach-to-user-namespace -l zsh"</span></code></pre></td></tr></table></div></figure>
 
-<p>eskkがEnterで改行しないようにしてないと安定しないのでそれに合わせるのと、邪魔な現在の入力モード表示をOFF。</p>
 
-<p><img src="http://hamaco.github.com/images/2012/06/setup-macbook-air-01-11.png" width="480"></p>
+<h3>できた</h3>
 
-<p>補完はやっぱり欲しいのでON。</p>
+<p>これで準備は完了。後は<code>tmux kill-server</code>とかやってtmux立ち上げ直すと<code>date | pbcopy</code>とかで結果がMacのクリップボードに入るようになっているはず。
+無事クリップボードが使えるようになったら、Vimでも<code>set clipboard=unnamed</code>している状態でコピペが動作するようになっているのを確認して終了!</p>
 
-<h1>まとめ</h1>
+<h2>参考サイト</h2>
 
-<p>システム環境設定は今の所こんな感じにしています。導入したアプリーケーションとかはある程度落ち着いたらその2とかでまとめます。</p>
+<p><a href="http://d.hatena.ne.jp/koseki2/20110816/TmuxCopy">Mac の tmux でクリップボードを使う。 - こせきの技術日記</a></p>
 ]]></content>
   </entry>
   

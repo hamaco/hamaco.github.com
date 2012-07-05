@@ -4,7 +4,7 @@
   <title><![CDATA[Category: vim | hamaco's blog]]></title>
   <link href="http://hamaco.github.com/blog/categories/vim/atom.xml" rel="self"/>
   <link href="http://hamaco.github.com/"/>
-  <updated>2012-06-21T19:31:31+09:00</updated>
+  <updated>2012-07-05T16:32:53+09:00</updated>
   <id>http://hamaco.github.com/</id>
   <author>
     <name><![CDATA[hamaco]]></name>
@@ -12,6 +12,50 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Macのtmuxでクリップボードを使えるようにする（主にVimの為に）]]></title>
+    <link href="http://hamaco.github.com/blog/2012/07/05/fix-macosx-tmux-pasteboard/"/>
+    <updated>2012-07-05T16:22:00+09:00</updated>
+    <id>http://hamaco.github.com/blog/2012/07/05/fix-macosx-tmux-pasteboard</id>
+    <content type="html"><![CDATA[<p>MacOSXのtmuxだとpbcopy|pbpasteが正常に動作しないみたいで、CUI版のVimで<code>set clipboard=unnamed</code>していると<code>p</code>でペーストする際に<code>E353: Nothing in register *</code>とかエラーがでてペーストが一切できなくなってしまいます。
+常にGui版のMacVimでも使っていれば良いのですが、流石にCUI版を一切使わない or ペーストしない生活は私には出来ないのでちょっと調べてみたら結構簡単に対処できたのでメモ。</p>
+
+<h2>やり方</h2>
+
+<p><a href="https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard">ChrisJohnsen/tmux-MacOSX-pasteboard</a>を使うと簡単にできるみたいです。READMEに書いてあるままやってるだけなのでそのままそっち見ながらやった方が楽かもしれない。</p>
+
+<h3>プログラムのコンパイル</h3>
+
+<p>普通にgitでcloneしてきてからmakeして、PATHの通った所にファイルを置きます。</p>
+
+<p><code>
+git clone https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard.git
+cd tmux-MacOSX-pasteboard
+make reattach-to-user-namespace
+cp reattach-to-user-namespace ~/bin/
+</code></p>
+
+<p>別にmakeだけでも実行ファイルできあがりますが、ついでにtestとかいうのもmakeされるので、READMEに書かれてる通りmakeに引数渡してます。</p>
+
+<h3>tmuxの設定</h3>
+
+<p>次に<code>.tmux.conf</code>に以下の内容を追加。</p>
+
+<p><code>
+set-option -g default-command "reattach-to-user-namespace -l zsh"
+</code></p>
+
+<h3>できた</h3>
+
+<p>これで準備は完了。後は<code>tmux kill-server</code>とかやってtmux立ち上げ直すと<code>date | pbcopy</code>とかで結果がMacのクリップボードに入るようになっているはず。
+無事クリップボードが使えるようになったら、Vimでも<code>set clipboard=unnamed</code>している状態でコピペが動作するようになっているのを確認して終了!</p>
+
+<h2>参考サイト</h2>
+
+<p><a href="http://d.hatena.ne.jp/koseki2/20110816/TmuxCopy">Mac の tmux でクリップボードを使う。 - こせきの技術日記</a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Vim をソースからコンパイルする]]></title>
