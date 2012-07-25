@@ -4,7 +4,7 @@
   <title><![CDATA[Category: firefox | hamaco's blog]]></title>
   <link href="http://hamaco.github.com/blog/categories/firefox/atom.xml" rel="self"/>
   <link href="http://hamaco.github.com/"/>
-  <updated>2012-07-05T16:32:53+09:00</updated>
+  <updated>2012-07-25T15:01:37+09:00</updated>
   <id>http://hamaco.github.com/</id>
   <author>
     <name><![CDATA[hamaco]]></name>
@@ -12,6 +12,87 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Firefox OSを試してみた]]></title>
+    <link href="http://hamaco.github.com/blog/2012/07/23/try-firefox-os/"/>
+    <updated>2012-07-23T13:52:00+09:00</updated>
+    <id>http://hamaco.github.com/blog/2012/07/23/try-firefox-os</id>
+    <content type="html"><![CDATA[<p>Firefox OSが試せるらしいので試してみました。まあ参考サイトまんまですが一応メモ。
+基本的に全てのコマンドでデカいファイルDLしたりしてそれなりに時間が掛かるので何か作業やりながらとかやると良いと思います。</p>
+
+<h2>インストール</h2>
+
+<p>Windowsだと動かないとかいう話を聞いたりするのでUbuntu 12.04で試してみました。Mac? 知らん。</p>
+
+<h3>ダウンロード</h3>
+
+<p><a href="http://ftp.mozilla.org/pub/mozilla.org/b2g/nightly/latest-mozilla-central/">ここ</a>からWindows/Mac/Linux用のファイルがDLできるのでDLして解凍する。20MBくらいあってそれなりにDLに時間掛かります。</p>
+
+<p><code>
+wget http://ftp.mozilla.org/pub/mozilla.org/b2g/nightly/latest-mozilla-central/b2g-17.0a1.en-US.linux-i686.tar.bz2
+tar xf b2g-17.0a1.en-US.linux-i686.tar.bz2
+</code></p>
+
+<h3>プロファイル作成</h3>
+
+<p>それなりに長いb2gのDLが完了したらMozillaスマフォのUIであるGaiaなるもののprofileを作成する。こっちはひたすら時間が掛かるので実行後放置推奨。</p>
+
+<p><code>
+cd b2g
+git clone git://github.com/mozilla-b2g/gaia
+make -C gaia profile
+</code></p>
+
+<h2>起動</h2>
+
+<p>プロファイルの作成が終わったら後は起動するだけ。</p>
+
+<p><code>
+./b2g -profile gaia/profile
+</code></p>
+
+<p>以下テキトーにスクショ</p>
+
+<h3>ロック画面</h3>
+
+<p><img src="/images/2012/07/try-firefox-os-01.png" width="322"></p>
+
+<h3>ホーム画面</h3>
+
+<p><img src="/images/2012/07/try-firefox-os-02.png" width="322"></p>
+
+<h3>通知バー</h3>
+
+<p>Androidっぽい通知バーも一応ある。出し方も一緒</p>
+
+<p><img src="/images/2012/07/try-firefox-os-03.png" width="322"></p>
+
+<h3>ブラウザ</h3>
+
+<p>なんかブラウザでページ表示させると上2/3くらいが真っ黒になるのは自分だけだろうか。</p>
+
+<p><img src="/images/2012/07/try-firefox-os-04.png" width="322"></p>
+
+<h3>メール</h3>
+
+<p>メールも一応ある。流石になにかあったら怖いので自分のアカウントは入れてないけど。</p>
+
+<p><img src="/images/2012/07/try-firefox-os-05.png" width="322"></p>
+
+<h3>カメラ</h3>
+
+<p>カメラはあるけどやっぱり真っ暗。</p>
+
+<p><img src="/images/2012/07/try-firefox-os-06.png" width="322"></p>
+
+<p>マウスカーソルの存在忘れてたorz</p>
+
+<h2>参考サイト</h2>
+
+<p><a href="https://dev.mozilla.jp/2012/07/try-firefox-os/">Firefox OS を試す | Mozilla Developer Street (modest)</a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Firebugのコマンドラインのフォントをカスタマイズした]]></title>

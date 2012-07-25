@@ -7,7 +7,7 @@
     <meta name="author" content="hamaco">
 
     
-    <meta name="description" content="Macのtmuxでクリップボードを使えるようにする（主にVimの為に） MacOSXのtmuxだとpbcopy|pbpasteが正常に動作しないみたいで、CUI版のVimでset clipboard=unnamedしているとpでペーストする際にE353: Nothing in register &hellip;">
+    <meta name="description" content="新Macbook Airを買ったので設定したことまとめ その2 大分前にその1を書いた、Macbook Airのセットアップまとめ記事 その2。めんどくさくて放置してたんですが、なんかもうMountain Lionが発売されちゃうらしいので、別マシンにMountain &hellip;">
     
     <meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1">
 
@@ -82,6 +82,266 @@
 </script>
 
 	<div id="content" class="inner">
+
+
+    <article class="post">
+    <h1 class="title"><a href="/blog/2012/07/25/setup-macbook-air-02/">新Macbook Airを買ったので設定したことまとめ その2</a></h1>
+    <div class="entry">
+        <p>大分前にその1を書いた、Macbook Airのセットアップまとめ記事 その2。めんどくさくて放置してたんですが、なんかもうMountain Lionが発売されちゃうらしいので、別マシンにMountain Lion入れる時の参考用兼ねて、よく見かけるMacに最初に入れたアプリ20個を紹介してみます。</p>
+
+<p>ちなみに前回は<a href="http://hamaco.github.com/blog/2012/06/21/setup-macbook-air-01/">こちら</a></p>
+
+<h2>インストールしたアプリ</h2>
+
+<p>前回入れたKeyRemap4macbookとAquaSKKは除外</p>
+
+<h3>1.Opera</h3>
+
+<p>まあこれを入れなきゃなにも始まらないですよね。戻る・進むが高速だったりどこぞの腐ったブラウザと違って普通にPOSTページのソース見れたり、簡単にHTML弄れたりと基本的な部分が使い易すぎます。
+ただ、Operaだとちゃんと動かないページがそれなりに……</p>
+
+<h3>2.Firefox</h3>
+
+<p>主に開発中のメインブラウザ。携帯ページの開発とかでUA簡単に変更できるFirefoxをずっと使ってます。
+ちなみにインストールしたアドオンはこれくらい。</p>
+
+<ul>
+<li>1Password</li>
+<li>Clearly</li>
+<li>Evernote Web Clipper</li>
+<li>Firebug</li>
+<li>FireMobileSimlator</li>
+<li>Hatenabookmark</li>
+<li>Stylish</li>
+<li>Vimperator</li>
+</ul>
+
+
+<h3>3.Google Chrome</h3>
+
+<p>ほとんどFlash見る専用ブラウザ。Windowsマシンだとfacebook見たりとかに使っててたのでインストールしたけど、MacだとSafariで十分なのであんまり立ち上げる機会がない。</p>
+
+<h3>4.MacVim</h3>
+
+<p>メインで使ってるエディタがVimなのでそれのMac版。もうVimがないと開発とか色々やる気が起きない。
+設定は<a href="https://github.com/hamaco/dotfiles/blob/master/dot.vimrc">この辺</a>に置いてあります。</p>
+
+<h3>5.YoruFukurou</h3>
+
+<p>Twitterクライアント。他に使い易いのがあるかもしれないけどキーバインドとかが自分の好みにあっているのでずっとこれを使ってます。</p>
+
+<h3>6.Growl</h3>
+
+<p>通知ツール。Lionに入れてからそれなりに暴走するのが困り所。</p>
+
+<h3>7.Dropbox</h3>
+
+<p>きっと誰もが知ってるクラウドストレージ。なんだかんだで他のに移行するの面倒だし、色んなアプリが対応してたりするのでずっとこれ使ってます。ちょこちょこイベントあったりして容量が増えてくのもGOOD!</p>
+
+<h3>8.1Password</h3>
+
+<p>パスワード管理ソフト。Windows/Mac/iPhone/Android/WindowsPhoneとLinux以外の自分が使ってる全てのOSに対応している&amp;Opera以外のブラウザAdd-onがあるので、パスワード管理はこれ一択。
+いや、まあKeePassとかあるけど、昔使ってた時全体的な使い勝手が悪かったりしたので……</p>
+
+<h3>9.Sequal Pro</h3>
+
+<p>MySQLのフロントエンドツール。基本コマンドラインでMySQLを操作してたんだけど、普通の人に画面見せたりする時に分かりにくいと思って試しに入れてみたらこれが非常に使い易い。
+これのPostgreSQL版とかないかなー。</p>
+
+<h3>10.MAMP</h3>
+
+<p>買った直後にハッカソンがあったりとかで開発環境必要だったのでとりあえず入れた。PHP5.3も動くし、変なことしないなら案外これだけでもいけるかもしれない。</p>
+
+<h3>11.iTerm2</h3>
+
+<p>ターミナルソフト。MacデフォルトのTerminalだとなんか問題があってこいつ使ってるんだけど理由を覚えていないという……
+基本的にTerminal&amp;Visorの頃と同様に、Command+EnterでHotkey Windowsがでるようにして使ってます。</p>
+
+<h3>12.homebrew</h3>
+
+<p>パッケージマネージャ。 yumとかaptみたいなやつ。macportsより楽に使えるのでこっち使ってる。</p>
+
+<h3>13.Horst</h3>
+
+<p>hostファイルをGUIで管理できるようになるツール。今迄普通にTerminalで/etc/hosts弄ってたんだけど、LionになってHorstが使えるようになったので試しに使用中。
+起動時に毎回ウィンドウサイズがリセットされる以外はまあボチボチ使い易いかな。</p>
+
+<h3>14.BetterTouchTool</h3>
+
+<p>細々した機能があるツールをいくつも入れるのが面倒だったので、まとめて導入できるこいつを使ってます。
+Windows7風にキーボードで画面サイズ最大化とか、Opera以外のブラウザでロッカージェスチャ(TipTap)有効化にするとかそんな感じでちまちましたやつをいくつか設定してます。</p>
+
+<h3>15.Alfred</h3>
+
+<p>ランチャー。QuickSilverが更新されてなかったのとなんだったか問題があってしばらく前にこれに乗り換えた。まだ普通のランチャー機能+ホットキーでのLockくらいしか使ってないけど……</p>
+
+<h3>16.Caffeine</h3>
+
+<p>Macのスリープを防止してくれるソフト。普段メインマシンはWindowsなので、Macがしょっちゅうスリープして面倒だったので入れてます。後はイベントの時とかにONにしておくとプレゼンしてて、気が付くと画面真っ黒とか防いでくれるので便利。ON/OFFするの忘れるのが一番の困りもの。</p>
+
+<h3>17.OmniFocus</h3>
+
+<p>TODO管理ソフト。他にも色々あるんだけどなんか良く名前を聞く気がしたので使用中。</p>
+
+<h3>18.SimpleCap</h3>
+
+<p>スクリーンショットツール。最低限必要な機能があったのと、角丸で撮ることとかができたので基本的にはこれを使ってます。基本的にスクリーンショット加工しないのでこれで十分。</p>
+
+<h3>19.Transmit</h3>
+
+<p>FTPとかのファイル転送クライアント。なにかのタイミングで安く手に入ったのと、リモートとローカルを同期してくれたりして細かい所が便利だったので使ってます。最近だとディスクとしてマウントできたりするのでさらに便利になってるけど、FTPとかWebDAV関係使う機会もなくなってきたのであんまり活躍する所がなくなってきてる。</p>
+
+<h3>20.iStat Menus</h3>
+
+<p>リソースモニタリングソフト。メニューバーから簡単にCPU使用状況とか見れるので便利。Memory・CPU・Date&amp;Time・Batteryの4つ表示して使ってます。
+ちなみに関係ないアプリですがiStat ProというDashboard用のモニタリングソフトも一応入れてたりします。</p>
+
+<h2>終わり</h2>
+
+<p>とりあえずインストールしたのはこのくらい。 まあ現在はお試しで入れてみたり、仕事で必要になったアプリとか入れてますが必ず入れるのはこの辺かなーと。</p>
+
+        
+        
+    </div>
+    <div class="meta">
+        <div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-07-25T14:58:00+09:00" pubdate data-updated="true">2012年07月25日</time></div>
+        <div class="tags">
+
+<div class="cat">
+  
+    <a class='category' href='/blog/categories/mac/'>mac</a>
+  
+</div>
+
+</div>
+        
+    </div>
+
+</article>
+
+
+    <article class="post">
+    <h1 class="title"><a href="/blog/2012/07/23/try-firefox-os/">Firefox OSを試してみた</a></h1>
+    <div class="entry">
+        <p>Firefox OSが試せるらしいので試してみました。まあ参考サイトまんまですが一応メモ。
+基本的に全てのコマンドでデカいファイルDLしたりしてそれなりに時間が掛かるので何か作業やりながらとかやると良いと思います。</p>
+
+<h2>インストール</h2>
+
+<p>Windowsだと動かないとかいう話を聞いたりするのでUbuntu 12.04で試してみました。Mac? 知らん。</p>
+
+<h3>ダウンロード</h3>
+
+<p><a href="http://ftp.mozilla.org/pub/mozilla.org/b2g/nightly/latest-mozilla-central/">ここ</a>からWindows/Mac/Linux用のファイルがDLできるのでDLして解凍する。20MBくらいあってそれなりにDLに時間掛かります。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>wget http://ftp.mozilla.org/pub/mozilla.org/b2g/nightly/latest-mozilla-central/b2g-17.0a1.en-US.linux-i686.tar.bz2
+</span><span class='line'>tar xf b2g-17.0a1.en-US.linux-i686.tar.bz2</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>プロファイル作成</h3>
+
+<p>それなりに長いb2gのDLが完了したらMozillaスマフォのUIであるGaiaなるもののprofileを作成する。こっちはひたすら時間が掛かるので実行後放置推奨。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>cd b2g
+</span><span class='line'>git clone git://github.com/mozilla-b2g/gaia
+</span><span class='line'>make -C gaia profile</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>起動</h2>
+
+<p>プロファイルの作成が終わったら後は起動するだけ。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>./b2g -profile gaia/profile</span></code></pre></td></tr></table></div></figure>
+
+
+<p>以下テキトーにスクショ</p>
+
+<h3>ロック画面</h3>
+
+<p><img src="/images/2012/07/try-firefox-os-01.png" width="322"></p>
+
+<h3>ホーム画面</h3>
+
+<p><img src="/images/2012/07/try-firefox-os-02.png" width="322"></p>
+
+<h3>通知バー</h3>
+
+<p>Androidっぽい通知バーも一応ある。出し方も一緒</p>
+
+<p><img src="/images/2012/07/try-firefox-os-03.png" width="322"></p>
+
+<h3>ブラウザ</h3>
+
+<p>なんかブラウザでページ表示させると上2/3くらいが真っ黒になるのは自分だけだろうか。</p>
+
+<p><img src="/images/2012/07/try-firefox-os-04.png" width="322"></p>
+
+<h3>メール</h3>
+
+<p>メールも一応ある。流石になにかあったら怖いので自分のアカウントは入れてないけど。</p>
+
+<p><img src="/images/2012/07/try-firefox-os-05.png" width="322"></p>
+
+<h3>カメラ</h3>
+
+<p>カメラはあるけどやっぱり真っ暗。</p>
+
+<p><img src="/images/2012/07/try-firefox-os-06.png" width="322"></p>
+
+<p>マウスカーソルの存在忘れてたorz</p>
+
+<h2>参考サイト</h2>
+
+<p><a href="https://dev.mozilla.jp/2012/07/try-firefox-os/">Firefox OS を試す | Mozilla Developer Street (modest)</a></p>
+
+        
+        
+    </div>
+    <div class="meta">
+        <div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-07-23T13:52:00+09:00" pubdate data-updated="true">2012年07月23日</time></div>
+        <div class="tags">
+
+<div class="cat">
+  
+    <a class='category' href='/blog/categories/firefox/'>firefox</a>
+  
+</div>
+
+</div>
+        
+    </div>
+
+</article>
 
 
     <article class="post">
@@ -1372,158 +1632,6 @@ gem install bson_ext
 <div class="cat">
   
     <a class='category' href='/blog/categories/fluented/'>fluented</a>
-  
-</div>
-
-</div>
-        
-    </div>
-
-</article>
-
-
-    <article class="post">
-    <h1 class="title"><a href="/blog/2012/04/02/change-octopress-theme/">Octopressのテーマを変更してみた</a></h1>
-    <div class="entry">
-        <p>Octopressのテーマがデフォルトだとつまんないなーとか思ったので変更してみた。<br/>
-しかし今の所そんなにテーマが豊富じゃないようなのでそんなに選択肢は多くないっぽい。</p>
-
-<h2>テーマのインストール</h2>
-
-<p><a href="https://github.com/imathis/octopress/wiki/List-Of-Octopress-Themes">List Of Octopress Themes</a>にOctopress用のテーマがリストアップされています。
-今回は検索してて一番最初に見つけたSlashというテーマを入れてみます。<br/>
-インストール方法も上記Wikiに書いてある通りコマンドを3つほど実行するだけで簡単にインストールできます。</p>
-
-<pre><code>git clone git://github.com/tommy351/Octopress-Theme-Slash.git .themes/slash
-rake install['slash']
-</code></pre>
-
-<h2>テーマ確認</h2>
-
-<p>インストールが完了したらプレビューで確認してみましょう。<br/>
-サーバが立ち上がったあと http://127.0.0.1:4000/ とかで確認できるはずです。</p>
-
-<pre><code>rake preview
-</code></pre>
-
-<h2>テーマ反映</h2>
-
-<p>プレビューしてみて良い感じであればそのままgenerateして本番環境に反映させます。</p>
-
-<pre><code>rake gen_deploy
-</code></pre>
-
-<p>GitHub Pagesで運用している場合暫く待つとGitHubからメールが飛んできてテーマが変わるはず。</p>
-
-        
-        
-    </div>
-    <div class="meta">
-        <div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-04-02T00:58:00+09:00" pubdate data-updated="true">2012年04月02日</time></div>
-        <div class="tags">
-
-<div class="cat">
-  
-    <a class='category' href='/blog/categories/octopress/'>octopress</a>
-  
-</div>
-
-</div>
-        
-    </div>
-
-</article>
-
-
-    <article class="post">
-    <h1 class="title"><a href="/blog/2012/03/28/compile-vim/">Vim をソースからコンパイルする</a></h1>
-    <div class="entry">
-        <p>普段使っているプラギンが7.3以上専用だったりして、基本的にディストリ標準のVimだとまともに動かないので、最近はvimを自分でコンパイルしてる。<br/>
-こないだインストールした時にも思ったけど、新規でインストールする時に必要なパッケージとか調べるの面倒なのでメモしておく。<br/>
-UbuntuでインストールしたのでUbuntuになってるのでCentOSとかの場合は適宜置き換えること。<br/>
-もし今度CentOSでコンパイルすることがあれば追記するかも。</p>
-
-<h2>必要なパッケージのインストール</h2>
-
-<pre><code>sudo aptitude install mercurial libncurses-dev libx11-dev libxt-dev libgtk2.0-dev
-</code></pre>
-
-<h2>Vimのソースの取得</h2>
-
-<p>今後それなりにコンパイルすることになると思うので、VimはMercurialのリポジトリから取得してくる。</p>
-
-<pre><code>hg clone https://vim.googlecode.com/hg/ vim
-</code></pre>
-
-<p>2回目以降は以下の方法でリポジトリを更新する。</p>
-
-<pre><code>hg pull
-hg update
-</code></pre>
-
-<h2>Make</h2>
-
-<p>後は普通にコンパイルするだけ。configureのオプションは結構テキトー。とりあえず動いてるからいいかなーとか思ってる。
-自分しか使わないし、サーバ上とかで他の人が使ってなにかあったりしたら面倒なのでホームディレクトリ以下にインストールされるようにしてるくらいで後は普通かと。</p>
-
-<div><script src='https://gist.github.com/2218942.js?file='></script>
-<noscript><pre><code>#!/bin/sh
-
-./configure \
-    --prefix=$HOME/app/vim-7.3 \
-    --disable-darwin \
-    --disable-selinux \
-    --enable-fontset \
-    --enable-gnome-check \
-    --enable-gui=gtk2 \
-    --enable-multibyte \
-    --enable-perlinterp \
-    --enable-pythoninterp \
-    --enable-rubyinterp \
-    --with-vim-name=vim \
-    --with-compiledby=&quot;hamaco &lt;hamanaka.kazuhiro@gmail.com&gt;&quot; \
-    --with-features=huge \
-    --with-tlib=ncurses
-
-make &amp;&amp; make install</code></pre></noscript></div>
-
-
-<p>終わり!</p>
-
-        
-        
-    </div>
-    <div class="meta">
-        <div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-03-28T03:21:00+09:00" pubdate data-updated="true">2012年03月28日</time></div>
-        <div class="tags">
-
-<div class="cat">
-  
-    <a class='category' href='/blog/categories/vim/'>vim</a>
   
 </div>
 
