@@ -4,7 +4,7 @@
   <title><![CDATA[Category: vim | hamaco's blog]]></title>
   <link href="http://hamaco.github.com/blog/categories/vim/atom.xml" rel="self"/>
   <link href="http://hamaco.github.com/"/>
-  <updated>2012-11-14T22:51:10+09:00</updated>
+  <updated>2012-11-15T21:43:36+09:00</updated>
   <id>http://hamaco.github.com/</id>
   <author>
     <name><![CDATA[hamaco]]></name>
@@ -90,27 +90,7 @@ hg update
 <p>後は普通にコンパイルするだけ。configureのオプションは結構テキトー。とりあえず動いてるからいいかなーとか思ってる。
 自分しか使わないし、サーバ上とかで他の人が使ってなにかあったりしたら面倒なのでホームディレクトリ以下にインストールされるようにしてるくらいで後は普通かと。</p>
 
-<p><div><script src='https://gist.github.com/2218942.js?file='></script>
-<noscript><pre><code>#!/bin/sh
-
-./configure \
-	--prefix=$HOME/app/vim-7.3 \
-	--disable-darwin \
-	--disable-selinux \
-	--enable-fontset \
-	--enable-gnome-check \
-	--enable-gui=gtk2 \
-	--enable-multibyte \
-	--enable-perlinterp \
-	--enable-pythoninterp \
-	--enable-rubyinterp \
-	--with-vim-name=vim \
-	--with-compiledby=&quot;hamaco &lt;hamanaka.kazuhiro@gmail.com&gt;&quot; \
-	--with-features=huge \
-	--with-tlib=ncurses
-
-make &amp;&amp; make install</code></pre></noscript></div>
-</p>
+<p>{% gist 2218942 %}</p>
 
 <p>終わり!</p>
 ]]></content>

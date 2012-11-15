@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: blog | hamaco's blog]]></title>
+  <link href="http://hamaco.github.com/blog/categories/blog/atom.xml" rel="self"/>
+  <link href="http://hamaco.github.com/"/>
+  <updated>2012-11-15T21:43:23+09:00</updated>
+  <id>http://hamaco.github.com/</id>
+  <author>
+    <name><![CDATA[hamaco]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[ブログのテーマを変更してみた]]></title>
+    <link href="http://hamaco.github.com/blog/2012/11/15/change-octopress-theme/"/>
+    <updated>2012-11-15T21:24:00+09:00</updated>
+    <id>http://hamaco.github.com/blog/2012/11/15/change-octopress-theme</id>
+    <content type="html"><![CDATA[<p>久し振りに <a href="https://github.com/imathis/octopress/wiki/3rd-Party-Octopress-Themes">Octopressのテーマ一覧</a> を見たら結構テーマが増えていたのでテーマを変更してみました。</p>
+
+<p>今回は一番上にあった <a href="https://github.com/shashankmehta/greyshade">greyshade</a> っていうテーマを入れてみたのですが、ちょっとだけ面倒だったのでメモメモ。</p>
+
+<h2>インストール</h2>
+
+<p>インストール自体は他のテーマと同じ感じでOK。</p>
+
+<p><code>
+git clone git://github.com/shashankmehta/greyshade.git .themes/greyshade
+rake install['greyshade']
+</code></p>
+
+<h2>リンクカラー設定</h2>
+
+<p>このテーマはリンクカラーを自分で決めないといけないみたいなので _colors.scss に <code>$greyshade: {color}</code> を追加します。
+今回はこのテーマのデモページと同じ色にしてみました。</p>
+
+<p><code>
+echo "\$greyshade: #2571B8;" &gt;&gt; sass/custom/_colors.scss
+</code></p>
+
+<h2>プロフィール画像設定</h2>
+
+<p>結構目立つ所にプロフィール画像が表示されるので source/images/dp.jpg に自分のプロフィール画像を配置します。</p>
+
+<p><code>
+cp {my_profile}.jpg source/images/dp.jpg
+</code></p>
+
+<h2>見た目修正</h2>
+
+<p>ヘッダー部分のソーシャルアイコンが以下の画像のように微妙に変な位置に表示されてしまっていたのでちょこっとだけテンプレートを編集します。</p>
+
+<p><img src="/images/2012/11/change-octopress-theme-01.png"></p>
+
+<p>といっても source/_includes/header.html の7行目からalignleftを取り除くだけですが。</p>
+
+<p><code>
+vim source/_includes/header.html
+</code></p>
+
+<p><code>
+- &lt;h3 class="alignleft"&gt;特に考えてない&lt;/h3&gt;
++ &lt;h3特に考えてない&lt;/h3&gt;
+</code></p>
+
+<h2>おしまい</h2>
+
+<p>後は普通に deploy すれば完了です。</p>
+]]></content>
+  </entry>
+  
+</feed>

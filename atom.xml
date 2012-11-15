@@ -4,7 +4,7 @@
   <title><![CDATA[hamaco's blog]]></title>
   <link href="http://hamaco.github.com/atom.xml" rel="self"/>
   <link href="http://hamaco.github.com/"/>
-  <updated>2012-11-14T22:51:10+09:00</updated>
+  <updated>2012-11-15T21:43:23+09:00</updated>
   <id>http://hamaco.github.com/</id>
   <author>
     <name><![CDATA[hamaco]]></name>
@@ -14,9 +14,71 @@
 
   
   <entry>
+    <title type="html"><![CDATA[ブログのテーマを変更してみた]]></title>
+    <link href="http://hamaco.github.com/blog/2012/11/15/change-octopress-theme/"/>
+    <updated>2012-11-15T21:24:00+09:00</updated>
+    <id>http://hamaco.github.com/blog/2012/11/15/change-octopress-theme</id>
+    <content type="html"><![CDATA[<p>久し振りに <a href="https://github.com/imathis/octopress/wiki/3rd-Party-Octopress-Themes">Octopressのテーマ一覧</a> を見たら結構テーマが増えていたのでテーマを変更してみました。</p>
+
+<p>今回は一番上にあった <a href="https://github.com/shashankmehta/greyshade">greyshade</a> っていうテーマを入れてみたのですが、ちょっとだけ面倒だったのでメモメモ。</p>
+
+<h2>インストール</h2>
+
+<p>インストール自体は他のテーマと同じ感じでOK。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git clone git://github.com/shashankmehta/greyshade.git .themes/greyshade
+</span><span class='line'>rake install['greyshade']</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>リンクカラー設定</h2>
+
+<p>このテーマはリンクカラーを自分で決めないといけないみたいなので _colors.scss に <code>$greyshade: {color}</code> を追加します。
+今回はこのテーマのデモページと同じ色にしてみました。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>echo "\$greyshade: #2571B8;" &gt;&gt; sass/custom/_colors.scss</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>プロフィール画像設定</h2>
+
+<p>結構目立つ所にプロフィール画像が表示されるので source/images/dp.jpg に自分のプロフィール画像を配置します。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>cp {my_profile}.jpg source/images/dp.jpg</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>見た目修正</h2>
+
+<p>ヘッダー部分のソーシャルアイコンが以下の画像のように微妙に変な位置に表示されてしまっていたのでちょこっとだけテンプレートを編集します。</p>
+
+<p><img src="http://hamaco.github.com/images/2012/11/change-octopress-theme-01.png"></p>
+
+<p>といっても source/_includes/header.html の7行目からalignleftを取り除くだけですが。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>vim source/_includes/header.html</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>- &lt;h3 class="alignleft"&gt;特に考えてない&lt;/h3&gt;
+</span><span class='line'>+ &lt;h3特に考えてない&lt;/h3&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>おしまい</h2>
+
+<p>後は普通に deploy すれば完了です。</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[PHP Matsuri 2012に参加してきた]]></title>
     <link href="http://hamaco.github.com/blog/2012/11/14/phpmatsuri-2012/"/>
-    <updated>2012-11-14T11:33:00+09:00</updated>
+    <updated>2012-11-14T23:04:00+09:00</updated>
     <id>http://hamaco.github.com/blog/2012/11/14/phpmatsuri-2012</id>
     <content type="html"><![CDATA[<p>11/3 - 11/4に福岡で開催されたPHP Matsuri 2012に参加してきました。
 東京のMatsuriには行ったことがないのでPHP Matsuriの参加は前回の関西に続いて2回目の参加です。</p>
@@ -1426,90 +1488,6 @@ make &amp;&amp; make install</code></pre></noscript></div>
 
 
 <p>終わり!</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[GitHub PagesでOctopress使ってみる]]></title>
-    <link href="http://hamaco.github.com/blog/2012/03/23/install-octopress/"/>
-    <updated>2012-03-23T00:46:00+09:00</updated>
-    <id>http://hamaco.github.com/blog/2012/03/23/install-octopress</id>
-    <content type="html"><![CDATA[<p>Markdownでメモ書きたかったので以前1回やったOctopressをまたセットアップしてみた。
-前やった時のメモとか公式とか見ながら再度セットアップしたのでMarkdownの練習兼ねてメモ。</p>
-
-<h2>Github Pages用のリポジトリ作成</h2>
-
-<p><a href="https://github.com/repositories/new">GitHub</a>で hamaco.github.com という名前でリポジトリを作成する。</p>
-
-<h2>Octopressのダウンロード</h2>
-
-<p>ダウンロードというかgitでcloneしてくる。</p>
-
-<pre><code>git clone https://github.com/imathis/octopress.git
-</code></pre>
-
-<p>bundlerとかいうやつで必要なgemとかインストールして初期処理を行う。</p>
-
-<pre><code>cd octopress
-gem install bundler
-bundle install
-rake install
-</code></pre>
-
-<h2>Octopressの設定</h2>
-
-<h3>初期設定</h3>
-
-<p>下記コマンドを実行するとgithubのリポジトリを聞かれるので最初に作成したGithub PageのリポジトリURLを指定する。</p>
-
-<pre><code>rake setup_github_pages
-
-git@github.com:hamaco/hamaco.github.com.git
-</code></pre>
-
-<p>その後、下記コマンドを実行してしばらく(10分弱)待つと見れるようになる。</p>
-
-<pre><code>rake generate
-rake deploy
-</code></pre>
-
-<h3>Blogの設定</h3>
-
-<p>設定ファイルを弄ってタイトルとかをちゃんとしたのにする。</p>
-
-<pre><code>gvim _config.yml
-</code></pre>
-
-<h2>記事の作成</h2>
-
-<p>記事を作成するのにはrakeを実行して、内容を書いてやる。</p>
-
-<pre><code>rake new_post\["title name"\]
-gvim source/_posts/2012-03-23-title-name.markdown
-</code></pre>
-
-<h2>ソースの管理</h2>
-
-<p>なんかプロジェクトページとユーザページを統合しとくと面倒とか書いてあるブログがあったりしたので丁度アカウントも持ってたしBitbucketでソースを管理するようにしてみる。<br/>
-と言ってもBitbucketでリポジトリを作成してpushしてあげるだけ。<br/>
-Bitbucketでのリポジトリ作成はGitHubとたいして変わらないので割愛。分からなければ参考サイト見て下さい。</p>
-
-<pre><code>git add .
-git commit -m 'commit message'
-git push origin source
-git remote add bitbucket git@bitbucket.org:hamaco/octopress-github.git
-git push -u bitbucket source
-</code></pre>
-
-<h2>参考サイト</h2>
-
-<ul>
-<li><a href="http://octopress.org/docs/setup/">Octopress Setup - Octopress</a></li>
-<li><a href="http://mattn.kaoriya.net/software/lang/ruby/20111017205717.htm">Big Sky :: githubとjekyllとoctopressで作る簡単でモダンなブログ</a></li>
-<li><a href="http://www.glidenote.com/archives/1517">GithubとOctopressでモダンな技術系ブログを作ってみる | Glide Note - グライドノート</a></li>
-<li><a href="http://tokkonopapa.github.com/blog/2011/12/30/octopress-on-github-and-bitbucket/">Octopressのインストールから運用管理まで - T.I.D.</a></li>
-</ul>
-
 ]]></content>
   </entry>
   
