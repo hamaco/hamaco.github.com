@@ -4,7 +4,7 @@
   <title><![CDATA[hamaco's blog]]></title>
   <link href="http://hamaco.github.com/atom.xml" rel="self"/>
   <link href="http://hamaco.github.com/"/>
-  <updated>2012-11-15T21:43:23+09:00</updated>
+  <updated>2012-11-15T21:50:30+09:00</updated>
   <id>http://hamaco.github.com/</id>
   <author>
     <name><![CDATA[hamaco]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[ブログのテーマを変更してみた]]></title>
     <link href="http://hamaco.github.com/blog/2012/11/15/change-octopress-theme/"/>
-    <updated>2012-11-15T21:24:00+09:00</updated>
+    <updated>2012-11-15T21:44:00+09:00</updated>
     <id>http://hamaco.github.com/blog/2012/11/15/change-octopress-theme</id>
     <content type="html"><![CDATA[<p>久し振りに <a href="https://github.com/imathis/octopress/wiki/3rd-Party-Octopress-Themes">Octopressのテーマ一覧</a> を見たら結構テーマが増えていたのでテーマを変更してみました。</p>
 
@@ -56,18 +56,6 @@
 <p><img src="http://hamaco.github.com/images/2012/11/change-octopress-theme-01.png"></p>
 
 <p>といっても source/_includes/header.html の7行目からalignleftを取り除くだけですが。</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>vim source/_includes/header.html</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>- &lt;h3 class="alignleft"&gt;特に考えてない&lt;/h3&gt;
-</span><span class='line'>+ &lt;h3特に考えてない&lt;/h3&gt;</span></code></pre></td></tr></table></div></figure>
-
 
 <h2>おしまい</h2>
 

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: blog | hamaco's blog]]></title>
   <link href="http://hamaco.github.com/blog/categories/blog/atom.xml" rel="self"/>
   <link href="http://hamaco.github.com/"/>
-  <updated>2012-11-15T21:43:23+09:00</updated>
+  <updated>2012-11-15T21:50:30+09:00</updated>
   <id>http://hamaco.github.com/</id>
   <author>
     <name><![CDATA[hamaco]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[ブログのテーマを変更してみた]]></title>
     <link href="http://hamaco.github.com/blog/2012/11/15/change-octopress-theme/"/>
-    <updated>2012-11-15T21:24:00+09:00</updated>
+    <updated>2012-11-15T21:44:00+09:00</updated>
     <id>http://hamaco.github.com/blog/2012/11/15/change-octopress-theme</id>
     <content type="html"><![CDATA[<p>久し振りに <a href="https://github.com/imathis/octopress/wiki/3rd-Party-Octopress-Themes">Octopressのテーマ一覧</a> を見たら結構テーマが増えていたのでテーマを変更してみました。</p>
 
@@ -55,15 +55,6 @@ cp {my_profile}.jpg source/images/dp.jpg
 <p><img src="/images/2012/11/change-octopress-theme-01.png"></p>
 
 <p>といっても source/_includes/header.html の7行目からalignleftを取り除くだけですが。</p>
-
-<p><code>
-vim source/_includes/header.html
-</code></p>
-
-<p><code>
-- &lt;h3 class="alignleft"&gt;特に考えてない&lt;/h3&gt;
-+ &lt;h3特に考えてない&lt;/h3&gt;
-</code></p>
 
 <h2>おしまい</h2>
 
