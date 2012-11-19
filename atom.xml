@@ -4,7 +4,7 @@
   <title><![CDATA[hamaco's blog]]></title>
   <link href="http://hamaco.github.com/atom.xml" rel="self"/>
   <link href="http://hamaco.github.com/"/>
-  <updated>2012-11-15T21:50:30+09:00</updated>
+  <updated>2012-11-19T12:09:38+09:00</updated>
   <id>http://hamaco.github.com/</id>
   <author>
     <name><![CDATA[hamaco]]></name>
@@ -12,6 +12,56 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[SpeakerDeckのスライドを操作するvimperatorプラグイン書いてみた]]></title>
+    <link href="http://hamaco.github.com/blog/2012/11/19/speakerdeck-js/"/>
+    <updated>2012-11-19T12:12:00+09:00</updated>
+    <id>http://hamaco.github.com/blog/2012/11/19/speakerdeck-js</id>
+    <content type="html"><![CDATA[<p>slideshare.js プラグインが便利で、SpeakerDeck でも同じ様に h/l でスライドをめくりたかったので slideshare.js を参考にプラグイン書いてみた。</p>
+
+<p>まだ vimperator のプラグイン良く分かってなくて、PLUGIN_INFO だか INFO だかを書いたほうが良いっぽいんだけどどっちが正しいのかが分からなかったので書いてない……</p>
+
+<div><script src='https://gist.github.com/4105959.js?file='></script>
+<noscript><pre><code>(function() {
+  var SpeakerDeck = function() {
+    var doc = content.document;
+    if (doc.location.host !== 'speakerdeck.com') {
+      return liberator.echoerr('Current page is not speakerdeck.');
+    }
+
+    var iframe = doc.wrappedJSObject.getElementsByClassName('speakerdeck-iframe')[0];
+    var slide  = iframe.contentWindow.Slide;
+
+    return {
+      next: function() {
+        slide.next();
+      },
+      prev: function() {
+        slide.previous();
+      }
+    }
+  };
+
+  commands.addUserCommand(
+    ['speakerdeck'],
+    'Speaker Deck controller',
+    function() {
+    },
+    {
+      subCommands: [
+        new Command(['n[ext]'], 'Go next page',     function() SpeakerDeck().next()),
+        new Command(['p[rev]'], 'Go previous page', function() SpeakerDeck().prev()),
+      ]
+    },
+    true
+  );
+})();</code></pre></noscript></div>
+
+
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[ブログのテーマを変更してみた]]></title>
@@ -1417,65 +1467,6 @@ rake install['slash']
 </code></pre>
 
 <p>GitHub Pagesで運用している場合暫く待つとGitHubからメールが飛んできてテーマが変わるはず。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Vim をソースからコンパイルする]]></title>
-    <link href="http://hamaco.github.com/blog/2012/03/28/compile-vim/"/>
-    <updated>2012-03-28T03:21:00+09:00</updated>
-    <id>http://hamaco.github.com/blog/2012/03/28/compile-vim</id>
-    <content type="html"><![CDATA[<p>普段使っているプラギンが7.3以上専用だったりして、基本的にディストリ標準のVimだとまともに動かないので、最近はvimを自分でコンパイルしてる。<br/>
-こないだインストールした時にも思ったけど、新規でインストールする時に必要なパッケージとか調べるの面倒なのでメモしておく。<br/>
-UbuntuでインストールしたのでUbuntuになってるのでCentOSとかの場合は適宜置き換えること。<br/>
-もし今度CentOSでコンパイルすることがあれば追記するかも。</p>
-
-<h2>必要なパッケージのインストール</h2>
-
-<pre><code>sudo aptitude install mercurial libncurses-dev libx11-dev libxt-dev libgtk2.0-dev
-</code></pre>
-
-<h2>Vimのソースの取得</h2>
-
-<p>今後それなりにコンパイルすることになると思うので、VimはMercurialのリポジトリから取得してくる。</p>
-
-<pre><code>hg clone https://vim.googlecode.com/hg/ vim
-</code></pre>
-
-<p>2回目以降は以下の方法でリポジトリを更新する。</p>
-
-<pre><code>hg pull
-hg update
-</code></pre>
-
-<h2>Make</h2>
-
-<p>後は普通にコンパイルするだけ。configureのオプションは結構テキトー。とりあえず動いてるからいいかなーとか思ってる。
-自分しか使わないし、サーバ上とかで他の人が使ってなにかあったりしたら面倒なのでホームディレクトリ以下にインストールされるようにしてるくらいで後は普通かと。</p>
-
-<div><script src='https://gist.github.com/2218942.js?file='></script>
-<noscript><pre><code>#!/bin/sh
-
-./configure \
-    --prefix=$HOME/app/vim-7.3 \
-    --disable-darwin \
-    --disable-selinux \
-    --enable-fontset \
-    --enable-gnome-check \
-    --enable-gui=gtk2 \
-    --enable-multibyte \
-    --enable-perlinterp \
-    --enable-pythoninterp \
-    --enable-rubyinterp \
-    --with-vim-name=vim \
-    --with-compiledby=&quot;hamaco &lt;hamanaka.kazuhiro@gmail.com&gt;&quot; \
-    --with-features=huge \
-    --with-tlib=ncurses
-
-make &amp;&amp; make install</code></pre></noscript></div>
-
-
-<p>終わり!</p>
 ]]></content>
   </entry>
   

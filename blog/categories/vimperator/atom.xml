@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: vimperator | hamaco's blog]]></title>
+  <link href="http://hamaco.github.com/blog/categories/vimperator/atom.xml" rel="self"/>
+  <link href="http://hamaco.github.com/"/>
+  <updated>2012-11-19T12:09:38+09:00</updated>
+  <id>http://hamaco.github.com/</id>
+  <author>
+    <name><![CDATA[hamaco]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[SpeakerDeckのスライドを操作するvimperatorプラグイン書いてみた]]></title>
+    <link href="http://hamaco.github.com/blog/2012/11/19/speakerdeck-js/"/>
+    <updated>2012-11-19T12:12:00+09:00</updated>
+    <id>http://hamaco.github.com/blog/2012/11/19/speakerdeck-js</id>
+    <content type="html"><![CDATA[<p>slideshare.js プラグインが便利で、SpeakerDeck でも同じ様に h/l でスライドをめくりたかったので slideshare.js を参考にプラグイン書いてみた。</p>
+
+<p>まだ vimperator のプラグイン良く分かってなくて、PLUGIN_INFO だか INFO だかを書いたほうが良いっぽいんだけどどっちが正しいのかが分からなかったので書いてない……</p>
+
+<p><div><script src='https://gist.github.com/4105959.js?file='></script>
+<noscript><pre><code>(function() {
+  var SpeakerDeck = function() {
+    var doc = content.document;
+    if (doc.location.host !== 'speakerdeck.com') {
+      return liberator.echoerr('Current page is not speakerdeck.');
+    }
+
+    var iframe = doc.wrappedJSObject.getElementsByClassName('speakerdeck-iframe')[0];
+    var slide  = iframe.contentWindow.Slide;
+
+    return {
+      next: function() {
+        slide.next();
+      },
+      prev: function() {
+        slide.previous();
+      }
+    }
+  };
+
+  commands.addUserCommand(
+    ['speakerdeck'],
+    'Speaker Deck controller',
+    function() {
+    },
+    {
+      subCommands: [
+        new Command(['n[ext]'], 'Go next page',     function() SpeakerDeck().next()),
+        new Command(['p[rev]'], 'Go previous page', function() SpeakerDeck().prev()),
+      ]
+    },
+    true
+  );
+})();</code></pre></noscript></div>
+</p>
+]]></content>
+  </entry>
+  
+</feed>

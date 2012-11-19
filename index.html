@@ -7,8 +7,7 @@
 	<meta name="author" content="hamaco">
 
 	
-	<meta name="description" content="久し振りに Octopressのテーマ一覧 を見たら結構テーマが増えていたのでテーマを変更してみました。 今回は一番上にあった greyshade っていうテーマを入れてみたのですが、ちょっとだけ面倒だったのでメモメモ。 インストール インストール自体は他のテーマと同じ感じでOK。 1
-2 &hellip;">
+	<meta name="description" content="slideshare.js プラグインが便利で、SpeakerDeck でも同じ様に h/l でスライドをめくりたかったので slideshare.js を参考にプラグイン書いてみた。 まだ vimperator のプラグイン良く分かってなくて、PLUGIN_INFO だか INFO &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -77,6 +76,82 @@
 			
 			<div class="mid-col-container">
 				<div id="content" class="inner">
+
+
+    <article class="post">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-11-19T12:12:00+09:00" pubdate data-updated="true">2012年11月19日</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/vimperator/'>vimperator</a>
+
+
+</div>
+		
+	</div>
+	<h1 class="title"><a href="/blog/2012/11/19/speakerdeck-js/">SpeakerDeckのスライドを操作するvimperatorプラグイン書いてみた</a></h1>
+	<div class="entry-content">
+		<p>slideshare.js プラグインが便利で、SpeakerDeck でも同じ様に h/l でスライドをめくりたかったので slideshare.js を参考にプラグイン書いてみた。</p>
+
+<p>まだ vimperator のプラグイン良く分かってなくて、PLUGIN_INFO だか INFO だかを書いたほうが良いっぽいんだけどどっちが正しいのかが分からなかったので書いてない……</p>
+
+<div><script src='https://gist.github.com/4105959.js?file='></script>
+<noscript><pre><code>(function() {
+  var SpeakerDeck = function() {
+    var doc = content.document;
+    if (doc.location.host !== 'speakerdeck.com') {
+      return liberator.echoerr('Current page is not speakerdeck.');
+    }
+
+    var iframe = doc.wrappedJSObject.getElementsByClassName('speakerdeck-iframe')[0];
+    var slide  = iframe.contentWindow.Slide;
+
+    return {
+      next: function() {
+        slide.next();
+      },
+      prev: function() {
+        slide.previous();
+      }
+    }
+  };
+
+  commands.addUserCommand(
+    ['speakerdeck'],
+    'Speaker Deck controller',
+    function() {
+    },
+    {
+      subCommands: [
+        new Command(['n[ext]'], 'Go next page',     function() SpeakerDeck().next()),
+        new Command(['p[rev]'], 'Go previous page', function() SpeakerDeck().prev()),
+      ]
+    },
+    true
+  );
+})();</code></pre></noscript></div>
+
+
+
+
+		
+		
+	</div>
+
+</article>
 
 
     <article class="post">
@@ -1455,39 +1530,6 @@ jsxファイル単体をbinの中に置いても動作しなかったのでgit c
 
 
 <p>まだMoshのメリットを享受してないので分からないですが、良い感じなら他のサーバにも導入しようかな。</p>
-
-		
-		
-	</div>
-
-</article>
-
-
-    <article class="post">
-	<div class="meta">
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-04-10T10:53:00+09:00" pubdate data-updated="true">2012年04月10日</time></div>
-		<div class="tags">
-
-</div>
-		
-	</div>
-	<h1 class="title"><a href="/blog/2012/04/10/reading-estimates/">「X分で読めるよ」のブログパーツ入れてみたったよー！</a></h1>
-	<div class="entry-content">
-		<p>人のブログ見てて、ふと思い立ったので「X分で読めるよ」ブログパーツを入れてみたった。<br/>
-プログラム弄るの面倒だったので、<a href="http://looxu.blogspot.jp/2010/08/x.html">arccosineさんが作ったJavaScriptで動くやつ</a>を使ってます。<br/>
-しかし、theme以下がgitに入ってなかったのでとりあえず生成後のファイルに直書きしてしまっているので後で直さんといかんなぁ……</p>
 
 		
 		
