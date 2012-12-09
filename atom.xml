@@ -4,7 +4,7 @@
   <title><![CDATA[hamaco's blog]]></title>
   <link href="http://hamaco.github.com/atom.xml" rel="self"/>
   <link href="http://hamaco.github.com/"/>
-  <updated>2012-12-09T18:58:02+09:00</updated>
+  <updated>2012-12-09T19:05:38+09:00</updated>
   <id>http://hamaco.github.com/</id>
   <author>
     <name><![CDATA[hamaco]]></name>
@@ -14,9 +14,9 @@
 
   
   <entry>
-    <title type="html"><![CDATA[CakePHP AdventCalendar 2012]]></title>
+    <title type="html"><![CDATA[CandyCane API実装中]]></title>
     <link href="http://hamaco.github.com/blog/2012/12/09/cakephp-adventcalendar-2012/"/>
-    <updated>2012-12-09T18:42:00+09:00</updated>
+    <updated>2012-12-09T19:02:00+09:00</updated>
     <id>http://hamaco.github.com/blog/2012/12/09/cakephp-adventcalendar-2012</id>
     <content type="html"><![CDATA[<p>このエントリは、<a href="http://www.adventar.org/calendars/40">CakePHP Advent Calendar 2012</a>の9日目です。8日目は<a href="https://twitter.com/junichi_11">@junichi_11</a>さんの「<a href="http://junichi11.com/?p=2665">NetBeans plugin の改善点</a>」でした。</p>
 
@@ -27,7 +27,7 @@
 <h2>REST API</h2>
 
 <p>RedmineにはREST APIというものがあって、XMLやJSON形式でチケットの一覧が見れたり、チケットの登録などの作業がRedmineのWebページを使わずにできるようになっています。
-ここで紹介するだけあって、もちろんCandyCaneには実装されてません。</p>
+ここで紹介するだけあって、もちろんCandyCaneには実装されてません(でした)。</p>
 
 <p>そんな訳で一部APIをさっき実装してみました。
 今回は <a href="https://github.com/yuroyoro/git-issue">git-issue</a> というRedmineのチケットを表示・編集できるツールが使えるようにしたいというのを目標に実装してみたので、それの動作をRedmineとCandyCaneで比較しつつ紹介していきたいと思います。</p>

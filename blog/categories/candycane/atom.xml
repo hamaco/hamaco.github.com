@@ -4,7 +4,7 @@
   <title><![CDATA[Category: candycane | hamaco's blog]]></title>
   <link href="http://hamaco.github.com/blog/categories/candycane/atom.xml" rel="self"/>
   <link href="http://hamaco.github.com/"/>
-  <updated>2012-12-09T19:02:13+09:00</updated>
+  <updated>2012-12-09T19:05:38+09:00</updated>
   <id>http://hamaco.github.com/</id>
   <author>
     <name><![CDATA[hamaco]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[CakePHP AdventCalendar 2012]]></title>
+    <title type="html"><![CDATA[CandyCane API実装中]]></title>
     <link href="http://hamaco.github.com/blog/2012/12/09/cakephp-adventcalendar-2012/"/>
     <updated>2012-12-09T19:02:00+09:00</updated>
     <id>http://hamaco.github.com/blog/2012/12/09/cakephp-adventcalendar-2012</id>
@@ -27,7 +27,7 @@
 <h2>REST API</h2>
 
 <p>RedmineにはREST APIというものがあって、XMLやJSON形式でチケットの一覧が見れたり、チケットの登録などの作業がRedmineのWebページを使わずにできるようになっています。
-ここで紹介するだけあって、もちろんCandyCaneには実装されてません。</p>
+ここで紹介するだけあって、もちろんCandyCaneには実装されてません(でした)。</p>
 
 <p>そんな訳で一部APIをさっき実装してみました。
 今回は <a href="https://github.com/yuroyoro/git-issue">git-issue</a> というRedmineのチケットを表示・編集できるツールが使えるようにしたいというのを目標に実装してみたので、それの動作をRedmineとCandyCaneで比較しつつ紹介していきたいと思います。</p>
@@ -39,11 +39,11 @@
 
 <h3>Redmine</h3>
 
-<p>{% img /images/2012/12/cakephp-adventcalendar-2012-01.png %}</p>
+<p><img src="/images/2012/12/cakephp-adventcalendar-2012-01.png"></p>
 
 <h3>CandyCane</h3>
 
-<p>{% img /images/2012/12/cakephp-adventcalendar-2012-02.png %}</p>
+<p><img src="/images/2012/12/cakephp-adventcalendar-2012-02.png"></p>
 
 <h2>git-issueの設定</h2>
 
@@ -65,11 +65,11 @@ type以外の部分は自分のCandyCane/Redmineのに合わせて変えて下�
 
 <h3>Redmine</h3>
 
-<p>{% img /images/2012/12/cakephp-adventcalendar-2012-03.png 680 %}</p>
+<p><img src="/images/2012/12/cakephp-adventcalendar-2012-03.png" width="680"></p>
 
 <h3>CandyCane</h3>
 
-<p>{% img /images/2012/12/cakephp-adventcalendar-2012-04.png 680 %}</p>
+<p><img src="/images/2012/12/cakephp-adventcalendar-2012-04.png" width="680"></p>
 
 <h2>チケットの詳細表示</h2>
 
@@ -77,11 +77,11 @@ type以外の部分は自分のCandyCane/Redmineのに合わせて変えて下�
 
 <h3>Redmine</h3>
 
-<p>{% img /images/2012/12/cakephp-adventcalendar-2012-05.png 680 %}</p>
+<p><img src="/images/2012/12/cakephp-adventcalendar-2012-05.png" width="680"></p>
 
 <h3>CandyCane</h3>
 
-<p>{% img /images/2012/12/cakephp-adventcalendar-2012-06.png 680 %}</p>
+<p><img src="/images/2012/12/cakephp-adventcalendar-2012-06.png" width="680"></p>
 
 <h2>チケットの登録</h2>
 
@@ -123,11 +123,11 @@ git clone https://github.com/hamaco/candycane-gal.git app/Plugin/CcGal
 
 <h3>Before</h3>
 
-<p>{% img /images/2012/06/candycane-gal-01.png 480 %}</p>
+<p><img src="/images/2012/06/candycane-gal-01.png" width="480"></p>
 
 <h3>After</h3>
 
-<p>{% img /images/2012/06/candycane-gal-02.png 480 %}</p>
+<p><img src="/images/2012/06/candycane-gal-02.png" width="480"></p>
 
 <h2>参考サイト</h2>
 
@@ -198,15 +198,15 @@ $ wget https://raw.github.com/farend/redmine_theme_farend_basic/master/styleshee
 <p>テーマファイルを設置したら後はCandyCaneの画面上でfarend basicテーマを使用するよう設定します。
 管理の設定からテーマのセレクトボックスでfarend_basicを選択すると、さっきDLしてきたfarend_basicが使えるようになります。</p>
 
-<p>{% img /images/2012/06/candycane-theme-01.png 480 %}</p>
+<p><img src="/images/2012/06/candycane-theme-01.png" width="480"></p>
 
 <p>このテーマは基本的な所は変わらないので分かりにくいですが、チケットの一覧ページに行くと優先度に応じて色が付いているのが分かると思います。</p>
 
-<p>{% img /images/2012/06/candycane-theme-02.png 480 %}</p>
+<p><img src="/images/2012/06/candycane-theme-02.png" width="480"></p>
 
 <p>書いてから投稿までに数日経ってしまったのでちょっと他のテーマも動かしてみました。<a href="http://www.redmine.org/projects/redmine/wiki/Theme_List">Redmineのテーマ一覧</a>一覧の一番上にあったA1 themeっていうテーマです。これもfarend basicと同じやり方で使えます。</p>
 
-<p>{% img /images/2012/06/candycane-theme-03.png 480 %}</p>
+<p><img src="/images/2012/06/candycane-theme-03.png" width="480"></p>
 
 <h2>終わりに</h2>
 
