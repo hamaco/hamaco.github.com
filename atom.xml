@@ -4,7 +4,7 @@
   <title><![CDATA[hamaco's blog]]></title>
   <link href="http://hamaco.github.com/atom.xml" rel="self"/>
   <link href="http://hamaco.github.com/"/>
-  <updated>2012-11-19T12:09:38+09:00</updated>
+  <updated>2012-12-09T18:58:02+09:00</updated>
   <id>http://hamaco.github.com/</id>
   <author>
     <name><![CDATA[hamaco]]></name>
@@ -12,6 +12,92 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[CakePHP AdventCalendar 2012]]></title>
+    <link href="http://hamaco.github.com/blog/2012/12/09/cakephp-adventcalendar-2012/"/>
+    <updated>2012-12-09T18:42:00+09:00</updated>
+    <id>http://hamaco.github.com/blog/2012/12/09/cakephp-adventcalendar-2012</id>
+    <content type="html"><![CDATA[<p>このエントリは、<a href="http://www.adventar.org/calendars/40">CakePHP Advent Calendar 2012</a>の9日目です。8日目は<a href="https://twitter.com/junichi_11">@junichi_11</a>さんの「<a href="http://junichi11.com/?p=2665">NetBeans plugin の改善点</a>」でした。</p>
+
+<h2>はじめに</h2>
+
+<p>普段仕事でCakePHPをメインに使ってるとかそういったことがまったくなく、私がCakePHPをネタにする時は大体CandyCaneネタなので、今回もCandyCaneネタでいきたいと思います。</p>
+
+<h2>REST API</h2>
+
+<p>RedmineにはREST APIというものがあって、XMLやJSON形式でチケットの一覧が見れたり、チケットの登録などの作業がRedmineのWebページを使わずにできるようになっています。
+ここで紹介するだけあって、もちろんCandyCaneには実装されてません。</p>
+
+<p>そんな訳で一部APIをさっき実装してみました。
+今回は <a href="https://github.com/yuroyoro/git-issue">git-issue</a> というRedmineのチケットを表示・編集できるツールが使えるようにしたいというのを目標に実装してみたので、それの動作をRedmineとCandyCaneで比較しつつ紹介していきたいと思います。</p>
+
+<h2>API keyの作成</h2>
+
+<p>API keyの作成部分はCandyCane側は今の所APIをOFFにできないくらいで基本的な作成方法は同じになっています。
+個人設定ページの右サイドバーにAPI keyの表示・作成がある感じですね。</p>
+
+<h3>Redmine</h3>
+
+<p><img src="http://hamaco.github.com/images/2012/12/cakephp-adventcalendar-2012-01.png"></p>
+
+<h3>CandyCane</h3>
+
+<p><img src="http://hamaco.github.com/images/2012/12/cakephp-adventcalendar-2012-02.png"></p>
+
+<h2>git-issueの設定</h2>
+
+<p>一応git-issueの初期設定も簡単に書いておきます。
+git-issueを使いたいプロジェクトの中で以下のようにコマンドを打つとgit issueサブコマンドで色々できるようになります。
+type以外の部分は自分のCandyCane/Redmineのに合わせて変えて下さい。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>% git config issue.type redmine
+</span><span class='line'>% git config issue.url http://candycane.hamacbook.local/
+</span><span class='line'>% git config issue.apikey e9897fd4de9570b5d61744d8ab1e18b796615e5b
+</span><span class='line'>% git config issue.repo candycane
+</span><span class='line'>% git config issue.user hamaco</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>チケットの一覧表示</h2>
+
+<p>CandyCane/Redmineに登録されているチケットの一覧が表示できます。</p>
+
+<h3>Redmine</h3>
+
+<p><img src="http://hamaco.github.com/images/2012/12/cakephp-adventcalendar-2012-03.png" width="680"></p>
+
+<h3>CandyCane</h3>
+
+<p><img src="http://hamaco.github.com/images/2012/12/cakephp-adventcalendar-2012-04.png" width="680"></p>
+
+<h2>チケットの詳細表示</h2>
+
+<p>CandyCane/Redmineに登録されているチケットの詳細が表示できます。</p>
+
+<h3>Redmine</h3>
+
+<p><img src="http://hamaco.github.com/images/2012/12/cakephp-adventcalendar-2012-05.png" width="680"></p>
+
+<h3>CandyCane</h3>
+
+<p><img src="http://hamaco.github.com/images/2012/12/cakephp-adventcalendar-2012-06.png" width="680"></p>
+
+<h2>チケットの登録</h2>
+
+<p>ここが一番やりたかったのですが、時間がなくなってしまったのと、git-issueがチケット登録時にJSONでデータを渡していて、CakePHPで上手いやり方が分からなかったので実装できてません……</p>
+
+<h2>最後に</h2>
+
+<p>まだまだ全然できてないですが、一応多少作ったので紹介してみました。まだ本家にpull requestを投げてないので、今は<a href="https://github.com/hamaco/candycane/tree/api-access">ここのブランチ</a>をチェックアウトしてくると試す事ができます。</p>
+
+<p>明日は<a href="https://twitter.com/yandod">@yandod</a>さんです。よろしくお願いしますー。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[SpeakerDeckのスライドを操作するvimperatorプラグイン書いてみた]]></title>
@@ -45,9 +131,8 @@
 
   commands.addUserCommand(
     ['speakerdeck'],
-    'Speaker Deck controller',
-    function() {
-    },
+    'SpeakerDeck controller',
+    function() {},
     {
       subCommands: [
         new Command(['n[ext]'], 'Go next page',     function() SpeakerDeck().next()),
@@ -1430,43 +1515,6 @@ gem install bson_ext
 
 
 <p>後はテキトーにwebにアクセスすると、Webサーバのstdoutに出力 -> DBサーバのstdoutに出力 -> MongoDBに保存 とされる。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Octopressのテーマを変更してみた]]></title>
-    <link href="http://hamaco.github.com/blog/2012/04/02/change-octopress-theme/"/>
-    <updated>2012-04-02T00:58:00+09:00</updated>
-    <id>http://hamaco.github.com/blog/2012/04/02/change-octopress-theme</id>
-    <content type="html"><![CDATA[<p>Octopressのテーマがデフォルトだとつまんないなーとか思ったので変更してみた。<br/>
-しかし今の所そんなにテーマが豊富じゃないようなのでそんなに選択肢は多くないっぽい。</p>
-
-<h2>テーマのインストール</h2>
-
-<p><a href="https://github.com/imathis/octopress/wiki/List-Of-Octopress-Themes">List Of Octopress Themes</a>にOctopress用のテーマがリストアップされています。
-今回は検索してて一番最初に見つけたSlashというテーマを入れてみます。<br/>
-インストール方法も上記Wikiに書いてある通りコマンドを3つほど実行するだけで簡単にインストールできます。</p>
-
-<pre><code>git clone git://github.com/tommy351/Octopress-Theme-Slash.git .themes/slash
-rake install['slash']
-</code></pre>
-
-<h2>テーマ確認</h2>
-
-<p>インストールが完了したらプレビューで確認してみましょう。<br/>
-サーバが立ち上がったあと http://127.0.0.1:4000/ とかで確認できるはずです。</p>
-
-<pre><code>rake preview
-</code></pre>
-
-<h2>テーマ反映</h2>
-
-<p>プレビューしてみて良い感じであればそのままgenerateして本番環境に反映させます。</p>
-
-<pre><code>rake gen_deploy
-</code></pre>
-
-<p>GitHub Pagesで運用している場合暫く待つとGitHubからメールが飛んできてテーマが変わるはず。</p>
 ]]></content>
   </entry>
   

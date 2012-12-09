@@ -4,7 +4,7 @@
   <title><![CDATA[Category: firefox | hamaco's blog]]></title>
   <link href="http://hamaco.github.com/blog/categories/firefox/atom.xml" rel="self"/>
   <link href="http://hamaco.github.com/"/>
-  <updated>2012-11-19T12:09:38+09:00</updated>
+  <updated>2012-12-09T19:02:13+09:00</updated>
   <id>http://hamaco.github.com/</id>
   <author>
     <name><![CDATA[hamaco]]></name>
@@ -56,35 +56,35 @@ make -C gaia profile
 
 <h3>ロック画面</h3>
 
-<p><img src="/images/2012/07/try-firefox-os-01.png" width="322"></p>
+<p>{% img /images/2012/07/try-firefox-os-01.png 322 %}</p>
 
 <h3>ホーム画面</h3>
 
-<p><img src="/images/2012/07/try-firefox-os-02.png" width="322"></p>
+<p>{% img /images/2012/07/try-firefox-os-02.png 322 %}</p>
 
 <h3>通知バー</h3>
 
 <p>Androidっぽい通知バーも一応ある。出し方も一緒</p>
 
-<p><img src="/images/2012/07/try-firefox-os-03.png" width="322"></p>
+<p>{% img /images/2012/07/try-firefox-os-03.png 322 %}</p>
 
 <h3>ブラウザ</h3>
 
 <p>なんかブラウザでページ表示させると上2/3くらいが真っ黒になるのは自分だけだろうか。</p>
 
-<p><img src="/images/2012/07/try-firefox-os-04.png" width="322"></p>
+<p>{% img /images/2012/07/try-firefox-os-04.png 322 %}</p>
 
 <h3>メール</h3>
 
 <p>メールも一応ある。流石になにかあったら怖いので自分のアカウントは入れてないけど。</p>
 
-<p><img src="/images/2012/07/try-firefox-os-05.png" width="322"></p>
+<p>{% img /images/2012/07/try-firefox-os-05.png 322 %}</p>
 
 <h3>カメラ</h3>
 
 <p>カメラはあるけどやっぱり真っ暗。</p>
 
-<p><img src="/images/2012/07/try-firefox-os-06.png" width="322"></p>
+<p>{% img /images/2012/07/try-firefox-os-06.png 322 %}</p>
 
 <p>マウスカーソルの存在忘れてたorz</p>
 

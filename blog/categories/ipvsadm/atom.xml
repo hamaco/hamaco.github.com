@@ -4,7 +4,7 @@
   <title><![CDATA[Category: ipvsadm | hamaco's blog]]></title>
   <link href="http://hamaco.github.com/blog/categories/ipvsadm/atom.xml" rel="self"/>
   <link href="http://hamaco.github.com/"/>
-  <updated>2012-11-19T12:09:38+09:00</updated>
+  <updated>2012-12-09T19:02:13+09:00</updated>
   <id>http://hamaco.github.com/</id>
   <author>
     <name><![CDATA[hamaco]]></name>
@@ -44,51 +44,28 @@ sysctl -p
 
 <p>今回LVSのローカルIPが192.168.1.11なのでwebサーバのgatewayをLVSに設定します。</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>/etc/network/interfaces </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;h1>This file describes the network interfaces available on your system&lt;/h1>
-</span><span class='line'>
-</span><span class='line'>&lt;h1>and how to activate them. For more information, see interfaces(5).&lt;/h1>
-</span><span class='line'>
-</span><span class='line'>&lt;h1>The loopback network interface&lt;/h1>
-</span><span class='line'>
-</span><span class='line'>&lt;p>auto lo
-</span><span class='line'>iface lo inet loopback&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;p>auto eth0
-</span><span class='line'>iface eth0 inet static&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;pre>&lt;code>    address 192.168.1.51
-</span><span class='line'>    netmask 255.255.255.0
-</span><span class='line'>    network 192.168.1.0
-</span><span class='line'>    broadcast 192.168.1.255
-</span><span class='line'>    gateway 192.168.1.11
-</span><span class='line'>&lt;/code>&lt;/pre>
-</span><span class='line'>
-</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock /etc/network/interfaces %}</p>
+
+<h1>This file describes the network interfaces available on your system</h1>
+
+<h1>and how to activate them. For more information, see interfaces(5).</h1>
+
+<h1>The loopback network interface</h1>
+
+<p>auto lo
+iface lo inet loopback</p>
+
+<p>auto eth0
+iface eth0 inet static</p>
+
+<pre><code>    address 192.168.1.51
+    netmask 255.255.255.0
+    network 192.168.1.0
+    broadcast 192.168.1.255
+    gateway 192.168.1.11
+</code></pre>
+
+<p>{% endcodeblock %}</p>
 
 <p>これでwebサーバがLVSを通してネットに繋がるようになっていると思います。</p>
 
