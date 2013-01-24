@@ -7,7 +7,7 @@
 	<meta name="author" content="hamaco">
 
 	
-	<meta name="description" content="このエントリは、CakePHP Advent Calendar 2012の9日目です。8日目は@junichi_11さんの「NetBeans plugin の改善点」でした。 はじめに 普段仕事でCakePHPをメインに使ってるとかそういったことがまったくなく、 &hellip;">
+	<meta name="description" content="今まで iPad では iPhone でも使っている Reeder を使っていたのですが、Nexus 7 とか他の端末をしばらく使っている間に Mr.Reader オススメ的なブログをちょこちょこ見ていたので乗り換えてみたらこれがすげー良い感じで、 &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -76,6 +76,228 @@
 			
 			<div class="mid-col-container">
 				<div id="content" class="inner">
+
+
+    <article class="post">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-24T15:53:00+09:00" pubdate data-updated="true">2013年01月24日</time></div>
+		<div class="tags">
+
+</div>
+		
+	</div>
+	<h1 class="title"><a href="/blog/2013/01/24/mr-reader/">iPadのRSSリーダーをMr.Readerに乗り換えた</a></h1>
+	<div class="entry-content">
+		<p>今まで iPad では iPhone でも使っている Reeder を使っていたのですが、Nexus 7 とか他の端末をしばらく使っている間に Mr.Reader オススメ的なブログをちょこちょこ見ていたので乗り換えてみたらこれがすげー良い感じで、今年のベストアプリに入るんじゃないかってくらい使いやすい。</p>
+
+<p>個人的な Mr.Reader の良いところはこんな感じ。</p>
+
+<h2>スクロールするだけで既読にできる</h2>
+
+<p><a href="http://www.flickr.com/photos/hamaco/8393953789" title="Mr. Reader 01"><img src="http://farm9.staticflickr.com/8515/8393953789_81d599f585_m.jpg" alt="Mr. Reader 01"/></a></p>
+
+<p>自分が Google Reader に登録しているのはニュース系のサイトとか Twitter みたいに件数が多くて流し読みするタイプのがメインなので気が付くと数千単位で未読が溜まってしまい、消化するのも面倒になって全件既読ばっかりしていました。</p>
+
+<p>Mr.Reader はスクロールするだけで自動的に既読化することができるので、iPad の大きな画面でだいぶ快適にサクサクとフィードが消化できています。</p>
+
+<h2>記事のサムネイルが表示できる</h2>
+
+<p>これは、Android の NewsRob Pro でもあったのですが、記事中の画像が一枚サムネイルとして一覧に表示されるので、いちいち英語を真剣に読まなくても、興味ありそうな画像だったらスターをつけて後で見る運用がちょっと楽になってます。</p>
+
+<p>ただ、目の移動が少なくなるように左側に表示してるんだけど、必ずサムネイルがでるとは限らないので記事によってタイトルの開始位置がズレてしまうのがちょっと難点。</p>
+
+<h2>表示モードを固定したまま記事の移動ができる</h2>
+
+<p><a href="http://www.flickr.com/photos/hamaco/8395039032" title="Mr. Reader 02"><img src="http://farm9.staticflickr.com/8364/8395039032_c8f7e716f3_m.jpg" alt="Mr. Reader 02"/></a></p>
+
+<p>流し読みタイプのもの以外で意外と多いのが RSS に全文入ってなかったりして、実際のサイトに飛ばないといけないのがあるのですが、これも Mr.Reader なら WebView や Readability 等の表示モードが選べる上、鍵アイコンをタップするとフィード毎に表示モードを記憶してくれるので、一々記事タイトルクリックしてブラウザで見たり、スターを付けて Pocket に送ってからあとで見たりとかしなくて良くなりました。</p>
+
+<h2>そんなわけで</h2>
+
+<p>Mr.Reader がほぼ完全に自分の Google Reader の使い方にマッチしているのであまりにもライフハックで生きるのが辛い。</p>
+
+<p>今まで消化するのが面倒で未読が万単位で溜まったりしてたのが、500 - 2000 程度をうろちょろするようになりましたとさ。</p>
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-13T22:29:00+09:00" pubdate data-updated="true">2013年01月13日</time></div>
+		<div class="tags">
+
+</div>
+		
+	</div>
+	<h1 class="title"><a href="/blog/2013/01/13/sshd-on-fedora17/">Fedora17 で SSH Server を自動起動させる</a></h1>
+	<div class="entry-content">
+		<p>久し振りにFedoraを使ってみたらサービスの起動方法が変わっていてびっくりしたのでメモ。</p>
+
+<p>普通に今まで通り <code>/etc/init.d/sshd start</code>とかやろうとしたのにファイルがなくて sshd の起動ができなかった。
+ちょっと調べてみたら最近の Fedora は systemctl コマンドでその辺管理するようになったらしい。</p>
+
+<h2>起動</h2>
+
+<pre><code>sudo systemctl start sshd.service
+</code></pre>
+
+<h2>停止</h2>
+
+<pre><code>sudo systemctl stop sshd.service
+</code></pre>
+
+<h2>再起動</h2>
+
+<pre><code>sudo systemctl restart sshd.service
+</code></pre>
+
+<h2>自動起動</h2>
+
+<p>これは <code>/etc/systemd/system</code> から <code>/etc/systemd/system/multi-user.target.wants</code> とかにシンボリックリンク作ってるだけっぽい</p>
+
+<pre><code>sudo systemctl enable sshd.service
+</code></pre>
+
+<h2>状態確認</h2>
+
+<pre><code>sudo systemctl status sshd.service
+</code></pre>
+
+<p>こんな感じに表示されて自動起動が有効になってるか(enabled)とか色々分かるようになっててちょっと便利。</p>
+
+<pre><code>sshd.service - OpenSSH server daemon
+          Loaded: loaded (/usr/lib/systemd/system/sshd.service; enabled)
+          Active: active (running) since Sun, 13 Jan 2013 19:35:04 +0900; 2h 59min ago
+        Main PID: 2242 (sshd)
+          CGroup: name=systemd:/system/sshd.service
+                  └ 2242 /usr/sbin/sshd -D
+</code></pre>
+
+<h2>終わり</h2>
+
+<p>これ <code>start</code> とかが最後にこないので C-p とかで過去の出した後に編集するのが面倒で微妙に辛い。</p>
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-12-31T23:00:00+09:00" pubdate data-updated="true">2012年12月31日</time></div>
+		<div class="tags">
+
+</div>
+		
+	</div>
+	<h1 class="title"><a href="/blog/2012/12/31/2012-summary/">2012年ふりかえり</a></h1>
+	<div class="entry-content">
+		<p>2012年のふりかえりが流行ってるっぽいので簡単にふりかえっておこうかなー。</p>
+
+<h2>ガジェット総入れ替え</h2>
+
+<p>全然気付いてなかったんですが、今メインで持ってるガジェットが一通り今年買ったやつみたい。</p>
+
+<p>N903i / Galaxy S2 / iPhone 3GS / 初代iPad / Kindle 4th / Macbook Air Late 2010</p>
+
+<p>だったのが、</p>
+
+<p>P-03B / Xperia GX / iPhone 4S / Nexus 7 / Kindle Paperwhite / Macbook Air Mid 2012</p>
+
+<p>といつの間にか切り替わってたっぽいです。 Kobo? なにそれ、美味しいの?</p>
+
+<h2>CandyCane にコミットした</h2>
+
+<p>普段あんまりオープンソース的な活動してなかったんですが、 <a href="https://github.com/yandod/candycane">CandyCane</a> 本体には今年の 5/17 のコミットを最初に40回ほどコミットしました。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>% git shortlog -sn | grep hamaco
+</span><span class='line'>10:    40       hamaco</span></code></pre></td></tr></table></div></figure>
+
+
+<p>CandyCane には本体のコミットよりプラグインてきとーに作ったほうがネタになった気がします。
+作ったプラグインはこんな感じ。まあ大半が Redmine の同名プラグインのパクりかネタプラグインですね。</p>
+
+<ul>
+<li><a href="https://github.com/hamaco/candycane-repository-browser">candycane-repository-browser</a></li>
+<li><a href="https://github.com/hamaco/candycane-u-nya-">candycane-u-nya-</a></li>
+<li><a href="https://github.com/hamaco/candycane-theme-changer">candycane-theme-changer</a></li>
+<li><a href="https://github.com/hamaco/candycane-gal">candycane-gal</a></li>
+<li><a href="https://github.com/hamaco/candycane-enter-cancel">candycane-enter-cancel</a></li>
+<li><a href="https://github.com/hamaco/candycane-comment-only">candycane-comment-only</a></li>
+</ul>
+
+
+<p>まあ、CandyCane 以外のにもコミットしたりしたけど、バグちょこっと直したとかがメインで CandyCane ほどコミットしたのはないかなぁ。</p>
+
+<h2>アニメ見るようになった</h2>
+
+<p>昔はボチボチアニメ見たりしてたんだけど、ここ数年まったく見てませんでした。
+でも、<a href="http://animita.tv/">あにみた！</a>っていうサービスが夏頃でたのと、同僚からオススメされたのを切っ掛けにまた見るようになりました。</p>
+
+<p>結構アニメ見てる知り合い・同僚いたり、プレゼンでネタとしてでてくるので、これは結構話のネタになったりして良い感じでした。</p>
+
+<h2>イベントのスタッフ初めてやった</h2>
+
+<p>手伝いとかその程度のことは今までやってきたことあったけど、スタッフ自体をやったのは今年が初めてでした。
+「PHPカンファレンス 2012」の当日スタッフやったとか「XOOPS Cube CONFERENCE 2012」のやり取り眺めてたとかその2つかな?</p>
+
+<p>(追記：2013-01-03) 完全に忘れてたけど、WordBench東京もスタッフやってました。</p>
+
+<h2>おしまい</h2>
+
+<p>意外とこうやって振り替えってみると、去年までビールを飲む以外に何やってたのかが気になりますね。</p>
+
+<p>来年はもうちょっとブログでふりかえれるような活動していきたいかなぁ。</p>
+
+		
+		
+	</div>
+
+</article>
 
 
     <article class="post">
@@ -1132,434 +1354,6 @@ Windows7風にキーボードで画面サイズ最大化とか、Opera以外の�
 
 </article>
 
-
-    <article class="post">
-	<div class="meta">
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-05-31T10:23:00+09:00" pubdate data-updated="true">2012年05月31日</time></div>
-		<div class="tags">
-
-
-	<a class='category' href='/blog/categories/jsx/'>jsx</a>
-
-
-</div>
-		
-	</div>
-	<h1 class="title"><a href="/blog/2012/05/31/install-jsx/">JSXをインストールしてちょろっと触ってみた</a></h1>
-	<div class="entry-content">
-		<p><strong>jsx.vimがあったので多少変更</strong></p>
-
-<p>今朝Twitterのタイムラインで<a href="http://jsx.github.com/">JSX</a>なるものが話題になっていたのでちょろっとインストールしてみた。</p>
-
-<h2>インストール</h2>
-
-<p>JSXにはnode.js / npmが必要なのでインストールする。今回はお試しで入れたのでaptitudeからインストールする。</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ s aptitude install npm</span></code></pre></td></tr></table></div></figure>
-
-
-<p>まずはJSX本体がないと話にならないのでgitからcloneしてくる。</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ git clone https://github.com/jsx/JSX.git
-</span><span class='line'>$ cd JSX</span></code></pre></td></tr></table></div></figure>
-
-
-<p>READMEに従ってインストールする。</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ make setup</span></code></pre></td></tr></table></div></figure>
-
-
-<p>以下のようなのがずらずらでてくるので暫く待つ。</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>npm install
-</span><span class='line'>npm http GET https://registry.npmjs.org/browserbuild
-</span><span class='line'>npm http GET https://registry.npmjs.org/source-map
-</span><span class='line'>npm http 200 https://registry.npmjs.org/source-map
-</span><span class='line'>npm http GET https://registry.npmjs.org/source-map/-/source-map-0.1.0.tgz
-</span><span class='line'>npm http 200 https://registry.npmjs.org/browserbuild
-</span><span class='line'>npm http GET https://registry.npmjs.org/browserbuild/-/browserbuild-0.4.9.tgz
-</span><span class='line'>npm http 200 https://registry.npmjs.org/source-map/-/source-map-0.1.0.tgz
-</span><span class='line'>npm http 200 https://registry.npmjs.org/browserbuild/-/browserbuild-0.4.9.tgz
-</span><span class='line'>npm http GET https://registry.npmjs.org/commander
-</span><span class='line'>npm http GET https://registry.npmjs.org/debug/0.6.0
-</span><span class='line'>npm http GET https://registry.npmjs.org/requirejs
-</span><span class='line'>npm http 200 https://registry.npmjs.org/requirejs
-</span><span class='line'>npm http GET https://registry.npmjs.org/requirejs/-/requirejs-2.0.0.tgz
-</span><span class='line'>npm http 200 https://registry.npmjs.org/debug/0.6.0
-</span><span class='line'>npm http GET https://registry.npmjs.org/debug/-/debug-0.6.0.tgz
-</span><span class='line'>npm http 200 https://registry.npmjs.org/commander
-</span><span class='line'>npm http GET https://registry.npmjs.org/commander/-/commander-0.5.2.tgz
-</span><span class='line'>npm http 200 https://registry.npmjs.org/requirejs/-/requirejs-2.0.0.tgz
-</span><span class='line'>npm http 200 https://registry.npmjs.org/debug/-/debug-0.6.0.tgz
-</span><span class='line'>npm http 200 https://registry.npmjs.org/commander/-/commander-0.5.2.tgz
-</span><span class='line'>Bbrowserbuild@0.4.9 ./node_modules/browserbuild 
-</span><span class='line'>├── debug@0.6.0
-</span><span class='line'>└── commander@0.5.2
-</span><span class='line'>source-map@0.1.0 ./node_modules/source-map 
-</span><span class='line'>└── requirejs@2.0.0
-</span><span class='line'>perl web/setup.pl
-</span><span class='line'>  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-</span><span class='line'>                                 Dload  Upload   Total   Spent    Left  Speed
-</span><span class='line'>  0     0    0     0    0     0      0      0 --:--:--  0:00:06 --:--:--     0
-</span><span class='line'>100  320k  100  320k    0     0  39278      0  0:00:08  0:00:08 --:--:--  343k
-</span><span class='line'>--&gt; Working on String::ShellQuote
-</span><span class='line'>Fetching http://www.cpan.org/authors/id/R/RO/ROSCH/String-ShellQuote-1.04.tar.gz ... OK
-</span><span class='line'>Configuring String-ShellQuote-1.04 ... OK
-</span><span class='line'>Building String-ShellQuote-1.04 ... OK
-</span><span class='line'>Successfully installed String-ShellQuote-1.04
-</span><span class='line'>--&gt; Working on JSON::PP
-</span><span class='line'>Fetching http://www.cpan.org/authors/id/M/MA/MAKAMAKA/JSON-PP-2.27200.tar.gz ... OK
-</span><span class='line'>Configuring JSON-PP-2.27200 ... OK
-</span><span class='line'>Building JSON-PP-2.27200 ... OK
-</span><span class='line'>Successfully installed JSON-PP-2.27200 (upgraded from 2.27105)
-</span><span class='line'>2 distributions installed</span></code></pre></td></tr></table></div></figure>
-
-
-<p>bin/jsxにファイルができあがるのでこれでインストールは終わり。</p>
-
-<h2>Hello World!</h2>
-
-<p>試しにhello worldを実行してみる。一度jsファイルで出力してnodeで実行する。</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ ./bin/jsx --executable --output hello.js example/hello.jsx
-</span><span class='line'>$ node hello.js</span></code></pre></td></tr></table></div></figure>
-
-
-<p>また一々jsファイルを作成しなくても以下のようにすれば実行できるみたい。</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ ./bin/jsx --run example/hello.jsx</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>jsx.vimのインストール</h2>
-
-<p>jsxのVim用syntaxファイルが実はあるみたいなのでインストールする。自分はNeoBundleを使用しているのでNeoBundleでインストールした。</p>
-
-<figure class='code'><figcaption><span>.vimrc</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='vim'><span class='line'>NeoBundle <span class="s1">&#39;git://github.com/jsx/jsx.vim.git&#39;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>.vimrc書いて<code>:Unite neobundle/install</code>か<code>:NeoBundleInstall</code>でインストールができる。</p>
-
-<h2>quickrunの設定を書く</h2>
-
-<p>まあ毎回コマンド叩くの面倒だよねってことでquickrunから一発で実行できるようにしてみる。</p>
-
-<p>まずはJSXをPATHの通った所(自分の場合は$HOME/app/*/bin)に配置する。
-jsxファイル単体をbinの中に置いても動作しなかったのでgit cloneしたやつ丸ごと移動させた。</p>
-
-<figure class='code'><figcaption><span>.vimrc</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='vim'><span class='line'>$ <span class="k">mv</span> JSX <span class="p">~</span><span class="sr">/app/</span>JSX
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>次に.vimrcに拡張子がjsxのファイルの扱いを設定する。<s>syntaxファイルがないのでとりあえずjavascriptのが有効になるようにしてみた。</s>syntaxファイルあったので修正。</p>
-
-<figure class='code'><figcaption><span>.vimrc</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='vim'><span class='line'><span class="k">let</span> <span class="k">g</span>:quickrun_config <span class="p">=</span> {}
-</span><span class='line'><span class="k">let</span> <span class="k">g</span>:quickrun_config[<span class="s1">&#39;jsx&#39;</span>] <span class="p">=</span> {
-</span><span class='line'>          \ <span class="s1">&#39;command&#39;</span>: <span class="s1">&#39;jsx&#39;</span><span class="p">,</span>
-</span><span class='line'>          \ <span class="s1">&#39;exec&#39;</span>: [<span class="s1">&#39;%c --run %s&#39;</span>]
-</span><span class='line'>          \ }
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>後はテキトーにjsxファイルを開いて<code>&lt;Leader&gt;r</code>を押すとそのまま実行されて結果が表示されるようになる。</p>
-
-<h2>shadow.vimで使ってみる</h2>
-
-<p>こんな感じでコードの最初の行にshadow.vim向けの1行を追加したshdファイルを作成した後<code>vim hello.js</code>と.shdなしのファイルを開くと自動的に.shd付きのファイルが開かれ、保存時に自動でjsにコンパイルされたものがhello.jsに保存されます。</p>
-
-<figure class='code'><figcaption><span>hello.js.shd</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="c1">// jsx /dev/stdin</span>
-</span><span class='line'>
-</span><span class='line'><span class="kr">class</span> <span class="nx">_Main</span> <span class="p">{</span>
-</span><span class='line'>  <span class="kr">static</span> <span class="kd">function</span> <span class="nx">main</span><span class="p">(</span><span class="nx">args</span> <span class="o">:</span> <span class="nx">string</span><span class="p">[])</span> <span class="o">:</span><span class="k">void</span> <span class="p">{</span>
-</span><span class='line'>      <span class="nx">log</span> <span class="s2">&quot;Hello, world!&quot;</span><span class="p">;</span>
-</span><span class='line'>  <span class="p">}</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'><span class="c1">// vim: set ft=jsx :</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>しかしこれやってみたけど、できあがるファイルに/dev/stdinとか入るから複数ファイル使うような時に使えないような気がしないでもない。</p>
-
-		
-		
-	</div>
-
-</article>
-
-
-    <article class="post">
-	<div class="meta">
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-04-17T23:34:00+09:00" pubdate data-updated="true">2012年04月17日</time></div>
-		<div class="tags">
-
-
-	<a class='category' href='/blog/categories/firefox/'>firefox</a>
-
-
-</div>
-		
-	</div>
-	<h1 class="title"><a href="/blog/2012/04/17/customize-firebug-commandline/">Firebugのコマンドラインのフォントをカスタマイズした</a></h1>
-	<div class="entry-content">
-		<p>多分誰かのはてブとかにあったんだと思うけど、<a href="http://efcl.info/2009/0927/res1363/">Firebugのコマンドラインのフォントを変更してるサイト</a>を見かけて、そういえばFirebugのコマンドラインの文字ってめっちゃ小さくて読みにくいなーとか思い出したので、stylishでフォントの設定してみました。<br/>
-参考サイトそのままじゃダメだったので調べたついでにコマンドラインだけじゃなくコマンドエディタとかコンソールの表示部分とかもついでに調べて最終的に以下の様な感じに。</p>
-
-<figure class='code'><figcaption><span>firebug-commandline-custom.css</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="c">/**</span>
-</span><span class='line'><span class="c"> * コマンドライン</span>
-</span><span class='line'><span class="c"> */</span>
-</span><span class='line'><span class="nt">textbox</span><span class="nf">#fbCommandLine</span> <span class="p">{</span>
-</span><span class='line'>    <span class="k">font-size</span><span class="o">:</span> <span class="m">13pt</span> <span class="cp">!important</span><span class="p">;</span>
-</span><span class='line'>    <span class="k">font-family</span><span class="o">:</span> <span class="s2">&quot;Rounded M+ 1m&quot;</span> <span class="cp">!important</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="c">/**</span>
-</span><span class='line'><span class="c"> * コマンドラインの補完候補</span>
-</span><span class='line'><span class="c"> */</span>
-</span><span class='line'><span class="nf">#fbCommandLineCompletion</span> <span class="p">{</span>
-</span><span class='line'>    <span class="k">font-size</span><span class="o">:</span> <span class="m">13pt</span> <span class="cp">!important</span><span class="p">;</span>
-</span><span class='line'>    <span class="k">font-family</span><span class="o">:</span> <span class="s2">&quot;Rounded M+ 1m&quot;</span> <span class="cp">!important</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="c">/**</span>
-</span><span class='line'><span class="c"> * コマンドエディタ</span>
-</span><span class='line'><span class="c"> */</span>
-</span><span class='line'><span class="nf">#fbCommandEditor</span> <span class="p">{</span>
-</span><span class='line'>    <span class="k">font-size</span><span class="o">:</span> <span class="m">13pt</span> <span class="cp">!important</span><span class="p">;</span>
-</span><span class='line'>    <span class="k">font-family</span><span class="o">:</span> <span class="s2">&quot;Rounded M+ 1m&quot;</span> <span class="cp">!important</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="c">/**</span>
-</span><span class='line'><span class="c"> * コマンドエディタツール</span>
-</span><span class='line'><span class="c"> */</span>
-</span><span class='line'><span class="nf">#fbCommandToolbar</span> <span class="p">{</span>
-</span><span class='line'>    <span class="k">font-size</span><span class="o">:</span> <span class="m">11pt</span> <span class="cp">!important</span><span class="p">;</span>
-</span><span class='line'>    <span class="k">font-family</span><span class="o">:</span> <span class="s2">&quot;Rounded M+ 1m&quot;</span> <span class="cp">!important</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="c">/**</span>
-</span><span class='line'><span class="c"> * コンソールログ</span>
-</span><span class='line'><span class="c"> */</span>
-</span><span class='line'><span class="nc">.panelNode-console</span> <span class="p">{</span>
-</span><span class='line'>    <span class="k">font-size</span><span class="o">:</span> <span class="m">10pt</span> <span class="cp">!important</span><span class="p">;</span>
-</span><span class='line'>    <span class="k">font-family</span><span class="o">:</span> <span class="s2">&quot;KugimmyAA&quot;</span> <span class="cp">!important</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-		
-		
-	</div>
-
-</article>
-
-
-    <article class="post">
-	<div class="meta">
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-04-16T14:40:00+09:00" pubdate data-updated="true">2012年04月16日</time></div>
-		<div class="tags">
-
-
-	<a class='category' href='/blog/categories/tmux/'>tmux</a>
-
-
-</div>
-		
-	</div>
-	<h1 class="title"><a href="/blog/2012/04/16/tmux-zombie/">SSH切断時にtmuxが自動で閉じないようにした</a></h1>
-	<div class="entry-content">
-		<p>SSHとかで接続失敗した時とか画面表示確認する前に閉じられてしまい原因調べるのが面倒だったので、ssh/mosh コマンド実行時にはセッションが閉じてもtmuxのWindowsが閉じないようにしてみました。</p>
-
-<h2>SSH用</h2>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="k">function </span>ssh_tmux<span class="o">()</span> <span class="o">{</span>
-</span><span class='line'>  <span class="nb">eval </span><span class="nv">server</span><span class="o">=</span><span class="se">\$</span><span class="o">{</span><span class="nv">$#}</span>
-</span><span class='line'>  tmux <span class="nb">set set</span>-remain-on-exit on<span class="se">\;</span> <span class="se">\</span>
-</span><span class='line'>      new-window -n s:<span class="nv">$server</span> <span class="s2">&quot;ssh $*&quot;</span><span class="se">\;</span> <span class="se">\</span>
-</span><span class='line'>      <span class="nb">set set</span>-remain-on-exit off &gt; /dev/null
-</span><span class='line'><span class="o">}</span>
-</span><span class='line'><span class="nb">alias </span><span class="nv">ssh</span><span class="o">=</span>ssh_tmux
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>Mosh用</h2>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="k">function </span>mosh_tmux<span class="o">()</span> <span class="o">{</span>
-</span><span class='line'>  <span class="nb">eval </span><span class="nv">server</span><span class="o">=</span><span class="se">\$</span><span class="o">{</span><span class="nv">$#}</span>
-</span><span class='line'>  tmux <span class="nb">set set</span>-remain-on-exit on<span class="se">\;</span> <span class="se">\</span>
-</span><span class='line'>      new-window -n s:<span class="nv">$server</span> <span class="s2">&quot;mosh $*&quot;</span><span class="se">\;</span> <span class="se">\</span>
-</span><span class='line'>      <span class="nb">set set</span>-remain-on-exit off &gt; /dev/null
-</span><span class='line'><span class="o">}</span>
-</span><span class='line'><span class="nb">alias </span><span class="nv">mosh</span><span class="o">=</span>mosh_tmux
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>screenの時は良く分からなくて <code>zombie ^[</code> と書いて全て残るようにしてたんだけど、tmuxはコマンド使えるので普段は自動で閉じて、ssh/moshの時だけ閉じないとかできて楽チンですね。</p>
-
-		
-		
-	</div>
-
-</article>
-
 <nav id="pagenavi">
     
     
@@ -1568,50 +1362,13 @@ jsxファイル単体をbinの中に置いても動作しなかったのでgit c
     <div class="center"><a href="/blog/archives">Blog Archives</a></div>
 </nav></div>
 			</div>
-			<footer id="footer" class="inner">Copyright &copy; 2012
+			<footer id="footer" class="inner">Copyright &copy; 2013
 
     hamaco
 
 
 Design credit: <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a></footer>
-			<script src="/javascripts/slash.js"></script>
-<script src="/javascripts/jquery.fancybox.pack.js"></script>
-<script type="text/javascript">
-(function($){
-	$('.fancybox').fancybox();
-})(jQuery);
-</script> <!-- Delete or comment this line to disable Fancybox -->
-
-
-<script type="text/javascript">
-      var disqus_shortname = 'hamaco-blog';
-      
-        
-        var disqus_script = 'count.js';
-      
-    (function () {
-      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    }());
-</script>
-
-
-
-	<script type="text/javascript">
-		var _gaq = _gaq || [];
-		_gaq.push(['_setAccount', 'UA-1995376-4']);
-		_gaq.push(['_trackPageview']);
-
-		(function() {
-			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-		})();
-	</script>
-
-
-
+			Liquid syntax error: Tag '{% # include fancybox.html %}' was not properly terminated with regexp: /\%\}/ 
 		</div>
 	</div>
 </body>
