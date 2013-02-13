@@ -7,7 +7,8 @@
 	<meta name="author" content="hamaco">
 
 	
-	<meta name="description" content="Portable Wi-Fi の2年縛りが切れて買い替えようと思ってた時に、スマホでも料金とか変わらないっすよってドコモショップの人が言ってたので Wi-Fi 端末の代わりに購入した。 良い所 Portable Wi-fi と比べてバッテリーの持ちが良い &hellip;">
+	<meta name="description" content="Mac ユーザで Sequel Pro を使っている人なら分かってくれると思いますが、Sequel Pro でクエリ入力してる時に C-h 押すとヘルプがでてくるの勘弁ならないですよね。
+そんな訳で KeyRemap4MacBook を使って C-h がバックスペースになるように設定してみました &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -93,7 +94,91 @@
   
 
 
-<time datetime="2013-02-13T01:13:28+09:00" pubdate data-updated="true">2013年02月13日</time></div>
+<time datetime="2013-02-13T20:17:00+09:00" pubdate data-updated="true">2013年02月13日</time></div>
+		<div class="tags">
+
+</div>
+		
+	</div>
+	<h1 class="title"><a href="/blog/2013/02/13/sequelpro-c-h/">Sequel Pro でも C-h がしたい！</a></h1>
+	<div class="entry-content">
+		<p>Mac ユーザで Sequel Pro を使っている人なら分かってくれると思いますが、Sequel Pro でクエリ入力してる時に C-h 押すとヘルプがでてくるの勘弁ならないですよね。
+そんな訳で KeyRemap4MacBook を使って C-h がバックスペースになるように設定してみました。</p>
+
+<h2>設定開始</h2>
+
+<p>まず KeyRemap4MacBook の Misc &amp; Uninstall から private.xml を開きます。<br/>
+なかったら <code>$HOME/Library/Application\ Support/KeyRemap4MacBook/private.xml</code> を作って下さい。</p>
+
+<p><a href="http://www.flickr.com/photos/hamaco/8470788540" title="KeyRemap4MacBook-01" class="dpad-flickr-img"><img src="http://farm9.staticflickr.com/8241/8470788540_fb68c8f00a_m.jpg" alt="KeyRemap4MacBook-01"/></a></p>
+
+<p><code>private.xml</code> が開いたら中身を以下のような感じにします。</p>
+
+<figure class='code'><figcaption><span>private.xml</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+</span><span class='line'><span class="nt">&lt;root&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;appdef&gt;</span>
+</span><span class='line'>      <span class="nt">&lt;appname&gt;</span>SEQUELPRO<span class="nt">&lt;/appname&gt;</span>
+</span><span class='line'>      <span class="nt">&lt;equal&gt;</span>com.sequelpro.SequelPro<span class="nt">&lt;/equal&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;/appdef&gt;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nt">&lt;item&gt;</span>
+</span><span class='line'>      <span class="nt">&lt;name&gt;</span>My keymappings<span class="nt">&lt;/name&gt;</span>
+</span><span class='line'>      <span class="nt">&lt;item&gt;</span>
+</span><span class='line'>          <span class="nt">&lt;name&gt;</span>C-h to Backspace (SequelPro)<span class="nt">&lt;/name&gt;</span>
+</span><span class='line'>          <span class="nt">&lt;identifier&gt;</span>private.app_sequelpro_control_h_to_backspace<span class="nt">&lt;/identifier&gt;</span>
+</span><span class='line'>          <span class="nt">&lt;only&gt;</span>SEQUELPRO<span class="nt">&lt;/only&gt;</span>
+</span><span class='line'>          <span class="nt">&lt;autogen&gt;</span>--KeyToKey-- KeyCode::H, ModifierFlag::CONTROL_L, KeyCode::DELETE<span class="nt">&lt;/autogen&gt;</span>
+</span><span class='line'>      <span class="nt">&lt;/item&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;/item&gt;</span>
+</span><span class='line'><span class="nt">&lt;/root&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><code>private.xml</code> の編集ができたら、後は XML を再読み込みして、今作った設定にチェックを入れるだけ！</p>
+
+<p><a href="http://www.flickr.com/photos/hamaco/8469695085" title="KeyRemap4MacBook-02" class="dpad-flickr-img"><img src="http://farm9.staticflickr.com/8520/8469695085_0f88729fd2_m.jpg" alt="KeyRemap4MacBook-02"/></a></p>
+
+<p>これで Sequel Pro でも C-h で バックスペースが使えるようになりました。</p>
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-12T16:13:00+09:00" pubdate data-updated="true">2013年02月12日</time></div>
 		<div class="tags">
 
 
@@ -103,7 +188,7 @@
 </div>
 		
 	</div>
-	<h1 class="title"><a href="/blog/2013/02/13/xperiagx-impression/">Xperia GX買ってからしばらく経った</a></h1>
+	<h1 class="title"><a href="/blog/2013/02/12/xperiagx-impression/">Xperia GX買ってからしばらく経った</a></h1>
 	<div class="entry-content">
 		<p>Portable Wi-Fi の2年縛りが切れて買い替えようと思ってた時に、スマホでも料金とか変わらないっすよってドコモショップの人が言ってたので Wi-Fi 端末の代わりに購入した。</p>
 
@@ -1277,91 +1362,6 @@ Windows7風にキーボードで画面サイズ最大化とか、Opera以外の�
 <p>すみません、このサイトのRedmineプラグインをパクりましたm(_ _)m</p>
 
 <p><a href="http://d.hatena.ne.jp/suer/20120610/1339336133">Redmineのチケット作成での誤爆を防ぐプラグイン書いた - すえひろがりっっっっ!</a></p>
-
-		
-		
-	</div>
-
-</article>
-
-
-    <article class="post">
-	<div class="meta">
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-06-04T10:26:00+09:00" pubdate data-updated="true">2012年06月04日</time></div>
-		<div class="tags">
-
-
-	<a class='category' href='/blog/categories/candycane/'>candycane</a>
-
-
-</div>
-		
-	</div>
-	<h1 class="title"><a href="/blog/2012/06/04/use-redmine-theme-on-candycane/">RedmineのテーマをCandyCaneで使ってみた</a></h1>
-	<div class="entry-content">
-		<p>プラグインは言語が違うので無理ですが、テーマなら言語関係ないのでRedmineのがCandyCaneでも使えるんじゃないかと思って試してみました。
-今回はRedmine Themeで検索して上の方にでてきた<a href="http://blog.redmine.jp/articles/farend-basic-theme/">farend basic</a>をCandyCaneで使ってみます。</p>
-
-<h2>テーマのダウンロード</h2>
-
-<p>まず、テーマをダウンロードするのですが、RedmineとCandyCane(CakePHP)ではテーマのディレクトリ構成など多少違うのでそのままダウンロードするだけだと動きません。
-なので、CakePHPの規則に従った形でテーマを用意します。</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ cd {CANDYCANE_ROOT_DIR}
-</span><span class='line'>$ mkdir -p app/webroot/themed/farend_basic/css</span></code></pre></td></tr></table></div></figure>
-
-
-<p>次にテーマのcssをダウンロードしてきます。</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ cd app/webroot/themed/farend_basic/css
-</span><span class='line'>$ wget https://raw.github.com/farend/redmine_theme_farend_basic/master/stylesheets/application.css</span></code></pre></td></tr></table></div></figure>
-
-
-<p>今回のはcss1個だけなのでディレクトリ作ってcssだけダウンロードしてきましたが、テーマに画像などが含まれている場合はzipファイルとかでダウンロードしてきたあとcssの入っているディレクトリを変更するのが簡単だと思います。</p>
-
-<h2>テーマの修正</h2>
-
-<p>CandyCaneはデフォルトのapplication.cssを読み込んだ後にテーマのcssを読み込む為、テーマのcss内にあるapplication.cssの読み込み処理を削除(コメントアウト)します。そもそもPATHが違うのでエラーでちゃいますし。</p>
-
-<figure class='code'><figcaption><span>application.css</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="c">/* @import url(../../../stylesheets/application.css); */</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>テーマの設定</h2>
-
-<p>テーマファイルを設置したら後はCandyCaneの画面上でfarend basicテーマを使用するよう設定します。
-管理の設定からテーマのセレクトボックスでfarend_basicを選択すると、さっきDLしてきたfarend_basicが使えるようになります。</p>
-
-<p><img src="/images/2012/06/candycane-theme-01.png" width="480"></p>
-
-<p>このテーマは基本的な所は変わらないので分かりにくいですが、チケットの一覧ページに行くと優先度に応じて色が付いているのが分かると思います。</p>
-
-<p><img src="/images/2012/06/candycane-theme-02.png" width="480"></p>
-
-<p>書いてから投稿までに数日経ってしまったのでちょっと他のテーマも動かしてみました。<a href="http://www.redmine.org/projects/redmine/wiki/Theme_List">Redmineのテーマ一覧</a>一覧の一番上にあったA1 themeっていうテーマです。これもfarend basicと同じやり方で使えます。</p>
-
-<p><img src="/images/2012/06/candycane-theme-03.png" width="480"></p>
-
-<h2>終わりに</h2>
-
-<p>こんな感じで比較的簡単にRedmineのテーマが使用できるのでライセンス的に問題のないやつがあればCandyCane用にコンバートしてみたり、Redmineのテーマを参考にCandyCaneのテーマを作ってみてはどうでしょうか。</p>
 
 		
 		

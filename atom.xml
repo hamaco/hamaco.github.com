@@ -4,7 +4,7 @@
   <title><![CDATA[hamaco's blog]]></title>
   <link href="http://hamaco.github.com/atom.xml" rel="self"/>
   <link href="http://hamaco.github.com/"/>
-  <updated>2013-02-13T17:54:55+09:00</updated>
+  <updated>2013-02-13T20:23:20+09:00</updated>
   <id>http://hamaco.github.com/</id>
   <author>
     <name><![CDATA[hamaco]]></name>
@@ -14,10 +14,72 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Sequel Pro でも C-h がしたい！]]></title>
+    <link href="http://hamaco.github.com/blog/2013/02/13/sequelpro-c-h/"/>
+    <updated>2013-02-13T20:17:00+09:00</updated>
+    <id>http://hamaco.github.com/blog/2013/02/13/sequelpro-c-h</id>
+    <content type="html"><![CDATA[<p>Mac ユーザで Sequel Pro を使っている人なら分かってくれると思いますが、Sequel Pro でクエリ入力してる時に C-h 押すとヘルプがでてくるの勘弁ならないですよね。
+そんな訳で KeyRemap4MacBook を使って C-h がバックスペースになるように設定してみました。</p>
+
+<h2>設定開始</h2>
+
+<p>まず KeyRemap4MacBook の Misc &amp; Uninstall から private.xml を開きます。<br/>
+なかったら <code>$HOME/Library/Application\ Support/KeyRemap4MacBook/private.xml</code> を作って下さい。</p>
+
+<p><a href="http://www.flickr.com/photos/hamaco/8470788540" title="KeyRemap4MacBook-01" class="dpad-flickr-img"><img src="http://farm9.staticflickr.com/8241/8470788540_fb68c8f00a_m.jpg" alt="KeyRemap4MacBook-01"/></a></p>
+
+<p><code>private.xml</code> が開いたら中身を以下のような感じにします。</p>
+
+<figure class='code'><figcaption><span>private.xml</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+</span><span class='line'><span class="nt">&lt;root&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;appdef&gt;</span>
+</span><span class='line'>      <span class="nt">&lt;appname&gt;</span>SEQUELPRO<span class="nt">&lt;/appname&gt;</span>
+</span><span class='line'>      <span class="nt">&lt;equal&gt;</span>com.sequelpro.SequelPro<span class="nt">&lt;/equal&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;/appdef&gt;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nt">&lt;item&gt;</span>
+</span><span class='line'>      <span class="nt">&lt;name&gt;</span>My keymappings<span class="nt">&lt;/name&gt;</span>
+</span><span class='line'>      <span class="nt">&lt;item&gt;</span>
+</span><span class='line'>          <span class="nt">&lt;name&gt;</span>C-h to Backspace (SequelPro)<span class="nt">&lt;/name&gt;</span>
+</span><span class='line'>          <span class="nt">&lt;identifier&gt;</span>private.app_sequelpro_control_h_to_backspace<span class="nt">&lt;/identifier&gt;</span>
+</span><span class='line'>          <span class="nt">&lt;only&gt;</span>SEQUELPRO<span class="nt">&lt;/only&gt;</span>
+</span><span class='line'>          <span class="nt">&lt;autogen&gt;</span>--KeyToKey-- KeyCode::H, ModifierFlag::CONTROL_L, KeyCode::DELETE<span class="nt">&lt;/autogen&gt;</span>
+</span><span class='line'>      <span class="nt">&lt;/item&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;/item&gt;</span>
+</span><span class='line'><span class="nt">&lt;/root&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><code>private.xml</code> の編集ができたら、後は XML を再読み込みして、今作った設定にチェックを入れるだけ！</p>
+
+<p><a href="http://www.flickr.com/photos/hamaco/8469695085" title="KeyRemap4MacBook-02" class="dpad-flickr-img"><img src="http://farm9.staticflickr.com/8520/8469695085_0f88729fd2_m.jpg" alt="KeyRemap4MacBook-02"/></a></p>
+
+<p>これで Sequel Pro でも C-h で バックスペースが使えるようになりました。</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Xperia GX買ってからしばらく経った]]></title>
-    <link href="http://hamaco.github.com/blog/2013/02/13/xperiagx-impression/"/>
-    <updated>2013-02-13T01:13:28+09:00</updated>
-    <id>http://hamaco.github.com/blog/2013/02/13/xperiagx-impression</id>
+    <link href="http://hamaco.github.com/blog/2013/02/12/xperiagx-impression/"/>
+    <updated>2013-02-12T16:13:00+09:00</updated>
+    <id>http://hamaco.github.com/blog/2013/02/12/xperiagx-impression</id>
     <content type="html"><![CDATA[<p>Portable Wi-Fi の2年縛りが切れて買い替えようと思ってた時に、スマホでも料金とか変わらないっすよってドコモショップの人が言ってたので Wi-Fi 端末の代わりに購入した。</p>
 
 <h2>良い所</h2>
@@ -1292,68 +1354,6 @@ jsxファイル単体をbinの中に置いても動作しなかったのでgit c
 
 
 <p>screenの時は良く分からなくて <code>zombie ^[</code> と書いて全て残るようにしてたんだけど、tmuxはコマンド使えるので普段は自動で閉じて、ssh/moshの時だけ閉じないとかできて楽チンですね。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Moshをインストールしてみた]]></title>
-    <link href="http://hamaco.github.com/blog/2012/04/15/install-mosh/"/>
-    <updated>2012-04-15T21:55:00+09:00</updated>
-    <id>http://hamaco.github.com/blog/2012/04/15/install-mosh</id>
-    <content type="html"><![CDATA[<p>Moshを使うとネットが遅かったり切れたりしても大丈夫とかいう話を聞いたので、新しくなったさくらVPSに<a href="http://mosh.mit.edu/">Mosh</a>をインストールしてみました。</p>
-
-<h2>サーバのDebianにインストール</h2>
-
-<p>Debianにはmoshのパッケージがないようなので自分でコンパイルする。<br/>
-以下の様にして必要なパッケージを導入。ただ、元々入っているパッケージもあるのでこれで全部かは不明。</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sudo aptitude install build-essential protobuf-compiler libprotobuf-dev pkg-config dh-autoreconf zlib1g-dev libboost-dev libncurses-dev</span></code></pre></td></tr></table></div></figure>
-
-
-<p>必要なパッケージが入ったら後はgithubからソースを持ってきて普通にコンパイルする。<br/>
-管理者権限が必要なく、ログインアカウントのPATHさえ通ってれば行ける感じだったので普段通り/homeディレクトリ内にインストールした。</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>git clone git://github.com/keithw/mosh.git
-</span><span class='line'>cd mosh
-</span><span class='line'>./autogen.sh
-</span><span class='line'>./configure \
-</span><span class='line'>  --prefix=$HOME/local
-</span><span class='line'>
-</span><span class='line'>make && make install</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>クライアントのUbuntuにインストール</h2>
-
-<p>Ubuntuにはパッケージからインストールできるようなので<a href="http://mosh.mit.edu/#getting">ここ</a>を参考にパッケージからインストールする。</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get install python-software-properties
-</span><span class='line'>sudo add-apt-repository ppa:keithw/mosh
-</span><span class='line'>sudo apt-get update
-</span><span class='line'>sudo apt-get install mosh</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>接続テスト</h2>
-
-<p>クライアント側とサーバ側でのインストールが完了したら接続テストをしてみる。<br/>
-特別サーバ側で事前になにかする必要はなく、クライアント側からの接続時にmosh-serverが立ち上がります。</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>mosh {sakura_vps_ip_address}</span></code></pre></td></tr></table></div></figure>
-
-
-<p>まだMoshのメリットを享受してないので分からないですが、良い感じなら他のサーバにも導入しようかな。</p>
 ]]></content>
   </entry>
   
