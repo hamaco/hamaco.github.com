@@ -4,7 +4,7 @@
   <title><![CDATA[hamaco's blog]]></title>
   <link href="http://hamaco.github.com/atom.xml" rel="self"/>
   <link href="http://hamaco.github.com/"/>
-  <updated>2013-02-14T16:36:55+09:00</updated>
+  <updated>2013-02-14T17:35:43+09:00</updated>
   <id>http://hamaco.github.com/</id>
   <author>
     <name><![CDATA[hamaco]]></name>
@@ -20,22 +20,21 @@
     <id>http://hamaco.github.com/blog/2013/02/14/candycane-assign-narrowdown</id>
     <content type="html"><![CDATA[<p><a href="http://d.hatena.ne.jp/nazoking/20110714/1310620770">Redmineのチケットの担当者を関係者のみに絞り込むプラグイン</a>と言う素敵なプラグインがあるらしいのですが、これがCandyCane に対応してなかったので CandyCane 版のチケットの担当者を関係者のみに絞り込むプラグインを作りました。</p>
 
-<p>そのチケットを作ったとか、チケットにコメントしてるとかそういう感じでチケットに関係してる人だけに絞る感じのプラグインです。<br/>
-詳しくは上記サイト見たりインストールして使ってみると良いと思います。</p>
-
 <h2>インストール方法</h2>
 
 <p>近いうちに普通に CandyCane の管理画面からプラグインインストールでいけるようになると思います。</p>
+
+<p>(追記：2013-02-14 17:25) pull request がマージされたのでインストールできるようになりました。</p>
 
 <h2>デモ</h2>
 
 <p>これが</p>
 
-<p><a href="http://www.flickr.com/photos/hamaco/8472036309" target="_blank"><img src="http://farm9.staticflickr.com/8250/8472036309_906443d111.jpg" title="candycane-assign-narrowdown-01" /></a></p>
+<p><a href="http://www.flickr.com/photos/hamaco/8472036309" target="_blank"><img src="http://farm9.staticflickr.com/8250/8472036309_906443d111.jpg" alt="candycane-assign-narrowdown-01" title="candycane-assign-narrowdown-01" /></a></p>
 
 <p>こうなる</p>
 
-<p><a href="http://www.flickr.com/photos/hamaco/8473127348" target="_blank"><img src="http://farm9.staticflickr.com/8517/8473127348_7df7976910.jpg" title="candycane-assign-narrowdown-02" /></a></p>
+<p><a href="http://www.flickr.com/photos/hamaco/8473127348" target="_blank"><img src="http://farm9.staticflickr.com/8517/8473127348_7df7976910.jpg" alt="candycane-assign-narrowdown-02" title="candycane-assign-narrowdown-02" /></a></p>
 ]]></content>
   </entry>
   
@@ -163,10 +162,7 @@
 
 <p>Mr.Reader がほぼ完全に自分の Google Reader の使い方にマッチしているのであまりにもライフハックで生きるのが辛い。</p>
 
-<p>   今まで消化するのが面倒で未読が万単位で溜まったりしてたのが、500 - 2000 程度をうろちょろするようになりましたとさ。
-   hogehoge</p>
-
-<p>add line</p>
+<p>今まで消化するのが面倒で未読が万単位で溜まったりしてたのが、500 - 2000 程度をうろちょろするようになりましたとさ。</p>
 ]]></content>
   </entry>
   
