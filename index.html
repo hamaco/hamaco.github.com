@@ -7,7 +7,7 @@
 	<meta name="author" content="hamaco">
 
 	
-	<meta name="description" content="Redmineのチケットの担当者を関係者のみに絞り込むプラグインと言う素敵なプラグインがあるらしいのですが、これがCandyCane に対応してなかったので CandyCane 版のチケットの担当者を関係者のみに絞り込むプラグインを作りました。 インストール方法 近いうちに普通に &hellip;">
+	<meta name="description" content="CakePHP 1.3で作られたウェブサービスをメンテナンスしてるのですが、先日ヘルパー部分でハマってしまったのでメモかねてエントリ。 まず前提として、cake/libs/controller/controller.php の __mergeVars() を見ると分かるのですが、CakePHP &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -77,6 +77,91 @@
 			
 			<div class="mid-col-container">
 				<div id="content" class="inner">
+
+
+    <article class="post">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-15T00:00:00+09:00" pubdate data-updated="true">2013年02月15日</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/cakephp/'>cakephp</a>
+
+
+</div>
+		
+	</div>
+	<h1 class="title"><a href="/blog/2013/02/15/cakephp-trap/">CakePHP のヘルパー設定で嵌った件</a></h1>
+	<div class="entry-content">
+		<p>CakePHP 1.3で作られたウェブサービスをメンテナンスしてるのですが、先日ヘルパー部分でハマってしまったのでメモかねてエントリ。</p>
+
+<p>まず前提として、<code>cake/libs/controller/controller.php</code> の <code>__mergeVars()</code> を見ると分かるのですが、CakePHP はヘルパーとかを AppController と現在のコントローラーのプロパティをマージして使ってます。</p>
+
+<p>なので例えば以下のように書けば Hoge と Fuga の2つのヘルパーが読み込まれます。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="cp">&lt;?php</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">class</span> <span class="nc">PostsController</span> <span class="k">extends</span> <span class="nx">AppController</span> <span class="p">{</span>
+</span><span class='line'>    <span class="k">var</span> <span class="nv">$helpers</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;Hoge&#39;</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">class</span> <span class="nc">AppController</span> <span class="k">extends</span> <span class="nx">Controller</span> <span class="p">{</span>
+</span><span class='line'>    <span class="k">var</span> <span class="nv">$helpers</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;Fuga&#39;</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>で、ここで私が1つ勘違いしていたことがあって、私は AppController に書いたやつと現在のコントローラーに書いたやつ「だけ」が読み込まれると思っていました。<br/>
+以下のように AppController に helpers プロパティがなかったら Hoge の1つだけが読み込まれると思っていたわけです。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="cp">&lt;?php</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">class</span> <span class="nc">PostsController</span> <span class="k">extends</span> <span class="nx">AppController</span> <span class="p">{</span>
+</span><span class='line'>    <span class="k">var</span> <span class="nv">$helpers</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;Hoge&#39;</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">class</span> <span class="nc">AppController</span> <span class="k">extends</span> <span class="nx">Controller</span> <span class="p">{</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>しかし、実際は AppController の親クラスである Controller の helpers プロパティでいくつか設定されてるので、 Hoge, Session, Html, Form の4つのヘルパーが読み込まれるんですね。<br/>
+これを知らなくて、 AppController に Fuga とだけ書いて暫く嵌ってしまいましたとさ。ちゃんちゃん。</p>
+
+		
+		
+	</div>
+
+</article>
 
 
     <article class="post">
@@ -1297,72 +1382,6 @@ Windows7風にキーボードで画面サイズ最大化とか、Opera以外の�
 <h1>まとめ</h1>
 
 <p>システム環境設定は今の所こんな感じにしています。導入したアプリーケーションとかはある程度落ち着いたらその2とかでまとめます。</p>
-
-		
-		
-	</div>
-
-</article>
-
-
-    <article class="post">
-	<div class="meta">
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-06-14T23:29:00+09:00" pubdate data-updated="true">2012年06月14日</time></div>
-		<div class="tags">
-
-
-	<a class='category' href='/blog/categories/candycane/'>candycane</a>
-
-
-</div>
-		
-	</div>
-	<h1 class="title"><a href="/blog/2012/06/14/candycane-gal/">CandyCaneでギャル文字</a></h1>
-	<div class="entry-content">
-		<p>最近ギャル文字が流行っているらしいのでCandyCaneでもギャル文字が使えるプラグイン作った。</p>
-
-<blockquote><p><a href="https://github.com/hamaco/candycane-gal">hamaco/candycane-gal - GitHub</a></p>
-
-<p><cite>http://github.com/hamaco/candycane-gal</cite></p></blockquote>
-
-<h2>インストール</h2>
-
-<p>まだ、CandyCaneのプラグイン一覧に登録されていないので以下の様な感じでgithubから持ってくる必要があります。</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>git clone https://github.com/hamaco/candycane-gal.git app/Plugin/CcGal</span></code></pre></td></tr></table></div></figure>
-
-
-<p>インストールはこれで終わり。
-これだけでチケットの説明やコメント等が全部ギャル文字になります。</p>
-
-<h2>スクリーンショット</h2>
-
-<p>参考までにギャル文字プラグインを入れる前と入れた後のスクリーンショットを貼っておきます。</p>
-
-<h3>Before</h3>
-
-<p><img src="/images/2012/06/candycane-gal-01.png" width="480"></p>
-
-<h3>After</h3>
-
-<p><img src="/images/2012/06/candycane-gal-02.png" width="480"></p>
-
-<h2>参考サイト</h2>
-
-<p><a href="http://mattn.kaoriya.net/software/vim/20120607224505.htm">Big Sky :: Vimでギャル文字</a></p>
 
 		
 		

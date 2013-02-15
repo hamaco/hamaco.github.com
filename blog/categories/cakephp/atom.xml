@@ -4,7 +4,7 @@
   <title><![CDATA[Category: cakephp | hamaco's blog]]></title>
   <link href="http://hamaco.github.com/blog/categories/cakephp/atom.xml" rel="self"/>
   <link href="http://hamaco.github.com/"/>
-  <updated>2013-02-14T17:35:43+09:00</updated>
+  <updated>2013-02-15T19:59:54+09:00</updated>
   <id>http://hamaco.github.com/</id>
   <author>
     <name><![CDATA[hamaco]]></name>
@@ -12,6 +12,57 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[CakePHP のヘルパー設定で嵌った件]]></title>
+    <link href="http://hamaco.github.com/blog/2013/02/15/cakephp-trap/"/>
+    <updated>2013-02-15T00:00:00+09:00</updated>
+    <id>http://hamaco.github.com/blog/2013/02/15/cakephp-trap</id>
+    <content type="html"><![CDATA[<p>CakePHP 1.3で作られたウェブサービスをメンテナンスしてるのですが、先日ヘルパー部分でハマってしまったのでメモかねてエントリ。</p>
+
+<p>まず前提として、<code>cake/libs/controller/controller.php</code> の <code>__mergeVars()</code> を見ると分かるのですが、CakePHP はヘルパーとかを AppController と現在のコントローラーのプロパティをマージして使ってます。</p>
+
+<p>なので例えば以下のように書けば Hoge と Fuga の2つのヘルパーが読み込まれます。</p>
+
+<p>```php
+&lt;?php</p>
+
+<p>class PostsController extends AppController {</p>
+
+<pre><code>var $helpers = array('Hoge');
+</code></pre>
+
+<p>}</p>
+
+<p>class AppController extends Controller {</p>
+
+<pre><code>var $helpers = array('Fuga');
+</code></pre>
+
+<p>}
+```</p>
+
+<p>で、ここで私が1つ勘違いしていたことがあって、私は AppController に書いたやつと現在のコントローラーに書いたやつ「だけ」が読み込まれると思っていました。<br/>
+以下のように AppController に helpers プロパティがなかったら Hoge の1つだけが読み込まれると思っていたわけです。</p>
+
+<p>```php
+&lt;?php</p>
+
+<p>class PostsController extends AppController {</p>
+
+<pre><code>var $helpers = array('Hoge');
+</code></pre>
+
+<p>}</p>
+
+<p>class AppController extends Controller {
+}
+```</p>
+
+<p>しかし、実際は AppController の親クラスである Controller の helpers プロパティでいくつか設定されてるので、 Hoge, Session, Html, Form の4つのヘルパーが読み込まれるんですね。<br/>
+これを知らなくて、 AppController に Fuga とだけ書いて暫く嵌ってしまいましたとさ。ちゃんちゃん。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[CandyCane API実装中]]></title>
