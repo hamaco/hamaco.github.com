@@ -122,7 +122,15 @@
     </url>
     <url>
         <loc>http://hamaco.github.com/blog/2013/02/15/cakephp-trap/</loc>
-        <lastmod>2013-02-15T19:59:53+09:00</lastmod>
+        <lastmod>2013-02-21T12:59:11+09:00</lastmod>
+    </url>
+    <url>
+        <loc>http://hamaco.github.com/blog/2013/02/16/recent-ipad/</loc>
+        <lastmod>2013-02-21T12:59:11+09:00</lastmod>
+    </url>
+    <url>
+        <loc>http://hamaco.github.com/blog/2013/04/16/chef-casual-talks-vol1/</loc>
+        <lastmod>2013-04-16T20:00:43+09:00</lastmod>
     </url>
     <url>
         <loc>http://hamaco.github.com/about/</loc>
@@ -130,10 +138,10 @@
     </url>
     <url>
         <loc>http://hamaco.github.com/blog/archives/</loc>
-        <lastmod>2013-02-15T19:59:53+09:00</lastmod>
+        <lastmod>2013-04-16T20:00:43+09:00</lastmod>
     </url>
     <url>
         <loc>http://hamaco.github.com/</loc>
-        <lastmod>2013-02-15T19:59:53+09:00</lastmod>
+        <lastmod>2013-04-16T20:00:43+09:00</lastmod>
     </url>
 </urlset>

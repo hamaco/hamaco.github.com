@@ -4,7 +4,7 @@
   <title><![CDATA[Category: mac | hamaco's blog]]></title>
   <link href="http://hamaco.github.com/blog/categories/mac/atom.xml" rel="self"/>
   <link href="http://hamaco.github.com/"/>
-  <updated>2013-02-15T19:59:54+09:00</updated>
+  <updated>2013-04-16T20:01:11+09:00</updated>
   <id>http://hamaco.github.com/</id>
   <author>
     <name><![CDATA[hamaco]]></name>
@@ -12,6 +12,46 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Chef Casual Talks Vol.1 に参加してきた]]></title>
+    <link href="http://hamaco.github.com/blog/2013/04/16/chef-casual-talks-vol1/"/>
+    <updated>2013-04-16T20:00:00+09:00</updated>
+    <id>http://hamaco.github.com/blog/2013/04/16/chef-casual-talks-vol1</id>
+    <content type="html"><![CDATA[<p>Chef の Casual なイベントがあったので参加してきました。</p>
+
+<h2>久し振りのLT</h2>
+
+<p>普段勉強会であんまり発表しないのですが、今回のイベントは発表必須だったので、最近ちょこちょこやり始めた Mac の開発環境を chef で管理している話を話してきました。</p>
+
+<p>スライドとかまともなの作ってなくて公開できないので、発表の時に使った cookbook を公開。</p>
+
+<p><a href="https://github.com/hamaco/chef-hamacbook">hamaco/chef-hamacbook · GitHub</a></p>
+
+<p>多分 Ruby が入ってて rake コマンドが使えれば動くと思いますが、ある程度環境構築済みの状態からしか使った事がないのでもしかしたら何か足りなかったりするかも……</p>
+
+<p>あと、完全に自分の使い易い環境構築するだけなので実行して後悔してもしりません。</p>
+
+<h2>感想</h2>
+
+<ul>
+<li>Casual っていうから軽い感じなのかと思いきや内容だいぶ濃かった</li>
+<li>ピザでてくると思ってたのに弁当でてきてビックリ
+
+<ul>
+<li>勉強会とかってピザ多いからピザ以外のがでてくるとなんとなく嬉しいよね</li>
+</ul>
+</li>
+<li>発表したおかげで嵌ってた箇所が1箇所解決した
+
+<ul>
+<li>ついでに会話中に1個 TODO 気付いた</li>
+</ul>
+</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[新Macbook Airを買ったので設定したことまとめ その2]]></title>

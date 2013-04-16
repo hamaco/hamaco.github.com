@@ -7,11 +7,8 @@
 	<meta name="author" content="hamaco">
 
 	
-	<meta name="description" content="よく覚えてなかったからoctopreessやり直してみた。 markdownってどうやって書くんだっけかな。 &lt;?php
-function hello($name)
-{ return "Hello {$name}!!";
-}
-echo hello("hamaco"); &hellip;">
+	<meta name="description" content="普段使っているプラギンが7.3以上専用だったりして、基本的にディストリ標準のVimだとまともに動かないので、最近はvimを自分でコンパイルしてる。
+こないだインストールした時にも思ったけど、新規でインストールする時に必要なパッケージとか調べるの面倒なのでメモしておく。 &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -81,6 +78,201 @@ echo hello("hamaco"); &hellip;">
 			
 			<div class="mid-col-container">
 				<div id="content" class="inner">
+
+
+    <article class="post">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-03-28T03:21:00+09:00" pubdate data-updated="true">2012年03月28日</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/vim/'>vim</a>
+
+
+</div>
+		
+	</div>
+	<h1 class="title"><a href="/blog/2012/03/28/compile-vim/">Vim をソースからコンパイルする</a></h1>
+	<div class="entry-content">
+		<p>普段使っているプラギンが7.3以上専用だったりして、基本的にディストリ標準のVimだとまともに動かないので、最近はvimを自分でコンパイルしてる。<br/>
+こないだインストールした時にも思ったけど、新規でインストールする時に必要なパッケージとか調べるの面倒なのでメモしておく。<br/>
+UbuntuでインストールしたのでUbuntuになってるのでCentOSとかの場合は適宜置き換えること。<br/>
+もし今度CentOSでコンパイルすることがあれば追記するかも。</p>
+
+<h2>必要なパッケージのインストール</h2>
+
+<pre><code>sudo aptitude install mercurial libncurses-dev libx11-dev libxt-dev libgtk2.0-dev
+</code></pre>
+
+<h2>Vimのソースの取得</h2>
+
+<p>今後それなりにコンパイルすることになると思うので、VimはMercurialのリポジトリから取得してくる。</p>
+
+<pre><code>hg clone https://vim.googlecode.com/hg/ vim
+</code></pre>
+
+<p>2回目以降は以下の方法でリポジトリを更新する。</p>
+
+<pre><code>hg pull
+hg update
+</code></pre>
+
+<h2>Make</h2>
+
+<p>後は普通にコンパイルするだけ。configureのオプションは結構テキトー。とりあえず動いてるからいいかなーとか思ってる。
+自分しか使わないし、サーバ上とかで他の人が使ってなにかあったりしたら面倒なのでホームディレクトリ以下にインストールされるようにしてるくらいで後は普通かと。</p>
+
+<div><script src='https://gist.github.com/2218942.js?file='></script>
+<noscript><pre><code>#!/bin/sh
+
+./configure \
+    --prefix=$HOME/app/vim-7.3 \
+    --disable-darwin \
+    --disable-selinux \
+    --enable-fontset \
+    --enable-gnome-check \
+    --enable-gui=gtk2 \
+    --enable-multibyte \
+    --enable-perlinterp \
+    --enable-pythoninterp \
+    --enable-rubyinterp \
+    --with-vim-name=vim \
+    --with-compiledby=&quot;hamaco &lt;hamanaka.kazuhiro@gmail.com&gt;&quot; \
+    --with-features=huge \
+    --with-tlib=ncurses
+
+make &amp;&amp; make install</code></pre></noscript></div>
+
+
+<p>終わり!</p>
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-03-23T00:46:00+09:00" pubdate data-updated="true">2012年03月23日</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/github/'>github</a>, <a class='category' href='/blog/categories/octopress/'>octopress</a>
+
+
+</div>
+		
+	</div>
+	<h1 class="title"><a href="/blog/2012/03/23/install-octopress/">GitHub PagesでOctopress使ってみる</a></h1>
+	<div class="entry-content">
+		<p>Markdownでメモ書きたかったので以前1回やったOctopressをまたセットアップしてみた。
+前やった時のメモとか公式とか見ながら再度セットアップしたのでMarkdownの練習兼ねてメモ。</p>
+
+<h2>Github Pages用のリポジトリ作成</h2>
+
+<p><a href="https://github.com/repositories/new">GitHub</a>で hamaco.github.com という名前でリポジトリを作成する。</p>
+
+<h2>Octopressのダウンロード</h2>
+
+<p>ダウンロードというかgitでcloneしてくる。</p>
+
+<pre><code>git clone https://github.com/imathis/octopress.git
+</code></pre>
+
+<p>bundlerとかいうやつで必要なgemとかインストールして初期処理を行う。</p>
+
+<pre><code>cd octopress
+gem install bundler
+bundle install
+rake install
+</code></pre>
+
+<h2>Octopressの設定</h2>
+
+<h3>初期設定</h3>
+
+<p>下記コマンドを実行するとgithubのリポジトリを聞かれるので最初に作成したGithub PageのリポジトリURLを指定する。</p>
+
+<pre><code>rake setup_github_pages
+
+git@github.com:hamaco/hamaco.github.com.git
+</code></pre>
+
+<p>その後、下記コマンドを実行してしばらく(10分弱)待つと見れるようになる。</p>
+
+<pre><code>rake generate
+rake deploy
+</code></pre>
+
+<h3>Blogの設定</h3>
+
+<p>設定ファイルを弄ってタイトルとかをちゃんとしたのにする。</p>
+
+<pre><code>gvim _config.yml
+</code></pre>
+
+<h2>記事の作成</h2>
+
+<p>記事を作成するのにはrakeを実行して、内容を書いてやる。</p>
+
+<pre><code>rake new_post\["title name"\]
+gvim source/_posts/2012-03-23-title-name.markdown
+</code></pre>
+
+<h2>ソースの管理</h2>
+
+<p>なんかプロジェクトページとユーザページを統合しとくと面倒とか書いてあるブログがあったりしたので丁度アカウントも持ってたしBitbucketでソースを管理するようにしてみる。<br/>
+と言ってもBitbucketでリポジトリを作成してpushしてあげるだけ。<br/>
+Bitbucketでのリポジトリ作成はGitHubとたいして変わらないので割愛。分からなければ参考サイト見て下さい。</p>
+
+<pre><code>git add .
+git commit -m 'commit message'
+git push origin source
+git remote add bitbucket git@bitbucket.org:hamaco/octopress-github.git
+git push -u bitbucket source
+</code></pre>
+
+<h2>参考サイト</h2>
+
+<ul>
+<li><a href="http://octopress.org/docs/setup/">Octopress Setup - Octopress</a></li>
+<li><a href="http://mattn.kaoriya.net/software/lang/ruby/20111017205717.htm">Big Sky :: githubとjekyllとoctopressで作る簡単でモダンなブログ</a></li>
+<li><a href="http://www.glidenote.com/archives/1517">GithubとOctopressでモダンな技術系ブログを作ってみる | Glide Note - グライドノート</a></li>
+<li><a href="http://tokkonopapa.github.com/blog/2011/12/30/octopress-on-github-and-bitbucket/">Octopressのインストールから運用管理まで - T.I.D.</a></li>
+</ul>
+
+
+		
+		
+	</div>
+
+</article>
 
 
     <article class="post">

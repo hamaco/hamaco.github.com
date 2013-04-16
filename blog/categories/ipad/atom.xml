@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: ipad | hamaco's blog]]></title>
+  <link href="http://hamaco.github.com/blog/categories/ipad/atom.xml" rel="self"/>
+  <link href="http://hamaco.github.com/"/>
+  <updated>2013-04-16T20:01:11+09:00</updated>
+  <id>http://hamaco.github.com/</id>
+  <author>
+    <name><![CDATA[hamaco]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[最近のiPad]]></title>
+    <link href="http://hamaco.github.com/blog/2013/02/16/recent-ipad/"/>
+    <updated>2013-02-16T23:25:00+09:00</updated>
+    <id>http://hamaco.github.com/blog/2013/02/16/recent-ipad</id>
+    <content type="html"><![CDATA[<p><a href="http://www.flickr.com/photos/hamaco/8479084770" target="_blank"><img src="http://farm9.staticflickr.com/8102/8479084770_3f6fbedaba.jpg" title="recent-ipad-01" /></a></p>
+
+<ul>
+<li>キーボードの右下にある切り替えキーが地味に便利</li>
+<li>Mr. Reader からはてブできるように設定した</li>
+<li>メインのカレンダーアプリを Calendars に変えた</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>
