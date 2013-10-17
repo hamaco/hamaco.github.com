@@ -7,7 +7,7 @@
 	<meta name="author" content="hamaco">
 
 	
-	<meta name="description" content="久し振りに Mr. Reader の テーマ一覧ページを見に行ったら、今使ってる Mr. Reminder Dark をベースにした Chad&#8217;s Perfect RSS というテーマがあったのでテーマを変更してみた。 ちなみに見た目はこんな感じに変わった。 ↓ 既読・ &hellip;">
+	<meta name="description" content="なんか、会場が家から歩いていける場所だったので、先週の日曜日に開催された、momonga.vim #2 に参加してきました。 昼食 他の人みたいに特に書くことはないです。 本編 自分のやりたい事をテキトーにやる感じのイベントだったので、Vim でぷよぷよやったりする人がいるのを横目に私は &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="pocket-site-verification" content="8f6b8d3da0b431025351fb1ea9acfc" />
@@ -56,9 +56,6 @@
 		
 	</div>
 </nav>
-<a href="http://phpmatsuri.net/2013/">
-  <img src="/images/banner/phpmatsuri-2013.png" alt="PHP Matsuri2013">
-</a>
 
 </header>
 		</div>		
@@ -83,6 +80,67 @@
 			
 			<div class="mid-col-container">
 				<div id="content" class="inner">
+
+
+    <article class="post">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-10-17T13:14:00+09:00" pubdate data-updated="true">2013年10月17日</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/event/'>event</a>, <a class='category' href='/blog/categories/vim/'>vim</a>
+
+
+</div>
+		
+	</div>
+	<h1 class="title"><a href="/blog/2013/10/17/momonga-vim-2/">momonga.vim #2 に参加してきた</a></h1>
+	<div class="entry-content">
+		<p>なんか、会場が家から歩いていける場所だったので、先週の日曜日に開催された、<a href="http://partake.in/events/55ef537f-07fb-4e36-8f27-666f7925a4d7">momonga.vim #2</a> に参加してきました。</p>
+
+<h2>昼食</h2>
+
+<p>他の人みたいに特に書くことはないです。</p>
+
+<h2>本編</h2>
+
+<p>自分のやりたい事をテキトーにやる感じのイベントだったので、Vim でぷよぷよやったりする人がいるのを横目に私は NeoBundle の Lazy とかの設定をちまちまやってました。</p>
+
+<h2>2次会</h2>
+
+<p>武蔵境駅北口にある温野菜ってお店で野菜しゃぶしゃぶ&amp;ソフトドリンクメインの健康的な2次会でした。
+ただ、この店食べ放題なのに3回催促しても注文通ってませんでしたってことでなかったことになるので、Vim の話より店の話で盛り上ったようなw</p>
+
+<h2>全ては無に</h2>
+
+<p>しかし、家に帰って次の日に Macbook を開いたら SSD が逝ってしまったので momonga.vim でやったことは全てなかったことに。
+明日コミットして github に上げればいいやとか思ってた自分がバカでした……
+自分の使ってるやつが Macbook Air 2012 + 東芝SSD と言う最近有名なやつだったので、バックアップとか気をつけとかないとなーと思っていたところでこれだよ。
+一応保証期間内か調べてみたところ、噂通りの1年ちょっとで壊れたのでダメっぽい……</p>
+
+<p>保証きれた頃に壊れるとか、とりあえず Apple は SONY に金を払え(違</p>
+
+<p>そんなわけで今は何かやる度に CPU使用率が 100% になる Macbook Air 2011 で作業をしてるのですが、今だとどの Macbook を買うのがお勧めなんですかね?
+調べていたら、Apple でカスタマイズしてメモリ8GBにした Air と、Retina Pro の最安値が同じというのを知って、Pro を使ってみるのも面白いんじゃないかとか思ったりしたけど、Retina Pro あんまり評判良くないので何となく不安だったり。
+ただ、丁度来週に新しい OS がでるとか、Macbook Pro が発表されるとかされないとかで、今買うとなんとなく負けな気がするのが悲しい……</p>
+
+		
+		
+	</div>
+
+</article>
 
 
     <article class="post">
@@ -878,39 +936,7 @@ type以外の部分は自分のCandyCane/Redmineのに合わせて変えて下�
 <p>まだ vimperator のプラグイン良く分かってなくて、PLUGIN_INFO だか INFO だかを書いたほうが良いっぽいんだけどどっちが正しいのかが分からなかったので書いてない……</p>
 
 <div><script src='https://gist.github.com/4105959.js?file='></script>
-<noscript><pre><code>(function() {
-  var SpeakerDeck = function() {
-    var doc = content.document;
-    if (doc.location.host !== 'speakerdeck.com') {
-      return liberator.echoerr('Current page is not speakerdeck.');
-    }
-
-    var iframe = doc.wrappedJSObject.getElementsByClassName('speakerdeck-iframe')[0];
-    var slide  = iframe.contentWindow.Slide;
-
-    return {
-      next: function() {
-        slide.next();
-      },
-      prev: function() {
-        slide.previous();
-      }
-    }
-  };
-
-  commands.addUserCommand(
-    ['speakerdeck'],
-    'SpeakerDeck controller',
-    function() {},
-    {
-      subCommands: [
-        new Command(['n[ext]'], 'Go next page',     function() SpeakerDeck().next()),
-        new Command(['p[rev]'], 'Go previous page', function() SpeakerDeck().prev()),
-      ]
-    },
-    true
-  );
-})();</code></pre></noscript></div>
+<noscript><pre><code>&lt;html&gt;&lt;body&gt;You are being &lt;a href=&quot;https://github.com/gist/4105959&quot;&gt;redirected&lt;/a&gt;.&lt;/body&gt;&lt;/html&gt;</code></pre></noscript></div>
 
 
 
@@ -1081,152 +1107,6 @@ PHP Matsuriの前のPHP勉強会でネタ決めましたー? 決めてないで�
 <p><img src="/images/2012/11/phpmatsuri-2012-04.png" width="240"></p>
 
 <p><img src="/images/2012/11/phpmatsuri-2012-05.png" width="240"></p>
-
-		
-		
-	</div>
-
-</article>
-
-
-    <article class="post">
-	<div class="meta">
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-07-25T14:58:00+09:00" pubdate data-updated="true">2012年07月25日</time></div>
-		<div class="tags">
-
-
-	<a class='category' href='/blog/categories/mac/'>mac</a>
-
-
-</div>
-		
-	</div>
-	<h1 class="title"><a href="/blog/2012/07/25/setup-macbook-air-02/">新Macbook Airを買ったので設定したことまとめ その2</a></h1>
-	<div class="entry-content">
-		<p>大分前にその1を書いた、Macbook Airのセットアップまとめ記事 その2。めんどくさくて放置してたんですが、なんかもうMountain Lionが発売されちゃうらしいので、別マシンにMountain Lion入れる時の参考用兼ねて、よく見かけるMacに最初に入れたアプリ20個を紹介してみます。</p>
-
-<p>ちなみに前回は<a href="http://hamaco.github.com/blog/2012/06/21/setup-macbook-air-01/">こちら</a></p>
-
-<h2>インストールしたアプリ</h2>
-
-<p>前回入れたKeyRemap4macbookとAquaSKKは除外</p>
-
-<h3>1.Opera</h3>
-
-<p>まあこれを入れなきゃなにも始まらないですよね。戻る・進むが高速だったりどこぞの腐ったブラウザと違って普通にPOSTページのソース見れたり、簡単にHTML弄れたりと基本的な部分が使い易すぎます。
-ただ、Operaだとちゃんと動かないページがそれなりに……</p>
-
-<h3>2.Firefox</h3>
-
-<p>主に開発中のメインブラウザ。携帯ページの開発とかでUA簡単に変更できるFirefoxをずっと使ってます。
-ちなみにインストールしたアドオンはこれくらい。</p>
-
-<ul>
-<li>1Password</li>
-<li>Clearly</li>
-<li>Evernote Web Clipper</li>
-<li>Firebug</li>
-<li>FireMobileSimlator</li>
-<li>Hatenabookmark</li>
-<li>Stylish</li>
-<li>Vimperator</li>
-</ul>
-
-
-<h3>3.Google Chrome</h3>
-
-<p>ほとんどFlash見る専用ブラウザ。Windowsマシンだとfacebook見たりとかに使っててたのでインストールしたけど、MacだとSafariで十分なのであんまり立ち上げる機会がない。</p>
-
-<h3>4.MacVim</h3>
-
-<p>メインで使ってるエディタがVimなのでそれのMac版。もうVimがないと開発とか色々やる気が起きない。
-設定は<a href="https://github.com/hamaco/dotfiles/blob/master/dot.vimrc">この辺</a>に置いてあります。</p>
-
-<h3>5.YoruFukurou</h3>
-
-<p>Twitterクライアント。他に使い易いのがあるかもしれないけどキーバインドとかが自分の好みにあっているのでずっとこれを使ってます。</p>
-
-<h3>6.Growl</h3>
-
-<p>通知ツール。Lionに入れてからそれなりに暴走するのが困り所。</p>
-
-<h3>7.Dropbox</h3>
-
-<p>きっと誰もが知ってるクラウドストレージ。なんだかんだで他のに移行するの面倒だし、色んなアプリが対応してたりするのでずっとこれ使ってます。ちょこちょこイベントあったりして容量が増えてくのもGOOD!</p>
-
-<h3>8.1Password</h3>
-
-<p>パスワード管理ソフト。Windows/Mac/iPhone/Android/WindowsPhoneとLinux以外の自分が使ってる全てのOSに対応している&amp;Opera以外のブラウザAdd-onがあるので、パスワード管理はこれ一択。
-いや、まあKeePassとかあるけど、昔使ってた時全体的な使い勝手が悪かったりしたので……</p>
-
-<h3>9.Sequal Pro</h3>
-
-<p>MySQLのフロントエンドツール。基本コマンドラインでMySQLを操作してたんだけど、普通の人に画面見せたりする時に分かりにくいと思って試しに入れてみたらこれが非常に使い易い。
-これのPostgreSQL版とかないかなー。</p>
-
-<h3>10.MAMP</h3>
-
-<p>買った直後にハッカソンがあったりとかで開発環境必要だったのでとりあえず入れた。PHP5.3も動くし、変なことしないなら案外これだけでもいけるかもしれない。</p>
-
-<h3>11.iTerm2</h3>
-
-<p>ターミナルソフト。MacデフォルトのTerminalだとなんか問題があってこいつ使ってるんだけど理由を覚えていないという……
-基本的にTerminal&amp;Visorの頃と同様に、Command+EnterでHotkey Windowsがでるようにして使ってます。</p>
-
-<h3>12.homebrew</h3>
-
-<p>パッケージマネージャ。 yumとかaptみたいなやつ。macportsより楽に使えるのでこっち使ってる。</p>
-
-<h3>13.Horst</h3>
-
-<p>hostファイルをGUIで管理できるようになるツール。今迄普通にTerminalで/etc/hosts弄ってたんだけど、LionになってHorstが使えるようになったので試しに使用中。
-起動時に毎回ウィンドウサイズがリセットされる以外はまあボチボチ使い易いかな。</p>
-
-<h3>14.BetterTouchTool</h3>
-
-<p>細々した機能があるツールをいくつも入れるのが面倒だったので、まとめて導入できるこいつを使ってます。
-Windows7風にキーボードで画面サイズ最大化とか、Opera以外のブラウザでロッカージェスチャ(TipTap)有効化にするとかそんな感じでちまちましたやつをいくつか設定してます。</p>
-
-<h3>15.Alfred</h3>
-
-<p>ランチャー。QuickSilverが更新されてなかったのとなんだったか問題があってしばらく前にこれに乗り換えた。まだ普通のランチャー機能+ホットキーでのLockくらいしか使ってないけど……</p>
-
-<h3>16.Caffeine</h3>
-
-<p>Macのスリープを防止してくれるソフト。普段メインマシンはWindowsなので、Macがしょっちゅうスリープして面倒だったので入れてます。後はイベントの時とかにONにしておくとプレゼンしてて、気が付くと画面真っ黒とか防いでくれるので便利。ON/OFFするの忘れるのが一番の困りもの。</p>
-
-<h3>17.OmniFocus</h3>
-
-<p>TODO管理ソフト。他にも色々あるんだけどなんか良く名前を聞く気がしたので使用中。</p>
-
-<h3>18.SimpleCap</h3>
-
-<p>スクリーンショットツール。最低限必要な機能があったのと、角丸で撮ることとかができたので基本的にはこれを使ってます。基本的にスクリーンショット加工しないのでこれで十分。</p>
-
-<h3>19.Transmit</h3>
-
-<p>FTPとかのファイル転送クライアント。なにかのタイミングで安く手に入ったのと、リモートとローカルを同期してくれたりして細かい所が便利だったので使ってます。最近だとディスクとしてマウントできたりするのでさらに便利になってるけど、FTPとかWebDAV関係使う機会もなくなってきたのであんまり活躍する所がなくなってきてる。</p>
-
-<h3>20.iStat Menus</h3>
-
-<p>リソースモニタリングソフト。メニューバーから簡単にCPU使用状況とか見れるので便利。Memory・CPU・Date&amp;Time・Batteryの4つ表示して使ってます。
-ちなみに関係ないアプリですがiStat ProというDashboard用のモニタリングソフトも一応入れてたりします。</p>
-
-<h2>終わり</h2>
-
-<p>とりあえずインストールしたのはこのくらい。 まあ現在はお試しで入れてみたり、仕事で必要になったアプリとか入れてますが必ず入れるのはこの辺かなーと。</p>
 
 		
 		

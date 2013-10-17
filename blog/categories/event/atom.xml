@@ -4,7 +4,7 @@
   <title><![CDATA[Category: event | hamaco's blog]]></title>
   <link href="http://hamaco.github.com/blog/categories/event/atom.xml" rel="self"/>
   <link href="http://hamaco.github.com/"/>
-  <updated>2013-06-25T11:33:47+09:00</updated>
+  <updated>2013-10-17T14:53:47+09:00</updated>
   <id>http://hamaco.github.com/</id>
   <author>
     <name><![CDATA[hamaco]]></name>
@@ -12,6 +12,41 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[momonga.vim #2 に参加してきた]]></title>
+    <link href="http://hamaco.github.com/blog/2013/10/17/momonga-vim-2/"/>
+    <updated>2013-10-17T13:14:00+09:00</updated>
+    <id>http://hamaco.github.com/blog/2013/10/17/momonga-vim-2</id>
+    <content type="html"><![CDATA[<p>なんか、会場が家から歩いていける場所だったので、先週の日曜日に開催された、<a href="http://partake.in/events/55ef537f-07fb-4e36-8f27-666f7925a4d7">momonga.vim #2</a> に参加してきました。</p>
+
+<h2>昼食</h2>
+
+<p>他の人みたいに特に書くことはないです。</p>
+
+<h2>本編</h2>
+
+<p>自分のやりたい事をテキトーにやる感じのイベントだったので、Vim でぷよぷよやったりする人がいるのを横目に私は NeoBundle の Lazy とかの設定をちまちまやってました。</p>
+
+<h2>2次会</h2>
+
+<p>武蔵境駅北口にある温野菜ってお店で野菜しゃぶしゃぶ&amp;ソフトドリンクメインの健康的な2次会でした。
+ただ、この店食べ放題なのに3回催促しても注文通ってませんでしたってことでなかったことになるので、Vim の話より店の話で盛り上ったようなw</p>
+
+<h2>全ては無に</h2>
+
+<p>しかし、家に帰って次の日に Macbook を開いたら SSD が逝ってしまったので momonga.vim でやったことは全てなかったことに。
+明日コミットして github に上げればいいやとか思ってた自分がバカでした……
+自分の使ってるやつが Macbook Air 2012 + 東芝SSD と言う最近有名なやつだったので、バックアップとか気をつけとかないとなーと思っていたところでこれだよ。
+一応保証期間内か調べてみたところ、噂通りの1年ちょっとで壊れたのでダメっぽい……</p>
+
+<p>保証きれた頃に壊れるとか、とりあえず Apple は SONY に金を払え(違</p>
+
+<p>そんなわけで今は何かやる度に CPU使用率が 100% になる Macbook Air 2011 で作業をしてるのですが、今だとどの Macbook を買うのがお勧めなんですかね?
+調べていたら、Apple でカスタマイズしてメモリ8GBにした Air と、Retina Pro の最安値が同じというのを知って、Pro を使ってみるのも面白いんじゃないかとか思ったりしたけど、Retina Pro あんまり評判良くないので何となく不安だったり。
+ただ、丁度来週に新しい OS がでるとか、Macbook Pro が発表されるとかされないとかで、今買うとなんとなく負けな気がするのが悲しい……</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[PHP Matsuri 2012に参加してきた]]></title>

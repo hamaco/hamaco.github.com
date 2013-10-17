@@ -56,9 +56,6 @@
 		
 	</div>
 </nav>
-<a href="http://phpmatsuri.net/2013/">
-  <img src="/images/banner/phpmatsuri-2013.png" alt="PHP Matsuri2013">
-</a>
 
 </header>
 		</div>		
@@ -89,39 +86,7 @@
 <p>まだ vimperator のプラグイン良く分かってなくて、PLUGIN_INFO だか INFO だかを書いたほうが良いっぽいんだけどどっちが正しいのかが分からなかったので書いてない……</p>
 
 <div><script src='https://gist.github.com/4105959.js?file='></script>
-<noscript><pre><code>(function() {
-  var SpeakerDeck = function() {
-    var doc = content.document;
-    if (doc.location.host !== 'speakerdeck.com') {
-      return liberator.echoerr('Current page is not speakerdeck.');
-    }
-
-    var iframe = doc.wrappedJSObject.getElementsByClassName('speakerdeck-iframe')[0];
-    var slide  = iframe.contentWindow.Slide;
-
-    return {
-      next: function() {
-        slide.next();
-      },
-      prev: function() {
-        slide.previous();
-      }
-    }
-  };
-
-  commands.addUserCommand(
-    ['speakerdeck'],
-    'SpeakerDeck controller',
-    function() {},
-    {
-      subCommands: [
-        new Command(['n[ext]'], 'Go next page',     function() SpeakerDeck().next()),
-        new Command(['p[rev]'], 'Go previous page', function() SpeakerDeck().prev()),
-      ]
-    },
-    true
-  );
-})();</code></pre></noscript></div>
+<noscript><pre><code>&lt;html&gt;&lt;body&gt;You are being &lt;a href=&quot;https://github.com/gist/4105959&quot;&gt;redirected&lt;/a&gt;.&lt;/body&gt;&lt;/html&gt;</code></pre></noscript></div>
 
 
 

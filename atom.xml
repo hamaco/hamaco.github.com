@@ -4,7 +4,7 @@
   <title><![CDATA[hamaco's blog]]></title>
   <link href="http://hamaco.github.com/atom.xml" rel="self"/>
   <link href="http://hamaco.github.com/"/>
-  <updated>2013-06-25T11:33:47+09:00</updated>
+  <updated>2013-10-17T14:53:47+09:00</updated>
   <id>http://hamaco.github.com/</id>
   <author>
     <name><![CDATA[hamaco]]></name>
@@ -12,6 +12,41 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[momonga.vim #2 に参加してきた]]></title>
+    <link href="http://hamaco.github.com/blog/2013/10/17/momonga-vim-2/"/>
+    <updated>2013-10-17T13:14:00+09:00</updated>
+    <id>http://hamaco.github.com/blog/2013/10/17/momonga-vim-2</id>
+    <content type="html"><![CDATA[<p>なんか、会場が家から歩いていける場所だったので、先週の日曜日に開催された、<a href="http://partake.in/events/55ef537f-07fb-4e36-8f27-666f7925a4d7">momonga.vim #2</a> に参加してきました。</p>
+
+<h2>昼食</h2>
+
+<p>他の人みたいに特に書くことはないです。</p>
+
+<h2>本編</h2>
+
+<p>自分のやりたい事をテキトーにやる感じのイベントだったので、Vim でぷよぷよやったりする人がいるのを横目に私は NeoBundle の Lazy とかの設定をちまちまやってました。</p>
+
+<h2>2次会</h2>
+
+<p>武蔵境駅北口にある温野菜ってお店で野菜しゃぶしゃぶ&amp;ソフトドリンクメインの健康的な2次会でした。
+ただ、この店食べ放題なのに3回催促しても注文通ってませんでしたってことでなかったことになるので、Vim の話より店の話で盛り上ったようなw</p>
+
+<h2>全ては無に</h2>
+
+<p>しかし、家に帰って次の日に Macbook を開いたら SSD が逝ってしまったので momonga.vim でやったことは全てなかったことに。
+明日コミットして github に上げればいいやとか思ってた自分がバカでした……
+自分の使ってるやつが Macbook Air 2012 + 東芝SSD と言う最近有名なやつだったので、バックアップとか気をつけとかないとなーと思っていたところでこれだよ。
+一応保証期間内か調べてみたところ、噂通りの1年ちょっとで壊れたのでダメっぽい……</p>
+
+<p>保証きれた頃に壊れるとか、とりあえず Apple は SONY に金を払え(違</p>
+
+<p>そんなわけで今は何かやる度に CPU使用率が 100% になる Macbook Air 2011 で作業をしてるのですが、今だとどの Macbook を買うのがお勧めなんですかね?
+調べていたら、Apple でカスタマイズしてメモリ8GBにした Air と、Retina Pro の最安値が同じというのを知って、Pro を使ってみるのも面白いんじゃないかとか思ったりしたけど、Retina Pro あんまり評判良くないので何となく不安だったり。
+ただ、丁度来週に新しい OS がでるとか、Macbook Pro が発表されるとかされないとかで、今買うとなんとなく負けな気がするのが悲しい……</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Mr.Reader の Theme を変更した]]></title>
@@ -515,39 +550,7 @@ type以外の部分は自分のCandyCane/Redmineのに合わせて変えて下�
 <p>まだ vimperator のプラグイン良く分かってなくて、PLUGIN_INFO だか INFO だかを書いたほうが良いっぽいんだけどどっちが正しいのかが分からなかったので書いてない……</p>
 
 <div><script src='https://gist.github.com/4105959.js?file='></script>
-<noscript><pre><code>(function() {
-  var SpeakerDeck = function() {
-    var doc = content.document;
-    if (doc.location.host !== 'speakerdeck.com') {
-      return liberator.echoerr('Current page is not speakerdeck.');
-    }
-
-    var iframe = doc.wrappedJSObject.getElementsByClassName('speakerdeck-iframe')[0];
-    var slide  = iframe.contentWindow.Slide;
-
-    return {
-      next: function() {
-        slide.next();
-      },
-      prev: function() {
-        slide.previous();
-      }
-    }
-  };
-
-  commands.addUserCommand(
-    ['speakerdeck'],
-    'SpeakerDeck controller',
-    function() {},
-    {
-      subCommands: [
-        new Command(['n[ext]'], 'Go next page',     function() SpeakerDeck().next()),
-        new Command(['p[rev]'], 'Go previous page', function() SpeakerDeck().prev()),
-      ]
-    },
-    true
-  );
-})();</code></pre></noscript></div>
+<noscript><pre><code>&lt;html&gt;&lt;body&gt;You are being &lt;a href=&quot;https://github.com/gist/4105959&quot;&gt;redirected&lt;/a&gt;.&lt;/body&gt;&lt;/html&gt;</code></pre></noscript></div>
 
 
 
@@ -1062,29 +1065,6 @@ Windows7風にキーボードで画面サイズ最大化とか、Opera以外の�
 <h2>参考サイト</h2>
 
 <p><a href="http://mattn.kaoriya.net/software/vim/20120607224505.htm">Big Sky :: Vimでギャル文字</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[CandyCaneのチケット作成での誤爆を防ぐプラグイン書いた]]></title>
-    <link href="http://hamaco.github.com/blog/2012/06/11/candycane-enter-cancel/"/>
-    <updated>2012-06-11T19:20:00+09:00</updated>
-    <id>http://hamaco.github.com/blog/2012/06/11/candycane-enter-cancel</id>
-    <content type="html"><![CDATA[<p>CandyCane でチケット作成してて、タイトルで Enter キーを連打して書きかけのチケットを作って、うがぁあああ、ってなったことありませんか？</p>
-
-<p>私はありません。</p>
-
-<p>ですがその様な人がいるかもしれないようなので、こんな悲しい思いを繰り返さないためのプラグインを作りました。</p>
-
-<h2>ソースコード</h2>
-
-<p><a href="https://github.com/hamaco/candycane-enter-cancel">hamaco/candycane-enter-cancel · GitHub</a></p>
-
-<h2>謝罪</h2>
-
-<p>すみません、このサイトのRedmineプラグインをパクりましたm(_ _)m</p>
-
-<p><a href="http://d.hatena.ne.jp/suer/20120610/1339336133">Redmineのチケット作成での誤爆を防ぐプラグイン書いた - すえひろがりっっっっ!</a></p>
 ]]></content>
   </entry>
   
