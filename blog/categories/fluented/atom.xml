@@ -4,7 +4,7 @@
   <title><![CDATA[Category: fluented | hamaco's blog]]></title>
   <link href="http://hamaco.github.com/blog/categories/fluented/atom.xml" rel="self"/>
   <link href="http://hamaco.github.com/"/>
-  <updated>2013-10-17T14:53:47+09:00</updated>
+  <updated>2013-11-25T21:12:36+09:00</updated>
   <id>http://hamaco.github.com/</id>
   <author>
     <name><![CDATA[hamaco]]></name>
@@ -115,7 +115,7 @@ fluentd -c fluent/fluent.conf
 <pre><code>sudo vim ~/works/fluent/fluent.conf
 </code></pre>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -170,8 +170,8 @@ gem install bson_ext
 
 <p>WebサーバとDBサーバの準備ができたのでnginxのアクセスログをDBサーバに飛ばしてMongoDBに保存する設定を書く。</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Web Server's fluent.conf  </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Web Server&rsquo;s fluent.conf </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -211,8 +211,8 @@ gem install bson_ext
 </span><span class='line'><span class="nt">&lt;/match&gt;</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>DB Server's fluent.conf  </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>DB Server&rsquo;s fluent.conf </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -256,7 +256,7 @@ gem install bson_ext
 </span><span class='line'><span class="nt">&lt;/match&gt;</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>後はテキトーにwebにアクセスすると、Webサーバのstdoutに出力 -> DBサーバのstdoutに出力 -> MongoDBに保存 とされる。</p>
+<p>後はテキトーにwebにアクセスすると、Webサーバのstdoutに出力 &ndash;> DBサーバのstdoutに出力 &ndash;> MongoDBに保存 とされる。</p>
 ]]></content>
   </entry>
   

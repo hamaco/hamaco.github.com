@@ -4,7 +4,7 @@
   <title><![CDATA[Category: php | hamaco's blog]]></title>
   <link href="http://hamaco.github.com/blog/categories/php/atom.xml" rel="self"/>
   <link href="http://hamaco.github.com/"/>
-  <updated>2013-10-17T14:53:47+09:00</updated>
+  <updated>2013-11-25T21:12:36+09:00</updated>
   <id>http://hamaco.github.com/</id>
   <author>
     <name><![CDATA[hamaco]]></name>
@@ -100,7 +100,7 @@ type以外の部分は自分のCandyCane/Redmineのに合わせて変えて下�
     <link href="http://hamaco.github.com/blog/2012/11/14/phpmatsuri-2012/"/>
     <updated>2012-11-14T23:04:00+09:00</updated>
     <id>http://hamaco.github.com/blog/2012/11/14/phpmatsuri-2012</id>
-    <content type="html"><![CDATA[<p>11/3 - 11/4に福岡で開催されたPHP Matsuri 2012に参加してきました。
+    <content type="html"><![CDATA[<p>11/3 &ndash; 11/4に福岡で開催されたPHP Matsuri 2012に参加してきました。
 東京のMatsuriには行ったことがないのでPHP Matsuriの参加は前回の関西に続いて2回目の参加です。</p>
 
 <p>前回PHP Matsuriってのがどんなのか良く分からずなんの準備もなく参加したけど、今回は前回の教訓を生かして事前にLTネタを考えてから参加しま……せんでした。

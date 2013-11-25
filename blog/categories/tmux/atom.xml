@@ -4,7 +4,7 @@
   <title><![CDATA[Category: tmux | hamaco's blog]]></title>
   <link href="http://hamaco.github.com/blog/categories/tmux/atom.xml" rel="self"/>
   <link href="http://hamaco.github.com/"/>
-  <updated>2013-10-17T14:53:47+09:00</updated>
+  <updated>2013-11-25T21:12:36+09:00</updated>
   <id>http://hamaco.github.com/</id>
   <author>
     <name><![CDATA[hamaco]]></name>
@@ -53,7 +53,7 @@ set-option -g default-command "reattach-to-user-namespace -l zsh"
 
 <h2>参考サイト</h2>
 
-<p><a href="http://d.hatena.ne.jp/koseki2/20110816/TmuxCopy">Mac の tmux でクリップボードを使う。 - こせきの技術日記</a></p>
+<p><a href="http://d.hatena.ne.jp/koseki2/20110816/TmuxCopy">Mac の tmux でクリップボードを使う。 &ndash; こせきの技術日記</a></p>
 ]]></content>
   </entry>
   

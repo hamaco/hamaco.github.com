@@ -4,7 +4,7 @@
   <title><![CDATA[Category: github | hamaco's blog]]></title>
   <link href="http://hamaco.github.com/blog/categories/github/atom.xml" rel="self"/>
   <link href="http://hamaco.github.com/"/>
-  <updated>2013-10-17T14:53:47+09:00</updated>
+  <updated>2013-11-25T21:12:36+09:00</updated>
   <id>http://hamaco.github.com/</id>
   <author>
     <name><![CDATA[hamaco]]></name>
@@ -88,10 +88,10 @@ git push -u bitbucket source
 <h2>参考サイト</h2>
 
 <ul>
-<li><a href="http://octopress.org/docs/setup/">Octopress Setup - Octopress</a></li>
+<li><a href="http://octopress.org/docs/setup/">Octopress Setup &ndash; Octopress</a></li>
 <li><a href="http://mattn.kaoriya.net/software/lang/ruby/20111017205717.htm">Big Sky :: githubとjekyllとoctopressで作る簡単でモダンなブログ</a></li>
-<li><a href="http://www.glidenote.com/archives/1517">GithubとOctopressでモダンな技術系ブログを作ってみる | Glide Note - グライドノート</a></li>
-<li><a href="http://tokkonopapa.github.com/blog/2011/12/30/octopress-on-github-and-bitbucket/">Octopressのインストールから運用管理まで - T.I.D.</a></li>
+<li><a href="http://www.glidenote.com/archives/1517">GithubとOctopressでモダンな技術系ブログを作ってみる | Glide Note &ndash; グライドノート</a></li>
+<li><a href="http://tokkonopapa.github.com/blog/2011/12/30/octopress-on-github-and-bitbucket/">Octopressのインストールから運用管理まで &ndash; T.I.D.</a></li>
 </ul>
 
 ]]></content>

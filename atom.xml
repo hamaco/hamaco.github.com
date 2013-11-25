@@ -4,7 +4,7 @@
   <title><![CDATA[hamaco's blog]]></title>
   <link href="http://hamaco.github.com/atom.xml" rel="self"/>
   <link href="http://hamaco.github.com/"/>
-  <updated>2013-10-17T14:53:47+09:00</updated>
+  <updated>2013-11-25T21:12:36+09:00</updated>
   <id>http://hamaco.github.com/</id>
   <author>
     <name><![CDATA[hamaco]]></name>
@@ -12,6 +12,17 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Octopress を最新にした]]></title>
+    <link href="http://hamaco.github.com/blog/2013/11/25/update-octopress/"/>
+    <updated>2013-11-25T21:07:00+09:00</updated>
+    <id>http://hamaco.github.com/blog/2013/11/25/update-octopress</id>
+    <content type="html"><![CDATA[<p>新しく買った Macbook Pro Retina (1個前のモデル&hellip;) で環境作ってみたら、iconvのあたりでエラーがでて<code>rake generate</code>とかなにもできなくなってしまったので、Octopress を1年以上振りに最新にしてみたら gem のバージョン上がって動くようになった。</p>
+
+<p>この1年ちょっとの間に Octopress 以外にも色々ブログ書けそうなやつ沢山でてきてるし、Octopress なんとなく面倒なのでもっとシンプルなのに乗り換えても良いんじゃないかと思ってる。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[momonga.vim #2 に参加してきた]]></title>
@@ -53,7 +64,7 @@
     <link href="http://hamaco.github.com/blog/2013/06/19/change-mr-reader-theme/"/>
     <updated>2013-06-19T19:46:00+09:00</updated>
     <id>http://hamaco.github.com/blog/2013/06/19/change-mr-reader-theme</id>
-    <content type="html"><![CDATA[<p>久し振りに Mr. Reader の テーマ一覧ページを見に行ったら、今使ってる Mr. Reminder Dark をベースにした Chad&#8217;s Perfect RSS というテーマがあったのでテーマを変更してみた。</p>
+    <content type="html"><![CDATA[<p>久し振りに Mr. Reader の テーマ一覧ページを見に行ったら、今使ってる Mr. Reminder Dark をベースにした Chad&rsquo;s Perfect RSS というテーマがあったのでテーマを変更してみた。</p>
 
 <p>ちなみに見た目はこんな感じに変わった。</p>
 
@@ -143,7 +154,7 @@
 <span class='line-number'>7</span>
 <span class='line-number'>8</span>
 <span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="cp">&lt;?php</span>
+</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="o">&lt;?</span><span class="nx">php</span>
 </span><span class='line'>
 </span><span class='line'><span class="k">class</span> <span class="nc">PostsController</span> <span class="k">extends</span> <span class="nx">AppController</span> <span class="p">{</span>
 </span><span class='line'>    <span class="k">var</span> <span class="nv">$helpers</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;Hoge&#39;</span><span class="p">);</span>
@@ -166,7 +177,7 @@
 <span class='line-number'>6</span>
 <span class='line-number'>7</span>
 <span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="cp">&lt;?php</span>
+</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="o">&lt;?</span><span class="nx">php</span>
 </span><span class='line'>
 </span><span class='line'><span class="k">class</span> <span class="nc">PostsController</span> <span class="k">extends</span> <span class="nx">AppController</span> <span class="p">{</span>
 </span><span class='line'>    <span class="k">var</span> <span class="nv">$helpers</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;Hoge&#39;</span><span class="p">);</span>
@@ -331,7 +342,7 @@
 
 <p>Mr.Reader がほぼ完全に自分の Google Reader の使い方にマッチしているのであまりにもライフハックで生きるのが辛い。</p>
 
-<p>今まで消化するのが面倒で未読が万単位で溜まったりしてたのが、500 - 2000 程度をうろちょろするようになりましたとさ。</p>
+<p>今まで消化するのが面倒で未読が万単位で溜まったりしてたのが、500 &ndash; 2000 程度をうろちょろするようになりましたとさ。</p>
 ]]></content>
   </entry>
   
@@ -549,8 +560,40 @@ type以外の部分は自分のCandyCane/Redmineのに合わせて変えて下�
 
 <p>まだ vimperator のプラグイン良く分かってなくて、PLUGIN_INFO だか INFO だかを書いたほうが良いっぽいんだけどどっちが正しいのかが分からなかったので書いてない……</p>
 
-<div><script src='https://gist.github.com/4105959.js?file='></script>
-<noscript><pre><code>&lt;html&gt;&lt;body&gt;You are being &lt;a href=&quot;https://github.com/gist/4105959&quot;&gt;redirected&lt;/a&gt;.&lt;/body&gt;&lt;/html&gt;</code></pre></noscript></div>
+<div><script src='https://gist.github.com/4105959.js'></script>
+<noscript><pre><code>(function() {
+  var SpeakerDeck = function() {
+    var doc = content.document;
+    if (doc.location.host !== &#39;speakerdeck.com&#39;) {
+      return liberator.echoerr(&#39;Current page is not speakerdeck.&#39;);
+    }
+
+    var iframe = doc.wrappedJSObject.getElementsByClassName(&#39;speakerdeck-iframe&#39;)[0];
+    var player = iframe.contentWindow.player;
+
+    return {
+      next: function() {
+        player.nextSlide();
+      },
+      prev: function() {
+        player.previousSlide();
+      }
+    }
+  };
+
+  commands.addUserCommand(
+    [&#39;speakerdeck&#39;],
+    &#39;Speaker Deck controller&#39;,
+    function() {},
+    {
+      subCommands: [
+        new Command([&#39;n[ext]&#39;], &#39;Go next page&#39;,     function() SpeakerDeck().next()),
+        new Command([&#39;p[rev]&#39;], &#39;Go previous page&#39;, function() SpeakerDeck().prev()),
+      ]
+    },
+    true
+  );
+})();</code></pre></noscript></div>
 
 
 
@@ -612,7 +655,7 @@ type以外の部分は自分のCandyCane/Redmineのに合わせて変えて下�
     <link href="http://hamaco.github.com/blog/2012/11/14/phpmatsuri-2012/"/>
     <updated>2012-11-14T23:04:00+09:00</updated>
     <id>http://hamaco.github.com/blog/2012/11/14/phpmatsuri-2012</id>
-    <content type="html"><![CDATA[<p>11/3 - 11/4に福岡で開催されたPHP Matsuri 2012に参加してきました。
+    <content type="html"><![CDATA[<p>11/3 &ndash; 11/4に福岡で開催されたPHP Matsuri 2012に参加してきました。
 東京のMatsuriには行ったことがないのでPHP Matsuriの参加は前回の関西に続いて2回目の参加です。</p>
 
 <p>前回PHP Matsuriってのがどんなのか良く分からずなんの準備もなく参加したけど、今回は前回の教訓を生かして事前にLTネタを考えてから参加しま……せんでした。
@@ -919,7 +962,7 @@ Windows7風にキーボードで画面サイズ最大化とか、Opera以外の�
 
 <h2>参考サイト</h2>
 
-<p><a href="http://d.hatena.ne.jp/koseki2/20110816/TmuxCopy">Mac の tmux でクリップボードを使う。 - こせきの技術日記</a></p>
+<p><a href="http://d.hatena.ne.jp/koseki2/20110816/TmuxCopy">Mac の tmux でクリップボードを使う。 &ndash; こせきの技術日記</a></p>
 ]]></content>
   </entry>
   
@@ -1002,9 +1045,9 @@ Windows7風にキーボードで画面サイズ最大化とか、Opera以外の�
 <ul>
 <li>US配列</li>
 <li>SandS</li>
-<li>かな -> Enter</li>
-<li>英数 -> ESC</li>
-<li>右Shift ->  ^と&amp;</li>
+<li>かな &ndash;> Enter</li>
+<li>英数 &ndash;> ESC</li>
+<li>右Shift &ndash;>  ^と&amp;</li>
 </ul>
 
 
@@ -1025,46 +1068,6 @@ Windows7風にキーボードで画面サイズ最大化とか、Opera以外の�
 <h1>まとめ</h1>
 
 <p>システム環境設定は今の所こんな感じにしています。導入したアプリーケーションとかはある程度落ち着いたらその2とかでまとめます。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[CandyCaneでギャル文字]]></title>
-    <link href="http://hamaco.github.com/blog/2012/06/14/candycane-gal/"/>
-    <updated>2012-06-14T23:29:00+09:00</updated>
-    <id>http://hamaco.github.com/blog/2012/06/14/candycane-gal</id>
-    <content type="html"><![CDATA[<p>最近ギャル文字が流行っているらしいのでCandyCaneでもギャル文字が使えるプラグイン作った。</p>
-
-<blockquote><p><a href="https://github.com/hamaco/candycane-gal">hamaco/candycane-gal - GitHub</a></p>
-
-<p><cite>http://github.com/hamaco/candycane-gal</cite></p></blockquote>
-
-<h2>インストール</h2>
-
-<p>まだ、CandyCaneのプラグイン一覧に登録されていないので以下の様な感じでgithubから持ってくる必要があります。</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>git clone https://github.com/hamaco/candycane-gal.git app/Plugin/CcGal</span></code></pre></td></tr></table></div></figure>
-
-
-<p>インストールはこれで終わり。
-これだけでチケットの説明やコメント等が全部ギャル文字になります。</p>
-
-<h2>スクリーンショット</h2>
-
-<p>参考までにギャル文字プラグインを入れる前と入れた後のスクリーンショットを貼っておきます。</p>
-
-<h3>Before</h3>
-
-<p><img src="http://hamaco.github.com/images/2012/06/candycane-gal-01.png" width="480"></p>
-
-<h3>After</h3>
-
-<p><img src="http://hamaco.github.com/images/2012/06/candycane-gal-02.png" width="480"></p>
-
-<h2>参考サイト</h2>
-
-<p><a href="http://mattn.kaoriya.net/software/vim/20120607224505.htm">Big Sky :: Vimでギャル文字</a></p>
 ]]></content>
   </entry>
   

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: octopress | hamaco's blog]]></title>
   <link href="http://hamaco.github.com/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://hamaco.github.com/"/>
-  <updated>2013-10-17T14:53:47+09:00</updated>
+  <updated>2013-11-25T21:12:36+09:00</updated>
   <id>http://hamaco.github.com/</id>
   <author>
     <name><![CDATA[hamaco]]></name>
@@ -12,6 +12,17 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Octopress を最新にした]]></title>
+    <link href="http://hamaco.github.com/blog/2013/11/25/update-octopress/"/>
+    <updated>2013-11-25T21:07:00+09:00</updated>
+    <id>http://hamaco.github.com/blog/2013/11/25/update-octopress</id>
+    <content type="html"><![CDATA[<p>新しく買った Macbook Pro Retina (1個前のモデル&hellip;) で環境作ってみたら、iconvのあたりでエラーがでて<code>rake generate</code>とかなにもできなくなってしまったので、Octopress を1年以上振りに最新にしてみたら gem のバージョン上がって動くようになった。</p>
+
+<p>この1年ちょっとの間に Octopress 以外にも色々ブログ書けそうなやつ沢山でてきてるし、Octopress なんとなく面倒なのでもっとシンプルなのに乗り換えても良いんじゃないかと思ってる。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Octopressのテーマを変更してみた]]></title>
@@ -34,7 +45,7 @@ rake install['slash']
 <h2>テーマ確認</h2>
 
 <p>インストールが完了したらプレビューで確認してみましょう。<br/>
-サーバが立ち上がったあと http://127.0.0.1:4000/ とかで確認できるはずです。</p>
+サーバが立ち上がったあと <a href="http://127.0.0.1:4000/">http://127.0.0.1:4000/</a> とかで確認できるはずです。</p>
 
 <pre><code>rake preview
 </code></pre>
@@ -125,10 +136,10 @@ git push -u bitbucket source
 <h2>参考サイト</h2>
 
 <ul>
-<li><a href="http://octopress.org/docs/setup/">Octopress Setup - Octopress</a></li>
+<li><a href="http://octopress.org/docs/setup/">Octopress Setup &ndash; Octopress</a></li>
 <li><a href="http://mattn.kaoriya.net/software/lang/ruby/20111017205717.htm">Big Sky :: githubとjekyllとoctopressで作る簡単でモダンなブログ</a></li>
-<li><a href="http://www.glidenote.com/archives/1517">GithubとOctopressでモダンな技術系ブログを作ってみる | Glide Note - グライドノート</a></li>
-<li><a href="http://tokkonopapa.github.com/blog/2011/12/30/octopress-on-github-and-bitbucket/">Octopressのインストールから運用管理まで - T.I.D.</a></li>
+<li><a href="http://www.glidenote.com/archives/1517">GithubとOctopressでモダンな技術系ブログを作ってみる | Glide Note &ndash; グライドノート</a></li>
+<li><a href="http://tokkonopapa.github.com/blog/2011/12/30/octopress-on-github-and-bitbucket/">Octopressのインストールから運用管理まで &ndash; T.I.D.</a></li>
 </ul>
 
 ]]></content>

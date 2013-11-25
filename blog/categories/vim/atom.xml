@@ -4,7 +4,7 @@
   <title><![CDATA[Category: vim | hamaco's blog]]></title>
   <link href="http://hamaco.github.com/blog/categories/vim/atom.xml" rel="self"/>
   <link href="http://hamaco.github.com/"/>
-  <updated>2013-10-17T14:53:47+09:00</updated>
+  <updated>2013-11-25T21:12:36+09:00</updated>
   <id>http://hamaco.github.com/</id>
   <author>
     <name><![CDATA[hamaco]]></name>
@@ -88,7 +88,7 @@ set-option -g default-command "reattach-to-user-namespace -l zsh"
 
 <h2>参考サイト</h2>
 
-<p><a href="http://d.hatena.ne.jp/koseki2/20110816/TmuxCopy">Mac の tmux でクリップボードを使う。 - こせきの技術日記</a></p>
+<p><a href="http://d.hatena.ne.jp/koseki2/20110816/TmuxCopy">Mac の tmux でクリップボードを使う。 &ndash; こせきの技術日記</a></p>
 ]]></content>
   </entry>
   
@@ -125,8 +125,26 @@ hg update
 <p>後は普通にコンパイルするだけ。configureのオプションは結構テキトー。とりあえず動いてるからいいかなーとか思ってる。
 自分しか使わないし、サーバ上とかで他の人が使ってなにかあったりしたら面倒なのでホームディレクトリ以下にインストールされるようにしてるくらいで後は普通かと。</p>
 
-<p><div><script src='https://gist.github.com/2218942.js?file='></script>
-<noscript><pre><code>&lt;html&gt;&lt;body&gt;You are being &lt;a href=&quot;https://github.com/gist/2218942&quot;&gt;redirected&lt;/a&gt;.&lt;/body&gt;&lt;/html&gt;</code></pre></noscript></div>
+<p><div><script src='https://gist.github.com/2218942.js'></script>
+<noscript><pre><code>#!/bin/sh
+
+./configure \
+	--prefix=$HOME/app/vim-7.3 \
+	--disable-darwin \
+	--disable-selinux \
+	--enable-fontset \
+	--enable-gnome-check \
+	--enable-gui=gtk2 \
+	--enable-multibyte \
+	--enable-perlinterp \
+	--enable-pythoninterp \
+	--enable-rubyinterp \
+	--with-vim-name=vim \
+	--with-compiledby=&quot;hamaco &lt;hamanaka.kazuhiro@gmail.com&gt;&quot; \
+	--with-features=huge \
+	--with-tlib=ncurses
+
+make &amp;&amp; make install</code></pre></noscript></div>
 </p>
 
 <p>終わり!</p>

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: candycane | hamaco's blog]]></title>
   <link href="http://hamaco.github.com/blog/categories/candycane/atom.xml" rel="self"/>
   <link href="http://hamaco.github.com/"/>
-  <updated>2013-10-17T14:53:47+09:00</updated>
+  <updated>2013-11-25T21:12:36+09:00</updated>
   <id>http://hamaco.github.com/</id>
   <author>
     <name><![CDATA[hamaco]]></name>
@@ -127,9 +127,9 @@ type以外の部分は自分のCandyCane/Redmineのに合わせて変えて下�
     <id>http://hamaco.github.com/blog/2012/06/14/candycane-gal</id>
     <content type="html"><![CDATA[<p>最近ギャル文字が流行っているらしいのでCandyCaneでもギャル文字が使えるプラグイン作った。</p>
 
-<blockquote><p><a href="https://github.com/hamaco/candycane-gal">hamaco/candycane-gal - GitHub</a></p>
+<blockquote><p><a href="https://github.com/hamaco/candycane-gal">hamaco/candycane-gal &ndash; GitHub</a></p>
 
-<p><cite>http://github.com/hamaco/candycane-gal</cite></p></blockquote>
+<p><cite><a href="http://github.com/hamaco/candycane-gal">http://github.com/hamaco/candycane-gal</a></cite></p></blockquote>
 
 <h2>インストール</h2>
 
@@ -179,7 +179,7 @@ git clone https://github.com/hamaco/candycane-gal.git app/Plugin/CcGal
 
 <p>すみません、このサイトのRedmineプラグインをパクりましたm(_ _)m</p>
 
-<p><a href="http://d.hatena.ne.jp/suer/20120610/1339336133">Redmineのチケット作成での誤爆を防ぐプラグイン書いた - すえひろがりっっっっ!</a></p>
+<p><a href="http://d.hatena.ne.jp/suer/20120610/1339336133">Redmineのチケット作成での誤爆を防ぐプラグイン書いた &ndash; すえひろがりっっっっ!</a></p>
 ]]></content>
   </entry>
   

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: jsx | hamaco's blog]]></title>
   <link href="http://hamaco.github.com/blog/categories/jsx/atom.xml" rel="self"/>
   <link href="http://hamaco.github.com/"/>
-  <updated>2013-10-17T14:53:47+09:00</updated>
+  <updated>2013-11-25T21:12:36+09:00</updated>
   <id>http://hamaco.github.com/</id>
   <author>
     <name><![CDATA[hamaco]]></name>
@@ -43,48 +43,48 @@ $ make setup
 <p>以下のようなのがずらずらでてくるので暫く待つ。
 ```
 npm install
-npm http GET https://registry.npmjs.org/browserbuild
-npm http GET https://registry.npmjs.org/source-map
-npm http 200 https://registry.npmjs.org/source-map
-npm http GET https://registry.npmjs.org/source-map/-/source-map-0.1.0.tgz
-npm http 200 https://registry.npmjs.org/browserbuild
-npm http GET https://registry.npmjs.org/browserbuild/-/browserbuild-0.4.9.tgz
-npm http 200 https://registry.npmjs.org/source-map/-/source-map-0.1.0.tgz
-npm http 200 https://registry.npmjs.org/browserbuild/-/browserbuild-0.4.9.tgz
-npm http GET https://registry.npmjs.org/commander
-npm http GET https://registry.npmjs.org/debug/0.6.0
-npm http GET https://registry.npmjs.org/requirejs
-npm http 200 https://registry.npmjs.org/requirejs
-npm http GET https://registry.npmjs.org/requirejs/-/requirejs-2.0.0.tgz
-npm http 200 https://registry.npmjs.org/debug/0.6.0
-npm http GET https://registry.npmjs.org/debug/-/debug-0.6.0.tgz
-npm http 200 https://registry.npmjs.org/commander
-npm http GET https://registry.npmjs.org/commander/-/commander-0.5.2.tgz
-npm http 200 https://registry.npmjs.org/requirejs/-/requirejs-2.0.0.tgz
-npm http 200 https://registry.npmjs.org/debug/-/debug-0.6.0.tgz
-npm http 200 https://registry.npmjs.org/commander/-/commander-0.5.2.tgz
-Bbrowserbuild@0.4.9 ./node_modules/browserbuild
-├── debug@0.6.0
-└── commander@0.5.2
-source-map@0.1.0 ./node_modules/source-map
-└── requirejs@2.0.0
+npm http GET <a href="https://registry.npmjs.org/browserbuild">https://registry.npmjs.org/browserbuild</a>
+npm http GET <a href="https://registry.npmjs.org/source-map">https://registry.npmjs.org/source-map</a>
+npm http 200 <a href="https://registry.npmjs.org/source-map">https://registry.npmjs.org/source-map</a>
+npm http GET <a href="https://registry.npmjs.org/source-map/-/source-map-0.1.0.tgz">https://registry.npmjs.org/source-map/-/source-map-0.1.0.tgz</a>
+npm http 200 <a href="https://registry.npmjs.org/browserbuild">https://registry.npmjs.org/browserbuild</a>
+npm http GET <a href="https://registry.npmjs.org/browserbuild/-/browserbuild-0.4.9.tgz">https://registry.npmjs.org/browserbuild/-/browserbuild-0.4.9.tgz</a>
+npm http 200 <a href="https://registry.npmjs.org/source-map/-/source-map-0.1.0.tgz">https://registry.npmjs.org/source-map/-/source-map-0.1.0.tgz</a>
+npm http 200 <a href="https://registry.npmjs.org/browserbuild/-/browserbuild-0.4.9.tgz">https://registry.npmjs.org/browserbuild/-/browserbuild-0.4.9.tgz</a>
+npm http GET <a href="https://registry.npmjs.org/commander">https://registry.npmjs.org/commander</a>
+npm http GET <a href="https://registry.npmjs.org/debug/0.6.0">https://registry.npmjs.org/debug/0.6.0</a>
+npm http GET <a href="https://registry.npmjs.org/requirejs">https://registry.npmjs.org/requirejs</a>
+npm http 200 <a href="https://registry.npmjs.org/requirejs">https://registry.npmjs.org/requirejs</a>
+npm http GET <a href="https://registry.npmjs.org/requirejs/-/requirejs-2.0.0.tgz">https://registry.npmjs.org/requirejs/-/requirejs-2.0.0.tgz</a>
+npm http 200 <a href="https://registry.npmjs.org/debug/0.6.0">https://registry.npmjs.org/debug/0.6.0</a>
+npm http GET <a href="https://registry.npmjs.org/debug/-/debug-0.6.0.tgz">https://registry.npmjs.org/debug/-/debug-0.6.0.tgz</a>
+npm http 200 <a href="https://registry.npmjs.org/commander">https://registry.npmjs.org/commander</a>
+npm http GET <a href="https://registry.npmjs.org/commander/-/commander-0.5.2.tgz">https://registry.npmjs.org/commander/-/commander-0.5.2.tgz</a>
+npm http 200 <a href="https://registry.npmjs.org/requirejs/-/requirejs-2.0.0.tgz">https://registry.npmjs.org/requirejs/-/requirejs-2.0.0.tgz</a>
+npm http 200 <a href="https://registry.npmjs.org/debug/-/debug-0.6.0.tgz">https://registry.npmjs.org/debug/-/debug-0.6.0.tgz</a>
+npm http 200 <a href="https://registry.npmjs.org/commander/-/commander-0.5.2.tgz">https://registry.npmjs.org/commander/-/commander-0.5.2.tgz</a>
+<a href="&#x6d;&#97;&#105;&#x6c;&#116;&#111;&#58;&#66;&#98;&#114;&#111;&#x77;&#115;&#x65;&#114;&#98;&#x75;&#x69;&#x6c;&#100;&#64;&#48;&#x2e;&#52;&#x2e;&#x39;">&#x42;&#98;&#x72;&#x6f;&#119;&#115;&#101;&#114;&#98;&#117;&#105;&#108;&#100;&#64;&#48;&#46;&#52;&#46;&#x39;</a> ./node_modules/browserbuild
+├── <a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#58;&#100;&#101;&#98;&#117;&#x67;&#x40;&#48;&#46;&#54;&#x2e;&#x30;">&#100;&#x65;&#x62;&#117;&#103;&#x40;&#48;&#46;&#54;&#46;&#48;</a>
+└── <a href="&#109;&#97;&#105;&#x6c;&#116;&#111;&#x3a;&#x63;&#111;&#109;&#109;&#97;&#110;&#x64;&#x65;&#114;&#64;&#x30;&#x2e;&#x35;&#46;&#x32;">&#99;&#111;&#x6d;&#x6d;&#x61;&#x6e;&#x64;&#x65;&#114;&#64;&#x30;&#46;&#x35;&#46;&#50;</a>
+<a href="&#x6d;&#x61;&#105;&#x6c;&#x74;&#111;&#x3a;&#x73;&#x6f;&#x75;&#x72;&#x63;&#x65;&#45;&#x6d;&#97;&#112;&#x40;&#x30;&#x2e;&#49;&#46;&#x30;">&#115;&#111;&#x75;&#x72;&#x63;&#101;&#x2d;&#x6d;&#x61;&#x70;&#64;&#48;&#46;&#49;&#x2e;&#x30;</a> ./node_modules/source-map
+└── <a href="&#109;&#x61;&#105;&#x6c;&#116;&#111;&#58;&#114;&#101;&#x71;&#x75;&#105;&#114;&#x65;&#x6a;&#115;&#64;&#50;&#x2e;&#x30;&#46;&#x30;">&#114;&#101;&#113;&#117;&#105;&#114;&#x65;&#106;&#115;&#x40;&#x32;&#46;&#48;&#x2e;&#x30;</a>
 perl web/setup.pl
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current</p>
 
 <pre><code>                             Dload  Upload   Total   Spent    Left  Speed
 </code></pre>
 
-<p>  0     0    0     0    0     0      0      0 --:--:--  0:00:06 --:--:--     0
-100  320k  100  320k    0     0  39278      0  0:00:08  0:00:08 --:--:--  343k
---> Working on String::ShellQuote
-Fetching http://www.cpan.org/authors/id/R/RO/ROSCH/String-ShellQuote-1.04.tar.gz ... OK
-Configuring String-ShellQuote-1.04 ... OK
-Building String-ShellQuote-1.04 ... OK
+<p>  0     0    0     0    0     0      0      0 &mdash;:&mdash;:&mdash;  0:00:06 &mdash;:&mdash;:&mdash;     0
+100  320k  100  320k    0     0  39278      0  0:00:08  0:00:08 &mdash;:&mdash;:&mdash;  343k
+&mdash;> Working on String::ShellQuote
+Fetching <a href="http://www.cpan.org/authors/id/R/RO/ROSCH/String-ShellQuote-1.04.tar.gz">http://www.cpan.org/authors/id/R/RO/ROSCH/String-ShellQuote-1.04.tar.gz</a> &hellip; OK
+Configuring String-ShellQuote-1.04 &hellip; OK
+Building String-ShellQuote-1.04 &hellip; OK
 Successfully installed String-ShellQuote-1.04
---> Working on JSON::PP
-Fetching http://www.cpan.org/authors/id/M/MA/MAKAMAKA/JSON-PP-2.27200.tar.gz ... OK
-Configuring JSON-PP-2.27200 ... OK
-Building JSON-PP-2.27200 ... OK
+&mdash;> Working on JSON::PP
+Fetching <a href="http://www.cpan.org/authors/id/M/MA/MAKAMAKA/JSON-PP-2.27200.tar.gz">http://www.cpan.org/authors/id/M/MA/MAKAMAKA/JSON-PP-2.27200.tar.gz</a> &hellip; OK
+Configuring JSON-PP-2.27200 &hellip; OK
+Building JSON-PP-2.27200 &hellip; OK
 Successfully installed JSON-PP-2.27200 (upgraded from 2.27105)
 2 distributions installed
 ```</p>
@@ -128,7 +128,7 @@ $ mv JSX ~/app/JSX
 
 <p>``` vim .vimrc
 let g:quickrun_config = {}
-let g:quickrun_config['jsx'] = {</p>
+let g:quickrun_config[&lsquo;jsx&rsquo;] = {</p>
 
 <pre><code>        \ 'command': 'jsx',
         \ 'exec': ['%c --run %s']

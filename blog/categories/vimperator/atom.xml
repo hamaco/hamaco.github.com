@@ -4,7 +4,7 @@
   <title><![CDATA[Category: vimperator | hamaco's blog]]></title>
   <link href="http://hamaco.github.com/blog/categories/vimperator/atom.xml" rel="self"/>
   <link href="http://hamaco.github.com/"/>
-  <updated>2013-10-17T14:53:47+09:00</updated>
+  <updated>2013-11-25T21:12:36+09:00</updated>
   <id>http://hamaco.github.com/</id>
   <author>
     <name><![CDATA[hamaco]]></name>
@@ -22,8 +22,40 @@
 
 <p>まだ vimperator のプラグイン良く分かってなくて、PLUGIN_INFO だか INFO だかを書いたほうが良いっぽいんだけどどっちが正しいのかが分からなかったので書いてない……</p>
 
-<p><div><script src='https://gist.github.com/4105959.js?file='></script>
-<noscript><pre><code>&lt;html&gt;&lt;body&gt;You are being &lt;a href=&quot;https://github.com/gist/4105959&quot;&gt;redirected&lt;/a&gt;.&lt;/body&gt;&lt;/html&gt;</code></pre></noscript></div>
+<p><div><script src='https://gist.github.com/4105959.js'></script>
+<noscript><pre><code>(function() {
+  var SpeakerDeck = function() {
+    var doc = content.document;
+    if (doc.location.host !== &#39;speakerdeck.com&#39;) {
+      return liberator.echoerr(&#39;Current page is not speakerdeck.&#39;);
+    }
+
+    var iframe = doc.wrappedJSObject.getElementsByClassName(&#39;speakerdeck-iframe&#39;)[0];
+    var player = iframe.contentWindow.player;
+
+    return {
+      next: function() {
+        player.nextSlide();
+      },
+      prev: function() {
+        player.previousSlide();
+      }
+    }
+  };
+
+  commands.addUserCommand(
+    [&#39;speakerdeck&#39;],
+    &#39;Speaker Deck controller&#39;,
+    function() {},
+    {
+      subCommands: [
+        new Command([&#39;n[ext]&#39;], &#39;Go next page&#39;,     function() SpeakerDeck().next()),
+        new Command([&#39;p[rev]&#39;], &#39;Go previous page&#39;, function() SpeakerDeck().prev()),
+      ]
+    },
+    true
+  );
+})();</code></pre></noscript></div>
 </p>
 ]]></content>
   </entry>

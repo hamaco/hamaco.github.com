@@ -4,7 +4,7 @@
   <title><![CDATA[Category: mac | hamaco's blog]]></title>
   <link href="http://hamaco.github.com/blog/categories/mac/atom.xml" rel="self"/>
   <link href="http://hamaco.github.com/"/>
-  <updated>2013-10-17T14:53:47+09:00</updated>
+  <updated>2013-11-25T21:12:36+09:00</updated>
   <id>http://hamaco.github.com/</id>
   <author>
     <name><![CDATA[hamaco]]></name>
@@ -213,7 +213,7 @@ set-option -g default-command "reattach-to-user-namespace -l zsh"
 
 <h2>参考サイト</h2>
 
-<p><a href="http://d.hatena.ne.jp/koseki2/20110816/TmuxCopy">Mac の tmux でクリップボードを使う。 - こせきの技術日記</a></p>
+<p><a href="http://d.hatena.ne.jp/koseki2/20110816/TmuxCopy">Mac の tmux でクリップボードを使う。 &ndash; こせきの技術日記</a></p>
 ]]></content>
   </entry>
   
@@ -296,9 +296,9 @@ set-option -g default-command "reattach-to-user-namespace -l zsh"
 <ul>
 <li>US配列</li>
 <li>SandS</li>
-<li>かな -> Enter</li>
-<li>英数 -> ESC</li>
-<li>右Shift ->  ^と&amp;</li>
+<li>かな &ndash;> Enter</li>
+<li>英数 &ndash;> ESC</li>
+<li>右Shift &ndash;>  ^と&amp;</li>
 </ul>
 
 

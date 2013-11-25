@@ -3,12 +3,11 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Vim をソースからコンパイルする - hamaco's blog</title>
+	<title>Octopress を最新にした - hamaco's blog</title>
 	<meta name="author" content="hamaco">
 
 	
-	<meta name="description" content="普段使っているプラギンが7.3以上専用だったりして、基本的にディストリ標準のVimだとまともに動かないので、最近はvimを自分でコンパイルしてる。
-こないだインストールした時にも思ったけど、新規でインストールする時に必要なパッケージとか調べるの面倒なのでメモしておく。 &hellip;">
+	<meta name="description" content="新しく買った Macbook Pro Retina (1個前のモデル&hellip;) で環境作ってみたら、iconvのあたりでエラーがでてrake generateとかなにもできなくなってしまったので、Octopress を1年以上振りに最新にしてみたら gem &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="pocket-site-verification" content="8f6b8d3da0b431025351fb1ea9acfc" />
@@ -81,58 +80,10 @@
 			
 			<div class="mid-col-container">
 				<div id="content" class="inner"><article class="post">
-	<h1 class="title">Vim をソースからコンパイルする</h1>
-	<div class="entry-content"><p>普段使っているプラギンが7.3以上専用だったりして、基本的にディストリ標準のVimだとまともに動かないので、最近はvimを自分でコンパイルしてる。<br/>
-こないだインストールした時にも思ったけど、新規でインストールする時に必要なパッケージとか調べるの面倒なのでメモしておく。<br/>
-UbuntuでインストールしたのでUbuntuになってるのでCentOSとかの場合は適宜置き換えること。<br/>
-もし今度CentOSでコンパイルすることがあれば追記するかも。</p>
+	<h1 class="title">Octopress を最新にした</h1>
+	<div class="entry-content"><p>新しく買った Macbook Pro Retina (1個前のモデル&hellip;) で環境作ってみたら、iconvのあたりでエラーがでて<code>rake generate</code>とかなにもできなくなってしまったので、Octopress を1年以上振りに最新にしてみたら gem のバージョン上がって動くようになった。</p>
 
-<h2>必要なパッケージのインストール</h2>
-
-<pre><code>sudo aptitude install mercurial libncurses-dev libx11-dev libxt-dev libgtk2.0-dev
-</code></pre>
-
-<h2>Vimのソースの取得</h2>
-
-<p>今後それなりにコンパイルすることになると思うので、VimはMercurialのリポジトリから取得してくる。</p>
-
-<pre><code>hg clone https://vim.googlecode.com/hg/ vim
-</code></pre>
-
-<p>2回目以降は以下の方法でリポジトリを更新する。</p>
-
-<pre><code>hg pull
-hg update
-</code></pre>
-
-<h2>Make</h2>
-
-<p>後は普通にコンパイルするだけ。configureのオプションは結構テキトー。とりあえず動いてるからいいかなーとか思ってる。
-自分しか使わないし、サーバ上とかで他の人が使ってなにかあったりしたら面倒なのでホームディレクトリ以下にインストールされるようにしてるくらいで後は普通かと。</p>
-
-<div><script src='https://gist.github.com/2218942.js'></script>
-<noscript><pre><code>#!/bin/sh
-
-./configure \
-    --prefix=$HOME/app/vim-7.3 \
-    --disable-darwin \
-    --disable-selinux \
-    --enable-fontset \
-    --enable-gnome-check \
-    --enable-gui=gtk2 \
-    --enable-multibyte \
-    --enable-perlinterp \
-    --enable-pythoninterp \
-    --enable-rubyinterp \
-    --with-vim-name=vim \
-    --with-compiledby=&quot;hamaco &lt;hamanaka.kazuhiro@gmail.com&gt;&quot; \
-    --with-features=huge \
-    --with-tlib=ncurses
-
-make &amp;&amp; make install</code></pre></noscript></div>
-
-
-<p>終わり!</p>
+<p>この1年ちょっとの間に Octopress 以外にも色々ブログ書けそうなやつ沢山でてきてるし、Octopress なんとなく面倒なのでもっとシンプルなのに乗り換えても良いんじゃないかと思ってる。</p>
 </div>
 
 </article>
@@ -174,8 +125,8 @@ Design credit: <a href="http://shashankmehta.in/archive/2012/greyshade.html">Sha
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://hamaco.github.com/blog/2012/03/28/compile-vim/';
-        var disqus_url = 'http://hamaco.github.com/blog/2012/03/28/compile-vim/';
+        var disqus_identifier = 'http://hamaco.github.com/blog/2013/11/25/update-octopress/';
+        var disqus_url = 'http://hamaco.github.com/blog/2013/11/25/update-octopress/';
         var disqus_script = 'embed.js';
       
     (function () {
