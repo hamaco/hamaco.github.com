@@ -7,7 +7,8 @@
 	<meta name="author" content="hamaco">
 
 	
-	<meta name="description" content="新しく買った Macbook Pro Retina (1個前のモデル&hellip;) で環境作ってみたら、iconvのあたりでエラーがでてrake generateとかなにもできなくなってしまったので、Octopress を1年以上振りに最新にしてみたら gem &hellip;">
+	<meta name="description" content="前回 Octopress でブログ書く環境を用意するのが面倒だったのと、最近 Qiita がどうたら的なブログいくつか見かけたのを思いだしたので、1年振りくらいに Qiita に投稿してみた。 投稿したのはこれ。
+zsh + tmux で端末に表示されてる文字列を補完する &ndash; &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="pocket-site-verification" content="8f6b8d3da0b431025351fb1ea9acfc" />
@@ -80,6 +81,47 @@
 			
 			<div class="mid-col-container">
 				<div id="content" class="inner">
+
+
+    <article class="post">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-11-27T21:45:00+09:00" pubdate data-updated="true">2013年11月27日</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/qiita/'>qiita</a>
+
+
+</div>
+		
+	</div>
+	<h1 class="title"><a href="/blog/2013/11/27/qiita/">Qiita に1年振りくらいに投稿してみた。</a></h1>
+	<div class="entry-content">
+		<p>前回 Octopress でブログ書く環境を用意するのが面倒だったのと、最近 Qiita がどうたら的なブログいくつか見かけたのを思いだしたので、1年振りくらいに Qiita に投稿してみた。</p>
+
+<p>投稿したのはこれ。<br/>
+<a href="http://qiita.com/hamaco/items/4eb19da6cf216104adf0">zsh + tmux で端末に表示されてる文字列を補完する &ndash; Qiita [キータ]</a></p>
+
+<p>久し振りに Kobito 使ってみたけど、リアルタイムプレビューは投稿前の確認に便利。<br/>
+最近のだと Vim で編集したのを Kobito に渡せるとかもできるようになってるしブログ書くより楽かもしれない。</p>
+
+		
+		
+	</div>
+
+</article>
 
 
     <article class="post">
@@ -1009,82 +1051,6 @@ type以外の部分は自分のCandyCane/Redmineのに合わせて変えて下�
 
 
 
-
-		
-		
-	</div>
-
-</article>
-
-
-    <article class="post">
-	<div class="meta">
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-11-15T21:44:00+09:00" pubdate data-updated="true">2012年11月15日</time></div>
-		<div class="tags">
-
-
-	<a class='category' href='/blog/categories/blog/'>blog</a>
-
-
-</div>
-		
-	</div>
-	<h1 class="title"><a href="/blog/2012/11/15/change-octopress-theme/">ブログのテーマを変更してみた</a></h1>
-	<div class="entry-content">
-		<p>久し振りに <a href="https://github.com/imathis/octopress/wiki/3rd-Party-Octopress-Themes">Octopressのテーマ一覧</a> を見たら結構テーマが増えていたのでテーマを変更してみました。</p>
-
-<p>今回は一番上にあった <a href="https://github.com/shashankmehta/greyshade">greyshade</a> っていうテーマを入れてみたのですが、ちょっとだけ面倒だったのでメモメモ。</p>
-
-<h2>インストール</h2>
-
-<p>インストール自体は他のテーマと同じ感じでOK。</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>git clone git://github.com/shashankmehta/greyshade.git .themes/greyshade
-</span><span class='line'>rake install['greyshade']</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>リンクカラー設定</h2>
-
-<p>このテーマはリンクカラーを自分で決めないといけないみたいなので _colors.scss に <code>$greyshade: {color}</code> を追加します。
-今回はこのテーマのデモページと同じ色にしてみました。</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>echo "\$greyshade: #2571B8;" &gt;&gt; sass/custom/_colors.scss</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>プロフィール画像設定</h2>
-
-<p>結構目立つ所にプロフィール画像が表示されるので source/images/dp.jpg に自分のプロフィール画像を配置します。</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>cp {my_profile}.jpg source/images/dp.jpg</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>見た目修正</h2>
-
-<p>ヘッダー部分のソーシャルアイコンが以下の画像のように微妙に変な位置に表示されてしまっていたのでちょこっとだけテンプレートを編集します。</p>
-
-<p><img src="/images/2012/11/change-octopress-theme-01.png"></p>
-
-<p>といっても source/_includes/header.html の7行目からalignleftを取り除くだけですが。</p>
-
-<h2>おしまい</h2>
-
-<p>後は普通に deploy すれば完了です。</p>
 
 		
 		

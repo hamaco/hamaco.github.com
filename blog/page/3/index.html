@@ -7,8 +7,9 @@
 	<meta name="author" content="hamaco">
 
 	
-	<meta name="description" content="WindowsであまりGvimを使ってなかったんだけど最近のcygwinは気軽に入れれたりしたのでWindowsのGvim環境を整えたりした時にmklinkでちょっと嵌ったのでメモ。
-mklinkでファイルのリンクを作成する場合に/Hを付けないとシンボリックリンクになるけど、 &hellip;">
+	<meta name="description" content="第2回クラウドサーバ勉強会に参加してきました。
+今回はXOOPS初心者勉強会の横でやってたのですがほとんどの時間関係ないことやってたのであまり出来ませんでしたorz
+そんな訳であまり時間かけずにできそうだったLVSの設定をちょこっとだけやってみた位ですが一応ログ残しておきます。 サーバ &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="pocket-site-verification" content="8f6b8d3da0b431025351fb1ea9acfc" />
@@ -81,6 +82,123 @@ mklinkでファイルのリンクを作成する場合に/Hを付けないとシ
 			
 			<div class="mid-col-container">
 				<div id="content" class="inner">
+
+
+    <article class="post">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-04-09T10:39:00+09:00" pubdate data-updated="true">2012年04月09日</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/ipvsadm/'>ipvsadm</a>
+
+
+</div>
+		
+	</div>
+	<h1 class="title"><a href="/blog/2012/04/09/suin-cloud-study-02/">第2回 クラウドサーバ勉強会に参加してきた</a></h1>
+	<div class="entry-content">
+		<p>第2回クラウドサーバ勉強会に参加してきました。<br/>
+今回はXOOPS初心者勉強会の横でやってたのですがほとんどの時間関係ないことやってたのであまり出来ませんでしたorz<br/>
+そんな訳であまり時間かけずにできそうだったLVSの設定をちょこっとだけやってみた位ですが一応ログ残しておきます。</p>
+
+<h2>サーバ</h2>
+
+<p>今回はLVSを1台とwebを2台さくらのクラウドで用意しました。<br/>
+その際にスイッチネットワークを1つ作成し、LVSのeth1とwebのeth0をそのネットワークに当てています。</p>
+
+<h2>ルーターの設定</h2>
+
+<p>今回はグローバルIP勿体無い気がしたのでNATでやってみたのでグローバルIPを持っているLVSからローカルIPしかないwebサーバが外部につながるようにします。<br/>
+とりあえずシンプルに、iptablesの設定クリアしてから他のネットワーク内のサーバが外部に接続できるようにします。</p>
+
+<pre><code>iptables -F
+iptables -t nat -F
+iptables -t nat -A POSTROUTING -o eth0 -s 192.168.1.0/24 -j MASQUERADE
+
+echo "net.ipv4.ip_forward=1" &gt;&gt; /etc/sysctl.conf
+sysctl -p
+</code></pre>
+
+<p>これでデフォルトゲートウェイをLVSにしたwebサーバでdigとか実行すると結果が返ってきてネットにちゃんと繋がってるのがわかると思います。</p>
+
+<p>今回LVSのローカルIPが192.168.1.11なのでwebサーバのgatewayをLVSに設定します。</p>
+
+<figure class='code'><figcaption><span>/etc/network/interfaces </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># This file describes the network interfaces available on your system
+</span><span class='line'># and how to activate them. For more information, see interfaces(5).
+</span><span class='line'>
+</span><span class='line'># The loopback network interface
+</span><span class='line'>auto lo
+</span><span class='line'>iface lo inet loopback
+</span><span class='line'>
+</span><span class='line'>auto eth0
+</span><span class='line'>iface eth0 inet static
+</span><span class='line'>        address 192.168.1.51
+</span><span class='line'>        netmask 255.255.255.0
+</span><span class='line'>        network 192.168.1.0
+</span><span class='line'>        broadcast 192.168.1.255
+</span><span class='line'>        gateway 192.168.1.11</span></code></pre></td></tr></table></div></figure>
+
+
+<p>これでwebサーバがLVSを通してネットに繋がるようになっていると思います。</p>
+
+<h2>LVSの設定</h2>
+
+<p>LVSにipvsadmを入れて設定します。まず、分散させるIP:portを登録し、分散対象のサーバを追加していきます。<br/>
+-s rrでラウンドロビンに設定し、-mでNATにしています。なので、この2つのパラメータを変更すれば他の方法で分散することができるようになります。</p>
+
+<pre><code>ipvsadm -A -t {LVS_IP}:80 -s rr
+ipvsadm -a -t {LVS_IP}:80 -r 192.168.1.51:80 -m
+ipvsadm -a -t {LVS_IP}:80 -r 192.168.1.52:80 -m
+
+ipvsadm -Ln
+IP Virtual Server version 1.2.1 (size=4096)
+Prot LocalAddress:Port Scheduler Flags
+  -&gt; RemoteAddress:Port           Forward Weight ActiveConn InActConn
+TCP  133.242.52.61:80 rr
+  -&gt; 192.168.1.51:80              Masq    1      1          1
+  -&gt; 192.168.1.52:80              Masq    1      2          1
+</code></pre>
+
+<p>これでブラウザから133.242.52.61にアクセスするとweb1とweb2に振り分けられていることが確認できます。</p>
+
+<h2>終わり</h2>
+
+<p>今回このくらいしかできなかったので結構テキトーです。<br/>
+本当はもう1台LVSを用意してLVSが片方落ちても大丈夫にしてみたりとかしたかったのですが……</p>
+
+		
+		
+	</div>
+
+</article>
 
 
     <article class="post">

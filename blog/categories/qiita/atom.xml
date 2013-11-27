@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: qiita | hamaco's blog]]></title>
+  <link href="http://hamaco.github.com/blog/categories/qiita/atom.xml" rel="self"/>
+  <link href="http://hamaco.github.com/"/>
+  <updated>2013-11-27T21:45:25+09:00</updated>
+  <id>http://hamaco.github.com/</id>
+  <author>
+    <name><![CDATA[hamaco]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Qiita に1年振りくらいに投稿してみた。]]></title>
+    <link href="http://hamaco.github.com/blog/2013/11/27/qiita/"/>
+    <updated>2013-11-27T21:45:00+09:00</updated>
+    <id>http://hamaco.github.com/blog/2013/11/27/qiita</id>
+    <content type="html"><![CDATA[<p>前回 Octopress でブログ書く環境を用意するのが面倒だったのと、最近 Qiita がどうたら的なブログいくつか見かけたのを思いだしたので、1年振りくらいに Qiita に投稿してみた。</p>
+
+<p>投稿したのはこれ。<br/>
+<a href="http://qiita.com/hamaco/items/4eb19da6cf216104adf0">zsh + tmux で端末に表示されてる文字列を補完する &ndash; Qiita [キータ]</a></p>
+
+<p>久し振りに Kobito 使ってみたけど、リアルタイムプレビューは投稿前の確認に便利。<br/>
+最近のだと Vim で編集したのを Kobito に渡せるとかもできるようになってるしブログ書くより楽かもしれない。</p>
+]]></content>
+  </entry>
+  
+</feed>
