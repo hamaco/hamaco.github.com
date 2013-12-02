@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: alfred | hamaco's blog]]></title>
+  <link href="http://hamaco.github.com/blog/categories/alfred/atom.xml" rel="self"/>
+  <link href="http://hamaco.github.com/"/>
+  <updated>2013-12-02T21:23:46+09:00</updated>
+  <id>http://hamaco.github.com/</id>
+  <author>
+    <name><![CDATA[hamaco]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Alfred Workflow for App Store をちょっとだけ使いやすくする]]></title>
+    <link href="http://hamaco.github.com/blog/2013/12/02/alfred-workflow-appstore/"/>
+    <updated>2013-12-02T21:23:00+09:00</updated>
+    <id>http://hamaco.github.com/blog/2013/12/02/alfred-workflow-appstore</id>
+    <content type="html"><![CDATA[<p>とある事情で Alfred の Workflow がまともに使えない状態だったのですが、最近それが解消できたので色々と Workflow を入れて使ってます。<br/>
+その中に <a href="https://github.com/yisiqi/alfred2-workflow-appstore">Alfred Workflow for App Store</a> っていう App Store の検索ができる便利な Workflow があるのですが、これ良く見ると検索結果が中国なんですよね。</p>
+
+<p>で、このままだと「テレbing」とか検索したくて入力しても結果がでてきません。</p>
+
+<p><img src="/images/2013/12/alfred-workflow-appstore-01.png" width="500"></p>
+
+<p>なので、ちょこっとだけ Workflow を弄って日本の App Store を検索するようにしちゃいます。<br/>
+といっても下の画像のように、Workflows の Script Filter 両方とも<code>country=cn</code>になっているのを<code>country=jp</code>に変えるだけ。</p>
+
+<p><img src="/images/2013/12/alfred-workflow-appstore-03.jpg" width="500"></p>
+
+<p>これで、こんな感じに「テレbing」とか日本向けのアプリとかが検索にでるようになって便利。</p>
+
+<p><img src="/images/2013/12/alfred-workflow-appstore-02.png" width="500"></p>
+]]></content>
+  </entry>
+  
+</feed>

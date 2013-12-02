@@ -7,8 +7,8 @@
 	<meta name="author" content="hamaco">
 
 	
-	<meta name="description" content="前回 Octopress でブログ書く環境を用意するのが面倒だったのと、最近 Qiita がどうたら的なブログいくつか見かけたのを思いだしたので、1年振りくらいに Qiita に投稿してみた。 投稿したのはこれ。
-zsh + tmux で端末に表示されてる文字列を補完する &ndash; &hellip;">
+	<meta name="description" content="とある事情で Alfred の Workflow がまともに使えない状態だったのですが、最近それが解消できたので色々と Workflow を入れて使ってます。
+その中に Alfred Workflow for App Store っていう App Store の検索ができる便利な &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="pocket-site-verification" content="8f6b8d3da0b431025351fb1ea9acfc" />
@@ -81,6 +81,55 @@ zsh + tmux で端末に表示されてる文字列を補完する &ndash; &helli
 			
 			<div class="mid-col-container">
 				<div id="content" class="inner">
+
+
+    <article class="post">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-12-02T21:23:00+09:00" pubdate data-updated="true">2013年12月02日</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/alfred/'>alfred</a>, <a class='category' href='/blog/categories/appstore/'>appstore</a>
+
+
+</div>
+		
+	</div>
+	<h1 class="title"><a href="/blog/2013/12/02/alfred-workflow-appstore/">Alfred Workflow for App Store をちょっとだけ使いやすくする</a></h1>
+	<div class="entry-content">
+		<p>とある事情で Alfred の Workflow がまともに使えない状態だったのですが、最近それが解消できたので色々と Workflow を入れて使ってます。<br/>
+その中に <a href="https://github.com/yisiqi/alfred2-workflow-appstore">Alfred Workflow for App Store</a> っていう App Store の検索ができる便利な Workflow があるのですが、これ良く見ると検索結果が中国なんですよね。</p>
+
+<p>で、このままだと「テレbing」とか検索したくて入力しても結果がでてきません。</p>
+
+<p><img src="/images/2013/12/alfred-workflow-appstore-01.png" width="500"></p>
+
+<p>なので、ちょこっとだけ Workflow を弄って日本の App Store を検索するようにしちゃいます。<br/>
+といっても下の画像のように、Workflows の Script Filter 両方とも<code>country=cn</code>になっているのを<code>country=jp</code>に変えるだけ。</p>
+
+<p><img src="/images/2013/12/alfred-workflow-appstore-03.jpg" width="500"></p>
+
+<p>これで、こんな感じに「テレbing」とか日本向けのアプリとかが検索にでるようになって便利。</p>
+
+<p><img src="/images/2013/12/alfred-workflow-appstore-02.png" width="500"></p>
+
+		
+		
+	</div>
+
+</article>
 
 
     <article class="post">
@@ -976,81 +1025,6 @@ type以外の部分は自分のCandyCane/Redmineのに合わせて変えて下�
 <p>まだまだ全然できてないですが、一応多少作ったので紹介してみました。まだ本家にpull requestを投げてないので、今は<a href="https://github.com/hamaco/candycane/tree/api-access">ここのブランチ</a>をチェックアウトしてくると試す事ができます。</p>
 
 <p>明日は<a href="https://twitter.com/yandod">@yandod</a>さんです。よろしくお願いしますー。</p>
-
-		
-		
-	</div>
-
-</article>
-
-
-    <article class="post">
-	<div class="meta">
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-11-19T12:12:00+09:00" pubdate data-updated="true">2012年11月19日</time></div>
-		<div class="tags">
-
-
-	<a class='category' href='/blog/categories/vimperator/'>vimperator</a>
-
-
-</div>
-		
-	</div>
-	<h1 class="title"><a href="/blog/2012/11/19/speakerdeck-js/">SpeakerDeckのスライドを操作するvimperatorプラグイン書いてみた</a></h1>
-	<div class="entry-content">
-		<p>slideshare.js プラグインが便利で、SpeakerDeck でも同じ様に h/l でスライドをめくりたかったので slideshare.js を参考にプラグイン書いてみた。</p>
-
-<p>まだ vimperator のプラグイン良く分かってなくて、PLUGIN_INFO だか INFO だかを書いたほうが良いっぽいんだけどどっちが正しいのかが分からなかったので書いてない……</p>
-
-<div><script src='https://gist.github.com/4105959.js'></script>
-<noscript><pre><code>(function() {
-  var SpeakerDeck = function() {
-    var doc = content.document;
-    if (doc.location.host !== &#39;speakerdeck.com&#39;) {
-      return liberator.echoerr(&#39;Current page is not speakerdeck.&#39;);
-    }
-
-    var iframe = doc.wrappedJSObject.getElementsByClassName(&#39;speakerdeck-iframe&#39;)[0];
-    var player = iframe.contentWindow.player;
-
-    return {
-      next: function() {
-        player.nextSlide();
-      },
-      prev: function() {
-        player.previousSlide();
-      }
-    }
-  };
-
-  commands.addUserCommand(
-    [&#39;speakerdeck&#39;],
-    &#39;Speaker Deck controller&#39;,
-    function() {},
-    {
-      subCommands: [
-        new Command([&#39;n[ext]&#39;], &#39;Go next page&#39;,     function() SpeakerDeck().next()),
-        new Command([&#39;p[rev]&#39;], &#39;Go previous page&#39;, function() SpeakerDeck().prev()),
-      ]
-    },
-    true
-  );
-})();</code></pre></noscript></div>
-
-
-
 
 		
 		

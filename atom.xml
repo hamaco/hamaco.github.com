@@ -4,7 +4,7 @@
   <title><![CDATA[hamaco's blog]]></title>
   <link href="http://hamaco.github.com/atom.xml" rel="self"/>
   <link href="http://hamaco.github.com/"/>
-  <updated>2013-11-27T21:46:46+09:00</updated>
+  <updated>2013-12-02T21:23:46+09:00</updated>
   <id>http://hamaco.github.com/</id>
   <author>
     <name><![CDATA[hamaco]]></name>
@@ -12,6 +12,29 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Alfred Workflow for App Store をちょっとだけ使いやすくする]]></title>
+    <link href="http://hamaco.github.com/blog/2013/12/02/alfred-workflow-appstore/"/>
+    <updated>2013-12-02T21:23:00+09:00</updated>
+    <id>http://hamaco.github.com/blog/2013/12/02/alfred-workflow-appstore</id>
+    <content type="html"><![CDATA[<p>とある事情で Alfred の Workflow がまともに使えない状態だったのですが、最近それが解消できたので色々と Workflow を入れて使ってます。<br/>
+その中に <a href="https://github.com/yisiqi/alfred2-workflow-appstore">Alfred Workflow for App Store</a> っていう App Store の検索ができる便利な Workflow があるのですが、これ良く見ると検索結果が中国なんですよね。</p>
+
+<p>で、このままだと「テレbing」とか検索したくて入力しても結果がでてきません。</p>
+
+<p><img src="http://hamaco.github.com/images/2013/12/alfred-workflow-appstore-01.png" width="500"></p>
+
+<p>なので、ちょこっとだけ Workflow を弄って日本の App Store を検索するようにしちゃいます。<br/>
+といっても下の画像のように、Workflows の Script Filter 両方とも<code>country=cn</code>になっているのを<code>country=jp</code>に変えるだけ。</p>
+
+<p><img src="http://hamaco.github.com/images/2013/12/alfred-workflow-appstore-03.jpg" width="500"></p>
+
+<p>これで、こんな感じに「テレbing」とか日本向けのアプリとかが検索にでるようになって便利。</p>
+
+<p><img src="http://hamaco.github.com/images/2013/12/alfred-workflow-appstore-02.png" width="500"></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Qiita に1年振りくらいに投稿してみた]]></title>
@@ -931,53 +954,6 @@ Windows7風にキーボードで画面サイズ最大化とか、Opera以外の�
 <h2>参考サイト</h2>
 
 <p><a href="https://dev.mozilla.jp/2012/07/try-firefox-os/">Firefox OS を試す | Mozilla Developer Street (modest)</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Macのtmuxでクリップボードを使えるようにする（主にVimの為に）]]></title>
-    <link href="http://hamaco.github.com/blog/2012/07/05/fix-macosx-tmux-pasteboard/"/>
-    <updated>2012-07-05T16:22:00+09:00</updated>
-    <id>http://hamaco.github.com/blog/2012/07/05/fix-macosx-tmux-pasteboard</id>
-    <content type="html"><![CDATA[<p>MacOSXのtmuxだとpbcopy|pbpasteが正常に動作しないみたいで、CUI版のVimで<code>set clipboard=unnamed</code>していると<code>p</code>でペーストする際に<code>E353: Nothing in register *</code>とかエラーがでてペーストが一切できなくなってしまいます。
-常にGui版のMacVimでも使っていれば良いのですが、流石にCUI版を一切使わない or ペーストしない生活は私には出来ないのでちょっと調べてみたら結構簡単に対処できたのでメモ。</p>
-
-<h2>やり方</h2>
-
-<p><a href="https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard">ChrisJohnsen/tmux-MacOSX-pasteboard</a>を使うと簡単にできるみたいです。READMEに書いてあるままやってるだけなのでそのままそっち見ながらやった方が楽かもしれない。</p>
-
-<h3>プログラムのコンパイル</h3>
-
-<p>普通にgitでcloneしてきてからmakeして、PATHの通った所にファイルを置きます。</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>git clone https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard.git
-</span><span class='line'>cd tmux-MacOSX-pasteboard
-</span><span class='line'>make reattach-to-user-namespace
-</span><span class='line'>cp reattach-to-user-namespace ~/bin/</span></code></pre></td></tr></table></div></figure>
-
-
-<p>別にmakeだけでも実行ファイルできあがりますが、ついでにtestとかいうのもmakeされるので、READMEに書かれてる通りmakeに引数渡してます。</p>
-
-<h3>tmuxの設定</h3>
-
-<p>次に<code>.tmux.conf</code>に以下の内容を追加。</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>set-option -g default-command "reattach-to-user-namespace -l zsh"</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>できた</h3>
-
-<p>これで準備は完了。後は<code>tmux kill-server</code>とかやってtmux立ち上げ直すと<code>date | pbcopy</code>とかで結果がMacのクリップボードに入るようになっているはず。
-無事クリップボードが使えるようになったら、Vimでも<code>set clipboard=unnamed</code>している状態でコピペが動作するようになっているのを確認して終了!</p>
-
-<h2>参考サイト</h2>
-
-<p><a href="http://d.hatena.ne.jp/koseki2/20110816/TmuxCopy">Mac の tmux でクリップボードを使う。 &ndash; こせきの技術日記</a></p>
 ]]></content>
   </entry>
   
