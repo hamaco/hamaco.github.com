@@ -4,7 +4,7 @@
   <title><![CDATA[Category: vim | hamaco's blog]]></title>
   <link href="http://hamaco.github.com/blog/categories/vim/atom.xml" rel="self"/>
   <link href="http://hamaco.github.com/"/>
-  <updated>2013-12-02T21:23:46+09:00</updated>
+  <updated>2014-06-09T19:06:23+09:00</updated>
   <id>http://hamaco.github.com/</id>
   <author>
     <name><![CDATA[hamaco]]></name>
@@ -12,6 +12,40 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[momonga.vim #4 に参加してきた]]></title>
+    <link href="http://hamaco.github.com/blog/2014/06/09/momonga-vim-4/"/>
+    <updated>2014-06-09T19:02:00+09:00</updated>
+    <id>http://hamaco.github.com/blog/2014/06/09/momonga-vim-4</id>
+    <content type="html"><![CDATA[<p>やっぱり会場が家から歩いていける場所だったので、<a href="http://connpass.com/event/6108/">momonga.vim #4</a> に参加してきました。</p>
+
+<h2>本編</h2>
+
+<p>特にやる事を考えてなかったのですが、ふとターミナルで Vim を立ち上げたら tabline の色がまったくでてなくて、どのタブにいるのかこれっぽっちも分からないことになってたのでこれを直すことに。</p>
+
+<p>何のプラギン入れたせいなのか調べてたら、どうやら <a href="https://github.com/itchyny/lightline.vim">lightline.vim</a> を入れると変になるということを突きとめたので、あとはソースコード読みつつハイライトの設定とかをちまちまと……<br/>
+ではなく、ただ単に tmux で TERM の設定をしてなかったのが原因で256色表示されてなかっただけでしたorz</p>
+
+<p>そんなわけで無駄に色々やったけど結局の所 Vim での成果はこれくらいで、後は一部の人が「進捗どうですか?」とかいいつつプレッシャーを色んな人にかけてたので、進捗ダメです的な画像を探したりしてた。</p>
+
+<h2>2次会</h2>
+
+<p>2次会は比較的最近できた気がするサイゼリヤで夕食を食べつつ、カラオケの時間までうだうだと。<br/>
+ちなみに<a href="http://d.hatena.ne.jp/thinca/">ラブライブの話をしてた</a>のは私です。話をしてたというかスクフェスをプレイしてました。</p>
+
+<h2>3次会</h2>
+
+<p>3次会は 19:00～05:00 までカラオケでした。10時間もカラオケ店にいるとか良く分からないし、初めての経験でした。<br/>
+3次会ではアイドルマスターミリオンライブのラウメンとTwitterでなんやらしてたり、ラブライブ! スクールアイドルフェスティバルをプレイしたり、Vim 以外の進捗出してたりしました。</p>
+
+<p>あ、あと vimrc 読書会に久し振りに参加したりしてました。</p>
+
+<h2>終わり</h2>
+
+<p>結局 Vim っぽいこと殆んどやらなかった気がするので、次回はもうちょっと Vim のなにかをやりたいなぁ。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[momonga.vim #2 に参加してきた]]></title>

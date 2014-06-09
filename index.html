@@ -7,8 +7,7 @@
 	<meta name="author" content="hamaco">
 
 	
-	<meta name="description" content="とある事情で Alfred の Workflow がまともに使えない状態だったのですが、最近それが解消できたので色々と Workflow を入れて使ってます。
-その中に Alfred Workflow for App Store っていう App Store の検索ができる便利な &hellip;">
+	<meta name="description" content="やっぱり会場が家から歩いていける場所だったので、momonga.vim #4 に参加してきました。 本編 特にやる事を考えてなかったのですが、ふとターミナルで Vim を立ち上げたら tabline の色がまったくでてなくて、 &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="pocket-site-verification" content="8f6b8d3da0b431025351fb1ea9acfc" />
@@ -81,6 +80,66 @@
 			
 			<div class="mid-col-container">
 				<div id="content" class="inner">
+
+
+    <article class="post">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-06-09T19:02:00+09:00" pubdate data-updated="true">2014年06月09日</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/event/'>event</a>, <a class='category' href='/blog/categories/vim/'>vim</a>
+
+
+</div>
+		
+	</div>
+	<h1 class="title"><a href="/blog/2014/06/09/momonga-vim-4/">momonga.vim #4 に参加してきた</a></h1>
+	<div class="entry-content">
+		<p>やっぱり会場が家から歩いていける場所だったので、<a href="http://connpass.com/event/6108/">momonga.vim #4</a> に参加してきました。</p>
+
+<h2>本編</h2>
+
+<p>特にやる事を考えてなかったのですが、ふとターミナルで Vim を立ち上げたら tabline の色がまったくでてなくて、どのタブにいるのかこれっぽっちも分からないことになってたのでこれを直すことに。</p>
+
+<p>何のプラギン入れたせいなのか調べてたら、どうやら <a href="https://github.com/itchyny/lightline.vim">lightline.vim</a> を入れると変になるということを突きとめたので、あとはソースコード読みつつハイライトの設定とかをちまちまと……<br/>
+ではなく、ただ単に tmux で TERM の設定をしてなかったのが原因で256色表示されてなかっただけでしたorz</p>
+
+<p>そんなわけで無駄に色々やったけど結局の所 Vim での成果はこれくらいで、後は一部の人が「進捗どうですか?」とかいいつつプレッシャーを色んな人にかけてたので、進捗ダメです的な画像を探したりしてた。</p>
+
+<h2>2次会</h2>
+
+<p>2次会は比較的最近できた気がするサイゼリヤで夕食を食べつつ、カラオケの時間までうだうだと。<br/>
+ちなみに<a href="http://d.hatena.ne.jp/thinca/">ラブライブの話をしてた</a>のは私です。話をしてたというかスクフェスをプレイしてました。</p>
+
+<h2>3次会</h2>
+
+<p>3次会は 19:00～05:00 までカラオケでした。10時間もカラオケ店にいるとか良く分からないし、初めての経験でした。<br/>
+3次会ではアイドルマスターミリオンライブのラウメンとTwitterでなんやらしてたり、ラブライブ! スクールアイドルフェスティバルをプレイしたり、Vim 以外の進捗出してたりしました。</p>
+
+<p>あ、あと vimrc 読書会に久し振りに参加したりしてました。</p>
+
+<h2>終わり</h2>
+
+<p>結局 Vim っぽいこと殆んどやらなかった気がするので、次回はもうちょっと Vim のなにかをやりたいなぁ。</p>
+
+		
+		
+	</div>
+
+</article>
 
 
     <article class="post">
@@ -920,118 +979,6 @@
 
 </article>
 
-
-    <article class="post">
-	<div class="meta">
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-12-09T19:02:00+09:00" pubdate data-updated="true">2012年12月09日</time></div>
-		<div class="tags">
-
-
-	<a class='category' href='/blog/categories/cakephp/'>cakephp</a>, <a class='category' href='/blog/categories/candycane/'>candycane</a>, <a class='category' href='/blog/categories/php/'>php</a>
-
-
-</div>
-		
-	</div>
-	<h1 class="title"><a href="/blog/2012/12/09/cakephp-adventcalendar-2012/">CandyCane API実装中</a></h1>
-	<div class="entry-content">
-		<p>このエントリは、<a href="http://www.adventar.org/calendars/40">CakePHP Advent Calendar 2012</a>の9日目です。8日目は<a href="https://twitter.com/junichi_11">@junichi_11</a>さんの「<a href="http://junichi11.com/?p=2665">NetBeans plugin の改善点</a>」でした。</p>
-
-<h2>はじめに</h2>
-
-<p>普段仕事でCakePHPをメインに使ってるとかそういったことがまったくなく、私がCakePHPをネタにする時は大体CandyCaneネタなので、今回もCandyCaneネタでいきたいと思います。</p>
-
-<h2>REST API</h2>
-
-<p>RedmineにはREST APIというものがあって、XMLやJSON形式でチケットの一覧が見れたり、チケットの登録などの作業がRedmineのWebページを使わずにできるようになっています。
-ここで紹介するだけあって、もちろんCandyCaneには実装されてません(でした)。</p>
-
-<p>そんな訳で一部APIをさっき実装してみました。
-今回は <a href="https://github.com/yuroyoro/git-issue">git-issue</a> というRedmineのチケットを表示・編集できるツールが使えるようにしたいというのを目標に実装してみたので、それの動作をRedmineとCandyCaneで比較しつつ紹介していきたいと思います。</p>
-
-<h2>API keyの作成</h2>
-
-<p>API keyの作成部分はCandyCane側は今の所APIをOFFにできないくらいで基本的な作成方法は同じになっています。
-個人設定ページの右サイドバーにAPI keyの表示・作成がある感じですね。</p>
-
-<h3>Redmine</h3>
-
-<p><img src="/images/2012/12/cakephp-adventcalendar-2012-01.png"></p>
-
-<h3>CandyCane</h3>
-
-<p><img src="/images/2012/12/cakephp-adventcalendar-2012-02.png"></p>
-
-<h2>git-issueの設定</h2>
-
-<p>一応git-issueの初期設定も簡単に書いておきます。
-git-issueを使いたいプロジェクトの中で以下のようにコマンドを打つとgit issueサブコマンドで色々できるようになります。
-type以外の部分は自分のCandyCane/Redmineのに合わせて変えて下さい。</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>% git config issue.type redmine
-</span><span class='line'>% git config issue.url http://candycane.hamacbook.local/
-</span><span class='line'>% git config issue.apikey e9897fd4de9570b5d61744d8ab1e18b796615e5b
-</span><span class='line'>% git config issue.repo candycane
-</span><span class='line'>% git config issue.user hamaco</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>チケットの一覧表示</h2>
-
-<p>CandyCane/Redmineに登録されているチケットの一覧が表示できます。</p>
-
-<h3>Redmine</h3>
-
-<p><img src="/images/2012/12/cakephp-adventcalendar-2012-03.png" width="680"></p>
-
-<h3>CandyCane</h3>
-
-<p><img src="/images/2012/12/cakephp-adventcalendar-2012-04.png" width="680"></p>
-
-<h2>チケットの詳細表示</h2>
-
-<p>CandyCane/Redmineに登録されているチケットの詳細が表示できます。</p>
-
-<h3>Redmine</h3>
-
-<p><img src="/images/2012/12/cakephp-adventcalendar-2012-05.png" width="680"></p>
-
-<h3>CandyCane</h3>
-
-<p><img src="/images/2012/12/cakephp-adventcalendar-2012-06.png" width="680"></p>
-
-<h2>チケットの登録</h2>
-
-<p>ここが一番やりたかったのですが、時間がなくなってしまったのと、git-issueがチケット登録時にJSONでデータを渡していて、CakePHPで上手いやり方が分からなかったので実装できてません……</p>
-
-<h2>最後に</h2>
-
-<p>まだまだ全然できてないですが、一応多少作ったので紹介してみました。まだ本家にpull requestを投げてないので、今は<a href="https://github.com/hamaco/candycane/tree/api-access">ここのブランチ</a>をチェックアウトしてくると試す事ができます。</p>
-
-<p>明日は<a href="https://twitter.com/yandod">@yandod</a>さんです。よろしくお願いしますー。</p>
-
-		
-		
-	</div>
-
-</article>
-
 <nav id="pagenavi">
     
     
@@ -1040,7 +987,7 @@ type以外の部分は自分のCandyCane/Redmineのに合わせて変えて下�
     <div class="center"><a href="/blog/archives">Blog Archives</a></div>
 </nav></div>
 			</div>
-			<footer id="footer" class="inner">Copyright &copy; 2013
+			<footer id="footer" class="inner">Copyright &copy; 2014
 
     hamaco
 
