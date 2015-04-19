@@ -4,7 +4,7 @@
   <title><![CDATA[Category: php | hamaco's blog]]></title>
   <link href="http://hamaco.github.com/blog/categories/php/atom.xml" rel="self"/>
   <link href="http://hamaco.github.com/"/>
-  <updated>2014-06-09T19:06:23+09:00</updated>
+  <updated>2015-04-19T23:12:47+09:00</updated>
   <id>http://hamaco.github.com/</id>
   <author>
     <name><![CDATA[hamaco]]></name>
@@ -12,6 +12,66 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[「Laravelエキスパート養成読本」を読んだ]]></title>
+    <link href="http://hamaco.github.com/blog/2015/04/19/laravel-expert-book-review/"/>
+    <updated>2015-04-19T23:02:00+09:00</updated>
+    <id>http://hamaco.github.com/blog/2015/04/19/laravel-expert-book-review</id>
+    <content type="html"><![CDATA[<p><img src="/images/2015/04/laravel-expert-book-review-01.jpg" width="320"></p>
+
+<p>Laravelエキスパート養成読本を <a href="https://twitter.com/localdisk">@localdisk</a> さんから頂いたので読んでみました。</p>
+
+<h2>はじめに</h2>
+
+<p>Laravel は一応気にはなっていたけど、まともに触ったことがなくて DB から SELECT する程度のやつで軽く触ってみたくらいしかないです。
+あとは、魔法少女ネタとか、CakePHP を使ってた人達がこぞって Laravel 使いだしてたりしてるなーってのを眺めてた感じ。</p>
+
+<p>なので、主に Chapter2 と Chapter5 に期待して読みました。</p>
+
+<h2>Chapter 1</h2>
+
+<p>Laravel の歴史とか、情報サイトの話とか、ネットでよくある Hello World 的なサンプルが載っていて、流石にここで知らないコードでてこないだろうとか思いつつ読んでたけど、途中から名前付きルートとかの説明があってもうこの時点でまったく知らないコードが……</p>
+
+<p>私が読んでる時点では公開されてなかったので普通にコマンドを叩いて Laravel 入れたけど、発売後には簡単に Laravel を試せる環境が公開されてるはずなので、環境自分で作らなくても Laravel 試せるのは良さそう。</p>
+
+<h2>Chapter 2</h2>
+
+<p>基礎の Chapter 2 の時点でサンプルアプリのコードを凄く細かく説明していて、もうここを読んだだけでも結構お腹一杯。
+DB の使い方とかも最初にちゃんとした書き方の説明をして、そこからもっと簡単な書き方になってたり、View もベタベタに1ファイルにずらーっと書くだけじゃなくしっかりパーツ毎に分割してたりで、とりあえず簡単なアプリケーションならもう Laravel っぽく書けるんじゃないかって気分になります。
+特にバリデーションエラーとか、ページ毎に <code>&lt;title&gt;</code> とかそういうレイアウト部分を変える方法とかの地味に気になる部分も書かれてるのは良かった。</p>
+
+<p>サンプルアプリのデモが公開されているので、自分でサンプルアプリを動かす環境を作らなくてもソースコードを読みつつ動きを見れるのですが、私が見た時は誰かのイタズラで動かなくなってたので残念……</p>
+
+<h2>Chapter 3</h2>
+
+<p>IoCコンテナとか、ファサードといった、Laravel と言えばー? な機能の解説がコアのコード込みで簡潔に説明されていて分かりやすかった。</p>
+
+<p>Eloquent は普通のクエリ実行から、リレーションやクエリスコープとか多分一通り説明されているので、とりあえず DB の使い方知りたくなったらここを見てみると良さげ。
+ただ、私はまだ Eloquent すらあまり使いこなしてないので、まずは Eloquent の使い方を覚えて、ある程度 Laravel に慣れてきたら残りを再度読み直して見ようかなーと思います。</p>
+
+<h2>Chapter 4</h2>
+
+<p>リリースされたばかりの Laravel 5 新機能紹介!
+コマンドバス&amp;ジョブキュー、フォームリクエスト、タスクランナーとか色々気になる機能が Laravel 5 から増えているらしいけど、Laravel 初心者の私にはちょっと難しいのでこの章も後でもう1回読まないとなー。</p>
+
+<h2>Special</h2>
+
+<p>Symfony / CakePHP / Zend Framework / Yii フレームワークの最新事情と PSR がさっくり紹介されてるのでとりあえず読んでおいて損はない感じ。</p>
+
+<h2>Chapter 5</h2>
+
+<p>簡単な REST API アプリケーションの作り方が分かりやすく綺麗に書かれているので、Chapter 2 と合わせてこれを読めば Laravel 始めるスタートダッシュが決めれる感じ。
+ここまで読むと、他の章と合わせてルーティングの機能が色々説明されているので、どのフレームワークでも意外と機能があるけど使いこなせる気がしないルーティングに詳しくなってる気がするのも良かった。</p>
+
+<h2>さいごに</h2>
+
+<p>Laravel 初心者でも楽しく読めるところからスタートしつつ、Laravel らしい機能もちゃんと紹介されてて良かった。
+PHP 初心者がここからスタートするのは難しいだろうけど、他のフレームワーク使ったことある人とかある程度 PHP が書ける人はこの本から Laravel 入門するのも良いんじゃないかと思います。</p>
+
+<p>これから Chapter5 のサンプルコード読んで、Chapter2 と合わせて参考にしつつ、とりあえず Laravel 使ってます状態のコードをちゃんと Laravel っぽい書き方で書き直していきたい。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[CandyCane API実装中]]></title>

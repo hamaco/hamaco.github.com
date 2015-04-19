@@ -4,7 +4,7 @@
   <title><![CDATA[hamaco's blog]]></title>
   <link href="http://hamaco.github.com/atom.xml" rel="self"/>
   <link href="http://hamaco.github.com/"/>
-  <updated>2014-06-09T19:06:23+09:00</updated>
+  <updated>2015-04-19T23:12:47+09:00</updated>
   <id>http://hamaco.github.com/</id>
   <author>
     <name><![CDATA[hamaco]]></name>
@@ -12,6 +12,66 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[「Laravelエキスパート養成読本」を読んだ]]></title>
+    <link href="http://hamaco.github.com/blog/2015/04/19/laravel-expert-book-review/"/>
+    <updated>2015-04-19T23:02:00+09:00</updated>
+    <id>http://hamaco.github.com/blog/2015/04/19/laravel-expert-book-review</id>
+    <content type="html"><![CDATA[<p><img src="http://hamaco.github.com/images/2015/04/laravel-expert-book-review-01.jpg" width="320"></p>
+
+<p>Laravelエキスパート養成読本を <a href="https://twitter.com/localdisk">@localdisk</a> さんから頂いたので読んでみました。</p>
+
+<h2>はじめに</h2>
+
+<p>Laravel は一応気にはなっていたけど、まともに触ったことがなくて DB から SELECT する程度のやつで軽く触ってみたくらいしかないです。
+あとは、魔法少女ネタとか、CakePHP を使ってた人達がこぞって Laravel 使いだしてたりしてるなーってのを眺めてた感じ。</p>
+
+<p>なので、主に Chapter2 と Chapter5 に期待して読みました。</p>
+
+<h2>Chapter 1</h2>
+
+<p>Laravel の歴史とか、情報サイトの話とか、ネットでよくある Hello World 的なサンプルが載っていて、流石にここで知らないコードでてこないだろうとか思いつつ読んでたけど、途中から名前付きルートとかの説明があってもうこの時点でまったく知らないコードが……</p>
+
+<p>私が読んでる時点では公開されてなかったので普通にコマンドを叩いて Laravel 入れたけど、発売後には簡単に Laravel を試せる環境が公開されてるはずなので、環境自分で作らなくても Laravel 試せるのは良さそう。</p>
+
+<h2>Chapter 2</h2>
+
+<p>基礎の Chapter 2 の時点でサンプルアプリのコードを凄く細かく説明していて、もうここを読んだだけでも結構お腹一杯。
+DB の使い方とかも最初にちゃんとした書き方の説明をして、そこからもっと簡単な書き方になってたり、View もベタベタに1ファイルにずらーっと書くだけじゃなくしっかりパーツ毎に分割してたりで、とりあえず簡単なアプリケーションならもう Laravel っぽく書けるんじゃないかって気分になります。
+特にバリデーションエラーとか、ページ毎に <code>&lt;title&gt;</code> とかそういうレイアウト部分を変える方法とかの地味に気になる部分も書かれてるのは良かった。</p>
+
+<p>サンプルアプリのデモが公開されているので、自分でサンプルアプリを動かす環境を作らなくてもソースコードを読みつつ動きを見れるのですが、私が見た時は誰かのイタズラで動かなくなってたので残念……</p>
+
+<h2>Chapter 3</h2>
+
+<p>IoCコンテナとか、ファサードといった、Laravel と言えばー? な機能の解説がコアのコード込みで簡潔に説明されていて分かりやすかった。</p>
+
+<p>Eloquent は普通のクエリ実行から、リレーションやクエリスコープとか多分一通り説明されているので、とりあえず DB の使い方知りたくなったらここを見てみると良さげ。
+ただ、私はまだ Eloquent すらあまり使いこなしてないので、まずは Eloquent の使い方を覚えて、ある程度 Laravel に慣れてきたら残りを再度読み直して見ようかなーと思います。</p>
+
+<h2>Chapter 4</h2>
+
+<p>リリースされたばかりの Laravel 5 新機能紹介!
+コマンドバス&amp;ジョブキュー、フォームリクエスト、タスクランナーとか色々気になる機能が Laravel 5 から増えているらしいけど、Laravel 初心者の私にはちょっと難しいのでこの章も後でもう1回読まないとなー。</p>
+
+<h2>Special</h2>
+
+<p>Symfony / CakePHP / Zend Framework / Yii フレームワークの最新事情と PSR がさっくり紹介されてるのでとりあえず読んでおいて損はない感じ。</p>
+
+<h2>Chapter 5</h2>
+
+<p>簡単な REST API アプリケーションの作り方が分かりやすく綺麗に書かれているので、Chapter 2 と合わせてこれを読めば Laravel 始めるスタートダッシュが決めれる感じ。
+ここまで読むと、他の章と合わせてルーティングの機能が色々説明されているので、どのフレームワークでも意外と機能があるけど使いこなせる気がしないルーティングに詳しくなってる気がするのも良かった。</p>
+
+<h2>さいごに</h2>
+
+<p>Laravel 初心者でも楽しく読めるところからスタートしつつ、Laravel らしい機能もちゃんと紹介されてて良かった。
+PHP 初心者がここからスタートするのは難しいだろうけど、他のフレームワーク使ったことある人とかある程度 PHP が書ける人はこの本から Laravel 入門するのも良いんじゃないかと思います。</p>
+
+<p>これから Chapter5 のサンプルコード読んで、Chapter2 と合わせて参考にしつつ、とりあえず Laravel 使ってます状態のコードをちゃんと Laravel っぽい書き方で書き直していきたい。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[momonga.vim #4 に参加してきた]]></title>
@@ -140,11 +200,11 @@
 
 <p>ちなみに見た目はこんな感じに変わった。</p>
 
-<p><a href="http://www.flickr.com/photos/hamaco/9073953993" target="_blank"><img src="http://farm4.staticflickr.com/3775/9073953993_6ddc8fde9b.jpg" title="Mr Reader - Chad's Perfect RSS" /></a></p>
+<p><a href="http://www.flickr.com/photos/hamaco/9073953993" target="_blank"><img src="https://farm4.staticflickr.com/3775/9073953993_6ddc8fde9b.jpg" title="Mr Reader - Chad's Perfect RSS" /></a></p>
 
 <p>↓</p>
 
-<p><a href="http://www.flickr.com/photos/hamaco/9076183152" target="_blank"><img src="http://farm4.staticflickr.com/3778/9076183152_8413cb085a.jpg" title="Mr Reader - Mr. Reminder Dark" /></a></p>
+<p><a href="http://www.flickr.com/photos/hamaco/9076183152" target="_blank"><img src="https://farm4.staticflickr.com/3778/9076183152_8413cb085a.jpg" title="Mr Reader - Mr. Reminder Dark" /></a></p>
 
 <p>既読・未読の区別が背景色でなく文字色で区別つけるようになったのが一番の違いかな?</p>
 ]]></content>
@@ -195,7 +255,7 @@
     <link href="http://hamaco.github.com/blog/2013/02/16/recent-ipad/"/>
     <updated>2013-02-16T23:25:00+09:00</updated>
     <id>http://hamaco.github.com/blog/2013/02/16/recent-ipad</id>
-    <content type="html"><![CDATA[<p><a href="http://www.flickr.com/photos/hamaco/8479084770" target="_blank"><img src="http://farm9.staticflickr.com/8102/8479084770_3f6fbedaba.jpg" title="recent-ipad-01" /></a></p>
+    <content type="html"><![CDATA[<p><a href="http://www.flickr.com/photos/hamaco/8479084770" target="_blank"><img src="https://farm9.staticflickr.com/8102/8479084770_3f6fbedaba.jpg" title="recent-ipad-01" /></a></p>
 
 <ul>
 <li>キーボードの右下にある切り替えキーが地味に便利</li>
@@ -282,11 +342,11 @@
 
 <p>これが</p>
 
-<p><a href="http://www.flickr.com/photos/hamaco/8472036309" target="_blank"><img src="http://farm9.staticflickr.com/8250/8472036309_906443d111.jpg" title="candycane-assign-narrowdown-01" /></a></p>
+<p><a href="http://www.flickr.com/photos/hamaco/8472036309" target="_blank"><img src="https://farm9.staticflickr.com/8250/8472036309_906443d111.jpg" title="candycane-assign-narrowdown-01" /></a></p>
 
 <p>こうなる</p>
 
-<p><a href="http://www.flickr.com/photos/hamaco/8473127348" target="_blank"><img src="http://farm9.staticflickr.com/8517/8473127348_7df7976910.jpg" title="candycane-assign-narrowdown-02" /></a></p>
+<p><a href="http://www.flickr.com/photos/hamaco/8473127348" target="_blank"><img src="https://farm9.staticflickr.com/8517/8473127348_7df7976910.jpg" title="candycane-assign-narrowdown-02" /></a></p>
 ]]></content>
   </entry>
   
@@ -784,126 +844,6 @@ PHP Matsuriの前のPHP勉強会でネタ決めましたー? 決めてないで�
 <p><img src="http://hamaco.github.com/images/2012/11/phpmatsuri-2012-04.png" width="240"></p>
 
 <p><img src="http://hamaco.github.com/images/2012/11/phpmatsuri-2012-05.png" width="240"></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[新Macbook Airを買ったので設定したことまとめ その2]]></title>
-    <link href="http://hamaco.github.com/blog/2012/07/25/setup-macbook-air-02/"/>
-    <updated>2012-07-25T14:58:00+09:00</updated>
-    <id>http://hamaco.github.com/blog/2012/07/25/setup-macbook-air-02</id>
-    <content type="html"><![CDATA[<p>大分前にその1を書いた、Macbook Airのセットアップまとめ記事 その2。めんどくさくて放置してたんですが、なんかもうMountain Lionが発売されちゃうらしいので、別マシンにMountain Lion入れる時の参考用兼ねて、よく見かけるMacに最初に入れたアプリ20個を紹介してみます。</p>
-
-<p>ちなみに前回は<a href="http://hamaco.github.com/blog/2012/06/21/setup-macbook-air-01/">こちら</a></p>
-
-<h2>インストールしたアプリ</h2>
-
-<p>前回入れたKeyRemap4macbookとAquaSKKは除外</p>
-
-<h3>1.Opera</h3>
-
-<p>まあこれを入れなきゃなにも始まらないですよね。戻る・進むが高速だったりどこぞの腐ったブラウザと違って普通にPOSTページのソース見れたり、簡単にHTML弄れたりと基本的な部分が使い易すぎます。
-ただ、Operaだとちゃんと動かないページがそれなりに……</p>
-
-<h3>2.Firefox</h3>
-
-<p>主に開発中のメインブラウザ。携帯ページの開発とかでUA簡単に変更できるFirefoxをずっと使ってます。
-ちなみにインストールしたアドオンはこれくらい。</p>
-
-<ul>
-<li>1Password</li>
-<li>Clearly</li>
-<li>Evernote Web Clipper</li>
-<li>Firebug</li>
-<li>FireMobileSimlator</li>
-<li>Hatenabookmark</li>
-<li>Stylish</li>
-<li>Vimperator</li>
-</ul>
-
-
-<h3>3.Google Chrome</h3>
-
-<p>ほとんどFlash見る専用ブラウザ。Windowsマシンだとfacebook見たりとかに使っててたのでインストールしたけど、MacだとSafariで十分なのであんまり立ち上げる機会がない。</p>
-
-<h3>4.MacVim</h3>
-
-<p>メインで使ってるエディタがVimなのでそれのMac版。もうVimがないと開発とか色々やる気が起きない。
-設定は<a href="https://github.com/hamaco/dotfiles/blob/master/dot.vimrc">この辺</a>に置いてあります。</p>
-
-<h3>5.YoruFukurou</h3>
-
-<p>Twitterクライアント。他に使い易いのがあるかもしれないけどキーバインドとかが自分の好みにあっているのでずっとこれを使ってます。</p>
-
-<h3>6.Growl</h3>
-
-<p>通知ツール。Lionに入れてからそれなりに暴走するのが困り所。</p>
-
-<h3>7.Dropbox</h3>
-
-<p>きっと誰もが知ってるクラウドストレージ。なんだかんだで他のに移行するの面倒だし、色んなアプリが対応してたりするのでずっとこれ使ってます。ちょこちょこイベントあったりして容量が増えてくのもGOOD!</p>
-
-<h3>8.1Password</h3>
-
-<p>パスワード管理ソフト。Windows/Mac/iPhone/Android/WindowsPhoneとLinux以外の自分が使ってる全てのOSに対応している&amp;Opera以外のブラウザAdd-onがあるので、パスワード管理はこれ一択。
-いや、まあKeePassとかあるけど、昔使ってた時全体的な使い勝手が悪かったりしたので……</p>
-
-<h3>9.Sequal Pro</h3>
-
-<p>MySQLのフロントエンドツール。基本コマンドラインでMySQLを操作してたんだけど、普通の人に画面見せたりする時に分かりにくいと思って試しに入れてみたらこれが非常に使い易い。
-これのPostgreSQL版とかないかなー。</p>
-
-<h3>10.MAMP</h3>
-
-<p>買った直後にハッカソンがあったりとかで開発環境必要だったのでとりあえず入れた。PHP5.3も動くし、変なことしないなら案外これだけでもいけるかもしれない。</p>
-
-<h3>11.iTerm2</h3>
-
-<p>ターミナルソフト。MacデフォルトのTerminalだとなんか問題があってこいつ使ってるんだけど理由を覚えていないという……
-基本的にTerminal&amp;Visorの頃と同様に、Command+EnterでHotkey Windowsがでるようにして使ってます。</p>
-
-<h3>12.homebrew</h3>
-
-<p>パッケージマネージャ。 yumとかaptみたいなやつ。macportsより楽に使えるのでこっち使ってる。</p>
-
-<h3>13.Horst</h3>
-
-<p>hostファイルをGUIで管理できるようになるツール。今迄普通にTerminalで/etc/hosts弄ってたんだけど、LionになってHorstが使えるようになったので試しに使用中。
-起動時に毎回ウィンドウサイズがリセットされる以外はまあボチボチ使い易いかな。</p>
-
-<h3>14.BetterTouchTool</h3>
-
-<p>細々した機能があるツールをいくつも入れるのが面倒だったので、まとめて導入できるこいつを使ってます。
-Windows7風にキーボードで画面サイズ最大化とか、Opera以外のブラウザでロッカージェスチャ(TipTap)有効化にするとかそんな感じでちまちましたやつをいくつか設定してます。</p>
-
-<h3>15.Alfred</h3>
-
-<p>ランチャー。QuickSilverが更新されてなかったのとなんだったか問題があってしばらく前にこれに乗り換えた。まだ普通のランチャー機能+ホットキーでのLockくらいしか使ってないけど……</p>
-
-<h3>16.Caffeine</h3>
-
-<p>Macのスリープを防止してくれるソフト。普段メインマシンはWindowsなので、Macがしょっちゅうスリープして面倒だったので入れてます。後はイベントの時とかにONにしておくとプレゼンしてて、気が付くと画面真っ黒とか防いでくれるので便利。ON/OFFするの忘れるのが一番の困りもの。</p>
-
-<h3>17.OmniFocus</h3>
-
-<p>TODO管理ソフト。他にも色々あるんだけどなんか良く名前を聞く気がしたので使用中。</p>
-
-<h3>18.SimpleCap</h3>
-
-<p>スクリーンショットツール。最低限必要な機能があったのと、角丸で撮ることとかができたので基本的にはこれを使ってます。基本的にスクリーンショット加工しないのでこれで十分。</p>
-
-<h3>19.Transmit</h3>
-
-<p>FTPとかのファイル転送クライアント。なにかのタイミングで安く手に入ったのと、リモートとローカルを同期してくれたりして細かい所が便利だったので使ってます。最近だとディスクとしてマウントできたりするのでさらに便利になってるけど、FTPとかWebDAV関係使う機会もなくなってきたのであんまり活躍する所がなくなってきてる。</p>
-
-<h3>20.iStat Menus</h3>
-
-<p>リソースモニタリングソフト。メニューバーから簡単にCPU使用状況とか見れるので便利。Memory・CPU・Date&amp;Time・Batteryの4つ表示して使ってます。
-ちなみに関係ないアプリですがiStat ProというDashboard用のモニタリングソフトも一応入れてたりします。</p>
-
-<h2>終わり</h2>
-
-<p>とりあえずインストールしたのはこのくらい。 まあ現在はお試しで入れてみたり、仕事で必要になったアプリとか入れてますが必ず入れるのはこの辺かなーと。</p>
 ]]></content>
   </entry>
   
